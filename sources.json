@@ -1,0 +1,13 @@
+[
+ {"name":"OpenAI","type":"rss","url":"https://openai.com/news/rss.xml"},
+ {"name":"Google DeepMind","type":"rss","url":"https://deepmind.google/blog/rss.xml"},
+ {"name":"Hugging Face","type":"rss","url":"https://huggingface.co/blog/feed.xml"},
+ {"name":"Mistral","type":"rss","url":"https://mistral.ai/news/rss"},
+ {"name":"Anthropic","type":"page","url":"https://www.anthropic.com/news","link_prefix":"/news/"},
+ {"name":"Meta AI","type":"page","url":"https://ai.meta.com/blog/","link_prefix":"/blog/"},
+ {"name":"xAI","type":"page","url":"https://x.ai/news","link_prefix":"/news/"},
+ {"name":"DeepSeek","type":"page","url":"https://api-docs.deepseek.com/news/news250120","link_prefix":"/news/"},
+ {"name":"Qwen","type":"page","url":"https://qwenlm.github.io/blog/","link_prefix":"/blog/"},
+ {"name":"Z.ai","type":"page","url":"https://z.ai/blog","link_prefix":"/blog/"},
+ {"name":"Artificial Analysis","type":"page","url":"https://artificialanalysis.ai/articles","link_prefix":"/articles/"}
+]

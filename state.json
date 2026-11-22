@@ -319,7 +319,7 @@
   "xAI": 0,
   "DeepSeek": 0,
   "Qwen": 0,
-  "Z.ai": 1,
+  "Z.ai": 2,
   "Artificial Analysis": 0
  },
  "feeds": {
@@ -330,17 +330,50 @@
   "Qwen": "https://qwenlm.github.io/blog/index.xml",
   "Artificial Analysis": ""
  },
- "drafts": {},
+ "drafts": {
+  "342573727": {
+   "tweets": [
+    "Qwen3.8-27B is out on Hugging Face. It's a 27B dense vision-language model supporting images and hour-scale videos, with native 262k context extensible to 1M. Compatible with HF Transformers, vLLM, and SGLang. Hosted API on Qwen Cloud is coming soon.",
+    "Qwen dropped Qwen3.8-27B. It brings big gains in coding, agentic tasks, and visual reasoning into a compact 27B model. Thinking mode is on by default but adjustable. You can grab the weights on Hugging Face now, with a managed Qwen Cloud API coming soon."
+   ],
+   "source": "Qwen/Qwen3.8-27B  Qwen/Qwen3.8-27B \u00b7 Hugging Face Qwen3.8-27B This repository contains model weights and configuration files for the post-trained model in the Hugging Face Transformers format. These artifacts are compatible with Hugging Face Transformers, vLLM, SGLang, TokenSpeed, etc. For users seeking managed, scalable inference without infrastructure maintenance, the official Qwen API service is provided by Qwen Cloud . In particular, Qwen3.8-27B will be available as a hosted version with more production features, e.g., 1M context length by default, official built-in tools. For more information, please refer to the Qwen3.8-27B Overview . The service is coming soon. Stay tuned for updates. Following the widespread community adoption of the Qwen3.5 and Qwen3.6 series, we are pleased to introduce Qwen3.8, the most capable generation in the Qwen open-model family to date. Built on the architectural foundation of Qwen3.5, Qwen3.8 delivers substantial gains across coding, professional work, research, and long-horizon agentic tasks. Qwen3.8-27B brings these advances to a compact, deployment-friendly dense model: a native vision-language model that understands images and videos, with flexible thinking control, designed to carry complex, multi-step tasks through to completion with greater reliability. Qwen3.8 Highlights Qwen3.8-27B features the following enhancements: Core Capabilities : Comprehensive improvements across coding, professional work, research, and long-horizon agentic tasks. Agent Execution : Stronger autonomous planning and better handling of environment feedback, leading to more reliable end-to-end task completion. Downstream Compatibility : Broader support for popular harnesses and development tools, making it easier to integrate into your existing stack. Flexible Thinking Control : Thinking mode is on by default and can be disabled per request; reasoning depth can be tuned with reasoning_effort , and reasoning context from historical messages is retained via preserve_thinking . Vision-Language Understanding : Native support for image and video understanding, from STEM diagrams and documents to hour-scale videos. Model Overview Type: Causal Language Model with Vision Encoder Training Stage: Pre-training & Post-training Language Model Number of Parameters: 27B Hidden Dimension: 5120 Token Embedding: 248,320 (Padded) Number of Layers: 64 Hidden Layout: 16 \u00d7 (3 \u00d7 (Gated DeltaNet \u2192 FFN) \u2192 1 \u00d7 (Gated Attention \u2192 FFN)) Gated DeltaNet: Number of Linear Attention Heads: 48 for V and 16 for QK Head Dimension: 128 Gated Attention: Number of Attention Heads: 24 for Q and 4 for KV Head Dimension: 256 Rotary Position Embedding Dimension: 64 Feed Forward Network: Intermediate Dimension: 17,408 LM Output: 248,320 (Padded) MTP (Multi-Token Prediction): trained with multiple steps Context Length: 262,144 natively and extensible up to 1,000,000 tokens. Benchmark Results Text Performance Qwen3.8-27B Qwen3.6-27B Qwen3.7-Plus Muse Glimmer-30B Opus4.6 Max Coding Agentic terminal coding Terminal Bench 2.1 (Terminus) 73.0 63.4 64.0 51.7 78.2 Agentic coding SWE-bench Pro 61.7 53.5 57.6 51.2 53.4 Repo-level code generation NL2Repo-Bench 42.3 36.2 41.1 -- 47.6 Agentic coding DeepSWE 1.1 42.2 13.3 14.2 -- -- Software engineering QwenSWEBench 79.0 49.3 59.2 -- 63.8 Agent Long-horizon office work CoWorkBench 70.7 61.0 65.1 -- 68.2 Professional job tasks JobBench 33.4 21.8 27.6 -- -- Frontier agentic tasks Agents' Last Exam Pass@1 20.4 Score 42.9 Pass@1 10.6 Score 27.3 Pass@1 13.2 Score 33.6 -- -- General Instruction following IFBench 79.5 69.1 79.1 77.0 62.5 Scientific reasoning GPQA Diamond 89.2 87.8 90.3 83.5 91.3 Multidisciplinary reasoning HLE 30.8 24.0 34.7 22.0 40.0 Competitive coding LiveCodeBench v6 90.3 83.9 89.6 -- 88.8 SWE-bench Pro: Except for Opus4.6 Max, which uses the officially reported score, all models are evaluated with the Claude Code harness at temp=1.0, top_p=0.95, and a 256K context window. Problematic tasks were corrected, and all baseline models were re-evaluated on the refined benchmark. NL2Repo-Bench: Evaluated with the Claude Code harness. To prevent reward hacking, we disable Bash commands that attempt to access the specific repository, such as pip download, pip install, and git clone. DeepSWE 1.1: Evaluated with the Claude Code harness at temp=1.0, top_p=0.95, and a 256K context window. QwenSWEBench: In-house coding benchmark for evaluating models' software engineering capabilities. Evaluated with the Claude Code harness. Reporting avg@3 with an 8-hour timeout, max_tokens=32,768, temperature=1.0, and a 256K context window. CoWorkBench: In-house cowork benchmark for evaluating long-horizon tasks across computer science, finance, law, medical, and other productivity domains. HLE: Judged by GPT-4o. The best result in each row is shown in bold. Empty cells (--) indicate that results are not yet available or not applicable. VL Performance Qwen3.8-27B Qwen3.6-27B Qwen3.7-Plus Muse Glimmer-30B Opus4.6 M",
+   "category": "news"
+  },
+  "342586114": {
+   "tweets": [
+    "There's an addon called mcp-for-blender-pro that adds an AI assistant and built-in MCP server to Blender. It lets you edit scenes and inspect viewports using OpenAI, Claude, Gemini, or local Ollama models. Runs on Windows x64 with Blender 4.2+.",
+    "Just saw blender-ai-mcp-addon on GitHub. It comes with 21 scene tools for AI models to build objects, edit materials, take viewport screenshots, and search Poly Haven assets. You can even set up multi-agent team workflows."
+   ],
+   "source": "bookwjitchieni1986/blender-ai-mcp-addon: AI assistant and MCP server for Blender: visual chat, scene tools, multi-agent workflows. Works with ChatGPT/GPT, Claude, Gemini, Ollama, OpenCode. Blender AI  AI assistant and MCP server for Blender: visual chat, scene tools, multi-agent workflows. Works with ChatGPT/GPT, Claude, Gemini, Ollama, OpenCode. Blender AI addon, copilot for 3D, bpy Python scripting, MCP integration. GitHub - bookwjitchieni1986/blender-ai-mcp-addon: AI assistant and MCP server for Blender: visual chat, scene tools, multi-agent workflows. Works with ChatGPT/GPT, Claude, Gemini, Ollama, OpenCode. Blender AI addon, copilot for 3D, bpy Python scripting, MCP integration. \u00b7 GitHub Skip to content You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert main Branches Tags Go to file Code Open more actions menu Latest commit History 8 Commits 8 Commits Folders and files Name Name Last commit message Last commit date docs docs LICENSE LICENSE README.md README.md View all files Repository files navigation mcp-for-blender-pro Your Blender scene. Your AI models. One creative workspace. An AI assistant for Blender that can inspect your scene, build objects, edit materials, find assets and carry out multi-step workflows\u2014with a visual chat workspace and a built-in Model Context Protocol (MCP) server. Download \u00b7 Getting started \u00b7 Connections and agents Turn a creative brief into scene operations Start with an idea. Ask the assistant to inspect your scene, create a product-display layout, arrange objects, assign materials or prepare an export. Follow its actions in the conversation and inspect the result in the viewport preview. Keep working in Blender throughout the process. mcp-for-blender-pro brings conversation, scene tools, model choice and agent workflows together. It is designed for artists who want faster iteration, technical artists who automate repetitive work, and developers connecting AI tools to Blender. Why choose mcp-for-blender-pro? Capability What it gives you Blender-aware assistance Scene and object inspection gives the assistant context before it acts. A visual Studio workspace Chat, scene objects, viewport snapshots, approvals and a task board in a companion window. Your choice of AI Connect supported cloud providers, local Ollama models or compatible custom endpoints. Saved connections Keep work and personal connections separate, including multiple keys for the same provider. One assistant or a team Use a single model for quick changes, or managers, workers and reviewers for structured tasks. Built-in MCP server Connect OpenCode and other clients supporting authenticated Streamable HTTP MCP. 21 scene tools Create, inspect, edit, capture, search assets, consult Blender APIs and export scenes. Multilingual menus Choose English, German, French, Spanish or Chinese for the main interface. From a quick edit to an agent team Use Single assistant for direct, conversational work. For larger tasks, configure a Team chain with individual responsibilities, instructions and models. Manager: breaks the request into assignments and acceptance criteria. Workers: perform the assigned scene operations. Reviewers: inspect results and approve work or return specific findings. Tasks run sequentially so scene edits stay ordered. A blocked task gets one correction attempt; a second failed review stops the workflow. The task board exposes assignments, attempts and review findings as work progresses. Connect the models that fit your work Supported connections include OpenAI, Anthropic Claude, Google Gemini, OpenRouter, OpenCode Zen, Ollama and custom APIs . Load the available model catalog and select a model directly in Blender or Studio. Custom endpoints support OpenAI Chat Completions, Anthropic Messages and Ollama protocols. Choose models with tool-calling support; image-capable models can also interpret viewport screenshots. OpenCode-only free models are available through the OpenCode client. Install and create Download mcp-for-blender-pro.zip from Releases . In Blender, open Edit \u2192 Preferences \u2192 Get Extensions \u2192 menu \u2192 Install from Disk . Select the ZIP, enable mcp-for-blender-pro , then open 3D Viewport \u2192 N \u2192 MCP Pro . Choose a provider, add your connection details and select a model. Send a message in Blender or click Open Studio Window . The release bundle targets Windows x64 with Blender 4.2 or later . Keep Blender open while using Studio or an external client. Try these prompts Inspect this scene and explain its object structure before making any changes. Create a simple product-display scene with a pedestal, a camera and three lights. Give the pedestal a matte blue material. Duplicate the selected object into a neatly spaced row of five and show the viewport. Find an appropriate Poly Haven asset for this scene and ask",
+   "category": "agents"
+  },
+  "342593125": {
+   "tweets": [
+    "OpenRouter addressed security findings showing some inference providers breached data policies. OpenRouter itself wasn't breached, but they off-boarded 3 providers, removed 125 endpoints from Zero Data Retention eligibility, and notified all affected users.",
+    "Security researchers found data policy issues with several AI inference providers. OpenRouter wasn't breached, but they've off-boarded 3 providers and stripped 125 endpoints of Zero Data Retention status while directly notifying impacted customers."
+   ],
+   "source": "Data Processing Incidents on Inference Providers  Data Processing Incidents on Inference Providers Data Processing Incidents on Inference Providers OpenRouter \u00b7 11/22/2026 Provider security announcements Provider security announcements Earlier this week, security researchers reported that certain inference providers had data compromised or otherwise shown evidence that their data policies were not being upheld. We have been collaborating closely with the researchers and with providers to understand the findings and encourage the providers to address them. These findings did not show any breach or unauthorized access of OpenRouter. The results of this testing revealed new findings about specific inference providers. A live list of the security announcements we have received from providers is below . As the operating layer between customers and a fast-moving ecosystem of models and providers, we take data policy enforcement very seriously. We have taken the following actions: Off-boarded three providers from OpenRouter, based on the results of our investigations. Removed 125 endpoints from Zero Data Retention (ZDR) eligibility. The removals included providers flagged by researchers, plus additional endpoints that we removed as a precautionary measure. Notified all potentially affected customers. The following work is underway: We are adapting the researchers\u2019 testing approach so we can run these checks on an ongoing basis. We are conducting technical verification of network paths to identify instances where requests and responses may be being forwarded to third parties. We are requiring appropriate assurances and validation before restoring ZDR eligibility to any endpoint removed in this review. We are grateful for the Dragos report. As we integrate similar testing techniques into OpenRouter, we will keep raising the bar, and providers that want to be on OpenRouter will need to meet it. Provider security announcements Novita: Privacy notice regarding MiniMax requests on Novita Phala: November preliminary incident report Together: Security event: prompt leakage for requests in June and July of 2026 Not all affected providers have posted publicly. We have notified affected users regardless of whether there is a public post. We are encouraging all providers to create incident write-ups and will keep this list updated. Email address Subscribe By subscribing you agree to receive the OpenRouter newsletter: model usage data, product updates, and research reports, about one email a week. Unsubscribe anytime via the link in every email. See our Privacy Policy .",
+   "category": "news"
+  },
+  "342641968": {
+   "tweets": [
+    "Replit released Amuse, a self-hosted personal AI agent that runs on your own computer. It does web research, has a live browser you can watch or take over, and asks for approval before payments or form submissions. Just needs Docker and your own OpenAI API key.",
+    "If you want a personal AI agent on your own machine, Replit open-sourced Amuse. It handles reminders, web research, and small apps, with memory stored as plain files. Runs locally on localhost:3000 with your OpenAI key and PostgreSQL."
+   ],
+   "source": "replit/amuse: Self-hosted personal AI agent: research, a live browser, reminders and small apps, with approvals before actions. Runs on your own computer with an OpenAI key. Self-hosted personal AI agent: research, a live browser, reminders and small apps, with approvals before actions. Runs on your own computer with an OpenAI key. GitHub - replit/amuse: Self-hosted personal AI agent: research, a live browser, reminders and small apps, with approvals before actions. Runs on your own computer with an OpenAI key. \u00b7 GitHub Skip to content You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert main Branches Tags Go to file Code Open more actions menu Latest commit History 2 Commits 2 Commits Folders and files Name Name Last commit message Last commit date .github .github apps apps docs docs lib/ db lib/ db tests/ e2e tests/ e2e .dockerignore .dockerignore .env.example .env.example .gitignore .gitignore .npmrc .npmrc .prettierignore .prettierignore .prettierrc.json .prettierrc.json CHANGELOG.md CHANGELOG.md CODE_OF_CONDUCT.md CODE_OF_CONDUCT.md CONTRIBUTING.md CONTRIBUTING.md Dockerfile Dockerfile LICENSE LICENSE NOTICE NOTICE README.md README.md SECURITY.md SECURITY.md THIRD_PARTY_LICENSES.md THIRD_PARTY_LICENSES.md docker-compose.yml docker-compose.yml package.json package.json pnpm-lock.yaml pnpm-lock.yaml pnpm-workspace.yaml pnpm-workspace.yaml tsconfig.base.json tsconfig.base.json tsconfig.json tsconfig.json View all files Repository files navigation Amuse Self-hosted personal AI agent: it researches the web, uses a live browser you can watch and take over, runs reminders and background checks, tracks goals and builds small apps you keep using, and asks before it sends, submits or pays for anything. Amuse runs on your own computer for one person. It needs an OpenAI API key and PostgreSQL. No account, hosted service or other API key is required. Features Chat with an agent you name and shape, with side chats for separate topics Web research with sources, using OpenAI web search A live browser in the chat that fills forms and navigates sites, which you can watch, take over or stop Reminders, monitors and a background heartbeat that only message you when something matters Goals turned into step-by-step plans that the agent keeps working on Documents, PDFs, images, podcasts and spaces: small apps with saved data Memory you can read and edit, stored as plain workspace files Approval cards for sends, form submissions, payments and new schedules, with once, task, site or always scopes An encrypted vault for logins and API keys; the model only sees stand-in tokens Voice mode with transcription and spoken replies Hatch your agent Ask for an app, get a working one It browses the web for you, live Talk to it, and it talks back Quick start with Docker Compose Requirements: Docker Engine with the Compose plugin, Git, and an OpenAI API key. git clone https://github.com/replit/amuse cd amuse cp .env.example .env # then set OPENAI_API_KEY docker compose up -d --build Open http://localhost:3000 and hatch your agent. Compose starts PostgreSQL alongside Amuse and publishes the app on 127.0.0.1 only. From source Use Node.js 22.9+ , pnpm 10.26.1 and PostgreSQL 14+ . corepack enable corepack prepare pnpm@10.26.1 --activate pnpm install --frozen-lockfile pnpm setup:browser # downloads Chromium for the agent's live browser cp .env.example .env # set OPENAI_API_KEY and DATABASE_URL pnpm build pnpm start Open http://localhost:3000 . The server migrates its schema automatically before listening. Your OpenAI key The agent ( gpt-6.2-sol , with gpt-6-luna for quick steps), web search, image generation ( gpt-image-2 ), transcription and spoken replies all run on your OpenAI key. Set a spend limit on your OpenAI project. Amuse also stops for the day at AMUSE_DAILY_LIMIT usage units (2,000 by default) and pauses background jobs until the next day. Models and every other setting are in .env.example . Besides OpenAI, Amuse only contacts the sites the agent visits for you and, for weather questions, the free Open-Meteo API (weather data by Open-Meteo.com, CC BY 4.0). Fonts and every other asset are served locally. Scope Amuse is deliberately small. It's a web app for one person on one computer, it uses OpenAI models only, and it connects to services through API keys and its live browser rather than MCP servers. Notifications appear while an Amuse tab is open; there's no push to your phone yet. Security model Amuse is built for one person on their own computer, so it has no login . It listens on 127.0.0.1 only and refuses changes from other sites. Don't expose it to a network or the internet. The agent can only reach public internet addresses, saved credentials are only sent to the site you confirmed, and consequential actions ask you first. See SECURITY.md for",
+   "category": "agents"
+  }
+ },
  "approved": [],
  "held": [],
  "stats": {
   "drafts": 0,
   "majors": 0,
-  "quotes": 5,
-  "chats": 1
+  "quotes": 12,
+  "chats": 2
  },
  "cool": {},
- "tg_offset": 694012118,
+ "tg_offset": 694012120,
  "chat": [
   {
    "role": "user",
@@ -349,14 +382,22 @@
   {
    "role": "model",
    "text": "Hey! Ready to look for some fresh AI news or draft some post ideas today. \n\nWould you like me to search for the latest AI model updates, run a web search on recent tech announcements, or suggest a model showdown idea?"
+  },
+  {
+   "role": "user",
+   "text": "Pause for now"
+  },
+  {
+   "role": "model",
+   "text": "Got it! I'm on standby whenever you're ready to check news or draft posts. Just let me know."
   }
  ],
- "last_digest": "2026-11-21T21:27:01.811138+00:00",
- "last_scan": "2026-11-21T21:27:01.811161+00:00",
+ "last_digest": "2026-11-22T10:15:23.368314+00:00",
+ "last_scan": "2026-11-22T10:15:23.631483+00:00",
  "credits": {
   "month": "2026-11",
   "used": [
-   16
+   66
   ],
   "alerted": []
  },
@@ -365,6 +406,97 @@
   "2124044780099285426",
   "2124071338394399028",
   "2124042864891982292",
-  "2124070328158900294"
- ]
+  "2124070328158900294",
+  "2124270426402836626",
+  "2124102691194306800",
+  "2124370391074288004"
+ ],
+ "style_accounts": [
+  "Octoberry"
+ ],
+ "cfg": {},
+ "cmds_v": 2,
+ "daily": {
+  "day": "2026-11-22",
+  "n": 4,
+  "min_done": false
+ },
+ "last_release_watch": "2026-11-22",
+ "web_note": "Last web scan: Hacker News: 12 | Reddit failed: 404 Client Error: Not Found for url: htt | GitHub: 12 | Hugging Face: 8 | Web search failed: 404 Client Error: Not Found for url: htt | new: 32",
+ "last_rumor": "2026-11-22",
+ "q_idx": 2,
+ "scan_note": "Last scan: 'new AI model release': 8 found, 2 fresh | 'AI model benchmark comparison': 8 found, 4 fresh | watchlist: 8 found, 8 fresh",
+ "last_web": "2026-11-22T10:16:00.590410+00:00",
+ "web": {
+  "subreddits": [
+   "LocalLLaMA",
+   "singularity",
+   "ClaudeAI",
+   "OpenAI",
+   "artificial"
+  ],
+  "hn_keywords": [
+   "AI",
+   "LLM",
+   "Claude",
+   "Gemini",
+   "GPT"
+  ],
+  "gh_topics": [
+   "llm",
+   "ai-agent"
+  ]
+ },
+ "seen_web": [
+  "https://huggingface.co/Qwen/Qwen3.8-27B",
+  "https://huggingface.co/thinkingmachines/Inkling-2-Mini",
+  "https://github.com/bookwjitchieni1986/blender-ai-mcp-addon",
+  "https://github.com/sybil-solutions/inference-optimisation-skill",
+  "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/",
+  "https://huggingface.co/harness-hub/Qwen3.8-27B-pi-adapted",
+  "https://huggingface.co/higurashi-ai/Haru-4B",
+  "https://huggingface.co/unsloth/Inkling-2-Mini-GGUF",
+  "https://huggingface.co/tencent/Hy4-flash",
+  "https://huggingface.co/inworld/voice-isolator",
+  "https://huggingface.co/apple/FastFrames-L",
+  "https://github.com/ShinMegamiBoson/lookatmyquant",
+  "https://github.com/INK-Q/agy-fast",
+  "https://github.com/w01fb0ss/PiBot",
+  "https://github.com/w01fb0ss/PiBot",
+  "https://github.com/Cloudcode04/runway-ml-pro-win",
+  "https://github.com/Morriswawan05/elevenlabs-pro-win",
+  "https://github.com/debugdigital677/descript-pro-win",
+  "https://github.com/Aroralayla99/capcut-seedance-win",
+  "https://github.com/josephyoung28/capcut-seedance-win",
+  "https://onurgumus.github.io/zero-csharp/index.html",
+  "https://github.com/ItsNotRexed/Leonida",
+  "https://github.com/chuxuan861119/zhichan-xiaozhan-work",
+  "https://jespino.github.io/gopgext/",
+  "https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/",
+  "https://github.com/replit/amuse",
+  "https://pwn.ai/upload2shell",
+  "https://github.com/sebaandrada-cell/PcapAnalyzer",
+  "https://www.pandex.io",
+  "https://betterdatacenterproject.com/2026/11/16/how-ai-is-powered-a-breakdown-of-byop-and-grid-power/",
+  "https://www.dragos.com/blog/ai-supply-chain-security-canary-tokens",
+  "https://www.noemamag.com/the-mythology-of-conscious-ai/"
+ ],
+ "styles": [
+  {
+   "label": "@Octoberry (auto)",
+   "notes": "Combines energetic, informal internet commentary with quick analytical takes on new AI releases and performance metrics. Frequently uses line breaks for readability, direct callouts, rhetorical questions, and casual tech slang like 'tbh' and 'ngl'. Types: Benchmark Analyses; Model Comparisons; Reactionary Takes; Rhetorical Questions; Industry Comme"
+  }
+ ],
+ "style_refresh": {
+  "Octoberry": "2026-11-22T10:17:32.970403+00:00"
+ },
+ "last_cmp": "2026-11-22",
+ "cmp_used": [
+  "Create a single self-contained HTML file (no external dependencies, standard HTML5 Canvas) that simulates an interactive",
+  "Generate a single-file playable 3D HTML game using Three.js via CDN. Theme: Synthwave Cyberpunk Endless Runner. Requirem",
+  "Write a single, fully responsive HTML landing page for a futuristic AI Robotics startup named 'Aether Dynamics'. Use Tai",
+  "Create a single self-contained HTML file containing an interactive 3D globe visualization using Three.js (via CDN). Feat"
+ ],
+ "month_log": [],
+ "releases": []
 }

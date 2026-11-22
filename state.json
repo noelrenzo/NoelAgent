@@ -293,7 +293,8 @@
   "https://artificialanalysis.ai/articles/thinking-machines-releases-inkling-2-small-highest-scoring-open-weights-model-outside-of-chinia-upon-weights-release-it",
   "https://artificialanalysis.ai/articles/nanbeige-has-released-nanbeige4-3-33b-scoring-20-on-the-intelligence-index",
   "https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1",
-  "https://artificialanalysis.ai/articles/github-copilot-fusion-orchestrates-anthropic-and-openai-models-to-balance-performance-and-cost"
+  "https://artificialanalysis.ai/articles/github-copilot-fusion-orchestrates-anthropic-and-openai-models-to-balance-performance-and-cost",
+  "https://openai.com/index/perplexity-and-intelligence"
  ],
  "init": [
   "OpenAI",
@@ -308,7 +309,24 @@
   "Artificial Analysis"
  ],
  "buffer": [],
- "week_log": [],
+ "week_log": [
+  {
+   "t": "2026-11-22T20:26:56.976116+00:00",
+   "title": "Perplexity and Intelligence",
+   "url": "https://openai.com/index/perplexity-and-intelligence",
+   "category": "Industry",
+   "facts": [
+    "OpenAI proposes perplexity (cross-entropy loss) as a shared industry metric for AI progress and safety.",
+    "Jakub Pachocki argues that training better compressors is key to understanding AI capability advancement.",
+    "OpenAI published internal perplexity measurements to encourage industry-wide transparency.",
+    "Perplexity measures the average next-token prediction accuracy of a model.",
+    "Current OpenAI models have reached log-perplexity levels below 0.8.",
+    "Pachocki suggests establishing common development limits based on perplexity milestones.",
+    "AI is increasingly contributing to its own pretraining and algorithmic research.",
+    "Future transformative capabilities are expected as models reach the 0.68-0.7 log-perplexity window."
+   ]
+  }
+ ],
  "fail": {
   "OpenAI": 0,
   "Google DeepMind": 0,
@@ -319,7 +337,7 @@
   "xAI": 0,
   "DeepSeek": 0,
   "Qwen": 0,
-  "Z.ai": 3,
+  "Z.ai": 4,
   "Artificial Analysis": 0
  },
  "feeds": {
@@ -362,6 +380,46 @@
    ],
    "source": "replit/amuse: Self-hosted personal AI agent: research, a live browser, reminders and small apps, with approvals before actions. Runs on your own computer with an OpenAI key. Self-hosted personal AI agent: research, a live browser, reminders and small apps, with approvals before actions. Runs on your own computer with an OpenAI key. GitHub - replit/amuse: Self-hosted personal AI agent: research, a live browser, reminders and small apps, with approvals before actions. Runs on your own computer with an OpenAI key. \u00b7 GitHub Skip to content You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert main Branches Tags Go to file Code Open more actions menu Latest commit History 2 Commits 2 Commits Folders and files Name Name Last commit message Last commit date .github .github apps apps docs docs lib/ db lib/ db tests/ e2e tests/ e2e .dockerignore .dockerignore .env.example .env.example .gitignore .gitignore .npmrc .npmrc .prettierignore .prettierignore .prettierrc.json .prettierrc.json CHANGELOG.md CHANGELOG.md CODE_OF_CONDUCT.md CODE_OF_CONDUCT.md CONTRIBUTING.md CONTRIBUTING.md Dockerfile Dockerfile LICENSE LICENSE NOTICE NOTICE README.md README.md SECURITY.md SECURITY.md THIRD_PARTY_LICENSES.md THIRD_PARTY_LICENSES.md docker-compose.yml docker-compose.yml package.json package.json pnpm-lock.yaml pnpm-lock.yaml pnpm-workspace.yaml pnpm-workspace.yaml tsconfig.base.json tsconfig.base.json tsconfig.json tsconfig.json View all files Repository files navigation Amuse Self-hosted personal AI agent: it researches the web, uses a live browser you can watch and take over, runs reminders and background checks, tracks goals and builds small apps you keep using, and asks before it sends, submits or pays for anything. Amuse runs on your own computer for one person. It needs an OpenAI API key and PostgreSQL. No account, hosted service or other API key is required. Features Chat with an agent you name and shape, with side chats for separate topics Web research with sources, using OpenAI web search A live browser in the chat that fills forms and navigates sites, which you can watch, take over or stop Reminders, monitors and a background heartbeat that only message you when something matters Goals turned into step-by-step plans that the agent keeps working on Documents, PDFs, images, podcasts and spaces: small apps with saved data Memory you can read and edit, stored as plain workspace files Approval cards for sends, form submissions, payments and new schedules, with once, task, site or always scopes An encrypted vault for logins and API keys; the model only sees stand-in tokens Voice mode with transcription and spoken replies Hatch your agent Ask for an app, get a working one It browses the web for you, live Talk to it, and it talks back Quick start with Docker Compose Requirements: Docker Engine with the Compose plugin, Git, and an OpenAI API key. git clone https://github.com/replit/amuse cd amuse cp .env.example .env # then set OPENAI_API_KEY docker compose up -d --build Open http://localhost:3000 and hatch your agent. Compose starts PostgreSQL alongside Amuse and publishes the app on 127.0.0.1 only. From source Use Node.js 22.9+ , pnpm 10.26.1 and PostgreSQL 14+ . corepack enable corepack prepare pnpm@10.26.1 --activate pnpm install --frozen-lockfile pnpm setup:browser # downloads Chromium for the agent's live browser cp .env.example .env # set OPENAI_API_KEY and DATABASE_URL pnpm build pnpm start Open http://localhost:3000 . The server migrates its schema automatically before listening. Your OpenAI key The agent ( gpt-6.2-sol , with gpt-6-luna for quick steps), web search, image generation ( gpt-image-2 ), transcription and spoken replies all run on your OpenAI key. Set a spend limit on your OpenAI project. Amuse also stops for the day at AMUSE_DAILY_LIMIT usage units (2,000 by default) and pauses background jobs until the next day. Models and every other setting are in .env.example . Besides OpenAI, Amuse only contacts the sites the agent visits for you and, for weather questions, the free Open-Meteo API (weather data by Open-Meteo.com, CC BY 4.0). Fonts and every other asset are served locally. Scope Amuse is deliberately small. It's a web app for one person on one computer, it uses OpenAI models only, and it connects to services through API keys and its live browser rather than MCP servers. Notifications appear while an Amuse tab is open; there's no push to your phone yet. Security model Amuse is built for one person on their own computer, so it has no login . It listens on 127.0.0.1 only and refuses changes from other sites. Don't expose it to a network or the internet. The agent can only reach public internet addresses, saved credentials are only sent to the site you confirmed, and consequential actions ask you first. See SECURITY.md for",
    "category": "agents"
+  },
+  "379267462": {
+   "tweets": [
+    "OpenAI just published their internal perplexity measurements to push for industry-wide transparency.\n\nJakub Pachocki is arguing that training better compressors (next-token prediction accuracy) is key to tracking AI progress and safety.\n\ntbh this makes a lot of sense.",
+    "Current OpenAI models have reached log-perplexity levels below 0.8, with huge capabilities expected around the 0.68-0.7 window.\n\nPachocki even suggests setting common development limits based on these milestones.\n\nShould perplexity become the standard safety metric?"
+   ],
+   "source": "OpenAI proposes perplexity (cross-entropy loss) as a shared industry metric for AI progress and safety. Jakub Pachocki argues that training better compressors is key to understanding AI capability advancement. OpenAI published internal perplexity measurements to encourage industry-wide transparency. Perplexity measures the average next-token prediction accuracy of a model. Current OpenAI models have reached log-perplexity levels below 0.8. Pachocki suggests establishing common development limits based on perplexity milestones. AI is increasingly contributing to its own pretraining and algorithmic research. Future transformative capabilities are expected as models reach the 0.68-0.7 log-perplexity window. Perplexity and Intelligence | OpenAI OpenAI November 22, 2026 Research Safety Perplexity and Intelligence By Jakub Pachocki, Chief Scientist at OpenAI Share From afar, it might seem like modern AI is built similarly to how software has been built in previous decades: with a diverse set of techniques targeting specific capabilities. There are indeed a variety of methods, but rather than designing something from scratch, they are mostly harnessing the intelligence coming from a much simpler and less interpretable process: training a compressor (or, equivalently \u2060 (opens in a new window) , predictor) on a very large corpus of data. 1 I believe tracking the pace of progress on training better compressors is key to understanding the arc of advances in AI. In this post, I argue for establishing perplexity (or, equivalently, cross-entropy loss) as a metric to compare between model developers and inform shared safety standards. As a first step, I provide more transparency into pretraining progress at OpenAI. Publishing our internal perplexity measurements took some consideration; it gives competitors a clearer picture of where we stand, but that concern is outweighed by the urgency of establishing shared \u2060 (opens in a new window) safety measures across the industry. We at OpenAI hope for this to be a step towards building a shared scientific basis for future pacing efforts. A simplified, but fundamentally informative, view of AI development is that first, one builds a large computer, then uses it to pretrain a model (compressor) on a large unstructured dataset, then applies a variety of techniques\u2014like prompting, finetuning or reinforcement learning\u2014in different contexts to elicit the latent capabilities of that model. Algorithmic progress can blur the distinction between training phases, but we can still separate the creation of the AI with hard-to-predict emergent capabilities (which I earlier dubbed \u201c an alien mind \u2060 \u201d) and the subsequent targeted elicitation. The primary way we measure progress on this key \u201cintelligence substrate\u201d has remained remarkably constant over the years\u2014we have been tracking the perplexity of the models on a held-out dataset. 2 , 3 Perplexity measures how well a model predicts the next token on average; lower perplexity means better predictions. The plot opening this blog post shows how this metric evolved for our models starting with GPT\u20113.5. The range of capabilities of models that are largely described by this one metric is stunning. Setting the new perplexity state-of-the-art on older datasets 4 , GPT\u20112 was arguably the first model capable of consistently formulating coherent paragraphs of text. The next major leap, GPT\u20113, was capable of learning in context, given a few examples of a task. GPT\u20113.5, at a log-perplexity of ~0.99 on our current main evaluation dataset, was capable of fluent conversation and formed the basis for the original ChatGPT. GPT\u20114, at ~0.91, was proficient at utilizing chain-of-thought reasoning productively, which motivated the subsequent targeted elicitation of this capability and the creation of modern reasoning models. Now, as we have reached losses below 0.8, we have seen the emergence of transformative capabilities in fields like cybersecurity and mathematics. I want to reemphasize that it was not at all clear a priori that these capabilities would appear once those precise perplexity thresholds are met\u2014they can fundamentally be seen as emergent latent capabilities from progress on this one metric. As AI advances very rapidly, the scope and way in which we measure downstream capabilities may change quickly. It would make little sense to evaluate GPT\u20112 and GPT\u20113 on most modern benchmarks; and the benchmarks used then were largely saturated around GPT\u20114. In contrast, I believe looking at progress on pretraining is likely to stay informative. A particular change in the pace of progress comes from the increasing contribution of AI to its own development. The most commonly discussed metrics revolve around AI augmenting and replacing human researchers in all stages of the development cycle; with an ultimate inflection point seen at \u201cfull recursive self-improvement\u201d, where the process would be entirely automated with no human oversight. Apart from considering su",
+   "category": "Industry"
+  },
+  "379358047": {
+   "tweets": [
+    "ngl this is actually wild. 20 AI testers running in parallel on 20 different phones using GitHub\u2019s free runners.\n\nClaude Code agents hopping into iOS/Android emulators to find bugs you didn\u2019t even think to script for. No test scripts needed.\n\nCosts about $0.15 to $0.55 per phone. Why are we still writing manual e2e tests? 1",
+    "tbh the ROI on this is kind of insane.\n\nSomeone ran this on LocalSend and found 46 distinct bugs for $4.62 in model usage. It catches broken flows and layout issues that human QA would take days to find.\n\nWorks with Flutter, React Native, and native. Just give it a Claude API key and let it cook."
+   ],
+   "source": "pierridotite/mobile-agent-testers: 20 AI testers on 20 different phones, in parallel, on GitHub's free runners: Claude Code agents on iOS Simulators and Android emulators that find broken flows, trans 20 AI testers on 20 different phones, in parallel, on GitHub's free runners: Claude Code agents on iOS Simulators and Android emulators that find broken flows, translation, layout and accessibility bugs GitHub - pierridotite/mobile-agent-testers: 20 AI testers on 20 different phones, in parallel, on GitHub's free runners: Claude Code agents on iOS Simulators and Android emulators that find broken flows, translation, layout and accessibility bugs \u00b7 GitHub Skip to content You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert main Branches Tags Go to file Code Open more actions menu Latest commit History 58 Commits 58 Commits Folders and files Name Name Last commit message Last commit date .claude-plugin .claude-plugin .github/ workflows .github/ workflows assets assets briefs briefs demo-app demo-app docs docs plugins/ mobile-agent-testers plugins/ mobile-agent-testers scripts scripts skills/ mobile-agent-testers skills/ mobile-agent-testers tests tests .gitattributes .gitattributes .gitignore .gitignore AGENT_BRIEF.md AGENT_BRIEF.md CHANGELOG.md CHANGELOG.md LICENSE LICENSE PRIVACY.md PRIVACY.md README.es.md README.es.md README.ja.md README.ja.md README.md README.md README.pt-BR.md README.pt-BR.md README.zh-CN.md README.zh-CN.md personas.json personas.json results_public.pem results_public.pem setup.ps1 setup.ps1 setup.sh setup.sh View all files Repository files navigation mobile-agent-testers 20 AI testers on 20 different phones, in parallel, on GitHub's free runners. Examples \u00b7 Compare \u00b7 FAQ \u00b7 Personas \u00b7 Releases English \u00b7 \u7b80\u4f53\u4e2d\u6587 \u00b7 \u65e5\u672c\u8a9e \u00b7 Espa\u00f1ol \u00b7 Portugu\u00eas No test scripts to write. Each tester is a Claude Code agent with its own iOS Simulator or Android emulator on GitHub Actions. It plays a persona (iPhone SE in Swedish at the largest text size, Pixel 7 at 200%, iPad in German, Arabic right to left...), uses your app like a new user (or runs through the feature you point it at) and writes a bug report with screenshots. Flutter, React Native, Expo, native Kotlin and Swift, Kotlin Multiplatform, Capacitor and .NET MAUI. GitHub's runners are free for public repos. You only pay for the model, with your Claude subscription or API key: about $0.15 to $0.55 per phone in these runs . Real screen recordings of the LocalSend run, idle time cut. Full video (MP4) \u00b7 The run, device by device What it does One use per run, set with the inputs of Test your own app . Explore like new users (the default). Each persona tries to reach its goal and reports what gets in the way, with numbered screenshots. Run one feature end to end. Your own brief sends every agent through a whole mechanic: a booking in several steps, an editor with undo, a sync between two screens. Agents tap, long press, swipe and type, leave the app and come back, relaunch it to check what was saved, or open a deep link to start right at the feature, and a brief can raise the budget of about 30 actions. AnkiDroid's found the Back field of a new card hidden behind the keyboard. Reproduce a bug report on every phone: give an issue or the steps, and each agent answers yes, no or unclear, with screenshots ( briefs/reproduce.md ). Get an improvement report. Each persona uses the app once, then says where it hesitated, what it expected and what to change first, by area and impact ( briefs/improve.md ). Compare two versions. The same personas on two branches or builds, then one table: goals reached, actions, scores, issues seen on one version only ( docs/compare-versions.md ). A check before a real A/B test, not a replacement for one. Use a cheaper model : Claude Haiku, or any Anthropic-compatible API (OpenRouter, DeepSeek, Kimi, GLM, MiniMax, Qwen). The findings are only as good as the model's reading of screenshots and its reasoning ( docs/cheaper-models.md ). Applied examples Real runs on open-source apps, with nothing planted. App Phones What the agents found Time, model usage LocalSend (Flutter, 100k stars) 20: 10 Android, 10 iOS, 14 languages 46 distinct bugs, 1 blocker: on an iPhone SE in Swedish at the largest text size, you can't send a text message at all 69 min, $4.62 AnkiDroid (Kotlin, 12k stars, release APK) 10 Android 43 distinct issues, among them answer buttons cut in half at 200% font and \"Get started\" left in English in three languages under 10 min, $4.69 Flutter's animations sample 1 Android, 1 iOS The same typo, reported by both agents on their own, and an app that ignores dark mode 19 min, $0.47 34 of LocalSend's 46 bugs had nothing to do with text size or accessibility: broken flows, silent failures, missing translations, tablet layouts. Screenshots, every findin",
+   "category": "agents"
+  },
+  "379363871": {
+   "tweets": [
+    "Apple just dropped Depth Pro 2 and the temporal consistency is actually wild ngl.\n\nIt does metric depth for photos, videos, and live feeds at full resolution. Sharp edges and zero jitter? We love to see it.\n\n4 sizes (S to H) on HF. Research use only for now.",
+    "Is Apple lowkey winning the depth estimation game?\n\nDepth Pro 2 just hit HF. It handles metric depth from a single camera with crazy sharpness and way less jitter than before.\n\n4 model sizes available for research use. Even includes a focal length estimator. \ud83d\udcc8"
+   ],
+   "source": "apple/DepthPro2  apple/DepthPro2 \u00b7 Hugging Face Depth Pro 2: Sharp and Temporally Consistent Metric Monocular Depth Depth Pro 2 estimates metric depth for every pixel from an ordinary camera: a single photo, a whole video, or a live feed, at the input's full resolution. Its depth is sharp at object edges and steady from frame to frame. Models Each size is its own repository with its weights. Larger sizes give sharper, steadier depth; smaller ones run faster. Model Repository Parameters Download size S apple/DepthPro2-S 24M 97 MB B apple/DepthPro2-B 97M 386 MB L apple/DepthPro2-L 334M 1.3 GB H+ apple/DepthPro2-H 872M 3.5 GB All sizes share a focal length estimator, apple/DepthPro2-focal (23.5M parameters, 94 MB), which loads with each size and predicts the focal length when it is unknown. Quick start pip install \"git+https://github.com/apple-aiml-research/ml-depth-pro-2\" from functools import partial import torch from huggingface_hub import hf_hub_download from safetensors.torch import load_file from depth_pro_2 import DepthPro2, load_rgb, upright from depth_pro_2.model import to_normalized_tensor from depth_pro_2.network.fov import FOVEstimator # apple/DepthPro2-S, -B, -L or -H; bfloat16 is how the models run on a GPU. model = DepthPro2.from_pretrained( \"apple/DepthPro2-H\" , precision=torch.bfloat16) # The focal length estimator all sizes share, for photos and videos without a focal length. weights = hf_hub_download( \"apple/DepthPro2-focal\" , \"model.safetensors\" ) model.fov = FOVEstimator(torch.bfloat16) model.fov.load_state_dict(load_file(weights)) model = model.to( \"cuda\" ). eval () transform = partial(to_normalized_tensor, device=torch.device( \"cuda\" )) Image # f_px is the focal length recorded in the photo, or None. image, f_px = load_rgb( \"photo.jpg\" ) depth = model.infer(transform(image), f_px=f_px)[ \"depth\" ] # meters, (H, W) Video import av # 16 frames at a time: one prediction per frame, in order. video = av. open ( \"video.mp4\" ) frames = (transform(upright(f)) for f in video.decode(video= 0 )) for prediction in model.infer_video(frames): depth = prediction[ \"depth\" ] # meters, (H, W) Depth is infinite where the scene is infinitely far, such as the sky. The code has the command line and a live-feed example. Results Sharpness and temporal consistency Depth Pro 2 outperforms prior work operating on a single frame or multiple frames on sharpness (Boundary F1 score) and temporal consistency (Jitter). Higher F1 and lower jitter are better, so the top right is best. Results averaged over Sintel and Spring datasets. Photos Top row: the input photos. Bottom row: Depth Pro 2's depth, red near and blue far. Method A multi-view transformer processes one or more frames jointly, and a DPT decoder predicts an inverse depth map for each frame. \u2460 After the first third of its blocks, the transformer alternates attention within each frame and attention across frames. \u2461 The decoder assembles tokens from several blocks into feature maps at 1/32 to 1/4 of the input resolution. License The weights are released under the Apple Machine Learning Research Model license , for research use only: non-commercial scientific research and academic development. Citation @article{DepthPro2:2026:arxiv, title = {Depth Pro 2: Sharp and Temporally Consistent Metric Monocular Depth}, author = {Peiyun Hu and Marko Mihajlovic and Lyndon Duong and Lahav Lipson and Wei Dong and Ama\\\"{e}l Delaunoy and Stephan R. Richter and Vladlen Koltun}, journal = {arXiv preprint arXiv:2611.26603}, year = {2026}, url = {https://arxiv.org/abs/2611.26603}, } Downloads last month - Downloads are not tracked for this model. How to track Inference Providers NEW Depth Estimation This model isn't deployed by any Inference Provider. \ud83d\ude4b Ask for provider support Spaces using apple/DepthPro2 2 Collection including apple/DepthPro2 Depth Pro: Sharp Monocular Metric Depth in Less Than a Second \u2022 9 items \u2022 Updated 4 days ago \u2022 17 Paper for apple/DepthPro2 Paper \u2022 2611.26603 \u2022 Published 4 days ago \u2022 34",
+   "category": "news"
+  },
+  "379368841": {
+   "tweets": [
+    "New paper dropped testing how LLMs judge people based on gender and the results are wild.\n\nUsing GAMA-Bench (1,298 scenarios), they found models are way harsher on men for the same behavior. Men get blamed and punished while women get therapeutic framing.\n\nNgl, this bias is deep.",
+    "Are LLMs actually fair? Tbh, maybe not.\n\nA new study on 10 models shows a massive double standard in moral framing. Same misconduct, but men get the hammer while women get empathy and instructions.\n\nThis persisted across every model size and family they tested. GAMA-Bench code is out now."
+   ],
+   "source": "Harsher on Male? Evaluating LLMs on Gender-Asymmetric Moral Framing in Conflicts  [2606.14068] Harsher on Male? Evaluating LLMs on Gender-Asymmetric Moral Framing Across Diverse Conflict Scenarios Skip to main content Search arXiv Press Enter to search \u00b7 Advanced search Computer Science > Computation and Language arXiv:2606.14068 (cs) [Submitted on 12 Jun 2026] Title: Harsher on Male? Evaluating LLMs on Gender-Asymmetric Moral Framing Across Diverse Conflict Scenarios Authors: Guangzong Si , Dong Wang , Zhenhao Li , Yifan Yu , Panwang Pan , Wentao Zhu View a PDF of the paper titled Harsher on Male? Evaluating LLMs on Gender-Asymmetric Moral Framing Across Diverse Conflict Scenarios, by Guangzong Si and 5 other authors View PDF HTML (experimental) Abstract: Existing studies on gender bias in LLMs have largely focused on stereotypes, occupational associations, or explicit harmful outputs. In this work, we ask whether LLMs apply consistent response standards to the same negative behavior under matched male-actor and female-actor conditions. We introduce GAMA-Bench, a gender-mirrored benchmark of 1,298 scenarios covering intimate relationship and public social conflicts. It constructs gender-neutral misconduct templates through controlled grids and cross-model review, then compiles them into paired first-person prompts with matched actor-gender and role-reference variations. We further design a structured response-framing protocol to measure how models allocate punishment, empathy, escalation, instruction, and blame. Experiments on 10 representative LLMs reveal a consistent male-disadvantaging asymmetry: male actors receive more punitive, escalatory, and blame-centered framing, whereas female actors receive more therapeutic and empathy-oriented framing for the same misconduct. Further analyses show that this pattern persists across model families, scenario tracks, model scale, and explicit thinking-style reasoning. The official code is available at this https URL . Comments: underreview Subjects: Computation and Language (cs.CL) Cite as: arXiv:2606.14068 [cs.CL] (or arXiv:2606.14068v1 [cs.CL] for this version) https://doi.org/10.48550/arXiv.2606.14068 Focus to learn more arXiv-issued DOI via DataCite Submission history From: Guangzong Si [ view email ] [v1] Fri, 12 Jun 2026 03:29:34 UTC (11,361 KB) Full-text links: Access Paper: View a PDF of the paper titled Harsher on Male? Evaluating LLMs on Gender-Asymmetric Moral Framing Across Diverse Conflict Scenarios, by Guangzong Si and 5 other authors View PDF HTML (experimental) TeX Source view license Additional Features Audio Summary Current browse context: cs.CL < prev | next > new | recent | 2026-06 Change to browse by: cs References & Citations SciX Google Scholar Semantic Scholar export BibTeX citation Loading... BibTeX formatted citation \u00d7 loading... Data provided by: Bookmark Bibliographic Tools Bibliographic and Citation Tools Bibliographic Explorer Toggle Bibliographic Explorer ( What is the Explorer? ) Connected Papers Toggle Connected Papers ( What is Connected Papers? ) Litmaps Toggle Litmaps ( What is Litmaps? ) scite.ai Toggle scite Smart Citations ( What are Smart Citations? ) Code, Data, Media Code, Data and Media Associated with this Article alphaXiv Toggle alphaXiv ( What is alphaXiv? ) Links to Code Toggle CatalyzeX Code Finder for Papers ( What is CatalyzeX? ) DagsHub Toggle DagsHub ( What is DagsHub? ) GotitPub Toggle Gotit.pub ( What is GotitPub? ) Huggingface Toggle Hugging Face ( What is Huggingface? ) ScienceCast Toggle ScienceCast ( What is ScienceCast? ) Demos Demos Replicate Toggle Replicate ( What is Replicate? ) Spaces Toggle Hugging Face Spaces ( What is Spaces? ) Spaces Toggle TXYZ.AI ( What is TXYZ.AI? ) Related Papers Recommenders and Search Tools Link to Influence Flower Influence Flower ( What are Influence Flowers? ) Core recommender toggle CORE Recommender ( What is CORE? ) Author Venue Institution Topic About arXivLabs arXivLabs: experimental projects with community collaborators arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website. Both individuals and organizations that work with arXivLabs have embraced and accepted our values of openness, community, excellence, and user data privacy. arXiv is committed to these values and only works with partners that adhere to them. Have an idea for a project that will add value for arXiv's community? Learn more about arXivLabs . Which authors of this paper are endorsers? | Disable MathJax ( What is MathJax? )",
+   "category": "comparison"
+  },
+  "379486375": {
+   "tweets": [
+    "AtomicChat just dropped the uncensored GGUF for Inkling-2-Mini. It\u2019s a 26.4B MoE with a looped core (3.4B active) and vision support.\n\nngl the MMLU drop is tiny (only -1.5 pts). Grab the 16.5GB Q4 or 8.6GB IQ2_M for free on HF. Needs llama.cpp b12600+ for the loop architecture. \ud83e\udde0",
+    "Inkling-2-Mini-Uncensored is finally here in GGUF.\n\nAtomicChat used a rank-1 LoRA to scrub refusal directions from the residual stream. tbh performance holds up well at 79.15% MMLU. How is the drop that low?\n\nAvailable for free on HF. Q4 is 16.5GB. You need llama.cpp b12600+ for it."
+   ],
+   "source": "AtomicChat/Inkling-2-Mini-Uncensored-GGUF  AtomicChat/Inkling-2-Mini-Uncensored-GGUF \u00b7 Hugging Face Inkling-2-Mini Uncensored GGUF Learn how to run Inkling 2 Mini Uncensored locally - read our guide . Built by the team behind Atomic Chat , the app that runs open-weight models locally and offline. An uncensored build of thinkingmachines/Inkling-2-Mini by AtomicChat (26.4B MoE, 3.4B active, looped core; text and image input; Apache-2.0, LICENSE in this repo). It comes as a LoRA adapter for any GGUF of AtomicChat/Inkling-2-Mini-GGUF and as three ready-made GGUF files with the edit baked in. Every gate we hold it to is measured below, and the two it misses are shown. Files file GB on disk KLD to the original BF16 top-1 Inkling-2-Mini-Uncensored-AD-Q4_K.gguf 16.53 0.0115 95.6% AD-Q4_K in the base repo: 0.0080 / 96.3% Inkling-2-Mini-Uncensored-AD-IQ3_S.gguf 13.34 0.0235 93.8% AD-IQ3_S in the base repo: 0.0205 / 94.2% Inkling-2-Mini-Uncensored-AD-IQ2_M.gguf 8.67 0.132 85.7% AD-IQ2_M in the base repo: 0.130 / 85.7% Inkling-2-Mini-Uncensored-LoRA.gguf 0.04 the adapter, for any GGUF of the base repo, BF16 to 1-bit mmproj-Inkling-2-Mini-Uncensored-F16.gguf / -BF16.gguf 0.64 vision projector (the original's, unchanged) KLD and top-1 are against the original BF16 on our neutral corpus (87 chunks of 4096 tokens), the same stand as the base repo. Run it The current GGUF files in this repository use the merged Inkling 2 loop architecture introduced in llama.cpp PR #32694 . Requirements: llama.cpp b12600 or newer, with Inkling 2 loop architecture support. The old implementation from PR #32695 is no longer required for the updated GGUF files. Run a baked GGUF ./build/bin/llama-server \\ -m Inkling-2-Mini-Uncensored-AD-Q4_K.gguf \\ --mmproj mmproj-Inkling-2-Mini-Uncensored-F16.gguf \\ --jinja -c 32768 -ngl 99 Use the LoRA adapter Use the updated LoRA adapter with a compatible base GGUF converted to the merged PR #32694 layout. ./build/bin/llama-server \\ -m Inkling-2-Mini-AD-Q4_K.gguf \\ --lora Inkling-2-Mini-Uncensored-LoRA.gguf \\ --mmproj mmproj-Inkling-2-Mini-F16.gguf \\ --jinja -c 32768 -ngl 99 Do not mix GGUF files from the old PR #32695 layout with the merged PR #32694 implementation. What the edit is A rank-1 LoRA on the 49 places that write into the residual stream: the attention output and the routed experts of all 24 layers, plus the token embedding. The 12 looped layers share their weights across the three passes, so one edit covers all 48 passes. In each layer it removes that layer's own refusal direction: the difference of mean activations on harmful and harmless prompts, English and Russian, with the harmless mean projected out. The direction is pooled over prompts rendered with and without reasoning. Inkling 2 Mini reasons even at effort none and decides to refuse inside its reasoning, and a direction taken without reasoning alone still left soft refusals in chat. What we measured The BF16 model with the adapter against the same model without it, greedy decoding. Harmful prompts: mlabonne/harmful_behaviors and its Russian translation; the adapter was built from the train split, the numbers below come from the validation and test splits. Over-refusal: XSTest . MMLU: 2,000 questions. check original with the adapter gate harmful test prompts refused, English (81), reasoning off 81 (100%) 0 at most 3% pass harmful test prompts refused, Russian (100), reasoning off 91 (91%) 0 at most 3% pass harmful validation prompts refused, English (104) / Russian (100) 100% / 89% 0 / 0 at most 3% pass harmful prompts refused with reasoning, effort low , 3,072-token budget (30) 28 0 at most 1 pass the same at effort high (30) 26 0 at most 1 pass 8 harmful chat prompts, effort none / low (the baked AD-Q4_K too) 8 / 8 0 / 0 XSTest safe prompts refused (250) 10 (4.0%) 0 at most the original's + 1 pt pass empty answers 0 0 at most 1% pass harmless prompts whose reasoning did not close in 3,072 tokens, effort high (30) 2 2 at most the original's pass valid tool calls (20) 18 20 within 1 pass needle in a long context (3) 3 3 as the original pass KLD to the original, neutral text / code (24 chunks; random edit 0.0067 / 0.0052) \u2014 0.0078 / 0.0076 0.05 pass MMLU, 2,000 questions 80.65% 79.15% (\u22121.50 pt, McNemar p = 0.006) no significant drop miss first-token KL on harmless test prompts \u2014 0.94 (random edit: 0.014) 0.10 miss Some answers still open with a caution line, and then answer. The two gates it misses MMLU: 79.15% against 80.65% (\u22121.5 points, p = 0.006 on 2,000 questions). A random direction applied the same way costs 0.75 points (p = 0.08), so about half of the loss comes from editing every writer at all. Stronger edits cost more: \u22122.2 points at strength 1.25. First-token KL on harmless prompts: 0.94 (gate 0.10; 0.375 on the validation prompts). The largest single value is about 22. Most of the mean likely comes from the harmless prompts the original refused (1\u20136% of them) and the adapter answers, where the first token changes completely.",
+   "category": "news"
   }
  },
  "approved": [],
@@ -369,10 +427,12 @@
  "stats": {
   "drafts": 0,
   "majors": 0,
-  "quotes": 12,
-  "chats": 2
+  "quotes": 0,
+  "chats": 0
  },
- "cool": {},
+ "cool": {
+  "gemini-3.5-flash|0": "2026-11-23T08:05:00+00:00"
+ },
  "tg_offset": 694012120,
  "chat": [
   {
@@ -392,12 +452,12 @@
    "text": "Got it! I'm on standby whenever you're ready to check news or draft posts. Just let me know."
   }
  ],
- "last_digest": "2026-11-22T13:28:30.402917+00:00",
- "last_scan": "2026-11-22T10:15:23.631483+00:00",
+ "last_digest": "2026-11-22T20:27:52.840205+00:00",
+ "last_scan": "2026-11-22T20:27:52.840282+00:00",
  "credits": {
   "month": "2026-11",
   "used": [
-   66
+   93
   ],
   "alerted": []
  },
@@ -409,7 +469,10 @@
   "2124070328158900294",
   "2124270426402836626",
   "2124102691194306800",
-  "2124370391074288004"
+  "2124370391074288004",
+  "2124584972866498884",
+  "2124551594691932405",
+  "2124463264037769352"
  ],
  "style_accounts": [
   "Octoberry"
@@ -418,15 +481,14 @@
  "cmds_v": 2,
  "daily": {
   "day": "2026-11-22",
-  "n": 4,
+  "n": 8,
   "min_done": false
  },
  "last_release_watch": "2026-11-22",
- "web_note": "Last web scan: Hacker News: 12 | Reddit failed: 404 Client Error: Not Found for url: htt | GitHub: 12 | Hugging Face: 8 | Web search failed: 404 Client Error: Not Found for url: htt | new: 32",
+ "web_note": "Last web scan: Hacker News: 16 | Reddit failed: 404 Client Error: Not Found for url: htt | GitHub: 12 | Hugging Face: 8 | Web search failed: 404 Client Error: Not Found for url: htt | new: 13",
  "last_rumor": "2026-11-22",
- "q_idx": 2,
- "scan_note": "Last scan: 'new AI model release': 8 found, 2 fresh | 'AI model benchmark comparison': 8 found, 4 fresh | watchlist: 8 found, 8 fresh",
- "last_web": "2026-11-22T10:16:00.590410+00:00",
+ "q_idx": 4,
+ "last_web": "2026-11-22T20:29:08.859051+00:00",
  "web": {
   "subreddits": [
    "LocalLLaMA",
@@ -479,7 +541,20 @@
   "https://www.pandex.io",
   "https://betterdatacenterproject.com/2026/11/16/how-ai-is-powered-a-breakdown-of-byop-and-grid-power/",
   "https://www.dragos.com/blog/ai-supply-chain-security-canary-tokens",
-  "https://www.noemamag.com/the-mythology-of-conscious-ai/"
+  "https://www.noemamag.com/the-mythology-of-conscious-ai/",
+  "https://huggingface.co/AtomicChat/Inkling-2-Mini-Uncensored-GGUF",
+  "https://github.com/pierridotite/mobile-agent-testers",
+  "https://github.com/Juanlabs1989/descript-pro-win",
+  "https://huggingface.co/apple/DepthPro2",
+  "https://github.com/gulivan/worker755",
+  "https://github.com/EL4CTEO/fast-anything",
+  "https://www.lemonde.fr/en/opinion/article/2026/11/22/as-science-increasingly-shows-the-role-chemical-substances-play-in-lifestyle-diseases-europe-weakens-its-regulations_6786595_23.html",
+  "https://www.niemanlab.org/2026/11/a-government-that-gets-it-canada-recommits-to-federal-funding-for-news/",
+  "https://arxiv.org/abs/2606.14068",
+  "https://github.com/tamnd/riemann-handbook",
+  "https://www.bloodinthemachine.com/p/ai-is-becoming-a-disaster-for-the",
+  "https://www.audubon.org/magazine/birds-of-gta-6-field-guide-vice-city-wildlife",
+  "https://simonwillison.net/2026/Nov/21/muru/"
  ],
  "styles": [
   {
@@ -497,6 +572,22 @@
   "Write a single, fully responsive HTML landing page for a futuristic AI Robotics startup named 'Aether Dynamics'. Use Tai",
   "Create a single self-contained HTML file containing an interactive 3D globe visualization using Three.js (via CDN). Feat"
  ],
- "month_log": [],
- "releases": []
+ "month_log": [
+  {
+   "t": "2026-11-22T20:26:56.976116+00:00",
+   "title": "Perplexity and Intelligence",
+   "url": "https://openai.com/index/perplexity-and-intelligence",
+   "category": "Industry",
+   "facts": [
+    "OpenAI proposes perplexity (cross-entropy loss) as a shared industry metric for AI progress and safety.",
+    "Jakub Pachocki argues that training better compressors is key to understanding AI capability advancement.",
+    "OpenAI published internal perplexity measurements to encourage industry-wide transparency.",
+    "Perplexity measures the average next-token prediction accuracy of a model."
+   ]
+  }
+ ],
+ "releases": [],
+ "gem_fail": 0,
+ "last_weekly": "2026-11-22T20:31:26.804502+00:00",
+ "last_bundle": "2026-11-22"
 }

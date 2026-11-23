@@ -299,7 +299,12 @@
   "https://api-docs.deepseek.com/news/news260910",
   "https://api-docs.deepseek.com/news/news260821",
   "https://api-docs.deepseek.com/news/news260813",
-  "https://api-docs.deepseek.com/news/news260424"
+  "https://api-docs.deepseek.com/news/news260424",
+  "https://api-docs.deepseek.com/news/news250120/",
+  "https://api-docs.deepseek.com/news/news261113/",
+  "https://api-docs.deepseek.com/news/news261017/",
+  "https://api-docs.deepseek.com/news/news260910/",
+  "https://api-docs.deepseek.com/news/news260821/"
  ],
  "init": [
   "OpenAI",
@@ -313,26 +318,7 @@
   "Qwen",
   "Artificial Analysis"
  ],
- "buffer": [
-  {
-   "title": "DeepSeek-V4-Flash-Vision-Exp Release 2026/08/21",
-   "url": "https://api-docs.deepseek.com/news/news260821",
-   "text": "DeepSeek-V4-Flash-Vision-Exp Release: Multimodal API Now Live | DeepSeek API Docs Skip to main content The full suite of DeepSeek application APIs is now available: web search, file input, URL reading, model safety, ASR, TTS and more. Click here to view the guide On this page Copy Markdown Copy Markdown Open Markdown DeepSeek-V4-Flash-Vision-Exp Release: Multimodal API Now Live DeepSeek-V4-Flash-Vision-Exp is now live on the DeepSeek API Platform! \u00f0\u009f\u009a\u0080 \u00f0\u009f\u0094\u00b9 This experimental multimodal model matches DeepSeek-V4-Flash on text capabilities\u00e2\u0080\u0094including agents, reasoning, and world knowledge. \u00f0\u009f\u0094\u00b9 On multimodal agent benchmarks, V4-Flash-Vision-Exp makes a major leap over V4-Flash, bringing multimodal agent performance close to Opus-4.8. Try it with model='deepseek-v4-flash-vision-exp' . DeepSeek Harness 0.1.1 was released today with out-of-the-box support for the new model. Multimodality unlocks more agent use cases \u00f0\u009f\u0091\u0080 \u00e2\u0080\u008b V4-Flash-Vision-Exp works smoothly across agent frameworks, combining visual understanding with a wide range of tools to unlock more practical workflows. Multimodal API support \u00f0\u009f\u0094\u008c \u00e2\u0080\u008b \u00f0\u009f\u0094\u00b9 Set model='deepseek-v4-flash-vision-exp' \u00f0\u009f\u0094\u00b9 Images are tokenized for billing: up to 384 tokens each, at V4-Flash pricing \u00f0\u009f\u0094\u00b9 Supports Chat Completions, Messages & Responses \u00f0\u009f\u0094\u00b9 Supports mixed text + image input; images can be provided via base64, external URLs, or the Files API Docs: API Guides - Vision Files API is now live \u00f0\u009f\u0093\u0081 \u00e2\u0080\u008b \u00f0\u009f\u0094\u00b9 Free to use \u00f0\u009f\u0094\u00b9 Upload an image once, then reference it by file_id to save request bandwidth \u00f0\u009f\u0094\u00b9 Reuse the same image across requests\u00e2\u0080\u0094no need to upload it again Learn more: API Guides - Files API Multimodality unlocks more agent use cases \u00f0\u009f\u0091\u0080 Multimodal API support \u00f0\u009f\u0094\u008c Files API is now live \u00f0\u009f\u0093\u0081",
-   "facts": [
-    "DeepSeek-V4-Flash-Vision-Exp experimental multimodal model released",
-    "Matches DeepSeek-V4-Flash text capabilities",
-    "Multimodal agent performance nears Opus-4.8",
-    "Supports mixed text and image input",
-    "Images tokenized at up to 384 tokens each",
-    "DeepSeek Harness 0.1.1 released with support for the new model",
-    "New Files API allows referencing images by file_id",
-    "Supports Chat Completions, Messages, and Responses"
-   ],
-   "category": "Models & benchmarks",
-   "topic": "deepseek-v4-flash-vision-exp",
-   "t": "2026-11-23T01:01:26.758831+00:00"
-  }
- ],
+ "buffer": [],
  "week_log": [
   {
    "t": "2026-11-22T20:26:56.976116+00:00",
@@ -429,6 +415,85 @@
     "DeepSeek-chat and deepseek-reasoner to be retired July 24th, 2026",
     "Models feature integrated thinking and non-thinking modes"
    ]
+  },
+  {
+   "t": "2026-11-23T08:48:11.646777+00:00",
+   "title": "English",
+   "url": "https://api-docs.deepseek.com/news/news250120/",
+   "category": "Models & benchmarks",
+   "facts": [
+    "DeepSeek-R1 released with performance parity to OpenAI-o1",
+    "Model and technical report released under MIT license",
+    "Six distilled models released based on DeepSeek-R1",
+    "DeepSeek-R1 utilizes large-scale reinforcement learning in post-training",
+    "API access available via model=deepseek-reasoner",
+    "API pricing starts at $0.14 per million input tokens (cache hit)",
+    "API outputs are permitted for fine-tuning and distillation",
+    "Supports math, code, and reasoning tasks"
+   ]
+  },
+  {
+   "t": "2026-11-23T08:48:24.205942+00:00",
+   "title": "News",
+   "url": "https://api-docs.deepseek.com/news/news261113/",
+   "category": "Models & benchmarks",
+   "facts": [
+    "DeepSeek API now includes full app capabilities: web search, file input, URL reading, OCR, ASR, and TTS.",
+    "DeepSeek-Flash (V4.1-Flash) now supports these capabilities across Messages, Responses, and Chat Completions.",
+    "Web search and URL reading are enabled via specific parameters.",
+    "Tool calls and context assembly are handled server-side.",
+    "Standalone APIs for OCR, ASR, and TTS are available for custom workflows.",
+    "Extended capabilities incur additional tool usage fees alongside standard token charges.",
+    "DeepSeek released an open-source frontend demo for developers.",
+    "Developers are responsible for content moderation and AI-generated content labeling."
+   ]
+  },
+  {
+   "t": "2026-11-23T08:48:28.305973+00:00",
+   "title": "DeepSeek-V4.1-Flash-1017 Release 2026/10/17",
+   "url": "https://api-docs.deepseek.com/news/news261017/",
+   "category": "Models & benchmarks",
+   "facts": [
+    "DeepSeek-V4.1-Flash-1017 released on 2026/10/17",
+    "Model features improved benchmark performance and faster task completion",
+    "Optimized for DeepSeek Harness, Tencent CodeBuddy, and WorkBuddy",
+    "Uses reinforcement learning with self-feedback for end-to-end project development",
+    "Search & Fetch APIs are now open to the public",
+    "Search & Fetch API pricing is $0.75 per 1,000 calls starting Oct 31, 2026",
+    "Model is available on Hugging Face and ModelScope",
+    "Supports building complete projects from scratch including 3D modeling and game creation"
+   ]
+  },
+  {
+   "t": "2026-11-23T08:49:34.418696+00:00",
+   "title": "DeepSeek-V4.1-Flash Release 2026/09/10",
+   "url": "https://api-docs.deepseek.com/news/news260910/",
+   "category": "Models & benchmarks",
+   "facts": [
+    "DeepSeek-V4.1-Flash is a 552B-parameter MoE model with an asymmetric architecture.",
+    "The model features 8B active parameters for input and 16B for output.",
+    "It offers native visual understanding and multimodal support.",
+    "KV cache requirements are reduced to 1/4 HBM and 1/8 SSD storage compared to previous generations.",
+    "The model outperforms the flagship DeepSeek-V4-Pro in performance, cost, and speed.",
+    "DeepSeek-V4-Pro requests will automatically route to V4.1-Flash starting Sept 14, 2026.",
+    "New API pricing structure implemented effective Sept 10, 2026.",
+    "The model is available via the DeepSeek API and hosted on Hugging Face."
+   ]
+  },
+  {
+   "t": "2026-11-23T08:49:50.366785+00:00",
+   "title": "DeepSeek-V4-Flash-Vision-Exp Release 2026/08/21",
+   "url": "https://api-docs.deepseek.com/news/news260821/",
+   "category": "Models & benchmarks",
+   "facts": [
+    "DeepSeek-V4-Flash-Vision-Exp experimental multimodal model released",
+    "Matches DeepSeek-V4-Flash text capabilities",
+    "Multimodal agent performance nears Opus-4.8",
+    "Images tokenized up to 384 tokens each",
+    "Supports Chat Completions, Messages, and Responses",
+    "New Files API allows image reuse via file_id",
+    "DeepSeek Harness 0.1.1 released with model support"
+   ]
   }
  ],
  "fail": {
@@ -441,7 +506,7 @@
   "xAI": 0,
   "DeepSeek": 0,
   "Qwen": 0,
-  "Z.ai": 5,
+  "Z.ai": 6,
   "Artificial Analysis": 0
  },
  "feeds": {
@@ -453,14 +518,6 @@
   "Artificial Analysis": ""
  },
  "drafts": {
-  "342573727": {
-   "tweets": [
-    "Qwen3.8-27B is out on Hugging Face. It's a 27B dense vision-language model supporting images and hour-scale videos, with native 262k context extensible to 1M. Compatible with HF Transformers, vLLM, and SGLang. Hosted API on Qwen Cloud is coming soon.",
-    "Qwen dropped Qwen3.8-27B. It brings big gains in coding, agentic tasks, and visual reasoning into a compact 27B model. Thinking mode is on by default but adjustable. You can grab the weights on Hugging Face now, with a managed Qwen Cloud API coming soon."
-   ],
-   "source": "Qwen/Qwen3.8-27B  Qwen/Qwen3.8-27B \u00b7 Hugging Face Qwen3.8-27B This repository contains model weights and configuration files for the post-trained model in the Hugging Face Transformers format. These artifacts are compatible with Hugging Face Transformers, vLLM, SGLang, TokenSpeed, etc. For users seeking managed, scalable inference without infrastructure maintenance, the official Qwen API service is provided by Qwen Cloud . In particular, Qwen3.8-27B will be available as a hosted version with more production features, e.g., 1M context length by default, official built-in tools. For more information, please refer to the Qwen3.8-27B Overview . The service is coming soon. Stay tuned for updates. Following the widespread community adoption of the Qwen3.5 and Qwen3.6 series, we are pleased to introduce Qwen3.8, the most capable generation in the Qwen open-model family to date. Built on the architectural foundation of Qwen3.5, Qwen3.8 delivers substantial gains across coding, professional work, research, and long-horizon agentic tasks. Qwen3.8-27B brings these advances to a compact, deployment-friendly dense model: a native vision-language model that understands images and videos, with flexible thinking control, designed to carry complex, multi-step tasks through to completion with greater reliability. Qwen3.8 Highlights Qwen3.8-27B features the following enhancements: Core Capabilities : Comprehensive improvements across coding, professional work, research, and long-horizon agentic tasks. Agent Execution : Stronger autonomous planning and better handling of environment feedback, leading to more reliable end-to-end task completion. Downstream Compatibility : Broader support for popular harnesses and development tools, making it easier to integrate into your existing stack. Flexible Thinking Control : Thinking mode is on by default and can be disabled per request; reasoning depth can be tuned with reasoning_effort , and reasoning context from historical messages is retained via preserve_thinking . Vision-Language Understanding : Native support for image and video understanding, from STEM diagrams and documents to hour-scale videos. Model Overview Type: Causal Language Model with Vision Encoder Training Stage: Pre-training & Post-training Language Model Number of Parameters: 27B Hidden Dimension: 5120 Token Embedding: 248,320 (Padded) Number of Layers: 64 Hidden Layout: 16 \u00d7 (3 \u00d7 (Gated DeltaNet \u2192 FFN) \u2192 1 \u00d7 (Gated Attention \u2192 FFN)) Gated DeltaNet: Number of Linear Attention Heads: 48 for V and 16 for QK Head Dimension: 128 Gated Attention: Number of Attention Heads: 24 for Q and 4 for KV Head Dimension: 256 Rotary Position Embedding Dimension: 64 Feed Forward Network: Intermediate Dimension: 17,408 LM Output: 248,320 (Padded) MTP (Multi-Token Prediction): trained with multiple steps Context Length: 262,144 natively and extensible up to 1,000,000 tokens. Benchmark Results Text Performance Qwen3.8-27B Qwen3.6-27B Qwen3.7-Plus Muse Glimmer-30B Opus4.6 Max Coding Agentic terminal coding Terminal Bench 2.1 (Terminus) 73.0 63.4 64.0 51.7 78.2 Agentic coding SWE-bench Pro 61.7 53.5 57.6 51.2 53.4 Repo-level code generation NL2Repo-Bench 42.3 36.2 41.1 -- 47.6 Agentic coding DeepSWE 1.1 42.2 13.3 14.2 -- -- Software engineering QwenSWEBench 79.0 49.3 59.2 -- 63.8 Agent Long-horizon office work CoWorkBench 70.7 61.0 65.1 -- 68.2 Professional job tasks JobBench 33.4 21.8 27.6 -- -- Frontier agentic tasks Agents' Last Exam Pass@1 20.4 Score 42.9 Pass@1 10.6 Score 27.3 Pass@1 13.2 Score 33.6 -- -- General Instruction following IFBench 79.5 69.1 79.1 77.0 62.5 Scientific reasoning GPQA Diamond 89.2 87.8 90.3 83.5 91.3 Multidisciplinary reasoning HLE 30.8 24.0 34.7 22.0 40.0 Competitive coding LiveCodeBench v6 90.3 83.9 89.6 -- 88.8 SWE-bench Pro: Except for Opus4.6 Max, which uses the officially reported score, all models are evaluated with the Claude Code harness at temp=1.0, top_p=0.95, and a 256K context window. Problematic tasks were corrected, and all baseline models were re-evaluated on the refined benchmark. NL2Repo-Bench: Evaluated with the Claude Code harness. To prevent reward hacking, we disable Bash commands that attempt to access the specific repository, such as pip download, pip install, and git clone. DeepSWE 1.1: Evaluated with the Claude Code harness at temp=1.0, top_p=0.95, and a 256K context window. QwenSWEBench: In-house coding benchmark for evaluating models' software engineering capabilities. Evaluated with the Claude Code harness. Reporting avg@3 with an 8-hour timeout, max_tokens=32,768, temperature=1.0, and a 256K context window. CoWorkBench: In-house cowork benchmark for evaluating long-horizon tasks across computer science, finance, law, medical, and other productivity domains. HLE: Judged by GPT-4o. The best result in each row is shown in bold. Empty cells (--) indicate that results are not yet available or not applicable. VL Performance Qwen3.8-27B Qwen3.6-27B Qwen3.7-Plus Muse Glimmer-30B Opus4.6 M",
-   "category": "news"
-  },
   "342586114": {
    "tweets": [
     "There's an addon called mcp-for-blender-pro that adds an AI assistant and built-in MCP server to Blender. It lets you edit scenes and inspect viewports using OpenAI, Claude, Gemini, or local Ollama models. Runs on Windows x64 with Blender 4.2+.",
@@ -561,19 +618,81 @@
    ],
    "source": "DeepSeek-V4 released with Pro and Flash variants DeepSeek-V4-Pro features 1.6T total and 49B active parameters DeepSeek-V4-Flash features 284B total and 13B active parameters Both models support 1M context length Introduces novel attention mechanism with token-wise compression and DSA API supports OpenAI ChatCompletions and Anthropic formats DeepSeek-chat and deepseek-reasoner to be retired July 24th, 2026 Models feature integrated thinking and non-thinking modes DeepSeek V4 Preview Release | DeepSeek API Docs Skip to main content The full suite of DeepSeek application APIs is now available: web search, file input, URL reading, model safety, ASR, TTS and more. Click here to view the guide On this page Copy Markdown Copy Markdown Open Markdown DeepSeek V4 Preview Release \u00f0\u009f\u009a\u0080 DeepSeek-V4 Preview is officially live & open-sourced! Welcome to the era of cost-effective 1M context length. \u00f0\u009f\u0094\u00b9 DeepSeek-V4-Pro: 1.6T total / 49B active params. Performance rivaling the world's top closed-source models. \u00f0\u009f\u0094\u00b9 DeepSeek-V4-Flash: 284B total / 13B active params. Your fast, efficient, and economical choice. Try it now at chat.deepseek.com via Expert Mode / Instant Mode. API is updated & available today! \u00f0\u009f\u0093\u0084 Tech Report: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/blob/main/DeepSeek_V4.pdf \u00f0\u009f\u00a4\u0097 Open Weights: https://huggingface.co/collections/deepseek-ai/deepseek-v4 DeepSeek-V4-Pro \u00e2\u0080\u008b \u00f0\u009f\u0094\u00b9 Enhanced Agentic Capabilities: Open-source SOTA in Agentic Coding benchmarks. \u00f0\u009f\u0094\u00b9 Rich World Knowledge: Leads all current open models, trailing only Gemini-3.1-Pro. \u00f0\u009f\u0094\u00b9 World-Class Reasoning: Beats all current open models in Math/STEM/Coding, rivaling top closed-source models. DeepSeek-V4-Flash \u00e2\u0080\u008b \u00f0\u009f\u0094\u00b9 Reasoning capabilities closely approach V4-Pro. \u00f0\u009f\u0094\u00b9 Performs on par with V4-Pro on simple Agent tasks. \u00f0\u009f\u0094\u00b9 Smaller parameter size, faster response times, and highly cost-effective API pricing. Structural Innovation & Ultra-High Context Efficiency \u00e2\u0080\u008b \u00f0\u009f\u0094\u00b9 Novel Attention: Token-wise compression + DSA (DeepSeek Sparse Attention). \u00f0\u009f\u0094\u00b9 Peak Efficiency: World-leading long context with drastically reduced compute & memory costs. \u00f0\u009f\u0094\u00b9 1M Standard: 1M context is now the default across all official DeepSeek services. Dedicated Optimizations for Agent Capabilities \u00e2\u0080\u008b \u00f0\u009f\u0094\u00b9 DeepSeek-V4 is seamlessly integrated with leading AI agents like Claude Code, OpenClaw & OpenCode. \u00f0\u009f\u0094\u00b9 Already driving our in-house agentic coding at DeepSeek. The figure below showcases a sample PDF generated by DeepSeek-V4-Pro. API is Available Today! \u00e2\u0080\u008b \u00f0\u009f\u0094\u00b9 Keep base_url, just update model to deepseek-v4-pro or deepseek-v4-flash. \u00f0\u009f\u0094\u00b9 Supports OpenAI ChatCompletions & Anthropic APIs. \u00f0\u009f\u0094\u00b9 Both models support 1M context & dual modes (Thinking / Non-Thinking): Thinking Mode guide \u00e2\u009a \u00ef\u00b8\u008f Note: deepseek-chat & deepseek-reasoner will be fully retired and inaccessible after Jul 24th, 2026, 15:59 (UTC Time). (Currently routing to deepseek-v4-flash non-thinking/thinking). \u00f0\u009f\u0094\u00b9 Amid recent attention, a quick reminder: please rely only on our official accounts for DeepSeek news. Statements from other channels do not reflect our views. \u00f0\u009f\u0094\u00b9 Thank you for your continued trust. We remain committed to longtermism, advancing steadily toward our ultimate goal of AGI. DeepSeek-V4-Pro DeepSeek-V4-Flash Structural Innovation & Ultra-High Context Efficiency Dedicated Optimizations for Agent Capabilities API is Available Today!",
    "category": "Models & benchmarks"
+  },
+  "423700616": {
+   "tweets": [
+    "DeepSeek just dropped DeepSeek-R1 and performance is on par with OpenAI-o1 for math, code, and reasoning.\n\nThe model and technical report are under the MIT license, and API outputs are explicitly allowed for fine-tuning and distillation.\n\nngl open source is moving insanely fast.",
+    "Practical details if you want to test it:\n- API model: deepseek-reasoner\n- Input (cache hit): $0.14 / 1M tokens\n- Input (cache miss): $0.55 / 1M tokens\n- Output: $2.19 / 1M tokens\n\nThey also released 6 distilled models, with the 32B and 70B performing on par with o1-mini."
+   ],
+   "source": "DeepSeek-R1 released with performance parity to OpenAI-o1 Model and technical report released under MIT license Six distilled models released based on DeepSeek-R1 DeepSeek-R1 utilizes large-scale reinforcement learning in post-training API access available via model=deepseek-reasoner API pricing starts at $0.14 per million input tokens (cache hit) API outputs are permitted for fine-tuning and distillation Supports math, code, and reasoning tasks DeepSeek-R1 Release | DeepSeek API Docs Skip to main content The full suite of DeepSeek application APIs is now available: web search, file input, URL reading, model safety, ASR, TTS and more. Click here to view the guide Copy Markdown Copy Markdown Open Markdown DeepSeek-R1 Release \u00e2\u009a\u00a1 Performance on par with OpenAI-o1 \u00f0\u009f\u0093\u0096 Fully open-source model & technical report \u00f0\u009f\u008f\u0086 Code and models are released under the MIT License: Distill & commercialize freely! \u00f0\u009f\u008c\u0090 Website & API are live now! Try DeepThink at chat.deepseek.com today! \u00f0\u009f\u0094\u00a5 Bonus: Open-Source Distilled Models! \u00f0\u009f\u0094\u00ac Distilled from DeepSeek-R1, 6 small models fully open-sourced \u00f0\u009f\u0093\u008f 32B & 70B models on par with OpenAI-o1-mini \u00f0\u009f\u00a4\u009d Empowering the open-source community \u00f0\u009f\u008c\u008d Pushing the boundaries of open AI ! \u00f0\u009f\u0093\u009c License Update! \u00f0\u009f\u0094\u0084 DeepSeek-R1 is now MIT licensed for clear open access \u00f0\u009f\u0094\u0093 Open for the community to leverage model weights & outputs \u00f0\u009f\u009b \u00ef\u00b8\u008f API outputs can now be used for fine-tuning & distillation \u00f0\u009f\u009b \u00ef\u00b8\u008f DeepSeek-R1: Technical Highlights \u00f0\u009f\u0093\u0088 Large-scale RL in post-training \u00f0\u009f\u008f\u0086 Significant performance boost with minimal labeled data \u00f0\u009f\u0094\u00a2 Math, code, and reasoning tasks on par with OpenAI-o1 \u00f0\u009f\u0093\u0084 More details: https://github.com/deepseek-ai/DeepSeek-R1/blob/main/DeepSeek_R1.pdf \u00f0\u009f\u008c\u0090 API Access & Pricing \u00e2\u009a\u0099\u00ef\u00b8\u008f Use DeepSeek-R1 by setting model=deepseek-reasoner \u00f0\u009f\u0092\u00b0 $0.14 / million input tokens (cache hit) \u00f0\u009f\u0092\u00b0 $0.55 / million input tokens (cache miss) \u00f0\u009f\u0092\u00b0 $2.19 / million output tokens \u00f0\u009f\u0093\u0096 API guide: Thinking Mode guide",
+   "category": "Models & benchmarks"
+  },
+  "423738692": {
+   "tweets": [
+    "DeepSeek-V4.1-Flash-1017 just dropped (2026/10/17) and ngl this update looks solid.\n\nIt features better benchmark performance and faster task completion, using RL with self-feedback for end-to-end project dev\u2014including full 3D modeling and game creation.",
+    "It's optimized for DeepSeek Harness, Tencent CodeBuddy, and WorkBuddy.\n\nSearch & Fetch APIs are open to the public now ($0.75 per 1,000 calls starting Oct 31, 2026).\n\nYou can grab the model on Hugging Face and ModelScope."
+   ],
+   "source": "DeepSeek-V4.1-Flash-1017 released on 2026/10/17 Model features improved benchmark performance and faster task completion Optimized for DeepSeek Harness, Tencent CodeBuddy, and WorkBuddy Uses reinforcement learning with self-feedback for end-to-end project development Search & Fetch APIs are now open to the public Search & Fetch API pricing is $0.75 per 1,000 calls starting Oct 31, 2026 Model is available on Hugging Face and ModelScope Supports building complete projects from scratch including 3D modeling and game creation DeepSeek-V4.1-Flash-1017: Wish-Driven Programming Made Real | DeepSeek API Docs Skip to main content The full suite of DeepSeek application APIs is now available: web search, file input, URL reading, model safety, ASR, TTS and more. Click here to view the guide On this page Copy Markdown Copy Markdown Open Markdown DeepSeek-V4.1-Flash-1017: Wish-Driven Programming Made Real \u00f0\u009f\u009a\u0080 DeepSeek-V4.1-Flash-1017 is here! \u00e2\u0080\u008b Stronger benchmark performance, faster task completion, and shorter outputs than the previous version\u00e2\u0080\u0094a Pareto improvement in performance and cost. Now live on our website, app, and API. \u00f0\u009f\u009b \u00ef\u00b8\u008f Optimized for DeepSeek Harness, Tencent CodeBuddy, WorkBuddy, and more. Upgrade to DeepSeek Harness v0.2.1-rc.1 or later for the best experience with the new model. DeepSWE v1.1 Pass@1 vs. cost per task for DeepSeek V4.1 Flash 1017, tested with the mini-swe-v2 harness. \u00f0\u009f\u008e\u00ae Build complete projects from scratch \u00e2\u0080\u008b DeepSeek-V4.1-Flash-1017 uses reinforcement learning with self-feedback to improve end-to-end project development\u00e2\u0080\u0094from game creation to 3D modeling. See it in action \u00f0\u009f\u0091\u0087 Example 1: 3D modeling of the Forbidden City Example 2: A web-based racing game Example 3: A Portal 2 recreation built with the Godot engine Example 4: Valley of Ages \u00e2\u0080\u0094 a 3D scene tracing the evolution from prehistoric times to the modern era \u00f0\u009f\u0094\u008d Search & Fetch APIs are now open to everyone! \u00e2\u0080\u008b Powered by our in-house search engine, serving hundreds of millions of requests daily worldwide. \u00f0\u009f\u0092\u00b0 Each endpoint: $0.75 per 1,000 calls. \u00f0\u009f\u0093\u0096 Docs: API Guides - Search & Fetch \u00f0\u009f\u0093\u008c Search & Fetch calls via server-side tools in DeepSeek Harness, Claude Code, and Codex are currently free for DeepSeek API users. Billing starts Oct 31, 2026, at 16:00 UTC . \u00f0\u009f\u0094\u0093 Open-source release \u00e2\u0080\u008b Get DeepSeek-V4.1-Flash-1017: \u00f0\u009f\u00a4\u0097 Hugging Face: https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017 \u00f0\u009f\u0094\u0097 ModelScope: https://modelscope.cn/models/deepseek-ai/DeepSeek-V4.1-Flash-1017 \u00f0\u009f\u009a\u0080 DeepSeek-V4.1-Flash-1017 is here! \u00f0\u009f\u008e\u00ae Build complete projects from scratch \u00f0\u009f\u0094\u008d Search & Fetch APIs are now open to everyone! \u00f0\u009f\u0094\u0093 Open-source release",
+   "category": "Models & benchmarks"
+  },
+  "423787026": {
+   "tweets": [
+    "DeepSeek just dropped V4.1-Flash and it\u2019s actually wild ngl.\n\nIt\u2019s a 552B MoE with an asymmetric setup (8B active for input, 16B for output) plus native multimodal support, and it beats their flagship V4-Pro on performance, cost, and speed.",
+    "The efficiency numbers are huge: KV cache is down to 1/4 HBM and 1/8 SSD storage compared to previous gen.\n\nIt's live on the DeepSeek API & Hugging Face. New pricing started Sept 10, 2026, and V4-Pro requests auto-route to V4.1-Flash on Sept 14 at 04:00 UTC."
+   ],
+   "source": "DeepSeek-V4.1-Flash is a 552B-parameter MoE model with an asymmetric architecture. The model features 8B active parameters for input and 16B for output. It offers native visual understanding and multimodal support. KV cache requirements are reduced to 1/4 HBM and 1/8 SSD storage compared to previous generations. The model outperforms the flagship DeepSeek-V4-Pro in performance, cost, and speed. DeepSeek-V4-Pro requests will automatically route to V4.1-Flash starting Sept 14, 2026. New API pricing structure implemented effective Sept 10, 2026. The model is available via the DeepSeek API and hosted on Hugging Face. DeepSeek-V4.1-Flash: Smarter, Faster, More Efficient | DeepSeek API Docs Skip to main content The full suite of DeepSeek application APIs is now available: web search, file input, URL reading, model safety, ASR, TTS and more. Click here to view the guide On this page Copy Markdown Copy Markdown Open Markdown DeepSeek-V4.1-Flash: Smarter, Faster, More Efficient \u00f0\u009f\u009a\u0080 Introducing DeepSeek-V4.1-Flash: smarter, faster, more efficient. \u00f0\u009f\u0094\u00b9 Introducing the smallest model in our new architecture family, with native visual understanding. \u00f0\u009f\u0094\u00b9 Designed for greater capability, faster inference, higher throughput, and scaling to larger models. \u00f0\u009f\u00a7 Asymmetric architecture. More intelligence, less cost. \u00e2\u0080\u008b \u00f0\u009f\u0094\u00b9 552B-parameter MoE. \u00f0\u009f\u0094\u00b9 New Causal Encoder\u00e2\u0080\u0093Decoder architecture: just 8B active parameters for input, 16B for output. \u00f0\u009f\u0094\u00b9 New pre-training methods + larger-scale RL post-training deliver benchmark results ahead of flagship models, including DeepSeek-V4-Pro. \u00f0\u009f\u0092\u00be Smaller KV cache. Bigger savings. \u00e2\u0080\u008b Compared with the previous generation, V4.1-Flash's KV cache needs just: \u00f0\u009f\u0094\u00b9 1/4 the HBM \u00f0\u009f\u0094\u00b9 1/8 the SSD storage Cache-hit charges often account for a large share of agent costs. Compressing the cache cuts those costs significantly. \u00e2\u009a\u00a1 V4.1-Flash is now live on the DeepSeek API with native multimodal support. \u00e2\u0080\u008b Set your model to deepseek-flash . \u00f0\u009f\u0094\u00b9 V4-Flash & V4-Flash-Vision-Exp are retired. For compatibility, deepseek-v4-flash and deepseek-v4-flash-vision-exp temporarily route to V4.1-Flash. \u00f0\u009f\u0094\u00b9 Tests by multiple parties put V4.1-Flash ahead of V4-Pro on performance, cost, speed & total runtime. We're phasing out V4-Pro. \u00f0\u009f\u0094\u00b9 Starting at 04:00 UTC on Sept 14, 2026, all deepseek-v4-pro requests will route to V4.1-Flash at V4.1-Flash rates. This will continue until V4.1-Pro launches. \u00f0\u009f\u00a4\u009d Official partners WorkBuddy (including CodeBuddy) & OpenCode now fully support V4.1-Flash. Try it today! \u00f0\u009f\u0092\u00b0 More efficient architecture. Lower API prices. \u00e2\u0080\u008b V4.1-Flash lets us serve more users at a lower cost. We're passing the savings on to you. \u00f0\u009f\u0094\u00b9 Peak/off-peak pricing continues to balance demand. \u00f0\u009f\u0094\u00b9 Off-peak rates are 50% of peak rates. Schedule flexible workloads off-peak to save. \u00f0\u009f\u0094\u00b9 New pricing takes effect at 04:00 UTC on Sept 10, 2026. \u00f0\u009f\u008c\u0090 Supporting open source. Expanding deployment options. \u00e2\u0080\u008b We'll work closely with the open-source community on V4.1-Flash inference support and explore more deployment options. Planning a large-scale deployment with 2,000 GPUs + a storage cluster? Let's talk. \u00f0\u009f\u0094\u00b9 Model: https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash \u00f0\u009f\u0094\u00b9 Paper: https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/blob/main/DeepSeek_V41_Tech_Report.pdf \u00f0\u009f\u00a7 Asymmetric architecture. More intelligence, less cost. \u00f0\u009f\u0092\u00be Smaller KV cache. Bigger savings. \u00e2\u009a\u00a1 V4.1-Flash is now live on the DeepSeek API with native multimodal support. \u00f0\u009f\u0092\u00b0 More efficient architecture. Lower API prices. \u00f0\u009f\u008c\u0090 Supporting open source. Expanding deployment options.",
+   "category": "Models & benchmarks"
+  },
+  "423803446": {
+   "tweets": [
+    "DeepSeek just dropped DeepSeek-V4-Flash-Vision-Exp on their API platform.\n\nngl seeing a flash model push multimodal agent performance close to Opus-4.8 is pretty wild. It keeps all the V4-Flash text capabilities while adding mixed image inputs.",
+    "Dev details:\n- Images tokenized up to 384 tokens (V4-Flash pricing)\n- Free new Files API to reference images by file_id\n- Supports base64, URLs, Chat Completions, Messages & Responses\n- Harness 0.1.1 out with support\n\nSet model='deepseek-v4-flash-vision-exp' to try."
+   ],
+   "source": "DeepSeek-V4-Flash-Vision-Exp experimental multimodal model released Matches DeepSeek-V4-Flash text capabilities Multimodal agent performance nears Opus-4.8 Supports mixed text and image input Images tokenized at up to 384 tokens each DeepSeek Harness 0.1.1 released with support for the new model New Files API allows referencing images by file_id Supports Chat Completions, Messages, and Responses DeepSeek-V4-Flash-Vision-Exp Release: Multimodal API Now Live | DeepSeek API Docs Skip to main content The full suite of DeepSeek application APIs is now available: web search, file input, URL reading, model safety, ASR, TTS and more. Click here to view the guide On this page Copy Markdown Copy Markdown Open Markdown DeepSeek-V4-Flash-Vision-Exp Release: Multimodal API Now Live DeepSeek-V4-Flash-Vision-Exp is now live on the DeepSeek API Platform! \u00f0\u009f\u009a\u0080 \u00f0\u009f\u0094\u00b9 This experimental multimodal model matches DeepSeek-V4-Flash on text capabilities\u00e2\u0080\u0094including agents, reasoning, and world knowledge. \u00f0\u009f\u0094\u00b9 On multimodal agent benchmarks, V4-Flash-Vision-Exp makes a major leap over V4-Flash, bringing multimodal agent performance close to Opus-4.8. Try it with model='deepseek-v4-flash-vision-exp' . DeepSeek Harness 0.1.1 was released today with out-of-the-box support for the new model. Multimodality unlocks more agent use cases \u00f0\u009f\u0091\u0080 \u00e2\u0080\u008b V4-Flash-Vision-Exp works smoothly across agent frameworks, combining visual understanding with a wide range of tools to unlock more practical workflows. Multimodal API support \u00f0\u009f\u0094\u008c \u00e2\u0080\u008b \u00f0\u009f\u0094\u00b9 Set model='deepseek-v4-flash-vision-exp' \u00f0\u009f\u0094\u00b9 Images are tokenized for billing: up to 384 tokens each, at V4-Flash pricing \u00f0\u009f\u0094\u00b9 Supports Chat Completions, Messages & Responses \u00f0\u009f\u0094\u00b9 Supports mixed text + image input; images can be provided via base64, external URLs, or the Files API Docs: API Guides - Vision Files API is now live \u00f0\u009f\u0093\u0081 \u00e2\u0080\u008b \u00f0\u009f\u0094\u00b9 Free to use \u00f0\u009f\u0094\u00b9 Upload an image once, then reference it by file_id to save request bandwidth \u00f0\u009f\u0094\u00b9 Reuse the same image across requests\u00e2\u0080\u0094no need to upload it again Learn more: API Guides - Files API Multimodality unlocks more agent use cases \u00f0\u009f\u0091\u0080 Multimodal API support \u00f0\u009f\u0094\u008c Files API is now live \u00f0\u009f\u0093\u0081 DeepSeek-V4-Flash-Vision-Exp experimental multimodal model released Matches DeepSeek-V4-Flash text capabilities Multimodal agent performance nears Opus-4.8 Images tokenized up to 384 tokens each Supports Chat Completions, Messages, and Responses New Files API allows image reuse via file_id DeepSeek Harness 0.1.1 released with model support DeepSeek-V4-Flash-Vision-Exp Release: Multimodal API Now Live | DeepSeek API Docs Skip to main content The full suite of DeepSeek application APIs is now available: web search, file input, URL reading, model safety, ASR, TTS and more. Click here to view the guide On this page Copy Markdown Copy Markdown Open Markdown DeepSeek-V4-Flash-Vision-Exp Release: Multimodal API Now Live DeepSeek-V4-Flash-Vision-Exp is now live on the DeepSeek API Platform! \u00f0\u009f\u009a\u0080 \u00f0\u009f\u0094\u00b9 This experimental multimodal model matches DeepSeek-V4-Flash on text capabilities\u00e2\u0080\u0094including agents, reasoning, and world knowledge. \u00f0\u009f\u0094\u00b9 On multimodal agent benchmarks, V4-Flash-Vision-Exp makes a major leap over V4-Flash, bringing multimodal agent performance close to Opus-4.8. Try it with model='deepseek-v4-flash-vision-exp' . DeepSeek Harness 0.1.1 was released today with out-of-the-box support for the new model. Multimodality unlocks more agent use cases \u00f0\u009f\u0091\u0080 \u00e2\u0080\u008b V4-Flash-Vision-Exp works smoothly across agent frameworks, combining visual understanding with a wide range of tools to unlock more practical workflows. Multimodal API support \u00f0\u009f\u0094\u008c \u00e2\u0080\u008b \u00f0\u009f\u0094\u00b9 Set model='deepseek-v4-flash-vision-exp' \u00f0\u009f\u0094\u00b9 Images are tokenized for billing: up to 384 tokens each, at V4-Flash pricing \u00f0\u009f\u0094\u00b9 Supports Chat Completions, Messages & Responses \u00f0\u009f\u0094\u00b9 Supports mixed text + image input; images can be provided via base64, external URLs, or the Files API Docs: API Guides - Vision Files API is now live \u00f0\u009f\u0093\u0081 \u00e2\u0080\u008b \u00f0\u009f\u0094\u00b9 Free to use \u00f0\u009f\u0094\u00b9 Upload an image once, then reference it by file_id to save request bandwidth \u00f0\u009f\u0094\u00b9 Reuse the same image across requests\u00e2\u0080\u0094no need to upload it again Learn more: API Guides - Files API Multimodality unlocks more agent use cases \u00f0\u009f\u0091\u0080 Multimodal API support \u00f0\u009f\u0094\u008c Files API is now live \u00f0\u009f\u0093\u0081",
+   "category": "Models & benchmarks"
+  },
+  "423827400": {
+   "tweets": [
+    "DeepSeek just released their full app capabilities into the API.\n\nV4.1-Flash now supports native web search, URL reading, file parsing, and safety checks, with server-side context assembly.\n\nngl having standalone OCR, ASR, and TTS APIs ready to call is pretty nice.",
+    "A few practical details for devs:\n\n- Tool usage incurs additional fees on top of standard token charges\n- Enabled via parameters like deepseek_web_search\n- Open-source frontend demo is up on GitHub\n- Developers remain responsible for content moderation and AI content labeling"
+   ],
+   "source": "DeepSeek API now includes full app capabilities: web search, file input, URL reading, OCR, ASR, and TTS. DeepSeek-Flash (V4.1-Flash) now supports these capabilities across Messages, Responses, and Chat Completions. Web search and URL reading are enabled via specific parameters. Tool calls and context assembly are handled server-side. Standalone APIs for OCR, ASR, and TTS are available for custom workflows. Extended capabilities incur additional tool usage fees alongside standard token charges. DeepSeek released an open-source frontend demo for developers. Developers are responsible for content moderation and AI-generated content labeling. The full DeepSeek App experience, now via API | DeepSeek API Docs Skip to main content The full suite of DeepSeek application APIs is now available: web search, file input, URL reading, model safety, ASR, TTS and more. Click here to view the guide On this page Copy Markdown Copy Markdown Open Markdown The full DeepSeek App experience, now via API Search, files, links, safety, and voice. The capabilities behind the DeepSeek App are now available through the DeepSeek API. Enable built-in features with a few parameters, or call standalone APIs such as OCR, ASR, and TTS. Build richer conversations or recreate the full DeepSeek App in your own application. Try our open-source frontend demo, with support for importing DeepSeek conversation history. \u00f0\u009f\u0094\u0097 Demo: https://cdn.deepseek.com/chat-demo \u00f0\u009f\u0093\u00a6 Code: https://github.com/deepseek-ai/chat-demo \u00f0\u009f\u0093\u0096 Details: https://api-docs.deepseek.com/guides/build_a_chatbot \u00f0\u009f\u009b \u00ef\u00b8\u008f Built-in tools. Flexible APIs. \u00e2\u0080\u008b V4.1-Flash ( deepseek-flash ) now supports these capabilities across Messages , Responses , and Chat Completions , with tool calls and context assembly handled server-side: \u00f0\u009f\u0094\u00b9 Web Search: Search the web or images with citations in non-thinking mode. \u00f0\u009f\u0094\u00b9 Deep Thinking Search: Search and read pages throughout multi-step reasoning. \u00f0\u009f\u0094\u00b9 File Input: Parse PDFs, Office files, images, and more into conversation context. \u00f0\u009f\u0094\u00b9 URL Reading: Automatically fetch links in user messages to inform answers. \u00f0\u009f\u0094\u00b9 Safety Checks: Screen inputs and outputs, returning refusal indicators when risks are detected. Enable search with deepseek_web_search and URL reading with deepseek_read_url . Public-facing apps must enable safety checks. Developers remain responsible for content moderation, applicable model registration, and AI-generated content labeling. Search, Fetch, OCR, ASR, and TTS are also available as standalone APIs for custom workflows. \u00f0\u009f\u0092\u00b0 API pricing \u00e2\u0080\u008b Extended capabilities incur tool usage fees in addition to standard token charges. See the tool pricing breakdown below. \u00f0\u009f\u008c\u00b1 More possibilities, ready to build \u00e2\u0080\u008b The DeepSeek App is just one way to interact with AI. Its capabilities are now yours to call and combine freely. Spend less time rebuilding the basics and more time creating something new. Build with DeepSeek. Let your imagination lead. \u00f0\u009f\u009b \u00ef\u00b8\u008f Built-in tools. Flexible APIs. \u00f0\u009f\u0092\u00b0 API pricing \u00f0\u009f\u008c\u00b1 More possibilities, ready to build",
+   "category": "Models & benchmarks"
+  },
+  "423921674": {
+   "tweets": [
+    "Why stick with cloud limits when Unsloth Desktop lets you run local AI on Windows in 10-15 mins with no terminal setup?\n\nAlso wild that an RTX 5060 Ti 16GB hits ~47 tokens/sec on Qwen3.6-35B MoE by offloading parameters to system RAM.\n\ntbh local setup is getting way too easy.",
+    "Ngl trading model precision down to 4-bit just to get a 128K context window on a 32GB RTX 5090 running Qwen3.8-27B is such a solid play for heavy research.\n\nNo Python environments or subscriptions needed either, just Unsloth Desktop serving it over your home network."
+   ],
+   "source": "A Beginner's Guide to Local AI with Inkling, Qwen, and Unsloth  A beginner's guide to Local AI with Inkling, Qwen, and Unsloth | GPU Partner Skip to content A beginner's guide to Local AI with Inkling, Qwen, and Unsloth We have AI at home! Set up your own free personal ChatGPT on your PC with Unsloth and Inkling or Qwen. It's private, and the whole house can use it. By Jerry James \u00b7 Nov 22, 2026 With the launch of open-weight models like Qwen, cloud-based LLM providers seem like they're more of infrastructure or appliance businesses when it comes to most routine tasks that an AI model can handle. OpenAI and Anthropic have displayed a pattern of dropping model quality in the 'latest' version and controlling exactly what you're allowed to run on their models. Add to this ballooning costs and privacy concerns, and we get a pretty good case for moving away from this 'convenient' cloud experience. That's basically where I was too. I wanted to offload certain token-heavy research, data collection, or coding tasks to an AI model without staring at usage limits all day. So, as any reasonable human being would do, I decided to set up my own local AI : a Claude and ChatGPT replacement that runs at home on my own hardware. Since this was my first attempt, my primary focus was keeping it simple and hosting it on Windows. If you're a beginner, you can follow along to get one going on your home network too. Once you have the hardware sorted, it takes about 10-15 minutes (excluding download times). The short version Install Unsloth Desktop, download a quantized AI model that fits your GPU's VRAM, set your context size, and turn on LAN access so everyone at home can use it. What Do You Need to Run a Local AI at Home? Not much (other than the hardware). Here's a short list: A Windows PC with a graphics card (GPU). The more video memory (VRAM) it has, the bigger the model it can run. I'm using an RTX 5090 with 32GB VRAM for this setup. Unsloth Desktop. A free app that 'serves' the AI model to you through a chat interface. Get it from Unsloth . An AI model sized to fit your GPU. We'll pick one in the next section. That's it. No terminal commands, Python environments, or subscriptions required. Which AI Model Can Your GPU Run? It depends on how much VRAM your graphics card has. As a rough guide, 8-12GB of VRAM handles smaller 9B-12B models, while 32GB comfortably runs 27B-35B models with plenty of room for long conversations. On consumer-grade hardware, we'll need smaller models. The full-size Qwen model sits at around 56GB and won't really fit on a consumer graphics card unless you're running a Mac with unified memory. That's where quantization comes in. What Is Quantization? Quantization shrinks a model by compressing weights and moving to a lower precision. You basically trade some accuracy for a model that actually fits on your GPU and runs faster. The same photo stored at 8, 4 and 2 bits per pixel. A model's weights lose detail the same way going from Q8 to Q4 to Q2. If you're wondering whether this tradeoff is worth it, well, it depends. You'll find that certain types of workloads don't really care and give similar outputs, while others may be nearly unusable. Which Model Should You Run for Your VRAM? For this guide, we'll be going with Qwen3.8-27B with 4-bit quantization on my system with an RTX 5090. Going up a tier is an option thanks to its 32GB of VRAM, but I wanted to allow for a larger context window (how much of the conversation the model can keep in mind at once) rather than cramming in the largest model that fits. Qwen3.8-27B at each precision with a 128K context, from our VRAM calculator . At 4-bit, the model and the context fit a 32 GB card with room to spare. If you want to run a model of this caliber with excellent performance, a hilariously overpriced RTX 5090 (remember when $1,999 felt too high?) is unfortunately still not a terrible 'deal' these days. The other option is way more expensive enterprise-grade GPUs . If you're on a GPU with less VRAM, you can still get something very usable going right away. The table below gives you a rough idea of where you can start. Size VRAM Models to try Version (quant) Context size Cards at this size Small 8-12 GB Qwen3.5-9B , Gemma 4 12B UD-Q4_K_S or Q4_K_M 8K-16K RTX 5060 8GB , RTX 3060 12GB , RTX 5070 12GB Medium 16 GB Qwen3-14B , gpt-oss-20b (MoE), Gemma 4 26B (MoE), Qwen3-Coder-30B (MoE), Qwen3.6-35B (MoE), Inkling 2 Mini (MoE) Q4_K_M or Q5_K_M 16K-32K RTX 5060 Ti 16GB , RTX 5070 Ti , RTX 5080 , RTX PRO 2000 Large 24 GB Gemma 4 31B , Qwen3.8-27B , Inkling 2 Mini UD-Q4_K_M or Q4_K_S 16K-32K RTX 3090 , RTX 4090 , RX 7900 XTX , RTX PRO 4000 Extra Large 32 GB+ Qwen3.8-27B , Inkling 2 Mini UD-Q4_K_XL or Q6_K 64K-128K+ RTX 5090 32GB , RTX PRO 4500 32GB , RTX PRO 5000 48GB , RTX PRO 6000 96GB Small VRAM 8-12 GB Models to try Qwen3.5-9B , Gemma 4 12B Version (quant) UD-Q4_K_S or Q4_K_M Context size 8K-16K Cards at this size RTX 5060 8GB , RTX 3060 12GB , RTX 5070 12GB Me",
+   "category": "resource"
+  },
+  "423934159": {
+   "tweets": [
+    "Runway ML Pro on Windows 10/11 is pretty slick ngl.\n\nSince generation is cloud-based, you don't need a high-end local GPU. Just 8GB RAM min (16GB recommended) and internet to run text-to-video, image animation, and Motion Brush editing.",
+    "Still relying purely on prompt luck for AI video?\n\nRunway ML Pro on Windows gives you actual directional control with Motion Brush and camera tools. Runs off cloud processing too, so you only need 8GB RAM minimum to get started tbh."
+   ],
+   "source": "JieFedorov81/runway-ml-pro-win: Runway - AI video generation platform for text-to-video synthesis, image animation and motion brush editing on Windows 10/11 Runway - AI video generation platform for text-to-video synthesis, image animation and motion brush editing on Windows 10/11 GitHub - JieFedorov81/runway-ml-pro-win: Runway - AI video generation platform for text-to-video synthesis, image animation and motion brush editing on Windows 10/11 \u00b7 GitHub Skip to content You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert main Branches Tags Go to file Code Open more actions menu Latest commit History 5 Commits 5 Commits Folders and files Name Name Last commit message Last commit date docs docs CHANGELOG.md CHANGELOG.md LICENSE LICENSE README.md README.md View all files Repository files navigation Runway ML Pro: AI Video Generation and Motion Editing for Windows A Windows reference and setup guide for the Runway ML Pro AI video platform, generative capabilities, system profile, and the first-run workflow. Introduction Runway ML Pro is an AI video generation platform that lets you turn written prompts into short video clips, animate still images, and direct motion with brush-based controls on Windows 10 and 11. It is used by beginners who are exploring generative media for the first time and by professionals who need fast concept footage, storyboard previews, or stylized visual assets. Instead of a traditional timeline-first editor, it centers on generative models you guide with text and reference imagery. When you use Runway ML Pro, you get a set of creative tools built around text-to-video synthesis, image-to-video animation, and the Motion Brush, which lets you paint regions of a frame and define how they should move. A typical workflow starts with a prompt or a source image, moves into generation and refinement, and ends with exporting a clip you can bring into a conventional editor. The platform also includes tools for inpainting, style transfer, and camera motion so you can iterate quickly on an idea. In the broader generative video field, Runway ML Pro sits among the tools that made prompt-driven video accessible to non-specialists, and it continues to evolve as new models and controls are added. Its cloud-based processing means your results depend more on your connection and creative direction than on a high-end local GPU. A large community shares prompts, workflows, and tutorials, which makes it easier to learn the platform's quirks and get consistent output. System Requirements Requirement Details Supported Windows Versions Windows 10, Windows 11 Architecture x64 Processor Modern dual-core or better, quad-core recommended for smooth browser and app performance RAM 8 GB minimum, 16 GB recommended Storage Around 1 GB for the desktop app plus space for downloaded clips and assets Permissions Administrative privileges may be required Internet Connection Required for activation, generation, and updates Dependencies Current Chromium-based browser or the desktop app, hardware-accelerated graphics with up-to-date drivers, DirectX 11 or later To get the best performance from Runway ML Pro, keep a stable, reasonably fast internet connection, since most generation happens remotely and your machine mainly handles the interface and preview playback. A dedicated graphics processor and 16 GB of RAM help when you scrub through clips and work with larger projects, but they are not the bottleneck the way they are for render-heavy desktop software. On a machine near the minimum specs you can still create and manage projects, though the interface may feel slower with many browser tabs open or when previewing high-resolution video. Features Text-to-Video Synthesis : Describe a scene in plain language and generate a short clip from the prompt. This is useful for quickly testing an idea or producing concept footage before any shooting begins, and it fits early in the workflow when you are still exploring direction. Image-to-Video Animation : Bring a still image to life by generating motion from it. You can use a photo, illustration, or generated frame as the starting point, which makes it practical to animate key visuals or add movement to existing art. Motion Brush : Paint over specific regions of a frame and control how those areas move independently. This gives you directorial control over elements like a flowing river or a turning head, and it is one of the tools that separates guided generation from pure prompt luck. Camera Motion Controls : Define pans, tilts, and zooms so a generated clip has deliberate camera movement. This helps you match the visual language of a scene or build a sequence that feels intentional rather than random. Inpainting and Object Removal : Select an area of a clip and replace or remove what is there. It is h",
+   "category": "video"
+  },
+  "423977293": {
+   "tweets": [
+    "Harvard's Fall 2026 AI Safety course (CS 2881) syllabus just dropped, taught by Boaz Barak.\n\nNgl pretty cool that students are actually encouraged to use generative & agentic AI for assignments, with potential compute reimbursements.\n\nHW0 is due Aug 5, 2026.",
+    "Boaz Barak is teaching Harvard\u2019s CS 2881 AI Safety grad course in Fall 2026.\n\nPractical info if you're looking to apply:\n- HW0 due Aug 5, 2026 (mandatory to be considered)\n- Guest speakers include Nicholas Carlini (Anthropic)\n- Lectures will be posted online"
+   ],
+   "source": "Harvard CS 2881R AI Safety  Fall 2026 | CS 2881 AI Safety Fall 2026 \u2014 registration and Homework Zero Everyone who wants to be considered for the course must fill out the Fall 2026 course registration form . In-person attendance will be mandatory for students enrolled in the course. Read Homework Zero HW0 is due August 5, 2026, at 11:59 p.m. Eastern Time. Submitting Homework Zero is a necessary but not sufficient condition for admission to the course. Completing the assignment does not guarantee admission. To get a sense of the issues we will cover, please read It\u2019s 2030 and we fucked up. How did it happen? and All Watched Over . CS 2881R \u2014 AI Safety Fall 2026 , Thursdays 3:45pm\u20136:30pm Eastern Time (first lecture September 3) Classroom: Room 2112, 114 Western Avenue, Allston, MA 02134 ( building information and directions ) Instructor: Boaz Barak Teaching Fellows: Natalia Siwek , Terry Zhou , Michael Shoemate , Ege \u00c7akar , Itay Lavie , Lia Zheng , and Hugh Van Deventer Course email: cs2881@boazbarak.org Links for registered students only: Canvas Perusall Course Description: This is a graduate-level course on challenges in the alignment and safety of artificial intelligence. We will consider technical questions as well as societal and other impacts of the field. Prerequisites: We require mathematical maturity and proficiency with proofs, probability, and information theory, along with the foundations of machine learning at the level of an undergraduate course such as Harvard CS 181 or MIT 6.036. On the applied side, students should be comfortable programming in Python and training a basic neural network. Looking for the previous course? The complete lecture materials, videos, notes, and experiments are preserved on the Fall 2025 course page . Mini Syllabus The course will have 13 in-person lectures. Each lecture will also involve discussion and the presentation of an experiment by a group of students. Attendance: In-person attendance is mandatory. Students are expected to attend all lectures, do the reading in advance, and discuss the readings in an electronic forum. AI use: Students are allowed and encouraged to use generative and agentic AI as much as they can for studying, exploring concepts, and completing their assignments and projects. We will explore ways to either give students access to compute credits or reimburse compute expenses. Electronic device policy: Students can use laptops in class, but we will ask those using them to sit in the back so they do not distract other students. Assignments: The course will involve the following assignments: presenting an experiment in class, writing scribe notes, completing a final project, and potentially completing one or more homework assignments or mini-projects. Grading will be decided later. Lecture recordings: To the extent technically possible, we intend to record and publish the lectures online, though there might be some delay in doing so. Note that recording is done automatically by a static in-room camera, and some parts of the lecture (e.g., whiteboard work or discussions) may not be captured as well. In addition, we will honor requests by external speakers not to record their talks. POTENTIAL CONFLICT OF INTEREST NOTE: In addition to his position at Harvard, Boaz is also a member of the technical staff at OpenAI. The course will include discussions of models from multiple providers, including OpenAI, and students are also encouraged to use AIs from multiple providers while doing their work. If students in the course have any concerns about this conflict, please do not hesitate to contact Boaz, the other staff, or the Harvard SEAS administration. For what it is worth, I (Boaz) will see it as a great success of the course if its graduates work in AI safety in any capacity, including in academia, nonprofits, governments, or any of OpenAI\u2019s competitors. Schedule Additional lecture topics and materials will be added as they are confirmed. Unless otherwise noted, all lectures meet in person on Thursdays from 3:45pm\u20136:30pm Eastern Time in Room 2112, 114 Western Avenue, Allston, MA 02134 . Thursday, September 3, 2026 Introduction \ud83d\udd17 Lecture materials: Lecture video (YouTube) Presentation slides Lecture blog post Student experiment: Is Chain of Thought an Interchangeable Scratchpad? \u2014 Shivam Singhal Code repository and write-up Slides: pptx / pdf Required pre-reading and viewing: It's 2030 and we fucked up. How did it happen? All Watched Over Read the UK AISI technical report on model hacking during cyber evaluations. Watch the Black Hat talk about the OpenAI/Hugging Face incident. Read METR's technical investigation of the OpenAI/Hugging Face incident . Optional but recommended: OpenAI's Hugging Face incident and the road ahead . OpenAI's technical report on the incident . Registered students should access the readings through Perusall and contribute substantive comments or replies to the discussion. Thursday, September 10, 2026 Cyber Capabilities \ud83d\udd17 Guest l",
+   "category": "resource"
   }
  },
  "approved": [],
  "held": [],
  "stats": {
-  "drafts": 0,
-  "majors": 4,
-  "quotes": 0,
+  "drafts": 2,
+  "majors": 7,
+  "quotes": 6,
   "chats": 0
  },
- "cool": {
-  "gemini-3.5-flash|0": "2026-11-23T08:05:00+00:00"
- },
+ "cool": {},
  "tg_offset": 694012120,
  "chat": [
   {
@@ -593,12 +712,12 @@
    "text": "Got it! I'm on standby whenever you're ready to check news or draft posts. Just let me know."
   }
  ],
- "last_digest": "2026-11-22T20:27:52.840205+00:00",
- "last_scan": "2026-11-22T20:27:52.840282+00:00",
+ "last_digest": "2026-11-23T08:49:51.998545+00:00",
+ "last_scan": "2026-11-23T08:50:36.244417+00:00",
  "credits": {
   "month": "2026-11",
   "used": [
-   93
+   127
   ],
   "alerted": []
  },
@@ -613,7 +732,10 @@
   "2124370391074288004",
   "2124584972866498884",
   "2124551594691932405",
-  "2124463264037769352"
+  "2124463264037769352",
+  "2124636544690495802",
+  "2124586834072330269",
+  "2124607737073910134"
  ],
  "style_accounts": [
   "Octoberry"
@@ -621,15 +743,15 @@
  "cfg": {},
  "cmds_v": 2,
  "daily": {
-  "day": "2026-11-22",
-  "n": 8,
+  "day": "2026-11-23",
+  "n": 5,
   "min_done": false
  },
- "last_release_watch": "2026-11-22",
- "web_note": "Last web scan: Hacker News: 16 | Reddit failed: 404 Client Error: Not Found for url: htt | GitHub: 12 | Hugging Face: 8 | Web search failed: 404 Client Error: Not Found for url: htt | new: 13",
- "last_rumor": "2026-11-22",
- "q_idx": 4,
- "last_web": "2026-11-22T20:29:08.859051+00:00",
+ "last_release_watch": "2026-11-23",
+ "web_note": "Last web scan: Hacker News: 13 | Reddit failed: 404 Client Error: Not Found for url: htt | GitHub: 12 | Hugging Face: 8 | Web search failed: 404 Client Error: Not Found for url: htt | new: 6",
+ "last_rumor": "2026-11-23",
+ "q_idx": 6,
+ "last_web": "2026-11-23T08:51:42.330776+00:00",
  "web": {
   "subreddits": [
    "LocalLLaMA",
@@ -695,7 +817,13 @@
   "https://github.com/tamnd/riemann-handbook",
   "https://www.bloodinthemachine.com/p/ai-is-becoming-a-disaster-for-the",
   "https://www.audubon.org/magazine/birds-of-gta-6-field-guide-vice-city-wildlife",
-  "https://simonwillison.net/2026/Nov/21/muru/"
+  "https://simonwillison.net/2026/Nov/21/muru/",
+  "https://www.gpupartner.com/blog/beginners-guide-local-ai-inkling-qwen-unsloth",
+  "https://github.com/JieFedorov81/runway-ml-pro-win",
+  "https://github.com/AFK-surf/xnulinux",
+  "https://claude.ai/artifact/CtQyX8qfYAF822bgHJHHE3",
+  "https://pengowray.github.io/riemann-zeta-proof-visualizer/",
+  "https://boazbk.github.io/mltheoryseminar/"
  ],
  "styles": [
   {
@@ -706,12 +834,16 @@
  "style_refresh": {
   "Octoberry": "2026-11-22T10:17:32.970403+00:00"
  },
- "last_cmp": "2026-11-22",
+ "last_cmp": "2026-11-23",
  "cmp_used": [
   "Create a single self-contained HTML file (no external dependencies, standard HTML5 Canvas) that simulates an interactive",
   "Generate a single-file playable 3D HTML game using Three.js via CDN. Theme: Synthwave Cyberpunk Endless Runner. Requirem",
   "Write a single, fully responsive HTML landing page for a futuristic AI Robotics startup named 'Aether Dynamics'. Use Tai",
-  "Create a single self-contained HTML file containing an interactive 3D globe visualization using Three.js (via CDN). Feat"
+  "Create a single self-contained HTML file containing an interactive 3D globe visualization using Three.js (via CDN). Feat",
+  "Write a single self-contained HTML file using standard HTML5 Canvas (no external JS libraries) that simulates an interac",
+  "Create a single self-contained HTML file using Three.js via CDN that renders a dynamic procedural solar system. Requirem",
+  "Write a single self-contained HTML file featuring an interactive audio-reactive visualizer and synthesizer. Requirements",
+  "Create a single self-contained HTML file containing a playable 2D physics mini-golf game. Requirements: drag-to-aim stro"
  ],
  "month_log": [
   {
@@ -785,6 +917,66 @@
     "DeepSeek-V4-Flash features 284B total and 13B active parameters",
     "Both models support 1M context length"
    ]
+  },
+  {
+   "t": "2026-11-23T08:48:11.646777+00:00",
+   "title": "English",
+   "url": "https://api-docs.deepseek.com/news/news250120/",
+   "category": "Models & benchmarks",
+   "facts": [
+    "DeepSeek-R1 released with performance parity to OpenAI-o1",
+    "Model and technical report released under MIT license",
+    "Six distilled models released based on DeepSeek-R1",
+    "DeepSeek-R1 utilizes large-scale reinforcement learning in post-training"
+   ]
+  },
+  {
+   "t": "2026-11-23T08:48:24.205942+00:00",
+   "title": "News",
+   "url": "https://api-docs.deepseek.com/news/news261113/",
+   "category": "Models & benchmarks",
+   "facts": [
+    "DeepSeek API now includes full app capabilities: web search, file input, URL reading, OCR, ASR, and TTS.",
+    "DeepSeek-Flash (V4.1-Flash) now supports these capabilities across Messages, Responses, and Chat Completions.",
+    "Web search and URL reading are enabled via specific parameters.",
+    "Tool calls and context assembly are handled server-side."
+   ]
+  },
+  {
+   "t": "2026-11-23T08:48:28.305973+00:00",
+   "title": "DeepSeek-V4.1-Flash-1017 Release 2026/10/17",
+   "url": "https://api-docs.deepseek.com/news/news261017/",
+   "category": "Models & benchmarks",
+   "facts": [
+    "DeepSeek-V4.1-Flash-1017 released on 2026/10/17",
+    "Model features improved benchmark performance and faster task completion",
+    "Optimized for DeepSeek Harness, Tencent CodeBuddy, and WorkBuddy",
+    "Uses reinforcement learning with self-feedback for end-to-end project development"
+   ]
+  },
+  {
+   "t": "2026-11-23T08:49:34.418696+00:00",
+   "title": "DeepSeek-V4.1-Flash Release 2026/09/10",
+   "url": "https://api-docs.deepseek.com/news/news260910/",
+   "category": "Models & benchmarks",
+   "facts": [
+    "DeepSeek-V4.1-Flash is a 552B-parameter MoE model with an asymmetric architecture.",
+    "The model features 8B active parameters for input and 16B for output.",
+    "It offers native visual understanding and multimodal support.",
+    "KV cache requirements are reduced to 1/4 HBM and 1/8 SSD storage compared to previous generations."
+   ]
+  },
+  {
+   "t": "2026-11-23T08:49:50.366785+00:00",
+   "title": "DeepSeek-V4-Flash-Vision-Exp Release 2026/08/21",
+   "url": "https://api-docs.deepseek.com/news/news260821/",
+   "category": "Models & benchmarks",
+   "facts": [
+    "DeepSeek-V4-Flash-Vision-Exp experimental multimodal model released",
+    "Matches DeepSeek-V4-Flash text capabilities",
+    "Multimodal agent performance nears Opus-4.8",
+    "Images tokenized up to 384 tokens each"
+   ]
   }
  ],
  "releases": [
@@ -827,9 +1019,53 @@
     "https://api-docs.deepseek.com/news/news260424"
    ],
    "bundled": false
+  },
+  {
+   "topic": "deepseek-r1",
+   "t": "2026-11-23T08:48:11.646777+00:00",
+   "urls": [
+    "https://api-docs.deepseek.com/news/news250120/"
+   ],
+   "bundled": false
+  },
+  {
+   "topic": "deepseek-flash",
+   "t": "2026-11-23T08:48:24.205942+00:00",
+   "urls": [
+    "https://api-docs.deepseek.com/news/news261113/"
+   ],
+   "bundled": false
+  },
+  {
+   "topic": "deepseek-v4.1-flash",
+   "t": "2026-11-23T08:48:28.305973+00:00",
+   "urls": [
+    "https://api-docs.deepseek.com/news/news261017/"
+   ],
+   "bundled": false
+  },
+  {
+   "topic": "deepseek-v4.1-flash",
+   "t": "2026-11-23T08:49:34.418696+00:00",
+   "urls": [
+    "https://api-docs.deepseek.com/news/news260910/"
+   ],
+   "bundled": false
+  },
+  {
+   "topic": "deepseek-v4-flash-vision-exp",
+   "t": "2026-11-23T08:49:50.366785+00:00",
+   "urls": [
+    "https://api-docs.deepseek.com/news/news260821/"
+   ],
+   "bundled": false
   }
  ],
  "gem_fail": 0,
  "last_weekly": "2026-11-22T20:31:26.804502+00:00",
- "last_bundle": "2026-11-22"
+ "last_bundle": "2026-11-22",
+ "job_err": {
+  "top picks": "2026-11-23"
+ },
+ "scan_note": "Last scan: 'AI agents new tool': 8 found, 2 fresh | 'AI video model new': 8 found, 6 fresh | watchlist: 8 found, 8 fresh"
 }

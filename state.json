@@ -304,7 +304,8 @@
   "https://api-docs.deepseek.com/news/news261113/",
   "https://api-docs.deepseek.com/news/news261017/",
   "https://api-docs.deepseek.com/news/news260910/",
-  "https://api-docs.deepseek.com/news/news260821/"
+  "https://api-docs.deepseek.com/news/news260821/",
+  "https://api-docs.deepseek.com/news/news260813/"
  ],
  "init": [
   "OpenAI",
@@ -494,6 +495,22 @@
     "New Files API allows image reuse via file_id",
     "DeepSeek Harness 0.1.1 released with model support"
    ]
+  },
+  {
+   "t": "2026-11-23T20:41:28.650050+00:00",
+   "title": "DeepSeek-V4-Pro GA Release 2026/08/13",
+   "url": "https://api-docs.deepseek.com/news/news260813/",
+   "category": "Models & benchmarks",
+   "facts": [
+    "DeepSeek-V4-Pro released on August 13, 2026",
+    "Introduces flexible reasoning effort for V4-Pro and V4-Flash",
+    "Supports native OpenAI Responses API",
+    "Includes new web search, file input, and URL reading capabilities",
+    "Adds ASR and TTS functionality",
+    "Introduces peak and off-peak API pricing",
+    "Off-peak rates are 50% lower than peak",
+    "New pricing takes effect at 16:00 UTC, August 16, 2026"
+   ]
   }
  ],
  "fail": {
@@ -506,7 +523,7 @@
   "xAI": 0,
   "DeepSeek": 0,
   "Qwen": 0,
-  "Z.ai": 6,
+  "Z.ai": 7,
   "Artificial Analysis": 0
  },
  "feeds": {
@@ -518,30 +535,6 @@
   "Artificial Analysis": ""
  },
  "drafts": {
-  "342586114": {
-   "tweets": [
-    "There's an addon called mcp-for-blender-pro that adds an AI assistant and built-in MCP server to Blender. It lets you edit scenes and inspect viewports using OpenAI, Claude, Gemini, or local Ollama models. Runs on Windows x64 with Blender 4.2+.",
-    "Just saw blender-ai-mcp-addon on GitHub. It comes with 21 scene tools for AI models to build objects, edit materials, take viewport screenshots, and search Poly Haven assets. You can even set up multi-agent team workflows."
-   ],
-   "source": "bookwjitchieni1986/blender-ai-mcp-addon: AI assistant and MCP server for Blender: visual chat, scene tools, multi-agent workflows. Works with ChatGPT/GPT, Claude, Gemini, Ollama, OpenCode. Blender AI  AI assistant and MCP server for Blender: visual chat, scene tools, multi-agent workflows. Works with ChatGPT/GPT, Claude, Gemini, Ollama, OpenCode. Blender AI addon, copilot for 3D, bpy Python scripting, MCP integration. GitHub - bookwjitchieni1986/blender-ai-mcp-addon: AI assistant and MCP server for Blender: visual chat, scene tools, multi-agent workflows. Works with ChatGPT/GPT, Claude, Gemini, Ollama, OpenCode. Blender AI addon, copilot for 3D, bpy Python scripting, MCP integration. \u00b7 GitHub Skip to content You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert main Branches Tags Go to file Code Open more actions menu Latest commit History 8 Commits 8 Commits Folders and files Name Name Last commit message Last commit date docs docs LICENSE LICENSE README.md README.md View all files Repository files navigation mcp-for-blender-pro Your Blender scene. Your AI models. One creative workspace. An AI assistant for Blender that can inspect your scene, build objects, edit materials, find assets and carry out multi-step workflows\u2014with a visual chat workspace and a built-in Model Context Protocol (MCP) server. Download \u00b7 Getting started \u00b7 Connections and agents Turn a creative brief into scene operations Start with an idea. Ask the assistant to inspect your scene, create a product-display layout, arrange objects, assign materials or prepare an export. Follow its actions in the conversation and inspect the result in the viewport preview. Keep working in Blender throughout the process. mcp-for-blender-pro brings conversation, scene tools, model choice and agent workflows together. It is designed for artists who want faster iteration, technical artists who automate repetitive work, and developers connecting AI tools to Blender. Why choose mcp-for-blender-pro? Capability What it gives you Blender-aware assistance Scene and object inspection gives the assistant context before it acts. A visual Studio workspace Chat, scene objects, viewport snapshots, approvals and a task board in a companion window. Your choice of AI Connect supported cloud providers, local Ollama models or compatible custom endpoints. Saved connections Keep work and personal connections separate, including multiple keys for the same provider. One assistant or a team Use a single model for quick changes, or managers, workers and reviewers for structured tasks. Built-in MCP server Connect OpenCode and other clients supporting authenticated Streamable HTTP MCP. 21 scene tools Create, inspect, edit, capture, search assets, consult Blender APIs and export scenes. Multilingual menus Choose English, German, French, Spanish or Chinese for the main interface. From a quick edit to an agent team Use Single assistant for direct, conversational work. For larger tasks, configure a Team chain with individual responsibilities, instructions and models. Manager: breaks the request into assignments and acceptance criteria. Workers: perform the assigned scene operations. Reviewers: inspect results and approve work or return specific findings. Tasks run sequentially so scene edits stay ordered. A blocked task gets one correction attempt; a second failed review stops the workflow. The task board exposes assignments, attempts and review findings as work progresses. Connect the models that fit your work Supported connections include OpenAI, Anthropic Claude, Google Gemini, OpenRouter, OpenCode Zen, Ollama and custom APIs . Load the available model catalog and select a model directly in Blender or Studio. Custom endpoints support OpenAI Chat Completions, Anthropic Messages and Ollama protocols. Choose models with tool-calling support; image-capable models can also interpret viewport screenshots. OpenCode-only free models are available through the OpenCode client. Install and create Download mcp-for-blender-pro.zip from Releases . In Blender, open Edit \u2192 Preferences \u2192 Get Extensions \u2192 menu \u2192 Install from Disk . Select the ZIP, enable mcp-for-blender-pro , then open 3D Viewport \u2192 N \u2192 MCP Pro . Choose a provider, add your connection details and select a model. Send a message in Blender or click Open Studio Window . The release bundle targets Windows x64 with Blender 4.2 or later . Keep Blender open while using Studio or an external client. Try these prompts Inspect this scene and explain its object structure before making any changes. Create a simple product-display scene with a pedestal, a camera and three lights. Give the pedestal a matte blue material. Duplicate the selected object into a neatly spaced row of five and show the viewport. Find an appropriate Poly Haven asset for this scene and ask",
-   "category": "agents"
-  },
-  "342593125": {
-   "tweets": [
-    "OpenRouter addressed security findings showing some inference providers breached data policies. OpenRouter itself wasn't breached, but they off-boarded 3 providers, removed 125 endpoints from Zero Data Retention eligibility, and notified all affected users.",
-    "Security researchers found data policy issues with several AI inference providers. OpenRouter wasn't breached, but they've off-boarded 3 providers and stripped 125 endpoints of Zero Data Retention status while directly notifying impacted customers."
-   ],
-   "source": "Data Processing Incidents on Inference Providers  Data Processing Incidents on Inference Providers Data Processing Incidents on Inference Providers OpenRouter \u00b7 11/22/2026 Provider security announcements Provider security announcements Earlier this week, security researchers reported that certain inference providers had data compromised or otherwise shown evidence that their data policies were not being upheld. We have been collaborating closely with the researchers and with providers to understand the findings and encourage the providers to address them. These findings did not show any breach or unauthorized access of OpenRouter. The results of this testing revealed new findings about specific inference providers. A live list of the security announcements we have received from providers is below . As the operating layer between customers and a fast-moving ecosystem of models and providers, we take data policy enforcement very seriously. We have taken the following actions: Off-boarded three providers from OpenRouter, based on the results of our investigations. Removed 125 endpoints from Zero Data Retention (ZDR) eligibility. The removals included providers flagged by researchers, plus additional endpoints that we removed as a precautionary measure. Notified all potentially affected customers. The following work is underway: We are adapting the researchers\u2019 testing approach so we can run these checks on an ongoing basis. We are conducting technical verification of network paths to identify instances where requests and responses may be being forwarded to third parties. We are requiring appropriate assurances and validation before restoring ZDR eligibility to any endpoint removed in this review. We are grateful for the Dragos report. As we integrate similar testing techniques into OpenRouter, we will keep raising the bar, and providers that want to be on OpenRouter will need to meet it. Provider security announcements Novita: Privacy notice regarding MiniMax requests on Novita Phala: November preliminary incident report Together: Security event: prompt leakage for requests in June and July of 2026 Not all affected providers have posted publicly. We have notified affected users regardless of whether there is a public post. We are encouraging all providers to create incident write-ups and will keep this list updated. Email address Subscribe By subscribing you agree to receive the OpenRouter newsletter: model usage data, product updates, and research reports, about one email a week. Unsubscribe anytime via the link in every email. See our Privacy Policy .",
-   "category": "news"
-  },
-  "342641968": {
-   "tweets": [
-    "Replit released Amuse, a self-hosted personal AI agent that runs on your own computer. It does web research, has a live browser you can watch or take over, and asks for approval before payments or form submissions. Just needs Docker and your own OpenAI API key.",
-    "If you want a personal AI agent on your own machine, Replit open-sourced Amuse. It handles reminders, web research, and small apps, with memory stored as plain files. Runs locally on localhost:3000 with your OpenAI key and PostgreSQL."
-   ],
-   "source": "replit/amuse: Self-hosted personal AI agent: research, a live browser, reminders and small apps, with approvals before actions. Runs on your own computer with an OpenAI key. Self-hosted personal AI agent: research, a live browser, reminders and small apps, with approvals before actions. Runs on your own computer with an OpenAI key. GitHub - replit/amuse: Self-hosted personal AI agent: research, a live browser, reminders and small apps, with approvals before actions. Runs on your own computer with an OpenAI key. \u00b7 GitHub Skip to content You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert main Branches Tags Go to file Code Open more actions menu Latest commit History 2 Commits 2 Commits Folders and files Name Name Last commit message Last commit date .github .github apps apps docs docs lib/ db lib/ db tests/ e2e tests/ e2e .dockerignore .dockerignore .env.example .env.example .gitignore .gitignore .npmrc .npmrc .prettierignore .prettierignore .prettierrc.json .prettierrc.json CHANGELOG.md CHANGELOG.md CODE_OF_CONDUCT.md CODE_OF_CONDUCT.md CONTRIBUTING.md CONTRIBUTING.md Dockerfile Dockerfile LICENSE LICENSE NOTICE NOTICE README.md README.md SECURITY.md SECURITY.md THIRD_PARTY_LICENSES.md THIRD_PARTY_LICENSES.md docker-compose.yml docker-compose.yml package.json package.json pnpm-lock.yaml pnpm-lock.yaml pnpm-workspace.yaml pnpm-workspace.yaml tsconfig.base.json tsconfig.base.json tsconfig.json tsconfig.json View all files Repository files navigation Amuse Self-hosted personal AI agent: it researches the web, uses a live browser you can watch and take over, runs reminders and background checks, tracks goals and builds small apps you keep using, and asks before it sends, submits or pays for anything. Amuse runs on your own computer for one person. It needs an OpenAI API key and PostgreSQL. No account, hosted service or other API key is required. Features Chat with an agent you name and shape, with side chats for separate topics Web research with sources, using OpenAI web search A live browser in the chat that fills forms and navigates sites, which you can watch, take over or stop Reminders, monitors and a background heartbeat that only message you when something matters Goals turned into step-by-step plans that the agent keeps working on Documents, PDFs, images, podcasts and spaces: small apps with saved data Memory you can read and edit, stored as plain workspace files Approval cards for sends, form submissions, payments and new schedules, with once, task, site or always scopes An encrypted vault for logins and API keys; the model only sees stand-in tokens Voice mode with transcription and spoken replies Hatch your agent Ask for an app, get a working one It browses the web for you, live Talk to it, and it talks back Quick start with Docker Compose Requirements: Docker Engine with the Compose plugin, Git, and an OpenAI API key. git clone https://github.com/replit/amuse cd amuse cp .env.example .env # then set OPENAI_API_KEY docker compose up -d --build Open http://localhost:3000 and hatch your agent. Compose starts PostgreSQL alongside Amuse and publishes the app on 127.0.0.1 only. From source Use Node.js 22.9+ , pnpm 10.26.1 and PostgreSQL 14+ . corepack enable corepack prepare pnpm@10.26.1 --activate pnpm install --frozen-lockfile pnpm setup:browser # downloads Chromium for the agent's live browser cp .env.example .env # set OPENAI_API_KEY and DATABASE_URL pnpm build pnpm start Open http://localhost:3000 . The server migrates its schema automatically before listening. Your OpenAI key The agent ( gpt-6.2-sol , with gpt-6-luna for quick steps), web search, image generation ( gpt-image-2 ), transcription and spoken replies all run on your OpenAI key. Set a spend limit on your OpenAI project. Amuse also stops for the day at AMUSE_DAILY_LIMIT usage units (2,000 by default) and pauses background jobs until the next day. Models and every other setting are in .env.example . Besides OpenAI, Amuse only contacts the sites the agent visits for you and, for weather questions, the free Open-Meteo API (weather data by Open-Meteo.com, CC BY 4.0). Fonts and every other asset are served locally. Scope Amuse is deliberately small. It's a web app for one person on one computer, it uses OpenAI models only, and it connects to services through API keys and its live browser rather than MCP servers. Notifications appear while an Amuse tab is open; there's no push to your phone yet. Security model Amuse is built for one person on their own computer, so it has no login . It listens on 127.0.0.1 only and refuses changes from other sites. Don't expose it to a network or the internet. The agent can only reach public internet addresses, saved credentials are only sent to the site you confirmed, and consequential actions ask you first. See SECURITY.md for",
-   "category": "agents"
-  },
   "379267462": {
    "tweets": [
     "OpenAI just published their internal perplexity measurements to push for industry-wide transparency.\n\nJakub Pachocki is arguing that training better compressors (next-token prediction accuracy) is key to tracking AI progress and safety.\n\ntbh this makes a lot of sense.",
@@ -682,13 +675,39 @@
    ],
    "source": "Harvard CS 2881R AI Safety  Fall 2026 | CS 2881 AI Safety Fall 2026 \u2014 registration and Homework Zero Everyone who wants to be considered for the course must fill out the Fall 2026 course registration form . In-person attendance will be mandatory for students enrolled in the course. Read Homework Zero HW0 is due August 5, 2026, at 11:59 p.m. Eastern Time. Submitting Homework Zero is a necessary but not sufficient condition for admission to the course. Completing the assignment does not guarantee admission. To get a sense of the issues we will cover, please read It\u2019s 2030 and we fucked up. How did it happen? and All Watched Over . CS 2881R \u2014 AI Safety Fall 2026 , Thursdays 3:45pm\u20136:30pm Eastern Time (first lecture September 3) Classroom: Room 2112, 114 Western Avenue, Allston, MA 02134 ( building information and directions ) Instructor: Boaz Barak Teaching Fellows: Natalia Siwek , Terry Zhou , Michael Shoemate , Ege \u00c7akar , Itay Lavie , Lia Zheng , and Hugh Van Deventer Course email: cs2881@boazbarak.org Links for registered students only: Canvas Perusall Course Description: This is a graduate-level course on challenges in the alignment and safety of artificial intelligence. We will consider technical questions as well as societal and other impacts of the field. Prerequisites: We require mathematical maturity and proficiency with proofs, probability, and information theory, along with the foundations of machine learning at the level of an undergraduate course such as Harvard CS 181 or MIT 6.036. On the applied side, students should be comfortable programming in Python and training a basic neural network. Looking for the previous course? The complete lecture materials, videos, notes, and experiments are preserved on the Fall 2025 course page . Mini Syllabus The course will have 13 in-person lectures. Each lecture will also involve discussion and the presentation of an experiment by a group of students. Attendance: In-person attendance is mandatory. Students are expected to attend all lectures, do the reading in advance, and discuss the readings in an electronic forum. AI use: Students are allowed and encouraged to use generative and agentic AI as much as they can for studying, exploring concepts, and completing their assignments and projects. We will explore ways to either give students access to compute credits or reimburse compute expenses. Electronic device policy: Students can use laptops in class, but we will ask those using them to sit in the back so they do not distract other students. Assignments: The course will involve the following assignments: presenting an experiment in class, writing scribe notes, completing a final project, and potentially completing one or more homework assignments or mini-projects. Grading will be decided later. Lecture recordings: To the extent technically possible, we intend to record and publish the lectures online, though there might be some delay in doing so. Note that recording is done automatically by a static in-room camera, and some parts of the lecture (e.g., whiteboard work or discussions) may not be captured as well. In addition, we will honor requests by external speakers not to record their talks. POTENTIAL CONFLICT OF INTEREST NOTE: In addition to his position at Harvard, Boaz is also a member of the technical staff at OpenAI. The course will include discussions of models from multiple providers, including OpenAI, and students are also encouraged to use AIs from multiple providers while doing their work. If students in the course have any concerns about this conflict, please do not hesitate to contact Boaz, the other staff, or the Harvard SEAS administration. For what it is worth, I (Boaz) will see it as a great success of the course if its graduates work in AI safety in any capacity, including in academia, nonprofits, governments, or any of OpenAI\u2019s competitors. Schedule Additional lecture topics and materials will be added as they are confirmed. Unless otherwise noted, all lectures meet in person on Thursdays from 3:45pm\u20136:30pm Eastern Time in Room 2112, 114 Western Avenue, Allston, MA 02134 . Thursday, September 3, 2026 Introduction \ud83d\udd17 Lecture materials: Lecture video (YouTube) Presentation slides Lecture blog post Student experiment: Is Chain of Thought an Interchangeable Scratchpad? \u2014 Shivam Singhal Code repository and write-up Slides: pptx / pdf Required pre-reading and viewing: It's 2030 and we fucked up. How did it happen? All Watched Over Read the UK AISI technical report on model hacking during cyber evaluations. Watch the Black Hat talk about the OpenAI/Hugging Face incident. Read METR's technical investigation of the OpenAI/Hugging Face incident . Optional but recommended: OpenAI's Hugging Face incident and the road ahead . OpenAI's technical report on the incident . Registered students should access the readings through Perusall and contribute substantive comments or replies to the discussion. Thursday, September 10, 2026 Cyber Capabilities \ud83d\udd17 Guest l",
    "category": "resource"
+  },
+  "466503609": {
+   "tweets": [
+    "DeepSeek-V4-Pro just dropped (Aug 13, 2026).\n\nngl flexible reasoning effort across V4-Pro and V4-Flash is a solid touch for agent builds\u2014low for simple tasks up to max for complex workflows.\n\nAlso adds native OpenAI Responses API support, web search, file input, ASR, and TTS.",
+    "Available now on web/app in \"Expert Mode\" and via API.\n\nThey're also introducing peak and off-peak API pricing starting Aug 16 at 16:00 UTC, where off-peak rates are 50% lower than peak."
+   ],
+   "source": "DeepSeek-V4-Pro released on August 13, 2026 Introduces flexible reasoning effort for V4-Pro and V4-Flash Supports native OpenAI Responses API Includes new web search, file input, and URL reading capabilities Adds ASR and TTS functionality Introduces peak and off-peak API pricing Off-peak rates are 50% lower than peak New pricing takes effect at 16:00 UTC, August 16, 2026 DeepSeek-V4-Pro GA Release | DeepSeek API Docs Skip to main content The full suite of DeepSeek application APIs is now available: web search, file input, URL reading, model safety, ASR, TTS and more. Click here to view the guide On this page Copy Markdown Copy Markdown Open Markdown DeepSeek-V4-Pro GA Release We\u00e2\u0080\u0099re launching DeepSeek-V4-Pro today! \u00f0\u009f\u009a\u0080 \u00f0\u009f\u0094\u00b7 Major Agent upgrades with strong production gains! \u00f0\u009f\u0094\u00b7 Flexible reasoning effort for V4-Pro & V4-Flash: low for simple tasks, high for daily Agent workflows, max for complex tasks. \u00f0\u009f\u0094\u00b7 Native OpenAI Responses API support, optimized for Codex with one-click setup. V4 Pro is now available on app/web. Try it via \u00e2\u0080\u009cExpert Mode\u00e2\u0080\u009d. V4 Pro is also available via API. Model names remain unchanged\u00e2\u0080\u0094please refer to the API docs for setup details. API pricing update \u00f0\u009f\u0092\u00b0 \u00e2\u0080\u008b With the V4 lineup release, we\u00e2\u0080\u0099re updating our API pricing and introducing peak and off-peak rates. Off-peak rates are 50% lower than peak, enabling more flexible workload scheduling. \u00f0\u009f\u0093\u0089 New pricing takes effect at 16:00 UTC, Aug 16, 2026 \u00f0\u009f\u0095\u0092 API pricing update \u00f0\u009f\u0092\u00b0",
+   "category": "Models & benchmarks"
+  },
+  "466688976": {
+   "tweets": [
+    "quick evening look at deepseek-v4.1-flash 1017.\n\nit's a 552B parameter MoE model with an asymmetric arch (8B active for input, 16B for output), native vision support, and self-feedback RL for end-to-end dev.\n\nngl the kv cache savings are huge: down to 1/4 HBM and 1/8 SSD.",
+    "how does it stack up on the benchmark leaderboard?\n\ndeepseek v4.1 flash 1017 hits an intelligence index of 33 ($0.60 cost per task, 13.8 min task time, 1M context).\n\ntbh it straight up beats deepseek v4 pro (23 index, $1.77 cost, 19.3 min) while being cheaper and faster.",
+    "for access & practical setup:\n\n- search & fetch APIs are open to all users\n- API format is compatible with OpenAI and Anthropic SDKs\n- optimized for DeepSeek Harness, Tencent CodeBuddy, and WorkBuddy\n\ndeepseek-flash is officially serving the V4.1-Flash-1017 model now."
+   ],
+   "source": "[{\"t\": \"2026-11-23T01:00:58.741961+00:00\", \"title\": \"DeepSeek-V4.1-Flash-1017 Release 2026/10/17\", \"url\": \"https://api-docs.deepseek.com/news/news261017\", \"category\": \"Models & benchmarks\", \"facts\": [\"DeepSeek-V4.1-Flash-1017 released on 2026/10/17\", \"Model features improved benchmark performance and faster task completion\", \"Supports reinforcement learning with self-feedback for end-to-end project development\", \"Search & Fetch APIs are now open to all users\"]}, {\"t\": \"2026-11-23T01:01:07.659450+00:00\", \"title\": \"DeepSeek-V4.1-Flash Release 2026/09/10\", \"url\": \"https://api-docs.deepseek.com/news/news260910\", \"category\": \"Models & benchmarks\", \"facts\": [\"DeepSeek-V4.1-Flash released with native visual understanding.\", \"Features a 552B-parameter MoE with asymmetric architecture.\", \"Uses 8B active parameters for input and 16B for output.\", \"KV cache requirements reduced to 1/4 HBM and 1/8 SSD storage.\"]}, {\"t\": \"2026-11-23T01:01:27.905009+00:00\", \"title\": \"DeepSeek-V4-Pro GA Release 2026/08/13\", \"url\": \"https://api-docs.deepseek.com/news/news260813\", \"category\": \"Models & benchmarks\", \"facts\": [\"DeepSeek-V4-Pro is now generally available.\", \"DeepSeek API now supports web search, file input, and URL reading.\", \"DeepSeek-flash is now served by the DeepSeek-V4.1-Flash-1017 model.\", \"API format is compatible with OpenAI and Anthropic SDKs.\"]}, {\"t\": \"2026-11-23T08:48:28.305973+00:00\", \"title\": \"DeepSeek-V4.1-Flash-1017 Release 2026/10/17\", \"url\": \"https://api-docs.deepseek.com/news/news261017/\", \"category\": \"Models & benchmarks\", \"facts\": [\"DeepSeek-V4.1-Flash-1017 released on 2026/10/17\", \"Model features improved benchmark performance and faster task completion\", \"Optimized for DeepSeek Harness, Tencent CodeBuddy, and WorkBuddy\", \"Uses reinforcement learning with self-feedback for end-to-end project development\"]}, {\"t\": \"2026-11-23T08:49:34.418696+00:00\", \"title\": \"DeepSeek-V4.1-Flash Release 2026/09/10\", \"url\": \"https://api-docs.deepseek.com/news/news260910/\", \"category\": \"Models & benchmarks\", \"facts\": [\"DeepSeek-V4.1-Flash is a 552B-parameter MoE model with an asymmetric architecture.\", \"The model features 8B active parameters for input and 16B for output.\", \"It offers native visual understanding and multimodal support.\", \"KV cache requirements are reduced to 1/4 HBM and 1/8 SSD storage compared to previous generations.\"]}] LLM Leaderboard - Comparison of AI models from OpenAI, Anthropic, Google, Meta & others | Artificial Analysis Artificial Analysis K LLM Leaderboard - Comparison of AI models from OpenAI, Anthropic, Google, Meta & others Comparison and ranking the performance of over 250 AI models (LLMs) across key metrics including intelligence, price, performance and speed (time per task in minutes & latency as time to first answer token), context window & others. For more details including relating to our methodology, see our FAQs. Intelligence Claude Fable 5.2 (max) and Claude Fable 5.2 (xhigh) are the highest intelligence models, followed by GPT-6.2 Astra (max) and Claude Fable 5.2 (high). Time per Task GPT-6 Luna (low) and GPT-6.1 Terra (low) have the lowest time per task, followed by Gemini 4 Hydrogen (low) and Gemini 3.5 Flash-Lite. Time to First Answer Token Tiny Aya Global and Phi-4 Multimodal have the lowest time to first answer token, followed by Celeris-1 and DeepSeek V4.1 Flash 1017 (non-reasoning). Cost per Task K2 Horizon 375B A23B and Command A+ have the lowest cost per task, followed by North Mini Code and GPT-6 Luna (low). Context Window Llama 4 Scout and GPT-6 Sol (Daybreak Blue, max) support the largest context windows, followed by Muse Wonder (max) and Muse Wonder (high). Expand columns Weights : All Size : All Price : All Reasoning : All Status : Current Intelligence Price Speed Latency Features Model Artificial Analysis Intelligence Index Cost per Task USD Time per Task Minutes First Answer Token (s) Context Window Further Analysis Claude Fable 5.2 Max, Default Fallback 65 $26.54 41.6 206.94 1M Model Providers GPT-6.2 Astra Max 62 $4.00 14.2 162.48 1M Model Providers Gemini 4 Neon Xhigh 61 $6.44 25.8 57.51 1M Model Providers Gemini 4 Carbon High 60 $7.76 33.7 68.26 1M Model Providers Claude Opus 5.5 Max, Default Fallback 59 $10.04 25.3 351.79 1M Model Providers GPT-6.2 Sol Max 57 $1.01 10.1 85.47 1M Model Providers Claude Sonnet 5.5 Max, Default Fallback 55 $10.02 31.4 255.33 1M Model Providers Gemini 4 Hydrogen Xhigh 54 $3.16 16.4 52.58 1M Model Providers GPT-6.1 Terra Max 51 $0.96 14.4 160.28 1M Model Providers Gemini 4 Argon High 50 $9.95 24.2 35.84 1M Model Providers Muse Wonder Full Max 50 -- -- -- 1M Model Providers Kimi K3.1 Pro 46 $3.68 36.9 145.10 1M Model Providers Muse Wonder Max 44 $6.95 14.9 24.01 1M Model Providers Qwen4 Max 43 $3.27 26.4 99.17 984k Model Providers Claude Haiku 5.5 Max 36 $0.41 14.6 169.74 1M Model Providers Muse Ember Max 36 $0.14 3.2 4.99 1M Model Providers Grok 4.7 Xhigh 35 $7.77 23.3 58.08 500k Model Providers Tencent Hy4 35 $1.03 14.0 102.39 1M Mod",
+   "category": "Release roundup"
+  },
+  "466755383": {
+   "tweets": [
+    "Quick evening roundup on DeepSeek-V4.1-Flash 1017.\n\nIt's now serving deepseek-flash:\n- 552B-parameter MoE (8B input / 16B output active)\n- Native visual understanding\n- Search & Fetch APIs open to all\n- Compatible with OpenAI & Anthropic SDKs",
+    "How does it stack up on the Artificial Analysis leaderboard?\n\nDeepSeek V4.1 Flash 1017 hits a 33 Intelligence Index at just $0.60 cost per task.\n\nThat beats out DeepSeek V4 Pro 0813 (23 index, $1.77 cost) while being faster (13.8 mins vs 19.3 mins).",
+    "Top spot overall goes to Claude Fable 5.2 Max (65 intelligence index), but at $26.54 cost per task tbh.\n\nFlash 1017 also gets RL self-feedback for project dev and reduced KV cache needs (1/4 HBM, 1/8 SSD). Ngl solid efficiency stats."
+   ],
+   "source": "[{\"t\": \"2026-11-23T01:00:58.741961+00:00\", \"title\": \"DeepSeek-V4.1-Flash-1017 Release 2026/10/17\", \"url\": \"https://api-docs.deepseek.com/news/news261017\", \"category\": \"Models & benchmarks\", \"facts\": [\"DeepSeek-V4.1-Flash-1017 released on 2026/10/17\", \"Model features improved benchmark performance and faster task completion\", \"Supports reinforcement learning with self-feedback for end-to-end project development\", \"Search & Fetch APIs are now open to all users\"]}, {\"t\": \"2026-11-23T01:01:07.659450+00:00\", \"title\": \"DeepSeek-V4.1-Flash Release 2026/09/10\", \"url\": \"https://api-docs.deepseek.com/news/news260910\", \"category\": \"Models & benchmarks\", \"facts\": [\"DeepSeek-V4.1-Flash released with native visual understanding.\", \"Features a 552B-parameter MoE with asymmetric architecture.\", \"Uses 8B active parameters for input and 16B for output.\", \"KV cache requirements reduced to 1/4 HBM and 1/8 SSD storage.\"]}, {\"t\": \"2026-11-23T01:01:27.905009+00:00\", \"title\": \"DeepSeek-V4-Pro GA Release 2026/08/13\", \"url\": \"https://api-docs.deepseek.com/news/news260813\", \"category\": \"Models & benchmarks\", \"facts\": [\"DeepSeek-V4-Pro is now generally available.\", \"DeepSeek API now supports web search, file input, and URL reading.\", \"DeepSeek-flash is now served by the DeepSeek-V4.1-Flash-1017 model.\", \"API format is compatible with OpenAI and Anthropic SDKs.\"]}, {\"t\": \"2026-11-23T08:48:28.305973+00:00\", \"title\": \"DeepSeek-V4.1-Flash-1017 Release 2026/10/17\", \"url\": \"https://api-docs.deepseek.com/news/news261017/\", \"category\": \"Models & benchmarks\", \"facts\": [\"DeepSeek-V4.1-Flash-1017 released on 2026/10/17\", \"Model features improved benchmark performance and faster task completion\", \"Optimized for DeepSeek Harness, Tencent CodeBuddy, and WorkBuddy\", \"Uses reinforcement learning with self-feedback for end-to-end project development\"]}, {\"t\": \"2026-11-23T08:49:34.418696+00:00\", \"title\": \"DeepSeek-V4.1-Flash Release 2026/09/10\", \"url\": \"https://api-docs.deepseek.com/news/news260910/\", \"category\": \"Models & benchmarks\", \"facts\": [\"DeepSeek-V4.1-Flash is a 552B-parameter MoE model with an asymmetric architecture.\", \"The model features 8B active parameters for input and 16B for output.\", \"It offers native visual understanding and multimodal support.\", \"KV cache requirements are reduced to 1/4 HBM and 1/8 SSD storage compared to previous generations.\"]}] LLM Leaderboard - Comparison of AI models from OpenAI, Anthropic, Google, Meta & others | Artificial Analysis Artificial Analysis K LLM Leaderboard - Comparison of AI models from OpenAI, Anthropic, Google, Meta & others Comparison and ranking the performance of over 250 AI models (LLMs) across key metrics including intelligence, price, performance and speed (time per task in minutes & latency as time to first answer token), context window & others. For more details including relating to our methodology, see our FAQs. Intelligence Claude Fable 5.2 (max) and Claude Fable 5.2 (xhigh) are the highest intelligence models, followed by GPT-6.2 Astra (max) and Claude Fable 5.2 (high). Time per Task GPT-6 Luna (low) and GPT-6.1 Terra (low) have the lowest time per task, followed by Gemini 4 Hydrogen (low) and Gemini 3.5 Flash-Lite. Time to First Answer Token Tiny Aya Global and Phi-4 Multimodal have the lowest time to first answer token, followed by Celeris-1 and DeepSeek V4.1 Flash 1017 (non-reasoning). Cost per Task K2 Horizon 375B A23B and Command A+ have the lowest cost per task, followed by North Mini Code and GPT-6 Luna (low). Context Window Llama 4 Scout and GPT-6 Sol (Daybreak Blue, max) support the largest context windows, followed by Muse Wonder (max) and Muse Wonder (high). Expand columns Weights : All Size : All Price : All Reasoning : All Status : Current Intelligence Price Speed Latency Features Model Artificial Analysis Intelligence Index Cost per Task USD Time per Task Minutes First Answer Token (s) Context Window Further Analysis Claude Fable 5.2 Max, Default Fallback 65 $26.54 41.6 206.94 1M Model Providers GPT-6.2 Astra Max 62 $4.00 14.2 162.48 1M Model Providers Gemini 4 Neon Xhigh 61 $6.44 25.8 57.51 1M Model Providers Gemini 4 Carbon High 60 $7.76 33.7 68.26 1M Model Providers Claude Opus 5.5 Max, Default Fallback 59 $10.04 25.3 351.79 1M Model Providers GPT-6.2 Sol Max 57 $1.01 10.1 85.47 1M Model Providers Claude Sonnet 5.5 Max, Default Fallback 55 $10.02 31.4 255.33 1M Model Providers Gemini 4 Hydrogen Xhigh 54 $3.16 16.4 52.58 1M Model Providers GPT-6.1 Terra Max 51 $0.96 14.4 160.28 1M Model Providers Gemini 4 Argon High 50 $9.95 24.2 35.84 1M Model Providers Muse Wonder Full Max 50 -- -- -- 1M Model Providers Kimi K3.1 Pro 46 $3.68 36.9 145.10 1M Model Providers Muse Wonder Max 44 $6.95 14.9 24.01 1M Model Providers Qwen4 Max 43 $3.27 26.4 99.17 984k Model Providers Claude Haiku 5.5 Max 36 $0.41 14.6 169.74 1M Model Providers Muse Ember Max 36 $0.14 3.2 4.99 1M Model Providers Grok 4.7 Xhigh 35 $7.77 23.3 58.08 500k Model Providers Tencent Hy4 35 $1.03 14.0 102.39 1M Mod",
+   "category": "Release roundup"
   }
  },
  "approved": [],
  "held": [],
  "stats": {
   "drafts": 2,
-  "majors": 7,
+  "majors": 8,
   "quotes": 6,
   "chats": 0
  },
@@ -712,8 +731,8 @@
    "text": "Got it! I'm on standby whenever you're ready to check news or draft posts. Just let me know."
   }
  ],
- "last_digest": "2026-11-23T08:49:51.998545+00:00",
- "last_scan": "2026-11-23T08:50:36.244417+00:00",
+ "last_digest": "2026-11-23T20:43:43.025126+00:00",
+ "last_scan": "2026-11-23T20:43:43.025202+00:00",
  "credits": {
   "month": "2026-11",
   "used": [
@@ -744,14 +763,14 @@
  "cmds_v": 2,
  "daily": {
   "day": "2026-11-23",
-  "n": 5,
+  "n": 7,
   "min_done": false
  },
  "last_release_watch": "2026-11-23",
- "web_note": "Last web scan: Hacker News: 13 | Reddit failed: 404 Client Error: Not Found for url: htt | GitHub: 12 | Hugging Face: 8 | Web search failed: 404 Client Error: Not Found for url: htt | new: 6",
+ "web_note": "Last web scan: Hacker News: 14 | Reddit failed: 404 Client Error: Not Found for url: htt | GitHub: 12 | Hugging Face: 8 | Web search failed: 404 Client Error: Not Found for url: htt | new: 18 | filter failed: Gemini failed: 503 Server Error: Service Unavailab",
  "last_rumor": "2026-11-23",
- "q_idx": 6,
- "last_web": "2026-11-23T08:51:42.330776+00:00",
+ "q_idx": 1,
+ "last_web": "2026-11-23T20:43:44.206399+00:00",
  "web": {
   "subreddits": [
    "LocalLLaMA",
@@ -823,7 +842,25 @@
   "https://github.com/AFK-surf/xnulinux",
   "https://claude.ai/artifact/CtQyX8qfYAF822bgHJHHE3",
   "https://pengowray.github.io/riemann-zeta-proof-visualizer/",
-  "https://boazbk.github.io/mltheoryseminar/"
+  "https://boazbk.github.io/mltheoryseminar/",
+  "https://z.ai/blog/glm-5.4",
+  "https://huggingface.co/SulphurAI/Sulphur-3",
+  "https://github.com/sous-labs/songe",
+  "https://github.com/glushchenko/fsnotes/discussions/2056",
+  "https://github.com/os6/nospeaker",
+  "https://www.reddit.com/r/GamingLeaksAndRumours/comments/1y3jzqe/cyberleek_posted_the_gta_6_xbox_build_executable/",
+  "https://github.com/mikuta0407/win4wine",
+  "https://github.com/LIUFelix2004/dsh-workbuddy",
+  "https://github.com/beyondtahir/beyondgtaclips",
+  "https://github.com/ccarter01011/traxagent-claude-plugin",
+  "https://huijzer.xyz/posts/174/gta-6-building-personal-behavioral-profile-for-eve",
+  "https://github.com/w1ccc/sap-data-mcp",
+  "https://bsky.app/profile/floppyadult.com/post/3n2tgw7rofc2v",
+  "https://www.theverge.com/ai-artificial-intelligence/1039745/dario-amodei-video-games-ai-joblessness",
+  "https://0rwx.com/",
+  "https://github.com/Echoxiawan/Astra",
+  "https://huggingface.co/nari-labs/Qwen3.8-27B-NariQ-GGUF",
+  "https://www.theregister.com/columnists/2026/11/21/aws-got-hit-by-an-outage-too-heres-why-you-didnt-hear-about-it/5311511"
  ],
  "styles": [
   {
@@ -977,6 +1014,18 @@
     "Multimodal agent performance nears Opus-4.8",
     "Images tokenized up to 384 tokens each"
    ]
+  },
+  {
+   "t": "2026-11-23T20:41:28.650050+00:00",
+   "title": "DeepSeek-V4-Pro GA Release 2026/08/13",
+   "url": "https://api-docs.deepseek.com/news/news260813/",
+   "category": "Models & benchmarks",
+   "facts": [
+    "DeepSeek-V4-Pro released on August 13, 2026",
+    "Introduces flexible reasoning effort for V4-Pro and V4-Flash",
+    "Supports native OpenAI Responses API",
+    "Includes new web search, file input, and URL reading capabilities"
+   ]
   }
  ],
  "releases": [
@@ -986,7 +1035,7 @@
    "urls": [
     "https://api-docs.deepseek.com/news/news261017"
    ],
-   "bundled": false
+   "bundled": true
   },
   {
    "topic": "deepseek-v4.1-flash",
@@ -994,7 +1043,7 @@
    "urls": [
     "https://api-docs.deepseek.com/news/news260910"
    ],
-   "bundled": false
+   "bundled": true
   },
   {
    "topic": "deepseek-v4-flash-vision-exp",
@@ -1059,13 +1108,21 @@
     "https://api-docs.deepseek.com/news/news260821/"
    ],
    "bundled": false
+  },
+  {
+   "topic": "deepseek-v4-pro",
+   "t": "2026-11-23T20:41:28.650050+00:00",
+   "urls": [
+    "https://api-docs.deepseek.com/news/news260813/"
+   ],
+   "bundled": false
   }
  ],
- "gem_fail": 0,
+ "gem_fail": 4,
  "last_weekly": "2026-11-22T20:31:26.804502+00:00",
- "last_bundle": "2026-11-22",
+ "last_bundle": "2026-11-23",
  "job_err": {
   "top picks": "2026-11-23"
  },
- "scan_note": "Last scan: 'AI agents new tool': 8 found, 2 fresh | 'AI video model new': 8 found, 6 fresh | watchlist: 8 found, 8 fresh"
+ "scan_note": "Last scan: 'Claude Gemini GPT Grok DeepSeek update' failed: 429 Client Error: Too Many Requests for url: https://api.wei | watchlist failed: 429 Client Error: Too Many Requests for url: https://api.wei | Google fallback failed: 404 Client Error: Not Found for url: https://generativelangu"
 }

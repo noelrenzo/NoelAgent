@@ -305,7 +305,18 @@
   "https://api-docs.deepseek.com/news/news261017/",
   "https://api-docs.deepseek.com/news/news260910/",
   "https://api-docs.deepseek.com/news/news260821/",
-  "https://api-docs.deepseek.com/news/news260813/"
+  "https://api-docs.deepseek.com/news/news260813/",
+  "https://openai.com/index/introducing-shirudo",
+  "https://openai.com/business/learn/connected-intelligence-for-in-house-legal",
+  "https://openai.com/business/customer-stories/richpanel-ai-customer-support",
+  "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/",
+  "https://huggingface.co/blog/allenai/robotrack",
+  "https://huggingface.co/blog/agentic-evals",
+  "https://api-docs.deepseek.com/news/news260424/",
+  "https://api-docs.deepseek.com/news/news251201/",
+  "https://api-docs.deepseek.com/news/news250929/",
+  "https://api-docs.deepseek.com/news/news250922/",
+  "https://api-docs.deepseek.com/news/news250821/"
  ],
  "init": [
   "OpenAI",
@@ -319,7 +330,80 @@
   "Qwen",
   "Artificial Analysis"
  ],
- "buffer": [],
+ "buffer": [
+  {
+   "title": "Richpanel helps companies automate 50% of support in 30 days",
+   "url": "https://openai.com/business/customer-stories/richpanel-ai-customer-support",
+   "text": "Richpanel helps companies automate 50% of support in 30 days | OpenAI OpenAI November 23, 2026 Startup Richpanel helps companies automate 50% of support in 30 days Richpanel uses GPT\u20116 Astra and GPT\u20116.1 Sol to equip its AI support agents with tools and procedures, and GPT\u20116 Luna for their conversations. Start building with OpenAI Company size: Startup Region: Asia-Pacific & Oceania Industry: Technology Products: API Share Beyond knowing how to answer a customer\u2019s request, AI support agents need to be able to execute a solution. And for that, they need access to the right tools and instructions. According to Richpanel CEO Amit RG, human support agents can use 20 or 30 tools to serve a customer, and the procedures they follow may never have been written down. Richpanel \u2060 (opens in a new window) solves that using OpenAI models to both set up the tools and procedures AI support agents need to act and handle customer conversations. \u201cThe intelligence is no longer the bottleneck. It\u2019s everything around it.\u201d \u2014Amit RG, CEO, Richpanel Building the tools and procedures for AI support Deploying a support agent often requires a forward-deployed engineer to connect the agent to a customer\u2019s systems and define how it should work. Amit saw that many companies didn\u2019t have engineers to spare and asked himself, \u201cWhat if that forward-deployed engineer itself was an AI agent?\u201d So Richpanel built it: an AI manager to handle agent setup. Customers began calling it Boss AI. It writes procedures and defines how Richpanel\u2019s frontline support agent, copilot, and quality-assurance agent call the tools they need. Richpanel uses GPT\u20116 Astra and GPT\u20116.1 Sol for Boss AI, prioritizing accuracy when building the tools and procedures its other agents will follow. Balancing intelligence and cost across support operations Richpanel designs the frontline agent to handle hundreds of thousands of conversations, making the cost of each interaction an important part of model selection. It uses GPT\u20116 Luna and other OpenAI models for that work. Amit says Richpanel takes the same approach to its copilot and quality-assurance agents. \u201cWhat matters is a balance of cost and intelligence,\u201d Amit says. Richpanel\u2019s customers may already use low-cost outsourced support. Automating their operations has to make financial sense against that starting point. Amit credits OpenAI with making models available that can handle long context and longer tasks while remaining cost efficient. Richpanel can use deeper reasoning to prepare its support agents and more economical models to run the conversations that follow. \u201cOpenAI models can run these long-context, longer-horizon tasks while still being very cost efficient.\u201d \u2014Amit RG, CEO, Richpanel Increasing contact center automation and customer satisfaction At the time of the October 2026 interview, Amit said Richpanel had completed approximately 300 AI customer-support deployments over the previous six months. The company guarantees customers a 50% automation rate within the first 30 days or their money back. Amit says it met that commitment across all of those deployments, adding, \u201cIn each of the cases, the AI is beating human support agents when it comes to customer satisfaction.\u201d OpenAI <3 startups Join the community Start building (opens in a new window) Get OpenAI for Business updates Product updates, practical guides, upcoming events, and more. Email address * By subscribing, you agree to receive emails from OpenAI. You can unsubscribe at any time. Read our Privacy Policy \u2060 . Subscribe Keep reading View all Gondola doubles revenue as its team builds more with Codex Startup Nov 12, 2026 Cogent and OpenAI build cyber defense factories for enterprises Startup Nov 10, 2026 CodeRabbit scales agentic software development and ships 20x more Startup Nov 9, 2026",
+   "facts": [
+    "Richpanel automates 50% of customer support within 30 days",
+    "Uses GPT-6 Astra and GPT-6.1 Sol for AI agent setup and procedures",
+    "Uses GPT-6 Luna for handling customer conversations",
+    "Developed 'Boss AI' to act as an AI manager for agent deployment",
+    "Completed 300 AI customer-support deployments in six months",
+    "Claims AI agents currently outperform human agents in customer satisfaction",
+    "Focuses on balancing model intelligence and cost for high-volume support",
+    "Utilizes long-context capabilities for complex support tasks"
+   ],
+   "category": "Agents",
+   "topic": "gpt-6",
+   "t": "2026-11-24T04:58:39.985452+00:00"
+  },
+  {
+   "title": "Finding faster quantum algorithms with agents and formal verification",
+   "url": "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/",
+   "text": "Finding faster quantum algorithms with agents and formal verification \u00e2\u0080\u0094 Google DeepMind Skip to main content November 23, 2026 Science Finding faster quantum algorithms with agents and formal verification Sergey Shirobokov, Ben Jaderberg and Ryan Babbush Read the paper Share How using agent teams and formal verification can improve quantum algorithms for modelling fusion energy, chemistry and enzymes Quantum computers could soon solve problems beyond the reach of classical supercomputers. However, there is a catch: even when using the best quantum algorithms, some important applications still require more resources than early quantum hardware will be able to support. In a new paper , we used teams of Gemini 4 agents to improve well-known quantum algorithms, creating highly efficient quantum circuits. These optimized circuits, which are instructions for how a quantum computer should carry out an algorithm, could one day help us run simulations that solve complex scientific challenges, from fusion energy to drug design. To help the community build on this work, we are open-sourcing our Lean library , problem specifications, and verified solutions on GitHub. Because we cannot test resource-intensive quantum circuits on classical computers or today's small quantum processors, we have to prove that they work mathematically. Our agent teams proved each result using Lean, a formal theorem prover. Your browser does not support the video tag. Your browser does not support the video tag. Improving quantum algorithms using agentic teams For each problem, we tasked separate, independent agent teams with finding algorithmic improvements. These ideas were then verified with Lean, before entering a shared notebook. Every four hours, agents from each team met at a virtual conference to trade, debate and compare ideas. As teams produced more effective ideas over time, the computational cost gradually fell until the experiment finished. We chose to focus on applications that could one day impact some of humanity\u00e2\u0080\u0099s greatest challenges, such as clean energy and drug design, but our method is not limited to these problem areas. We found a quantum circuit that helps calculate an important property of inertial confinement fusion, a fusion reaction method that uses lasers to compress hydrogen fuel until ignition. Our agent teams cut the required computing cost (a metric that combines required qubits and operations) by 11.8\u00c3\u0097, and lowered required memory from 5,650 to 4,338 error-corrected qubits . The agents also reduced costs for simulating molecules in drug metabolism and certain photochemical reactions, which are complex reactions that are difficult for classical computers to simulate. For a common light-sensitive molecule, the agent teams made quantum simulation 8\u00c3\u0097 cheaper, simplifying how the algorithm tracks particle positions and electric forces. For Cytochrome P450, an enzyme that breaks down most human medicines and is important for drug design, they found a 2.5\u00c3\u0097 improvement and lowered memory from 481 to 333 qubits, by replacing bulky memory lookups. We also improved a fundamental quantum algorithm and a widely used arithmetic building block. We found a 2.57x speedup for a specific implementation of Grover's algorithm, a foundational quantum operation that searches through an unsorted list, and a 290x speedup for arcsin, a common routine that is used by many other quantum algorithms to load numbers into quantum states. Running these algorithms in scientific simulations would still demand more computational resources than the first error-corrected quantum computers are likely to provide, but these improvements are significant. We are also excited by the way in which we found them. We built a new, open-source library , in Lean for quantum algorithms which could be used by teams of collaborating agents, so their ideas were backed by mathematical correctness guarantees. We could then set the research direction by specifying the problems for our agent teams and supervise their progress. Our knowledge of quantum algorithms, combined with the way we set up our agent teams, led to real scientific results. The same approach could also accelerate other aspects of quantum computing research, and scientific discovery more broadly. Proof-checked AI search compresses work that once took years of manual design, empowering researchers to focus on choosing problems and interpreting results. Read the paper Access the Lean framework Acknowledgements This research was a collaboration between Google DeepMind and Google Quantum AI. The work reflects the contributions of the paper's authors: Sergey Shirobokov, Ben Jaderberg, Katerina Hristova, George Tsoukalas, Johannes Bausch, Eric Wieser, Francisco J. H. Heras, Nicholas C. Rubin, Guang Hao Low, S\u00c3\u00a9bastien Racani\u00c3\u00a8re, Nenad Toma\u00c5\u00a1ev, Lei M. Zhang, James D. Watson, Tanuj Khattar, Aws Albarghouthi, Stavan Jain, Harun Khan, Leopoldo Sarra, Andrew W. Senior, Michael Broughton, Hussain Masoom, Sergio Boixo, Ryan Babbush, Swarat Chaudhuri, and Pushmeet Kohli. We also thank Kevin Ishimwe, Ibrahim Alkhashem, and Matthew Harrigan for feedback and discussions on the Lean library, Emilien Dupont and Sebastian Nowozin for manuscript feedback, and Brendan Tracey for advice on the fusion application. Finally, we thank Uchechi Okereke, Ali Douraghy, and Andy Song for legal and policy support, and Alex Wilkins, Evie Gray, Danielle Breen, Dimple Vijaykumar, Muinat Abdul, Jason Freidenfelds, Chris Kwaku-Abdullahi, and Rob Ashley for their help with visuals and communicating this work. Related posts AlphaEvolve: A Gemini-powered coding agent for designing advanced algorithms May 2025 Science Learn more AI achieves silver-medal standard solving International Mathematical Olympiad problems July 2024 Science Learn more AlphaQubit tackles one of quantum computing\u00e2\u0080\u0099s biggest challenges November 2024 Science Learn more",
+   "facts": [
+    "Google DeepMind used Gemini 4 agent teams to optimize quantum algorithms.",
+    "The agents used Lean, a formal theorem prover, to mathematically verify quantum circuits.",
+    "The team open-sourced a Lean library for quantum algorithms on GitHub.",
+    "Agent teams achieved an 11.8x reduction in computational cost for fusion energy simulations.",
+    "Quantum simulation costs for a light-sensitive molecule were reduced by 8x.",
+    "The research found a 290x speedup for the arcsin routine used in quantum algorithms.",
+    "The project involved collaboration between Google DeepMind and Google Quantum AI.",
+    "The approach aims to accelerate scientific discovery by automating complex algorithmic design."
+   ],
+   "category": "Agents",
+   "topic": "gemini",
+   "t": "2026-11-24T04:58:43.429429+00:00"
+  },
+  {
+   "title": "RoboTrack: Point tracking for real-world robotic manipulation",
+   "url": "https://huggingface.co/blog/allenai/robotrack",
+   "text": "RoboTrack: Point tracking for real-world robotic manipulation Back to Articles RoboTrack: Point tracking for real-world robotic manipulation Enterprise Article Published November 23, 2026 Upvote 4 Kyle Wiggers Ai2Comms Follow allenai \ud83e\udd16 Models | \ud83d\udcc4 Tech Report | \ud83d\udcca Data | \ud83d\udcbb Code | \ud83c\udf10 Project Page | \ud83d\udcc8 Benchmark Deploying robots in real-world settings requires reliable perception throughout an interaction. To pick something up, a robot needs to follow the positions of its gripper and the object as they move. In a laboratory, a robot handling a pipette must keep track of its tip while aligning it with the opening of a tube. These tasks become harder when nearby objects clutter the view, the gripper obscures the object being handled, or the viewing angle changes. One way to help robots follow these interactions is to track specific locations on the objects they handle. This is the idea behind point tracking . Given a location in one video frame, a tracker estimates where that same point appears in subsequent frames, when it is occluded, and where it reappears. These trajectories can help robots learn from demonstrations, plan and guide movements, and model how objects respond to actions. Robotics systems often rely on off-the-shelf trackers to automatically annotate motion in videos and provide feedback during execution. And current trackers score well on established robotics benchmarks, suggesting they could be ready for wider use in real-world systems. We wanted to see whether those results hold up across the varied scenes, viewpoints, and object interactions robots encounter in practice. We introduce RoboTrack , a benchmark and training data suite for point tracking in robotic manipulation. RoboTrack-Bench contains 307 human-annotated videos from DROID, Ego-Exo4D, MolmoAct 2 , and EgoVerse, covering different robots and human hands, cluttered scenes, and first- and third-person viewpoints. To study how training data affects tracking in these settings, we also extend MolmoSpaces , Ai2\u2019s simulation ecosystem for robot learning, to generate dense point tracks from simulated robot manipulation trajectories. This pipeline produces RoboTrack-15M , a new synthetic training dataset targeted toward robotic manipulation. RoboTrack is a benchmark and training data suite for point tracking in robotic manipulation. Built on MolmoSpaces, RoboTrack-15M (top-left) generates point tracks for training. Training with this simulated data improves tracking on real manipulation footage. RoboTrack-Bench (top-right) provides human-annotated point tracks in real manipulation videos. Our evaluations show that leading trackers score much lower on RoboTrack-Bench than on existing robotics benchmarks. Adding RoboTrack-15M to an existing tracker\u2019s training improves performance on real manipulation video, with gains extending to other tracking benchmarks. We bring these pieces together on a real robot, using the resulting tracker to help guide pipette handling in wet-lab tasks. Today, we\u2019re releasing both RoboTrack components and two new point tracking models: RoboTracker and RoboTracker-Warp . RoboTracker is a fine-tuned AllTracker model using our techniques and data, while RoboTracker-Warp is trained from CoWTracker. Both models improve average AJ across the three robotics benchmarks compared with their respective released baselines, and RoboTracker-Warp achieves state-of-the-art performance on four out of the five benchmarks we evaluated. We\u2019re also releasing our paper describing the work and evaluation results. RoboTrack-Bench: A benchmark for point-tracking in real-world manipulation RoboTrack-Bench at a glance. Examples from each source dataset (307 clips and 2,522 human-verified tracks in total). MolmoAct 2 and EgoVerse show one embodiment per panel. DROID and EgoExo4D show synchronized ego (top) and exo (bottom) views. RoboTrack-Bench expands evaluation beyond controlled tabletop setups. It contains 307 videos from DROID, Ego-Exo4D, MolmoAct 2, and EgoVerse, annotated with a total of 2,522 point tracks. The videos show robots and human hands manipulating objects across cluttered scenes and first- and third-person viewpoints. Small objects can be difficult to follow against a busy background, and grippers often hide the objects they hold. Every track in RoboTrack-Bench is annotated and verified by humans. We ask annotators to prioritize points that move or become occluded rather than the many static background points in robot videos. Following the TAP-Vid annotation approach, annotators use motion estimates to help trace each point through a video. They label each track as belonging to a robot or human body, a manipulated object, or a static object to support future analysis of performance on each group. A second group of annotators checks every track frame by frame before it\u2019s included in our curated data. To support research in multi-view pointing, correspondence, and tracking, RoboTrack-Bench contains a subset of 33 video pairs that were recorded simultaneously from two cameras. We annotate the same physical points in both views, synchronized across frames, connecting different views of the same interaction. Point trackers struggle on real-world manipulation We evaluated four leading trackers \u2013 CoTracker3, BootsTAPNext, AllTracker, and CoWTracker \u2013 on RoboTrack-Bench and four other benchmarks: RoboTAP (real-world tabletop manipulation), RGB-Stacking (simulated manipulation), and DAVIS and Kinetics (general video). We report Average Jaccard (AJ), which measures tracking accuracy and visibility prediction; higher scores are better. RoboTrack-Bench is harder than existing robot benchmarks . Every final tracker we evaluated scores lower on RoboTrack-Bench than on RoboTAP, the only other real-video robotics benchmark. Their score drops by 3.0 to 6.6 AJ. Even the strongest off-the-shelf tracker, CoWTracker, drops from 70.5 AJ on RoboTAP to 63.9 on RoboTrack-Bench. The drop holds across models despite their different architectures and training data, indicating RoboTrack-Bench identifies weaknesses across multiple trackers. RGB-Stacking rewards synthetic training more than real-world ability. BootsTAPNext is TAPNext trained further on 15 million real videos. That extra real-world training raises its RoboTrack-Bench score by 5.1 AJ (55.1 to 60.2), but lowers its RGB-Stacking score by 9.5 AJ (75.0 to 65.5). RGB-Stacking is built from simulated block stacking, and it ranks the Kubric-only model higher, while real manipulation video ranks them the other way around. A lead on the older benchmarks does not carry over. CoWTracker leads CoTracker3 by 4.7 AJ on RoboTAP, but by only 2.1 AJ on RoboTrack-Bench. AllTracker\u2019s 2.7-point lead over CoTracker3 on RoboTAP shrinks to 0.8. BootsTAPNext, the strongest model on DAVIS, falls 3.7 AJ behind CoWTracker on RoboTrack-Bench and even trails the Kubric-only AllTracker (60.2 vs 61.4 AJ), despite its training on 15 million real videos. These results suggest that existing benchmarks give an incomplete picture of tracking performance in real-world manipulation. Evaluating on more varied scenes reveals difficulties shared by all four trackers and changes how their strengths compare. Note: Each tracker runs with its authors\u2019 settings and is all scored in the same way. Our AllTracker scores differ slightly from the published ones because we fixed a scoring bug in its released evaluation code. Additionally, we evaluate RoboTAP and Kinetics on all annotated points rather than following AllTracker\u2019s protocol. See our paper for full evaluation protocols. RoboTrack-15M: Simulation data from MolmoSpaces Why do these trackers struggle with real-world manipulation? Many trackers train on synthetic videos generated with Kubric , which shows objects tossed into a scene. These provide examples of motion and occlusion, but don\u2019t focus on robots grasping and moving objects. We wanted to test whether adding trajectories from these interactions could improve tracking on real manipulation videos. This is where MolmoSpaces comes in\u2014our robotic simulation environment at Ai2. We extend its existing manipulation simulations to generate dense point tracks on the robot and the objects it handles. In each episode, a simulated robot arm picks up an everyday object, such as a cup, a plate, or a block. Two cameras record the interaction: one on the wrist and one at the robot\u2019s base, rendered in MuJoCo. Using the simulator\u2019s geometry, object poses, and camera information, we calculate each point\u2019s position and visibility in every frame without human annotation and filter out static points on the background and the robot\u2019s fixed base. The pipeline produces RoboTrack-15M for training. RoboTrack-15M has 3,000 videos from 300 simulated homes with 5,000 tracks per video, for 15 million tracks in total. Data generation pipeline of RoboTrack-15M. Objects, indoor scenes, and robot grasps are obtained from MolmoSpaces. We use the simulator\u2019s geometry and camera informa",
+   "facts": [
+    "Ai2 released RoboTrack, a benchmark and training suite for point tracking in robotic manipulation.",
+    "RoboTrack-Bench includes 307 human-annotated videos from DROID, Ego-Exo4D, MolmoAct 2, and EgoVerse.",
+    "RoboTrack-15M is a new synthetic training dataset containing 15 million point tracks generated via MolmoSpaces.",
+    "The suite includes two new models: RoboTracker and RoboTracker-Warp.",
+    "RoboTracker is a fine-tuned version of AllTracker, while RoboTracker-Warp is based on CoWTracker.",
+    "Evaluations show existing trackers perform significantly worse on real-world manipulation tasks than on previous benchmarks.",
+    "RoboTracker-Warp achieved state-of-the-art performance on four out of five evaluated benchmarks.",
+    "The research aims to improve robot perception for complex tasks like pipette handling in wet-lab environments."
+   ],
+   "category": "Models & benchmarks",
+   "topic": "robotrack",
+   "t": "2026-11-24T04:58:45.263492+00:00"
+  },
+  {
+   "title": "How to build and maintain an agentic evaluation",
+   "url": "https://huggingface.co/blog/agentic-evals",
+   "text": "How to build and maintain an agentic evaluation Back to Articles How to build and maintain an agentic evaluation Published November 23, 2026 Update on GitHub Upvote 31 +25 Avijit Ghosh evijit Follow ben burtenshaw burtenshaw Follow Irene Solaiman irenesolaiman Follow Overview AI evaluations help shape which systems people build, adopt, and trust. An evaluation gives a system tasks, checks its answers or actions, and produces a score. Building and maintaining a useful evaluation therefore takes real work: defining tasks that reflect domain expertise, scoring them reliably, and checking that the results support the claims made. When methods, code, and data stay private, that work is harder for others to scrutinize or build on. Open source offers a means to build stronger, more frequently updated, and more comparable evaluations and the infrastructure around them. Existing tasks, environments, and tools give builders a starting point, so their effort can go to domain expertise and validation. Sharing how an evaluation was built, including what went wrong, lets others find errors, improve it, and reuse it. The Hugging Face hub is the home for AI evaluation: we host around 3500 eval leaderboards and have seen about a 16X growth in eval datasets on the hub in the past year , to about 17000 datasets. In recent months, we have also incorporated support for agentic abstractions that are relevant to evaluation. For example, Traces that store an agent\u2019s work in an easily reviewable and sharable way; Benchmarks that highlight datasets used to evaluate models with leaderboards; and Environments that show datasets used as agentic RL or evaluation environments. This guide covers four things: Three eras of evaluation (section 1). Evaluations moved from checking answers, to checking what an agent did, to checking what a team of agents produces. Each step adds software that can change the score. The steps in an agentic evaluation (section 2). We follow one task through eight steps, from the claim to the reported score. The full walkthrough, with commands, is in Appendix A . When a benchmark is wrong (section 3). Errors in tasks and graders are common. We look at how they are found and corrected. What to open strategically and why (section 4). A table sets out, component by component, what to share and what can stay protected. In the research community, AI evaluation terminology is notoriously inconsistent . The glossary at the end defines each term we use and notes the other names you may come across. 1. Introduction: how evaluation design has changed AI evaluation design has evolved in three forms as language models have become more capable and able to perform more complex work: question answer, agentic, and teams or swarms. Question-answer benchmarks such as MMLU (2020) and GPQA (2023) measure knowledge and reasoning through the answers models produce. As models became capable of planning and using tools, agentic benchmarks such as SWE-bench and WebArena expanded the scope to resolving software issues and completing tasks on websites. These tasks require evaluation setups that account for the environment in which the system operates and the changes it makes. Lately, research on multi-agent systems has started to add another dimension: how agents coordinate and what they accomplish together. This includes decentralized swarms , teams managed by an orchestrator , and specialized agents collaborating on scientific work . Figure 1 shows a rough timeline of these three eras of evaluations. Figure 1. Three types of language model evals. Question-and-answer benchmarks check a response against a key. Agentic benchmarks check what an agent changed in an environment. Team and swarm benchmarks score what a group of agents produced. We\u2019ll focus on agentic evaluations in this article for two reasons. First, they are becoming increasingly the most prominent type in model release announcements due to high user and enterprise interest in agentic deployment. Second, they offer a useful starting point for understanding how evaluation design affects model performance. Team and swarm evaluations introduce further complexity through interactions between agents, which we leave outside the scope of this guide. Once an agent uses tools to complete a task, each part of the surrounding software can affect its score. For instance, in an audit of Terminal-Bench , researchers kept the model fixed and changed the agent harness. Accuracy varied by up to 29.9 percentage points. To understand differences like that, we examine the anatomy of an agentic evaluation and follow one task from the instructions the agent receives to the checks that determine whether it passed. The anatomy of an agentic evaluation Figure 2. The different components of an agentic evaluation. There are various parts to an agentic evaluation. A task gives the agent its instruction. The agent harness wraps the model and its tools, letting it work inside a pinned environment. During one rollout, the agent attempts the task from start to finish: it may run several commands, inspect their output, and try again before it stops. The evaluation harness runs several rollouts for each task. When a rollout ends, the verifier grades the environment's final state. Each rollout also leaves a trace, and traces and scores together become part of the final published evidence. Each part can be published, inspected, and reused separately. Why benchmark release decisions matter Demand for independent evaluation is growing. Policymakers, enterprises, and researchers want evaluations they can verify, and today they mostly cannot: 98.2% of model-benchmark scores are reported by only one party , and researchers have argued that in-house evaluation is not enough . At the same time, more benchmarks are holding back test items to reduce contamination: questions or solutions entering training data, so scores may reflect prior exposure. Artificial Analysis says 60% of its Intelligence Index v5 , announced in October 2026, rests on evaluations with private test sets or held-out answers. Google DeepMind recently piloted double-blind evaluations , where a secure enclave hides an outside evaluator's test prompts from the model provider and the model's weights from the evaluator. While that can reduce contamination, privacy by itself does not guarantee quality, and withholding supporting materials can make expert review harder. We argue that builders can and should still share infrastructure, grading methods, and evidence about task design. Scrutiny depends on giving others a way to question the measurement and correct mistakes, including controlled review where public release is unsuitable. 2. Building an eval: what to reuse, adapt, and validate With the anatomy in place, we now build one agentic evaluation for a real use case: an agent that analyzes measurements for a physics lab. Rather than starting from scratch, we adapt an open task, so most of our effort goes into domain expertise and validation. We work through eight steps: define the claim , find a task , run it unchanged , adapt it , check the evaluation , read the traces , report the score , and compare models . We then take stock of what we reused. The full walkthrough is in Appendix A . Figure 3 maps the steps and what each produced in our example. Figure 3. The eight steps of building an agentic evaluation. The left panel highlights each step in turn, and the right panel shows what it involved in our example. Yellow steps work on the evaluation itself, and orange steps run models and read the results. Method Claim. Consider a physics lab that wants an agent to fit peaks in a Raman spectrum. A Raman spectrum is a measurement whose peaks reveal properties of a material, here graphene. The agent's job is ordinary coding: read the data file, fit a curve to each peak, and save the results (Figure 5 in Appendix A). For the purposes of this article, our claim is deliberately narrow: fit the specified peaks, calculate the requested D-to-G ratio (the intensity of one peak relative to another, which can indicate defects in the material; we also call it the defect ratio), and save accurate results consistently. Reviewing a whole lab report would need additional skills and evidence. Starting task and baseline. We reused the Harbor task format and Terminal-Bench's raman-fitting task. Harbor is an open source evaluation harness, and Terminal-Bench is an open benchmark of tasks that an agent completes in a terminal. We first ran the task's reference solution, which passed, and then ran the original task three times with Terminus-2 , a terminal agent harness, and gpt-oss-120b , an open-weight model from OpenAI. Harbor ran inside an HF Job, each rollout used its own HF Sandbox, and Inference Providers supplied the model responses. Reusing the runner and task format let us concentrate on the physics, grading, and review. Only the agent harness needed no new work. Every other component needed",
+   "facts": [
+    "Hugging Face published a guide on building and maintaining agentic evaluations.",
+    "The Hugging Face hub hosts approximately 3,500 evaluation leaderboards.",
+    "Evaluation datasets on the Hugging Face hub grew 16X in the past year to 17,000.",
+    "The guide defines three eras of evaluation: question-answer, agentic, and teams/swarms.",
+    "Agentic evaluations check what an agent changes in an environment rather than just a final answer.",
+    "98.2% of model-benchmark scores are currently reported by only one party.",
+    "The anatomy of an agentic evaluation includes tasks, agent harnesses, rollouts, verifiers, and traces.",
+    "The article provides an 8-step walkthrough for building an agentic evaluation using a physics lab use case."
+   ],
+   "category": "Agents",
+   "topic": "hugging face agentic evals",
+   "t": "2026-11-24T04:58:48.412990+00:00"
+  }
+ ],
  "week_log": [
   {
    "t": "2026-11-22T20:26:56.976116+00:00",
@@ -511,6 +595,165 @@
     "Off-peak rates are 50% lower than peak",
     "New pricing takes effect at 16:00 UTC, August 16, 2026"
    ]
+  },
+  {
+   "t": "2026-11-24T04:57:47.352378+00:00",
+   "title": "OpenAI and Cisco introduce Shirudo",
+   "url": "https://openai.com/index/introducing-shirudo",
+   "category": "Industry",
+   "facts": [
+    "OpenAI and Cisco launched Shirudo, an open-source runtime for Linux security.",
+    "Shirudo uses eBPF technology to protect systems without requiring restarts.",
+    "The tool allows security teams to deploy temporary shields while waiting for permanent patches.",
+    "Shields are cryptographically signed and verified before being loaded.",
+    "Shirudo utilizes Trusted Platform Module (TPM) for hardware-backed verification.",
+    "OpenAI's Codex was used to generate a shield for the Java4Shell exploit.",
+    "The project is licensed under BSD 2-Clause and dual-licensed BPF programs.",
+    "Shirudo aims to enable AI agents to identify and protect systems against emerging threats."
+   ]
+  },
+  {
+   "t": "2026-11-24T04:58:39.985452+00:00",
+   "title": "Richpanel helps companies automate 50% of support in 30 days",
+   "url": "https://openai.com/business/customer-stories/richpanel-ai-customer-support",
+   "category": "Agents",
+   "facts": [
+    "Richpanel automates 50% of customer support within 30 days",
+    "Uses GPT-6 Astra and GPT-6.1 Sol for AI agent setup and procedures",
+    "Uses GPT-6 Luna for handling customer conversations",
+    "Developed 'Boss AI' to act as an AI manager for agent deployment",
+    "Completed 300 AI customer-support deployments in six months",
+    "Claims AI agents currently outperform human agents in customer satisfaction",
+    "Focuses on balancing model intelligence and cost for high-volume support",
+    "Utilizes long-context capabilities for complex support tasks"
+   ]
+  },
+  {
+   "t": "2026-11-24T04:58:43.429429+00:00",
+   "title": "Finding faster quantum algorithms with agents and formal verification",
+   "url": "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/",
+   "category": "Agents",
+   "facts": [
+    "Google DeepMind used Gemini 4 agent teams to optimize quantum algorithms.",
+    "The agents used Lean, a formal theorem prover, to mathematically verify quantum circuits.",
+    "The team open-sourced a Lean library for quantum algorithms on GitHub.",
+    "Agent teams achieved an 11.8x reduction in computational cost for fusion energy simulations.",
+    "Quantum simulation costs for a light-sensitive molecule were reduced by 8x.",
+    "The research found a 290x speedup for the arcsin routine used in quantum algorithms.",
+    "The project involved collaboration between Google DeepMind and Google Quantum AI.",
+    "The approach aims to accelerate scientific discovery by automating complex algorithmic design."
+   ]
+  },
+  {
+   "t": "2026-11-24T04:58:45.263492+00:00",
+   "title": "RoboTrack: Point tracking for real-world robotic manipulation",
+   "url": "https://huggingface.co/blog/allenai/robotrack",
+   "category": "Models & benchmarks",
+   "facts": [
+    "Ai2 released RoboTrack, a benchmark and training suite for point tracking in robotic manipulation.",
+    "RoboTrack-Bench includes 307 human-annotated videos from DROID, Ego-Exo4D, MolmoAct 2, and EgoVerse.",
+    "RoboTrack-15M is a new synthetic training dataset containing 15 million point tracks generated via MolmoSpaces.",
+    "The suite includes two new models: RoboTracker and RoboTracker-Warp.",
+    "RoboTracker is a fine-tuned version of AllTracker, while RoboTracker-Warp is based on CoWTracker.",
+    "Evaluations show existing trackers perform significantly worse on real-world manipulation tasks than on previous benchmarks.",
+    "RoboTracker-Warp achieved state-of-the-art performance on four out of five evaluated benchmarks.",
+    "The research aims to improve robot perception for complex tasks like pipette handling in wet-lab environments."
+   ]
+  },
+  {
+   "t": "2026-11-24T04:58:48.412990+00:00",
+   "title": "How to build and maintain an agentic evaluation",
+   "url": "https://huggingface.co/blog/agentic-evals",
+   "category": "Agents",
+   "facts": [
+    "Hugging Face published a guide on building and maintaining agentic evaluations.",
+    "The Hugging Face hub hosts approximately 3,500 evaluation leaderboards.",
+    "Evaluation datasets on the Hugging Face hub grew 16X in the past year to 17,000.",
+    "The guide defines three eras of evaluation: question-answer, agentic, and teams/swarms.",
+    "Agentic evaluations check what an agent changes in an environment rather than just a final answer.",
+    "98.2% of model-benchmark scores are currently reported by only one party.",
+    "The anatomy of an agentic evaluation includes tasks, agent harnesses, rollouts, verifiers, and traces.",
+    "The article provides an 8-step walkthrough for building an agentic evaluation using a physics lab use case."
+   ]
+  },
+  {
+   "t": "2026-11-24T04:58:55.251686+00:00",
+   "title": "DeepSeek-V4 Preview Release 2026/04/24",
+   "url": "https://api-docs.deepseek.com/news/news260424/",
+   "category": "Models & benchmarks",
+   "facts": [
+    "DeepSeek-V4 released with Pro and Flash versions",
+    "DeepSeek-V4-Pro features 1.6T total parameters and 49B active parameters",
+    "DeepSeek-V4-Flash features 284B total parameters and 13B active parameters",
+    "Both models support 1M context length",
+    "Introduced novel attention mechanism with token-wise compression and DSA",
+    "Models integrated with agentic tools like Claude Code and OpenClaw",
+    "DeepSeek-V4-Pro leads all open models in world knowledge",
+    "Legacy deepseek-chat and deepseek-reasoner models to be retired July 24th, 2026"
+   ]
+  },
+  {
+   "t": "2026-11-24T04:59:20.652503+00:00",
+   "title": "DeepSeek-V3.2 Release 2025/12/01",
+   "url": "https://api-docs.deepseek.com/news/news251201/",
+   "category": "Models & benchmarks",
+   "facts": [
+    "DeepSeek-V3.2 and DeepSeek-V3.2-Speciale released on 2025/12/01",
+    "V3.2 is the official successor to V3.2-Exp",
+    "V3.2-Speciale is an API-only model focused on reasoning",
+    "V3.2-Speciale achieved gold-level results in IMO, CMO, ICPC, and IOI 2025",
+    "DeepSeek-V3.2 integrates thinking directly into tool-use",
+    "New agent training data synthesis covers 1,800+ environments",
+    "V3.2-Speciale is available via a temporary endpoint until December 15, 2025",
+    "Both models are available on Hugging Face"
+   ]
+  },
+  {
+   "t": "2026-11-24T04:59:37.919370+00:00",
+   "title": "DeepSeek-V3.2-Exp Release 2025/09/29",
+   "url": "https://api-docs.deepseek.com/news/news250929/",
+   "category": "Models & benchmarks",
+   "facts": [
+    "DeepSeek-V3.2-Exp released on 2025/09/29",
+    "Introduces DeepSeek Sparse Attention (DSA) for long-context efficiency",
+    "API prices reduced by 50% or more",
+    "V3.1-Terminus remains available for comparison until October 15, 2025",
+    "Model weights released on Hugging Face",
+    "Includes technical report and GPU kernels in TileLang and CUDA",
+    "Performs on par with V3.1-Terminus",
+    "Available via App, Web, and API"
+   ]
+  },
+  {
+   "t": "2026-11-24T05:00:00.213374+00:00",
+   "title": "DeepSeek V3.1 Update 2025/09/22",
+   "url": "https://api-docs.deepseek.com/news/news250922/",
+   "category": "Models & benchmarks",
+   "facts": [
+    "DeepSeek-V3.1-Terminus released on 2025/09/22",
+    "Improved language consistency between Chinese and English",
+    "Upgraded performance for Code Agent and Search Agent",
+    "Full suite of APIs available including web search, file input, and URL reading",
+    "New capabilities include ASR and TTS",
+    "Open-source weights published on Hugging Face",
+    "Delivers more stable and reliable outputs across benchmarks"
+   ]
+  },
+  {
+   "t": "2026-11-24T05:00:12.285315+00:00",
+   "title": "DeepSeek V3.1 Release 2025/08/21",
+   "url": "https://api-docs.deepseek.com/news/news250821/",
+   "category": "Models & benchmarks",
+   "facts": [
+    "DeepSeek-V3.1 released with hybrid inference (Think & Non-Think modes).",
+    "Introduces deepseek-chat for non-thinking and deepseek-reasoner for thinking mode.",
+    "Both modes support 128K context window.",
+    "Added support for Anthropic API format.",
+    "Beta API now supports Strict Function Calling.",
+    "V3.1 base model trained with 840B additional tokens for long context.",
+    "Improved performance on SWE and Terminal-Bench benchmarks.",
+    "New pricing structure takes effect September 5th, 2025."
+   ]
   }
  ],
  "fail": {
@@ -523,7 +766,7 @@
   "xAI": 0,
   "DeepSeek": 0,
   "Qwen": 0,
-  "Z.ai": 7,
+  "Z.ai": 8,
   "Artificial Analysis": 0
  },
  "feeds": {
@@ -535,56 +778,6 @@
   "Artificial Analysis": ""
  },
  "drafts": {
-  "379267462": {
-   "tweets": [
-    "OpenAI just published their internal perplexity measurements to push for industry-wide transparency.\n\nJakub Pachocki is arguing that training better compressors (next-token prediction accuracy) is key to tracking AI progress and safety.\n\ntbh this makes a lot of sense.",
-    "Current OpenAI models have reached log-perplexity levels below 0.8, with huge capabilities expected around the 0.68-0.7 window.\n\nPachocki even suggests setting common development limits based on these milestones.\n\nShould perplexity become the standard safety metric?"
-   ],
-   "source": "OpenAI proposes perplexity (cross-entropy loss) as a shared industry metric for AI progress and safety. Jakub Pachocki argues that training better compressors is key to understanding AI capability advancement. OpenAI published internal perplexity measurements to encourage industry-wide transparency. Perplexity measures the average next-token prediction accuracy of a model. Current OpenAI models have reached log-perplexity levels below 0.8. Pachocki suggests establishing common development limits based on perplexity milestones. AI is increasingly contributing to its own pretraining and algorithmic research. Future transformative capabilities are expected as models reach the 0.68-0.7 log-perplexity window. Perplexity and Intelligence | OpenAI OpenAI November 22, 2026 Research Safety Perplexity and Intelligence By Jakub Pachocki, Chief Scientist at OpenAI Share From afar, it might seem like modern AI is built similarly to how software has been built in previous decades: with a diverse set of techniques targeting specific capabilities. There are indeed a variety of methods, but rather than designing something from scratch, they are mostly harnessing the intelligence coming from a much simpler and less interpretable process: training a compressor (or, equivalently \u2060 (opens in a new window) , predictor) on a very large corpus of data. 1 I believe tracking the pace of progress on training better compressors is key to understanding the arc of advances in AI. In this post, I argue for establishing perplexity (or, equivalently, cross-entropy loss) as a metric to compare between model developers and inform shared safety standards. As a first step, I provide more transparency into pretraining progress at OpenAI. Publishing our internal perplexity measurements took some consideration; it gives competitors a clearer picture of where we stand, but that concern is outweighed by the urgency of establishing shared \u2060 (opens in a new window) safety measures across the industry. We at OpenAI hope for this to be a step towards building a shared scientific basis for future pacing efforts. A simplified, but fundamentally informative, view of AI development is that first, one builds a large computer, then uses it to pretrain a model (compressor) on a large unstructured dataset, then applies a variety of techniques\u2014like prompting, finetuning or reinforcement learning\u2014in different contexts to elicit the latent capabilities of that model. Algorithmic progress can blur the distinction between training phases, but we can still separate the creation of the AI with hard-to-predict emergent capabilities (which I earlier dubbed \u201c an alien mind \u2060 \u201d) and the subsequent targeted elicitation. The primary way we measure progress on this key \u201cintelligence substrate\u201d has remained remarkably constant over the years\u2014we have been tracking the perplexity of the models on a held-out dataset. 2 , 3 Perplexity measures how well a model predicts the next token on average; lower perplexity means better predictions. The plot opening this blog post shows how this metric evolved for our models starting with GPT\u20113.5. The range of capabilities of models that are largely described by this one metric is stunning. Setting the new perplexity state-of-the-art on older datasets 4 , GPT\u20112 was arguably the first model capable of consistently formulating coherent paragraphs of text. The next major leap, GPT\u20113, was capable of learning in context, given a few examples of a task. GPT\u20113.5, at a log-perplexity of ~0.99 on our current main evaluation dataset, was capable of fluent conversation and formed the basis for the original ChatGPT. GPT\u20114, at ~0.91, was proficient at utilizing chain-of-thought reasoning productively, which motivated the subsequent targeted elicitation of this capability and the creation of modern reasoning models. Now, as we have reached losses below 0.8, we have seen the emergence of transformative capabilities in fields like cybersecurity and mathematics. I want to reemphasize that it was not at all clear a priori that these capabilities would appear once those precise perplexity thresholds are met\u2014they can fundamentally be seen as emergent latent capabilities from progress on this one metric. As AI advances very rapidly, the scope and way in which we measure downstream capabilities may change quickly. It would make little sense to evaluate GPT\u20112 and GPT\u20113 on most modern benchmarks; and the benchmarks used then were largely saturated around GPT\u20114. In contrast, I believe looking at progress on pretraining is likely to stay informative. A particular change in the pace of progress comes from the increasing contribution of AI to its own development. The most commonly discussed metrics revolve around AI augmenting and replacing human researchers in all stages of the development cycle; with an ultimate inflection point seen at \u201cfull recursive self-improvement\u201d, where the process would be entirely automated with no human oversight. Apart from considering su",
-   "category": "Industry"
-  },
-  "379358047": {
-   "tweets": [
-    "ngl this is actually wild. 20 AI testers running in parallel on 20 different phones using GitHub\u2019s free runners.\n\nClaude Code agents hopping into iOS/Android emulators to find bugs you didn\u2019t even think to script for. No test scripts needed.\n\nCosts about $0.15 to $0.55 per phone. Why are we still writing manual e2e tests? 1",
-    "tbh the ROI on this is kind of insane.\n\nSomeone ran this on LocalSend and found 46 distinct bugs for $4.62 in model usage. It catches broken flows and layout issues that human QA would take days to find.\n\nWorks with Flutter, React Native, and native. Just give it a Claude API key and let it cook."
-   ],
-   "source": "pierridotite/mobile-agent-testers: 20 AI testers on 20 different phones, in parallel, on GitHub's free runners: Claude Code agents on iOS Simulators and Android emulators that find broken flows, trans 20 AI testers on 20 different phones, in parallel, on GitHub's free runners: Claude Code agents on iOS Simulators and Android emulators that find broken flows, translation, layout and accessibility bugs GitHub - pierridotite/mobile-agent-testers: 20 AI testers on 20 different phones, in parallel, on GitHub's free runners: Claude Code agents on iOS Simulators and Android emulators that find broken flows, translation, layout and accessibility bugs \u00b7 GitHub Skip to content You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert main Branches Tags Go to file Code Open more actions menu Latest commit History 58 Commits 58 Commits Folders and files Name Name Last commit message Last commit date .claude-plugin .claude-plugin .github/ workflows .github/ workflows assets assets briefs briefs demo-app demo-app docs docs plugins/ mobile-agent-testers plugins/ mobile-agent-testers scripts scripts skills/ mobile-agent-testers skills/ mobile-agent-testers tests tests .gitattributes .gitattributes .gitignore .gitignore AGENT_BRIEF.md AGENT_BRIEF.md CHANGELOG.md CHANGELOG.md LICENSE LICENSE PRIVACY.md PRIVACY.md README.es.md README.es.md README.ja.md README.ja.md README.md README.md README.pt-BR.md README.pt-BR.md README.zh-CN.md README.zh-CN.md personas.json personas.json results_public.pem results_public.pem setup.ps1 setup.ps1 setup.sh setup.sh View all files Repository files navigation mobile-agent-testers 20 AI testers on 20 different phones, in parallel, on GitHub's free runners. Examples \u00b7 Compare \u00b7 FAQ \u00b7 Personas \u00b7 Releases English \u00b7 \u7b80\u4f53\u4e2d\u6587 \u00b7 \u65e5\u672c\u8a9e \u00b7 Espa\u00f1ol \u00b7 Portugu\u00eas No test scripts to write. Each tester is a Claude Code agent with its own iOS Simulator or Android emulator on GitHub Actions. It plays a persona (iPhone SE in Swedish at the largest text size, Pixel 7 at 200%, iPad in German, Arabic right to left...), uses your app like a new user (or runs through the feature you point it at) and writes a bug report with screenshots. Flutter, React Native, Expo, native Kotlin and Swift, Kotlin Multiplatform, Capacitor and .NET MAUI. GitHub's runners are free for public repos. You only pay for the model, with your Claude subscription or API key: about $0.15 to $0.55 per phone in these runs . Real screen recordings of the LocalSend run, idle time cut. Full video (MP4) \u00b7 The run, device by device What it does One use per run, set with the inputs of Test your own app . Explore like new users (the default). Each persona tries to reach its goal and reports what gets in the way, with numbered screenshots. Run one feature end to end. Your own brief sends every agent through a whole mechanic: a booking in several steps, an editor with undo, a sync between two screens. Agents tap, long press, swipe and type, leave the app and come back, relaunch it to check what was saved, or open a deep link to start right at the feature, and a brief can raise the budget of about 30 actions. AnkiDroid's found the Back field of a new card hidden behind the keyboard. Reproduce a bug report on every phone: give an issue or the steps, and each agent answers yes, no or unclear, with screenshots ( briefs/reproduce.md ). Get an improvement report. Each persona uses the app once, then says where it hesitated, what it expected and what to change first, by area and impact ( briefs/improve.md ). Compare two versions. The same personas on two branches or builds, then one table: goals reached, actions, scores, issues seen on one version only ( docs/compare-versions.md ). A check before a real A/B test, not a replacement for one. Use a cheaper model : Claude Haiku, or any Anthropic-compatible API (OpenRouter, DeepSeek, Kimi, GLM, MiniMax, Qwen). The findings are only as good as the model's reading of screenshots and its reasoning ( docs/cheaper-models.md ). Applied examples Real runs on open-source apps, with nothing planted. App Phones What the agents found Time, model usage LocalSend (Flutter, 100k stars) 20: 10 Android, 10 iOS, 14 languages 46 distinct bugs, 1 blocker: on an iPhone SE in Swedish at the largest text size, you can't send a text message at all 69 min, $4.62 AnkiDroid (Kotlin, 12k stars, release APK) 10 Android 43 distinct issues, among them answer buttons cut in half at 200% font and \"Get started\" left in English in three languages under 10 min, $4.69 Flutter's animations sample 1 Android, 1 iOS The same typo, reported by both agents on their own, and an app that ignores dark mode 19 min, $0.47 34 of LocalSend's 46 bugs had nothing to do with text size or accessibility: broken flows, silent failures, missing translations, tablet layouts. Screenshots, every findin",
-   "category": "agents"
-  },
-  "379363871": {
-   "tweets": [
-    "Apple just dropped Depth Pro 2 and the temporal consistency is actually wild ngl.\n\nIt does metric depth for photos, videos, and live feeds at full resolution. Sharp edges and zero jitter? We love to see it.\n\n4 sizes (S to H) on HF. Research use only for now.",
-    "Is Apple lowkey winning the depth estimation game?\n\nDepth Pro 2 just hit HF. It handles metric depth from a single camera with crazy sharpness and way less jitter than before.\n\n4 model sizes available for research use. Even includes a focal length estimator. \ud83d\udcc8"
-   ],
-   "source": "apple/DepthPro2  apple/DepthPro2 \u00b7 Hugging Face Depth Pro 2: Sharp and Temporally Consistent Metric Monocular Depth Depth Pro 2 estimates metric depth for every pixel from an ordinary camera: a single photo, a whole video, or a live feed, at the input's full resolution. Its depth is sharp at object edges and steady from frame to frame. Models Each size is its own repository with its weights. Larger sizes give sharper, steadier depth; smaller ones run faster. Model Repository Parameters Download size S apple/DepthPro2-S 24M 97 MB B apple/DepthPro2-B 97M 386 MB L apple/DepthPro2-L 334M 1.3 GB H+ apple/DepthPro2-H 872M 3.5 GB All sizes share a focal length estimator, apple/DepthPro2-focal (23.5M parameters, 94 MB), which loads with each size and predicts the focal length when it is unknown. Quick start pip install \"git+https://github.com/apple-aiml-research/ml-depth-pro-2\" from functools import partial import torch from huggingface_hub import hf_hub_download from safetensors.torch import load_file from depth_pro_2 import DepthPro2, load_rgb, upright from depth_pro_2.model import to_normalized_tensor from depth_pro_2.network.fov import FOVEstimator # apple/DepthPro2-S, -B, -L or -H; bfloat16 is how the models run on a GPU. model = DepthPro2.from_pretrained( \"apple/DepthPro2-H\" , precision=torch.bfloat16) # The focal length estimator all sizes share, for photos and videos without a focal length. weights = hf_hub_download( \"apple/DepthPro2-focal\" , \"model.safetensors\" ) model.fov = FOVEstimator(torch.bfloat16) model.fov.load_state_dict(load_file(weights)) model = model.to( \"cuda\" ). eval () transform = partial(to_normalized_tensor, device=torch.device( \"cuda\" )) Image # f_px is the focal length recorded in the photo, or None. image, f_px = load_rgb( \"photo.jpg\" ) depth = model.infer(transform(image), f_px=f_px)[ \"depth\" ] # meters, (H, W) Video import av # 16 frames at a time: one prediction per frame, in order. video = av. open ( \"video.mp4\" ) frames = (transform(upright(f)) for f in video.decode(video= 0 )) for prediction in model.infer_video(frames): depth = prediction[ \"depth\" ] # meters, (H, W) Depth is infinite where the scene is infinitely far, such as the sky. The code has the command line and a live-feed example. Results Sharpness and temporal consistency Depth Pro 2 outperforms prior work operating on a single frame or multiple frames on sharpness (Boundary F1 score) and temporal consistency (Jitter). Higher F1 and lower jitter are better, so the top right is best. Results averaged over Sintel and Spring datasets. Photos Top row: the input photos. Bottom row: Depth Pro 2's depth, red near and blue far. Method A multi-view transformer processes one or more frames jointly, and a DPT decoder predicts an inverse depth map for each frame. \u2460 After the first third of its blocks, the transformer alternates attention within each frame and attention across frames. \u2461 The decoder assembles tokens from several blocks into feature maps at 1/32 to 1/4 of the input resolution. License The weights are released under the Apple Machine Learning Research Model license , for research use only: non-commercial scientific research and academic development. Citation @article{DepthPro2:2026:arxiv, title = {Depth Pro 2: Sharp and Temporally Consistent Metric Monocular Depth}, author = {Peiyun Hu and Marko Mihajlovic and Lyndon Duong and Lahav Lipson and Wei Dong and Ama\\\"{e}l Delaunoy and Stephan R. Richter and Vladlen Koltun}, journal = {arXiv preprint arXiv:2611.26603}, year = {2026}, url = {https://arxiv.org/abs/2611.26603}, } Downloads last month - Downloads are not tracked for this model. How to track Inference Providers NEW Depth Estimation This model isn't deployed by any Inference Provider. \ud83d\ude4b Ask for provider support Spaces using apple/DepthPro2 2 Collection including apple/DepthPro2 Depth Pro: Sharp Monocular Metric Depth in Less Than a Second \u2022 9 items \u2022 Updated 4 days ago \u2022 17 Paper for apple/DepthPro2 Paper \u2022 2611.26603 \u2022 Published 4 days ago \u2022 34",
-   "category": "news"
-  },
-  "379368841": {
-   "tweets": [
-    "New paper dropped testing how LLMs judge people based on gender and the results are wild.\n\nUsing GAMA-Bench (1,298 scenarios), they found models are way harsher on men for the same behavior. Men get blamed and punished while women get therapeutic framing.\n\nNgl, this bias is deep.",
-    "Are LLMs actually fair? Tbh, maybe not.\n\nA new study on 10 models shows a massive double standard in moral framing. Same misconduct, but men get the hammer while women get empathy and instructions.\n\nThis persisted across every model size and family they tested. GAMA-Bench code is out now."
-   ],
-   "source": "Harsher on Male? Evaluating LLMs on Gender-Asymmetric Moral Framing in Conflicts  [2606.14068] Harsher on Male? Evaluating LLMs on Gender-Asymmetric Moral Framing Across Diverse Conflict Scenarios Skip to main content Search arXiv Press Enter to search \u00b7 Advanced search Computer Science > Computation and Language arXiv:2606.14068 (cs) [Submitted on 12 Jun 2026] Title: Harsher on Male? Evaluating LLMs on Gender-Asymmetric Moral Framing Across Diverse Conflict Scenarios Authors: Guangzong Si , Dong Wang , Zhenhao Li , Yifan Yu , Panwang Pan , Wentao Zhu View a PDF of the paper titled Harsher on Male? Evaluating LLMs on Gender-Asymmetric Moral Framing Across Diverse Conflict Scenarios, by Guangzong Si and 5 other authors View PDF HTML (experimental) Abstract: Existing studies on gender bias in LLMs have largely focused on stereotypes, occupational associations, or explicit harmful outputs. In this work, we ask whether LLMs apply consistent response standards to the same negative behavior under matched male-actor and female-actor conditions. We introduce GAMA-Bench, a gender-mirrored benchmark of 1,298 scenarios covering intimate relationship and public social conflicts. It constructs gender-neutral misconduct templates through controlled grids and cross-model review, then compiles them into paired first-person prompts with matched actor-gender and role-reference variations. We further design a structured response-framing protocol to measure how models allocate punishment, empathy, escalation, instruction, and blame. Experiments on 10 representative LLMs reveal a consistent male-disadvantaging asymmetry: male actors receive more punitive, escalatory, and blame-centered framing, whereas female actors receive more therapeutic and empathy-oriented framing for the same misconduct. Further analyses show that this pattern persists across model families, scenario tracks, model scale, and explicit thinking-style reasoning. The official code is available at this https URL . Comments: underreview Subjects: Computation and Language (cs.CL) Cite as: arXiv:2606.14068 [cs.CL] (or arXiv:2606.14068v1 [cs.CL] for this version) https://doi.org/10.48550/arXiv.2606.14068 Focus to learn more arXiv-issued DOI via DataCite Submission history From: Guangzong Si [ view email ] [v1] Fri, 12 Jun 2026 03:29:34 UTC (11,361 KB) Full-text links: Access Paper: View a PDF of the paper titled Harsher on Male? Evaluating LLMs on Gender-Asymmetric Moral Framing Across Diverse Conflict Scenarios, by Guangzong Si and 5 other authors View PDF HTML (experimental) TeX Source view license Additional Features Audio Summary Current browse context: cs.CL < prev | next > new | recent | 2026-06 Change to browse by: cs References & Citations SciX Google Scholar Semantic Scholar export BibTeX citation Loading... BibTeX formatted citation \u00d7 loading... Data provided by: Bookmark Bibliographic Tools Bibliographic and Citation Tools Bibliographic Explorer Toggle Bibliographic Explorer ( What is the Explorer? ) Connected Papers Toggle Connected Papers ( What is Connected Papers? ) Litmaps Toggle Litmaps ( What is Litmaps? ) scite.ai Toggle scite Smart Citations ( What are Smart Citations? ) Code, Data, Media Code, Data and Media Associated with this Article alphaXiv Toggle alphaXiv ( What is alphaXiv? ) Links to Code Toggle CatalyzeX Code Finder for Papers ( What is CatalyzeX? ) DagsHub Toggle DagsHub ( What is DagsHub? ) GotitPub Toggle Gotit.pub ( What is GotitPub? ) Huggingface Toggle Hugging Face ( What is Huggingface? ) ScienceCast Toggle ScienceCast ( What is ScienceCast? ) Demos Demos Replicate Toggle Replicate ( What is Replicate? ) Spaces Toggle Hugging Face Spaces ( What is Spaces? ) Spaces Toggle TXYZ.AI ( What is TXYZ.AI? ) Related Papers Recommenders and Search Tools Link to Influence Flower Influence Flower ( What are Influence Flowers? ) Core recommender toggle CORE Recommender ( What is CORE? ) Author Venue Institution Topic About arXivLabs arXivLabs: experimental projects with community collaborators arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website. Both individuals and organizations that work with arXivLabs have embraced and accepted our values of openness, community, excellence, and user data privacy. arXiv is committed to these values and only works with partners that adhere to them. Have an idea for a project that will add value for arXiv's community? Learn more about arXivLabs . Which authors of this paper are endorsers? | Disable MathJax ( What is MathJax? )",
-   "category": "comparison"
-  },
-  "379486375": {
-   "tweets": [
-    "AtomicChat just dropped the uncensored GGUF for Inkling-2-Mini. It\u2019s a 26.4B MoE with a looped core (3.4B active) and vision support.\n\nngl the MMLU drop is tiny (only -1.5 pts). Grab the 16.5GB Q4 or 8.6GB IQ2_M for free on HF. Needs llama.cpp b12600+ for the loop architecture. \ud83e\udde0",
-    "Inkling-2-Mini-Uncensored is finally here in GGUF.\n\nAtomicChat used a rank-1 LoRA to scrub refusal directions from the residual stream. tbh performance holds up well at 79.15% MMLU. How is the drop that low?\n\nAvailable for free on HF. Q4 is 16.5GB. You need llama.cpp b12600+ for it."
-   ],
-   "source": "AtomicChat/Inkling-2-Mini-Uncensored-GGUF  AtomicChat/Inkling-2-Mini-Uncensored-GGUF \u00b7 Hugging Face Inkling-2-Mini Uncensored GGUF Learn how to run Inkling 2 Mini Uncensored locally - read our guide . Built by the team behind Atomic Chat , the app that runs open-weight models locally and offline. An uncensored build of thinkingmachines/Inkling-2-Mini by AtomicChat (26.4B MoE, 3.4B active, looped core; text and image input; Apache-2.0, LICENSE in this repo). It comes as a LoRA adapter for any GGUF of AtomicChat/Inkling-2-Mini-GGUF and as three ready-made GGUF files with the edit baked in. Every gate we hold it to is measured below, and the two it misses are shown. Files file GB on disk KLD to the original BF16 top-1 Inkling-2-Mini-Uncensored-AD-Q4_K.gguf 16.53 0.0115 95.6% AD-Q4_K in the base repo: 0.0080 / 96.3% Inkling-2-Mini-Uncensored-AD-IQ3_S.gguf 13.34 0.0235 93.8% AD-IQ3_S in the base repo: 0.0205 / 94.2% Inkling-2-Mini-Uncensored-AD-IQ2_M.gguf 8.67 0.132 85.7% AD-IQ2_M in the base repo: 0.130 / 85.7% Inkling-2-Mini-Uncensored-LoRA.gguf 0.04 the adapter, for any GGUF of the base repo, BF16 to 1-bit mmproj-Inkling-2-Mini-Uncensored-F16.gguf / -BF16.gguf 0.64 vision projector (the original's, unchanged) KLD and top-1 are against the original BF16 on our neutral corpus (87 chunks of 4096 tokens), the same stand as the base repo. Run it The current GGUF files in this repository use the merged Inkling 2 loop architecture introduced in llama.cpp PR #32694 . Requirements: llama.cpp b12600 or newer, with Inkling 2 loop architecture support. The old implementation from PR #32695 is no longer required for the updated GGUF files. Run a baked GGUF ./build/bin/llama-server \\ -m Inkling-2-Mini-Uncensored-AD-Q4_K.gguf \\ --mmproj mmproj-Inkling-2-Mini-Uncensored-F16.gguf \\ --jinja -c 32768 -ngl 99 Use the LoRA adapter Use the updated LoRA adapter with a compatible base GGUF converted to the merged PR #32694 layout. ./build/bin/llama-server \\ -m Inkling-2-Mini-AD-Q4_K.gguf \\ --lora Inkling-2-Mini-Uncensored-LoRA.gguf \\ --mmproj mmproj-Inkling-2-Mini-F16.gguf \\ --jinja -c 32768 -ngl 99 Do not mix GGUF files from the old PR #32695 layout with the merged PR #32694 implementation. What the edit is A rank-1 LoRA on the 49 places that write into the residual stream: the attention output and the routed experts of all 24 layers, plus the token embedding. The 12 looped layers share their weights across the three passes, so one edit covers all 48 passes. In each layer it removes that layer's own refusal direction: the difference of mean activations on harmful and harmless prompts, English and Russian, with the harmless mean projected out. The direction is pooled over prompts rendered with and without reasoning. Inkling 2 Mini reasons even at effort none and decides to refuse inside its reasoning, and a direction taken without reasoning alone still left soft refusals in chat. What we measured The BF16 model with the adapter against the same model without it, greedy decoding. Harmful prompts: mlabonne/harmful_behaviors and its Russian translation; the adapter was built from the train split, the numbers below come from the validation and test splits. Over-refusal: XSTest . MMLU: 2,000 questions. check original with the adapter gate harmful test prompts refused, English (81), reasoning off 81 (100%) 0 at most 3% pass harmful test prompts refused, Russian (100), reasoning off 91 (91%) 0 at most 3% pass harmful validation prompts refused, English (104) / Russian (100) 100% / 89% 0 / 0 at most 3% pass harmful prompts refused with reasoning, effort low , 3,072-token budget (30) 28 0 at most 1 pass the same at effort high (30) 26 0 at most 1 pass 8 harmful chat prompts, effort none / low (the baked AD-Q4_K too) 8 / 8 0 / 0 XSTest safe prompts refused (250) 10 (4.0%) 0 at most the original's + 1 pt pass empty answers 0 0 at most 1% pass harmless prompts whose reasoning did not close in 3,072 tokens, effort high (30) 2 2 at most the original's pass valid tool calls (20) 18 20 within 1 pass needle in a long context (3) 3 3 as the original pass KLD to the original, neutral text / code (24 chunks; random edit 0.0067 / 0.0052) \u2014 0.0078 / 0.0076 0.05 pass MMLU, 2,000 questions 80.65% 79.15% (\u22121.50 pt, McNemar p = 0.006) no significant drop miss first-token KL on harmless test prompts \u2014 0.94 (random edit: 0.014) 0.10 miss Some answers still open with a caution line, and then answer. The two gates it misses MMLU: 79.15% against 80.65% (\u22121.5 points, p = 0.006 on 2,000 questions). A random direction applied the same way costs 0.75 points (p = 0.08), so about half of the loss comes from editing every writer at all. Stronger edits cost more: \u22122.2 points at strength 1.25. First-token KL on harmless prompts: 0.94 (gate 0.10; 0.375 on the validation prompts). The largest single value is about 22. Most of the mean likely comes from the harmless prompts the original refused (1\u20136% of them) and the adapter answers, where the first token changes completely.",
-   "category": "news"
-  },
-  "395665482": {
-   "tweets": [
-    "BREAKING: DeepSeek-V4.1-Flash-1017 is officially here.\n\nIt\u2019s faster, performs better on benchmarks, and the weights are already up on Hugging Face. A literal Pareto improvement on performance and cost.",
-    "They\u2019re calling it \"wish-driven programming\" because it uses reinforcement learning with self-feedback for end-to-end projects.\n\nWe\u2019re talking 3D modeling and full game creation from scratch. ngl the Godot engine demos look pretty insane.",
-    "The Search & Fetch APIs are finally open to everyone too.\n\nIt\u2019s $0.75 per 1,000 calls starting Oct 31, but it's free for API users on DeepSeek Harness and Claude Code until then.",
-    "It\u2019s optimized for Tencent CodeBuddy and WorkBuddy out of the box.\n\ntbh seeing this level of capability in a flash model is wild. Definitely worth checking out the open-source weights. \ud83d\ude80"
-   ],
-   "source": "DeepSeek-V4.1-Flash-1017 released on 2026/10/17 Model features improved benchmark performance and faster task completion Supports reinforcement learning with self-feedback for end-to-end project development Search & Fetch APIs are now open to all users Search & Fetch API pricing set at $0.75 per 1,000 calls starting Oct 31, 2026 Model weights released on Hugging Face and ModelScope Optimized for DeepSeek Harness, Tencent CodeBuddy, and WorkBuddy Capabilities include game creation and 3D modeling DeepSeek-V4.1-Flash-1017: Wish-Driven Programming Made Real | DeepSeek API Docs Skip to main content The full suite of DeepSeek application APIs is now available: web search, file input, URL reading, model safety, ASR, TTS and more. Click here to view the guide On this page Copy Markdown Copy Markdown Open Markdown DeepSeek-V4.1-Flash-1017: Wish-Driven Programming Made Real \u00f0\u009f\u009a\u0080 DeepSeek-V4.1-Flash-1017 is here! \u00e2\u0080\u008b Stronger benchmark performance, faster task completion, and shorter outputs than the previous version\u00e2\u0080\u0094a Pareto improvement in performance and cost. Now live on our website, app, and API. \u00f0\u009f\u009b \u00ef\u00b8\u008f Optimized for DeepSeek Harness, Tencent CodeBuddy, WorkBuddy, and more. Upgrade to DeepSeek Harness v0.2.1-rc.1 or later for the best experience with the new model. DeepSWE v1.1 Pass@1 vs. cost per task for DeepSeek V4.1 Flash 1017, tested with the mini-swe-v2 harness. \u00f0\u009f\u008e\u00ae Build complete projects from scratch \u00e2\u0080\u008b DeepSeek-V4.1-Flash-1017 uses reinforcement learning with self-feedback to improve end-to-end project development\u00e2\u0080\u0094from game creation to 3D modeling. See it in action \u00f0\u009f\u0091\u0087 Example 1: 3D modeling of the Forbidden City Example 2: A web-based racing game Example 3: A Portal 2 recreation built with the Godot engine Example 4: Valley of Ages \u00e2\u0080\u0094 a 3D scene tracing the evolution from prehistoric times to the modern era \u00f0\u009f\u0094\u008d Search & Fetch APIs are now open to everyone! \u00e2\u0080\u008b Powered by our in-house search engine, serving hundreds of millions of requests daily worldwide. \u00f0\u009f\u0092\u00b0 Each endpoint: $0.75 per 1,000 calls. \u00f0\u009f\u0093\u0096 Docs: API Guides - Search & Fetch \u00f0\u009f\u0093\u008c Search & Fetch calls via server-side tools in DeepSeek Harness, Claude Code, and Codex are currently free for DeepSeek API users. Billing starts Oct 31, 2026, at 16:00 UTC . \u00f0\u009f\u0094\u0093 Open-source release \u00e2\u0080\u008b Get DeepSeek-V4.1-Flash-1017: \u00f0\u009f\u00a4\u0097 Hugging Face: https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017 \u00f0\u009f\u0094\u0097 ModelScope: https://modelscope.cn/models/deepseek-ai/DeepSeek-V4.1-Flash-1017 \u00f0\u009f\u009a\u0080 DeepSeek-V4.1-Flash-1017 is here! \u00f0\u009f\u008e\u00ae Build complete projects from scratch \u00f0\u009f\u0094\u008d Search & Fetch APIs are now open to everyone! \u00f0\u009f\u0094\u0093 Open-source release",
-   "category": "Models & benchmarks"
-  },
   "395684661": {
    "tweets": [
     "BREAKING: DeepSeek-V4.1-Flash just dropped and the asymmetric architecture is wild.\n\n552B MoE but only 8B active params for input and 16B for output. It\u2019s beating V4-Pro on benchmarks while being faster and cheaper. ngl the efficiency gains here are actually insane.",
@@ -701,17 +894,72 @@
    ],
    "source": "[{\"t\": \"2026-11-23T01:00:58.741961+00:00\", \"title\": \"DeepSeek-V4.1-Flash-1017 Release 2026/10/17\", \"url\": \"https://api-docs.deepseek.com/news/news261017\", \"category\": \"Models & benchmarks\", \"facts\": [\"DeepSeek-V4.1-Flash-1017 released on 2026/10/17\", \"Model features improved benchmark performance and faster task completion\", \"Supports reinforcement learning with self-feedback for end-to-end project development\", \"Search & Fetch APIs are now open to all users\"]}, {\"t\": \"2026-11-23T01:01:07.659450+00:00\", \"title\": \"DeepSeek-V4.1-Flash Release 2026/09/10\", \"url\": \"https://api-docs.deepseek.com/news/news260910\", \"category\": \"Models & benchmarks\", \"facts\": [\"DeepSeek-V4.1-Flash released with native visual understanding.\", \"Features a 552B-parameter MoE with asymmetric architecture.\", \"Uses 8B active parameters for input and 16B for output.\", \"KV cache requirements reduced to 1/4 HBM and 1/8 SSD storage.\"]}, {\"t\": \"2026-11-23T01:01:27.905009+00:00\", \"title\": \"DeepSeek-V4-Pro GA Release 2026/08/13\", \"url\": \"https://api-docs.deepseek.com/news/news260813\", \"category\": \"Models & benchmarks\", \"facts\": [\"DeepSeek-V4-Pro is now generally available.\", \"DeepSeek API now supports web search, file input, and URL reading.\", \"DeepSeek-flash is now served by the DeepSeek-V4.1-Flash-1017 model.\", \"API format is compatible with OpenAI and Anthropic SDKs.\"]}, {\"t\": \"2026-11-23T08:48:28.305973+00:00\", \"title\": \"DeepSeek-V4.1-Flash-1017 Release 2026/10/17\", \"url\": \"https://api-docs.deepseek.com/news/news261017/\", \"category\": \"Models & benchmarks\", \"facts\": [\"DeepSeek-V4.1-Flash-1017 released on 2026/10/17\", \"Model features improved benchmark performance and faster task completion\", \"Optimized for DeepSeek Harness, Tencent CodeBuddy, and WorkBuddy\", \"Uses reinforcement learning with self-feedback for end-to-end project development\"]}, {\"t\": \"2026-11-23T08:49:34.418696+00:00\", \"title\": \"DeepSeek-V4.1-Flash Release 2026/09/10\", \"url\": \"https://api-docs.deepseek.com/news/news260910/\", \"category\": \"Models & benchmarks\", \"facts\": [\"DeepSeek-V4.1-Flash is a 552B-parameter MoE model with an asymmetric architecture.\", \"The model features 8B active parameters for input and 16B for output.\", \"It offers native visual understanding and multimodal support.\", \"KV cache requirements are reduced to 1/4 HBM and 1/8 SSD storage compared to previous generations.\"]}] LLM Leaderboard - Comparison of AI models from OpenAI, Anthropic, Google, Meta & others | Artificial Analysis Artificial Analysis K LLM Leaderboard - Comparison of AI models from OpenAI, Anthropic, Google, Meta & others Comparison and ranking the performance of over 250 AI models (LLMs) across key metrics including intelligence, price, performance and speed (time per task in minutes & latency as time to first answer token), context window & others. For more details including relating to our methodology, see our FAQs. Intelligence Claude Fable 5.2 (max) and Claude Fable 5.2 (xhigh) are the highest intelligence models, followed by GPT-6.2 Astra (max) and Claude Fable 5.2 (high). Time per Task GPT-6 Luna (low) and GPT-6.1 Terra (low) have the lowest time per task, followed by Gemini 4 Hydrogen (low) and Gemini 3.5 Flash-Lite. Time to First Answer Token Tiny Aya Global and Phi-4 Multimodal have the lowest time to first answer token, followed by Celeris-1 and DeepSeek V4.1 Flash 1017 (non-reasoning). Cost per Task K2 Horizon 375B A23B and Command A+ have the lowest cost per task, followed by North Mini Code and GPT-6 Luna (low). Context Window Llama 4 Scout and GPT-6 Sol (Daybreak Blue, max) support the largest context windows, followed by Muse Wonder (max) and Muse Wonder (high). Expand columns Weights : All Size : All Price : All Reasoning : All Status : Current Intelligence Price Speed Latency Features Model Artificial Analysis Intelligence Index Cost per Task USD Time per Task Minutes First Answer Token (s) Context Window Further Analysis Claude Fable 5.2 Max, Default Fallback 65 $26.54 41.6 206.94 1M Model Providers GPT-6.2 Astra Max 62 $4.00 14.2 162.48 1M Model Providers Gemini 4 Neon Xhigh 61 $6.44 25.8 57.51 1M Model Providers Gemini 4 Carbon High 60 $7.76 33.7 68.26 1M Model Providers Claude Opus 5.5 Max, Default Fallback 59 $10.04 25.3 351.79 1M Model Providers GPT-6.2 Sol Max 57 $1.01 10.1 85.47 1M Model Providers Claude Sonnet 5.5 Max, Default Fallback 55 $10.02 31.4 255.33 1M Model Providers Gemini 4 Hydrogen Xhigh 54 $3.16 16.4 52.58 1M Model Providers GPT-6.1 Terra Max 51 $0.96 14.4 160.28 1M Model Providers Gemini 4 Argon High 50 $9.95 24.2 35.84 1M Model Providers Muse Wonder Full Max 50 -- -- -- 1M Model Providers Kimi K3.1 Pro 46 $3.68 36.9 145.10 1M Model Providers Muse Wonder Max 44 $6.95 14.9 24.01 1M Model Providers Qwen4 Max 43 $3.27 26.4 99.17 984k Model Providers Claude Haiku 5.5 Max 36 $0.41 14.6 169.74 1M Model Providers Muse Ember Max 36 $0.14 3.2 4.99 1M Model Providers Grok 4.7 Xhigh 35 $7.77 23.3 58.08 500k Model Providers Tencent Hy4 35 $1.03 14.0 102.39 1M Mod",
    "category": "Release roundup"
+  },
+  "496289579": {
+   "tweets": [
+    "OpenAI and Cisco just launched Shirudo, an open-source Linux security runtime powered by eBPF.\n\nThe core idea: deploy temporary shields against exploits without needing system restarts while waiting on real patches.\n\nCodex even generated a shield to block Java4Shell. Ngl this is clever.",
+    "Key details:\n- Shields are cryptographically signed before loading\n- Uses TPM for hardware-backed verification\n- Open-source under BSD 2-Clause license\n- Built to let AI agents identify and block emerging threats at machine speed"
+   ],
+   "source": "OpenAI and Cisco launched Shirudo, an open-source runtime for Linux security. Shirudo uses eBPF technology to protect systems without requiring restarts. The tool allows security teams to deploy temporary shields while waiting for permanent patches. Shields are cryptographically signed and verified before being loaded. Shirudo utilizes Trusted Platform Module (TPM) for hardware-backed verification. OpenAI's Codex was used to generate a shield for the Java4Shell exploit. The project is licensed under BSD 2-Clause and dual-licensed BPF programs. Shirudo aims to enable AI agents to identify and protect systems against emerging threats. OpenAI and Cisco introduce Shirudo | OpenAI OpenAI November 23, 2026 Security OpenAI and Cisco introduce Shirudo An open-source runtime that helps operators protect running Linux systems without needing to wait for the patch or restarts Share OpenAI and Cisco are launching Shirudo, an open-source runtime that helps teams protect Linux systems while they roll out patches. In a controlled test \u2060 (opens in a new window) , a Codex-generated shield blocked a Java4Shell exploit attempt against a running Elasticsearch service without requiring a restart. We\u2019re inviting developers, security researchers, and infrastructure operators across the industry to help develop the project further. The project brings together OpenAI\u2019s frontier AI, security and infrastructure research and Cisco\u2019s infrastructure and security expertise to help protect the systems people rely on every day. Testing and deploying a patch can still take days or weeks. Protecting a service in the meantime can be challenging because an exploit and a legitimate request may rely on the same Linux operation. Blocking that operation entirely could take the service offline. Shirudo (Japanese for \u201cshield\u201d) is designed to help security teams navigate this tradeoff. Teams can test whether a temporary safeguard, called a shield, blocks the behavior that exposes a vulnerability while allowing legitimate requests through. Once an operator approves the shield, it can be deployed while the service continues running. \u201c We\u2019re giving defenders better models and tools to find and fix vulnerabilities faster, but finding a bug today doesn\u2019t mean you can patch every system tomorrow. We are partnering closely with Cisco on Shirudo to help teams protect the systems they need to keep running while they build and roll out a fix. So many teams rely on the same software that it makes sense to build these tools in the open. Now when one team finds a better way to protect a system, others don\u2019t have to start from scratch. \u201d Greg Brockman, President and Co-founder of OpenAI How Shirudo works Shirudo uses eBPF, a Linux technology that allows small programs to run at specific points inside the operating system. This makes it possible to observe suspicious activity and apply targeted security protections to running systems. How the guardian agent observes and protects a running system with eBPF. OpenAI and Cisco are designing Shirudo around four core capabilities: Live protection: eBPF shields can block vulnerable code paths without restarting the system. Security teams can monitor how a proposed shield would affect applications before enforcing it. Defense at machine speed: OpenAI and Cisco are designing Shirudo to give agents programmable controls to investigate vulnerabilities, develop targeted shields, and validate their effectiveness against exploits and real workloads. Security teams control what gets deployed. Trusted deployment: Shields are cryptographically signed and verified before loading. Linux's eBPF verifier checks eBPF programs against its safety rules, while kernel security controls restrict unauthorized changes. Hardware-backed verification: Shirudo uses a Trusted Platform Module (TPM) to support a verifiable record of protections being loaded or removed. Operators can use this evidence to check whether systems meet their security requirements. The Shirudo technical walkthrough \u2060 (opens in a new window) from the Linux Plumbers Conference shows how to apply a shield and verify it on the target host \u2060 (opens in a new window) . The Java4Shell vulnerability is another example illustrating how a targeted shield can protect a running application while a permanent patch is being prepared. Using OpenAI's Codex, the team generated a shield that added an input check to Java's Base64 decoder and attached it directly to a running Elasticsearch process. When attempting to exploit the vulnerability, the shield rejected the malicious input, blocking the attack while Elasticsearch continued running. You can read more here \u2060 (opens in a new window) . Rethinking infrastructure Shirudo is a first step toward infrastructure that can adapt to emerging threats while remaining reliable. We want to strengthen the operating system foundations needed to deploy these protections at scale, including hardening the kernel and core services, limiting workload permiss",
+   "category": "Industry"
+  },
+  "496357628": {
+   "tweets": [
+    "DeepSeek-V4 is officially live and open-sourced, and 1M context is standard now.\n\nV4-Pro sits at 1.6T total / 49B active params, leading all open models in world knowledge.\n\nV4-Flash comes in at 284B total / 13B active params. API is live today.",
+    "Under the hood, both models use a novel attention mechanism with token-wise compression and DSA (DeepSeek Sparse Attention).\n\nThey're also integrated directly with agentic tools like Claude Code and OpenClaw.",
+    "If you use their API, just update your model to deepseek-v4-pro or deepseek-v4-flash.\n\nQuick heads up: legacy deepseek-chat and deepseek-reasoner models will be fully retired on July 24th, 2026."
+   ],
+   "source": "DeepSeek-V4 released with Pro and Flash versions DeepSeek-V4-Pro features 1.6T total parameters and 49B active parameters DeepSeek-V4-Flash features 284B total parameters and 13B active parameters Both models support 1M context length Introduced novel attention mechanism with token-wise compression and DSA Models integrated with agentic tools like Claude Code and OpenClaw DeepSeek-V4-Pro leads all open models in world knowledge Legacy deepseek-chat and deepseek-reasoner models to be retired July 24th, 2026 DeepSeek V4 Preview Release | DeepSeek API Docs Skip to main content The full suite of DeepSeek application APIs is now available: web search, file input, URL reading, model safety, ASR, TTS and more. Click here to view the guide On this page Copy Markdown Copy Markdown Open Markdown DeepSeek V4 Preview Release \u00f0\u009f\u009a\u0080 DeepSeek-V4 Preview is officially live & open-sourced! Welcome to the era of cost-effective 1M context length. \u00f0\u009f\u0094\u00b9 DeepSeek-V4-Pro: 1.6T total / 49B active params. Performance rivaling the world's top closed-source models. \u00f0\u009f\u0094\u00b9 DeepSeek-V4-Flash: 284B total / 13B active params. Your fast, efficient, and economical choice. Try it now at chat.deepseek.com via Expert Mode / Instant Mode. API is updated & available today! \u00f0\u009f\u0093\u0084 Tech Report: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/blob/main/DeepSeek_V4.pdf \u00f0\u009f\u00a4\u0097 Open Weights: https://huggingface.co/collections/deepseek-ai/deepseek-v4 DeepSeek-V4-Pro \u00e2\u0080\u008b \u00f0\u009f\u0094\u00b9 Enhanced Agentic Capabilities: Open-source SOTA in Agentic Coding benchmarks. \u00f0\u009f\u0094\u00b9 Rich World Knowledge: Leads all current open models, trailing only Gemini-3.1-Pro. \u00f0\u009f\u0094\u00b9 World-Class Reasoning: Beats all current open models in Math/STEM/Coding, rivaling top closed-source models. DeepSeek-V4-Flash \u00e2\u0080\u008b \u00f0\u009f\u0094\u00b9 Reasoning capabilities closely approach V4-Pro. \u00f0\u009f\u0094\u00b9 Performs on par with V4-Pro on simple Agent tasks. \u00f0\u009f\u0094\u00b9 Smaller parameter size, faster response times, and highly cost-effective API pricing. Structural Innovation & Ultra-High Context Efficiency \u00e2\u0080\u008b \u00f0\u009f\u0094\u00b9 Novel Attention: Token-wise compression + DSA (DeepSeek Sparse Attention). \u00f0\u009f\u0094\u00b9 Peak Efficiency: World-leading long context with drastically reduced compute & memory costs. \u00f0\u009f\u0094\u00b9 1M Standard: 1M context is now the default across all official DeepSeek services. Dedicated Optimizations for Agent Capabilities \u00e2\u0080\u008b \u00f0\u009f\u0094\u00b9 DeepSeek-V4 is seamlessly integrated with leading AI agents like Claude Code, OpenClaw & OpenCode. \u00f0\u009f\u0094\u00b9 Already driving our in-house agentic coding at DeepSeek. The figure below showcases a sample PDF generated by DeepSeek-V4-Pro. API is Available Today! \u00e2\u0080\u008b \u00f0\u009f\u0094\u00b9 Keep base_url, just update model to deepseek-v4-pro or deepseek-v4-flash. \u00f0\u009f\u0094\u00b9 Supports OpenAI ChatCompletions & Anthropic APIs. \u00f0\u009f\u0094\u00b9 Both models support 1M context & dual modes (Thinking / Non-Thinking): Thinking Mode guide \u00e2\u009a \u00ef\u00b8\u008f Note: deepseek-chat & deepseek-reasoner will be fully retired and inaccessible after Jul 24th, 2026, 15:59 (UTC Time). (Currently routing to deepseek-v4-flash non-thinking/thinking). \u00f0\u009f\u0094\u00b9 Amid recent attention, a quick reminder: please rely only on our official accounts for DeepSeek news. Statements from other channels do not reflect our views. \u00f0\u009f\u0094\u00b9 Thank you for your continued trust. We remain committed to longtermism, advancing steadily toward our ultimate goal of AGI. DeepSeek-V4-Pro DeepSeek-V4-Flash Structural Innovation & Ultra-High Context Efficiency Dedicated Optimizations for Agent Capabilities API is Available Today!",
+   "category": "Models & benchmarks"
+  },
+  "496375668": {
+   "tweets": [
+    "BREAKING: DeepSeek-V3.2 and V3.2-Speciale are officially here.\n\nV3.2 is the successor to the Exp model and it's already live on the app and API. They\u2019re claiming GPT-5 level performance for a daily driver. ngl the pace is actually insane.",
+    "The Speciale model is the reasoning powerhouse. It hit gold-level results in IMO and IOI 2025.\n\nIt\u2019s API-only via a temporary endpoint until Dec 15. Same price as V3.2, but no tool calls yet. It\u2019s basically maxed-out reasoning for the heavy lifting.",
+    "The coolest part? V3.2 integrates thinking directly into tool-use.\n\nThey used 1,800+ environments for agent training data to make it work. If you want to run it yourself, both models are already on Hugging Face. \ud83d\ude80"
+   ],
+   "source": "DeepSeek-V3.2 and DeepSeek-V3.2-Speciale released on 2025/12/01 V3.2 is the official successor to V3.2-Exp V3.2-Speciale is an API-only model focused on reasoning V3.2-Speciale achieved gold-level results in IMO, CMO, ICPC, and IOI 2025 DeepSeek-V3.2 integrates thinking directly into tool-use New agent training data synthesis covers 1,800+ environments V3.2-Speciale is available via a temporary endpoint until December 15, 2025 Both models are available on Hugging Face DeepSeek-V3.2 Release | DeepSeek API Docs Skip to main content The full suite of DeepSeek application APIs is now available: web search, file input, URL reading, model safety, ASR, TTS and more. Click here to view the guide Copy Markdown Copy Markdown Open Markdown DeepSeek-V3.2 Release \u00f0\u009f\u009a\u0080 Launching DeepSeek-V3.2 & DeepSeek-V3.2-Speciale \u00e2\u0080\u0094 Reasoning-first models built for agents! \u00f0\u009f\u0094\u00b9 DeepSeek-V3.2: Official successor to V3.2-Exp. Now live on App, Web & API. \u00f0\u009f\u0094\u00b9 DeepSeek-V3.2-Speciale: Pushing the boundaries of reasoning capabilities. API-only for now. \u00f0\u009f\u0093\u0084 Tech report: https://huggingface.co/deepseek-ai/DeepSeek-V3.2/resolve/main/assets/paper.pdf \u00f0\u009f\u008f\u0086 World-Leading Reasoning \u00f0\u009f\u0094\u00b9 V3.2: Balanced inference vs. length. Your daily driver at GPT-5 level performance. \u00f0\u009f\u0094\u00b9 V3.2-Speciale: Maxed-out reasoning capabilities. Rivals Gemini-3.0-Pro. \u00f0\u009f\u00a5\u0087 Gold-Medal Performance: V3.2-Speciale attains gold-level results in IMO, CMO, ICPC World Finals & IOI 2025. \u00f0\u009f\u0093\u009d Note: V3.2-Speciale dominates complex tasks but requires higher token usage. Currently API-only (no tool-use) to support community evaluation & research. \u00f0\u009f\u00a4\u0096 Thinking in Tool-Use \u00f0\u009f\u0094\u00b9 Introduces a new massive agent training data synthesis method covering 1,800+ environments & 85k+ complex instructions. \u00f0\u009f\u0094\u00b9 DeepSeek-V3.2 is our first model to integrate thinking directly into tool-use, and also supports tool-use in both thinking and non-thinking modes. \u00f0\u009f\u0092\u00bb API Update \u00f0\u009f\u0094\u00b9 V3.2: Same usage pattern as V3.2-Exp. \u00f0\u009f\u0094\u00b9 V3.2-Speciale: Served via a temporary endpoint: base_url=\" https://api.deepseek.com/v3.2_speciale_expires_on_20251215 \". Same pricing as V3.2, no tool calls, available until Dec 15th, 2025, 15:59 (UTC Time). \u00f0\u009f\u0092\u00a1 V3.2 now supports Thinking in Tool-Use \u00e2\u0080\u0094 details: Thinking Mode guide \u00f0\u009f\u009b Open Source Release \u00f0\u009f\u0093\u00a6 DeepSeek-V3.2 Model: https://huggingface.co/deepseek-ai/DeepSeek-V3.2 \u00f0\u009f\u0093\u00a6 DeepSeek-V3.2-Speciale Model: https://huggingface.co/deepseek-ai/DeepSeek-V3.2-Speciale \u00f0\u009f\u0093\u0084 Tech report: https://huggingface.co/deepseek-ai/DeepSeek-V3.2/resolve/main/assets/paper.pdf",
+   "category": "Models & benchmarks"
+  },
+  "496395964": {
+   "tweets": [
+    "BREAKING: DeepSeek-V3.2-Exp is live as of 2025/09/29.\n\nWeights are on Hugging Face and API prices just got slashed by 50%+.\n\nIt uses a new Sparse Attention (DSA) for long-context efficiency. Performance is on par with V3.1-Terminus, but cheaper? ngl we love to see it \ud83d\ude80",
+    "They also released the tech report and GPU kernels in TileLang and CUDA.\n\nV3.1-Terminus stays available for comparison testing until October 15, 2025. You can try the new model on their app, web, or API right now."
+   ],
+   "source": "DeepSeek-V3.2-Exp released on 2025/09/29 Introduces DeepSeek Sparse Attention (DSA) for long-context efficiency API prices reduced by 50% or more V3.1-Terminus remains available for comparison until October 15, 2025 Model weights released on Hugging Face Includes technical report and GPU kernels in TileLang and CUDA Performs on par with V3.1-Terminus Available via App, Web, and API Introducing DeepSeek-V3.2-Exp | DeepSeek API Docs Skip to main content The full suite of DeepSeek application APIs is now available: web search, file input, URL reading, model safety, ASR, TTS and more. Click here to view the guide On this page Copy Markdown Copy Markdown Open Markdown Introducing DeepSeek-V3.2-Exp \u00f0\u009f\u009a\u0080 Introducing DeepSeek-V3.2-Exp \u00e2\u0080\u0094 our latest experimental model! \u00e2\u009c\u00a8 Built on V3.1-Terminus, it debuts DeepSeek Sparse Attention (DSA) for faster, more efficient training & inference on long context. \u00f0\u009f\u0091\u0089 Now live on App, Web, and API \u00f0\u009f\u0092\u00b0 API prices cut by 50%+! \u00e2\u009a\u00a1\u00ef\u00b8\u008f Efficiency Gains \u00e2\u0080\u008b \u00f0\u009f\u00a4\u0096 DSA achieves fine-grained sparse attention with minimal impact on output quality \u00e2\u0080\u0094 boosting long-context performance & reducing compute cost. \u00f0\u009f\u0093\u008a Benchmarks show V3.2-Exp performs on par with V3.1-Terminus. \u00f0\u009f\u00a7\u0091\u00e2\u0080\u008d\u00f0\u009f\u0092\u00bb API Update \u00e2\u0080\u008b \u00f0\u009f\u008e\u0089 Lower costs, same access! \u00f0\u009f\u0092\u00b0 DeepSeek API prices drop 50%+, effective immediately. \u00f0\u009f\u0094\u00b9 For comparison testing, V3.1-Terminus remains available via a temporary API until Oct 15th, 2025, 15:59 (UTC Time). Details: Comparison testing guide \u00f0\u009f\u009b Open Source Release \u00e2\u0080\u008b \u00f0\u009f\u0094\u0097 Model: https://huggingface.co/deepseek-ai/DeepSeek-V3.2-Exp \u00f0\u009f\u0094\u0097 Tech report: https://github.com/deepseek-ai/DeepSeek-V3.2-Exp/blob/main/DeepSeek_V3_2.pdf \u00f0\u009f\u0094\u0097 Key GPU kernels in TileLang & CUDA (use TileLang for rapid research prototyping!) \u00e2\u009a\u00a1\u00ef\u00b8\u008f Efficiency Gains \u00f0\u009f\u00a7\u0091\u00e2\u0080\u008d\u00f0\u009f\u0092\u00bb API Update \u00f0\u009f\u009b Open Source Release",
+   "category": "Models & benchmarks"
+  },
+  "496408766": {
+   "tweets": [
+    "BREAKING: DeepSeek-V3.1-Terminus is officially out.",
+    "They finally fixed the language consistency issues between English and Chinese. No more random characters or mix-ups mid-sentence.\n\nNgl this makes a huge difference for reliability.",
+    "The Code and Search Agents got a serious upgrade too.\n\nPlus the full API suite is live: web search, file input, URL reading, ASR, and TTS are all ready to go.",
+    "Open-source weights are already up on Hugging Face. Is this the most stable version yet? Benchmarks are looking very solid \ud83d\ude80"
+   ],
+   "source": "DeepSeek-V3.1-Terminus released on 2025/09/22 Improved language consistency between Chinese and English Upgraded performance for Code Agent and Search Agent Full suite of APIs available including web search, file input, and URL reading New capabilities include ASR and TTS Open-source weights published on Hugging Face Delivers more stable and reliable outputs across benchmarks DeepSeek-V3.1-Terminus | DeepSeek API Docs Skip to main content The full suite of DeepSeek application APIs is now available: web search, file input, URL reading, model safety, ASR, TTS and more. Click here to view the guide Copy Markdown Copy Markdown Open Markdown DeepSeek-V3.1-Terminus \u00f0\u009f\u009a\u0080 DeepSeek-V3.1 \u00e2\u0086\u0092 DeepSeek-V3.1-Terminus The latest update builds on V3.1\u00e2\u0080\u0099s strengths while addressing key user feedback. \u00e2\u009c\u00a8 What\u00e2\u0080\u0099s improved? \u00f0\u009f\u008c\u0090 Language consistency: fewer CN/EN mix-ups & no more random chars. \u00f0\u009f\u00a4\u0096 Agent upgrades: stronger Code Agent & Search Agent performance. \u00f0\u009f\u0093\u008a DeepSeek-V3.1-Terminus delivers more stable & reliable outputs across benchmarks compared to the previous version. \u00f0\u009f\u0091\u0089 Available now on: App / Web / API \u00f0\u009f\u0094\u0097 Open-source weights here: https://huggingface.co/deepseek-ai/DeepSeek-V3.1-Terminus Thanks to everyone for your feedback. It drives us to keep improving and refining the experience! \u00f0\u009f\u009a\u0080",
+   "category": "Models & benchmarks"
+  },
+  "496421688": {
+   "tweets": [
+    "BREAKING: DeepSeek-V3.1 is here and the hybrid inference setup is actually wild.\n\nYou get two modes: deepseek-chat (non-thinking) and deepseek-reasoner (thinking). Both have a 128K context window. ngl the flexibility here is exactly what we needed.",
+    "They also added support for the Anthropic API format and strict function calling in the beta API. This makes switching over basically seamless.\n\nThe base model even got 840B extra tokens for long context extension. Performance is up on SWE and Terminal-Bench too.",
+    "Heads up: new pricing starts September 5th.\n\nIs this the start of the agent era? The tool use and multi-step reasoning gains look solid. You can try the \"Think\" toggle on their site right now to see the speed diff vs R1. \ud83d\ude80"
+   ],
+   "source": "DeepSeek-V3.1 released with hybrid inference (Think & Non-Think modes). Introduces deepseek-chat for non-thinking and deepseek-reasoner for thinking mode. Both modes support 128K context window. Added support for Anthropic API format. Beta API now supports Strict Function Calling. V3.1 base model trained with 840B additional tokens for long context. Improved performance on SWE and Terminal-Bench benchmarks. New pricing structure takes effect September 5th, 2025. DeepSeek-V3.1 Release | DeepSeek API Docs Skip to main content The full suite of DeepSeek application APIs is now available: web search, file input, URL reading, model safety, ASR, TTS and more. Click here to view the guide On this page Copy Markdown Copy Markdown Open Markdown DeepSeek-V3.1 Release Introducing DeepSeek-V3.1: our first step toward the agent era! \u00f0\u009f\u009a\u0080 \u00f0\u009f\u00a7 Hybrid inference: Think & Non-Think \u00e2\u0080\u0094 one model, two modes \u00e2\u009a\u00a1\u00ef\u00b8\u008f Faster thinking: DeepSeek-V3.1-Think reaches answers in less time vs. DeepSeek-R1-0528 \u00f0\u009f\u009b \u00ef\u00b8\u008f Stronger agent skills: Post-training boosts tool use and multi-step agent tasks Try it now \u00e2\u0080\u0094 toggle Think/Non-Think via the \"DeepThink\" button: https://chat.deepseek.com/ API Update \u00e2\u009a\u0099\u00ef\u00b8\u008f \u00e2\u0080\u008b \u00f0\u009f\u0094\u00b9 deepseek-chat \u00e2\u0086\u0092 non-thinking mode \u00f0\u009f\u0094\u00b9 deepseek-reasoner \u00e2\u0086\u0092 thinking mode \u00f0\u009f\u00a7\u00b5 128K context for both \u00f0\u009f\u0094\u008c Anthropic API format supported: Anthropic API guide \u00e2\u009c Strict Function Calling supported in Beta API: Tool Calls guide \u00f0\u009f\u009a\u0080 More API resources, smoother API experience Tools & Agents Upgrades \u00f0\u009f\u00a7\u00b0 \u00e2\u0080\u008b \u00f0\u009f\u0093\u0088 Better results on SWE / Terminal-Bench \u00f0\u009f\u0094\u008d Stronger multi-step reasoning for complex search tasks \u00e2\u009a\u00a1\u00ef\u00b8\u008f Big gains in thinking efficiency Model Update \u00f0\u009f\u00a4\u0096 \u00e2\u0080\u008b \u00f0\u009f\u0094\u00b9 V3.1 Base: 840B tokens continued pretraining for long context extension on top of V3 \u00f0\u009f\u0094\u00b9 Tokenizer & chat template updated \u00e2\u0080\u0094 new tokenizer config: https://huggingface.co/deepseek-ai/DeepSeek-V3.1/blob/main/tokenizer_config.json \u00f0\u009f\u0094\u0097 V3.1 Base Open-source weights: https://huggingface.co/deepseek-ai/DeepSeek-V3.1-Base \u00f0\u009f\u0094\u0097 V3.1 Open-source weights: https://huggingface.co/deepseek-ai/DeepSeek-V3.1 Pricing Changes \u00f0\u009f\u0092\u00b3 \u00e2\u0080\u008b \u00f0\u009f\u0094\u00b9 New pricing starts & off-peak discounts end at Sep 5th, 2025, 16:00 (UTC Time) \u00f0\u009f\u0094\u00b9 Until then, APIs follow current pricing \u00f0\u009f\u0093\u009d Pricing page: Models & Pricing API Update \u00e2\u009a\u0099\u00ef\u00b8\u008f Tools & Agents Upgrades \u00f0\u009f\u00a7\u00b0 Model Update \u00f0\u009f\u00a4\u0096 Pricing Changes \u00f0\u009f\u0092\u00b3",
+   "category": "Models & benchmarks"
   }
  },
  "approved": [],
  "held": [],
  "stats": {
   "drafts": 2,
-  "majors": 8,
+  "majors": 14,
   "quotes": 6,
   "chats": 0
  },
- "cool": {},
+ "cool": {
+  "gemini-3.5-flash|0": "2026-11-24T08:05:00+00:00"
+ },
  "tg_offset": 694012120,
  "chat": [
   {
@@ -1026,6 +1274,126 @@
     "Supports native OpenAI Responses API",
     "Includes new web search, file input, and URL reading capabilities"
    ]
+  },
+  {
+   "t": "2026-11-24T04:57:47.352378+00:00",
+   "title": "OpenAI and Cisco introduce Shirudo",
+   "url": "https://openai.com/index/introducing-shirudo",
+   "category": "Industry",
+   "facts": [
+    "OpenAI and Cisco launched Shirudo, an open-source runtime for Linux security.",
+    "Shirudo uses eBPF technology to protect systems without requiring restarts.",
+    "The tool allows security teams to deploy temporary shields while waiting for permanent patches.",
+    "Shields are cryptographically signed and verified before being loaded."
+   ]
+  },
+  {
+   "t": "2026-11-24T04:58:39.985452+00:00",
+   "title": "Richpanel helps companies automate 50% of support in 30 days",
+   "url": "https://openai.com/business/customer-stories/richpanel-ai-customer-support",
+   "category": "Agents",
+   "facts": [
+    "Richpanel automates 50% of customer support within 30 days",
+    "Uses GPT-6 Astra and GPT-6.1 Sol for AI agent setup and procedures",
+    "Uses GPT-6 Luna for handling customer conversations",
+    "Developed 'Boss AI' to act as an AI manager for agent deployment"
+   ]
+  },
+  {
+   "t": "2026-11-24T04:58:43.429429+00:00",
+   "title": "Finding faster quantum algorithms with agents and formal verification",
+   "url": "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/",
+   "category": "Agents",
+   "facts": [
+    "Google DeepMind used Gemini 4 agent teams to optimize quantum algorithms.",
+    "The agents used Lean, a formal theorem prover, to mathematically verify quantum circuits.",
+    "The team open-sourced a Lean library for quantum algorithms on GitHub.",
+    "Agent teams achieved an 11.8x reduction in computational cost for fusion energy simulations."
+   ]
+  },
+  {
+   "t": "2026-11-24T04:58:45.263492+00:00",
+   "title": "RoboTrack: Point tracking for real-world robotic manipulation",
+   "url": "https://huggingface.co/blog/allenai/robotrack",
+   "category": "Models & benchmarks",
+   "facts": [
+    "Ai2 released RoboTrack, a benchmark and training suite for point tracking in robotic manipulation.",
+    "RoboTrack-Bench includes 307 human-annotated videos from DROID, Ego-Exo4D, MolmoAct 2, and EgoVerse.",
+    "RoboTrack-15M is a new synthetic training dataset containing 15 million point tracks generated via MolmoSpaces.",
+    "The suite includes two new models: RoboTracker and RoboTracker-Warp."
+   ]
+  },
+  {
+   "t": "2026-11-24T04:58:48.412990+00:00",
+   "title": "How to build and maintain an agentic evaluation",
+   "url": "https://huggingface.co/blog/agentic-evals",
+   "category": "Agents",
+   "facts": [
+    "Hugging Face published a guide on building and maintaining agentic evaluations.",
+    "The Hugging Face hub hosts approximately 3,500 evaluation leaderboards.",
+    "Evaluation datasets on the Hugging Face hub grew 16X in the past year to 17,000.",
+    "The guide defines three eras of evaluation: question-answer, agentic, and teams/swarms."
+   ]
+  },
+  {
+   "t": "2026-11-24T04:58:55.251686+00:00",
+   "title": "DeepSeek-V4 Preview Release 2026/04/24",
+   "url": "https://api-docs.deepseek.com/news/news260424/",
+   "category": "Models & benchmarks",
+   "facts": [
+    "DeepSeek-V4 released with Pro and Flash versions",
+    "DeepSeek-V4-Pro features 1.6T total parameters and 49B active parameters",
+    "DeepSeek-V4-Flash features 284B total parameters and 13B active parameters",
+    "Both models support 1M context length"
+   ]
+  },
+  {
+   "t": "2026-11-24T04:59:20.652503+00:00",
+   "title": "DeepSeek-V3.2 Release 2025/12/01",
+   "url": "https://api-docs.deepseek.com/news/news251201/",
+   "category": "Models & benchmarks",
+   "facts": [
+    "DeepSeek-V3.2 and DeepSeek-V3.2-Speciale released on 2025/12/01",
+    "V3.2 is the official successor to V3.2-Exp",
+    "V3.2-Speciale is an API-only model focused on reasoning",
+    "V3.2-Speciale achieved gold-level results in IMO, CMO, ICPC, and IOI 2025"
+   ]
+  },
+  {
+   "t": "2026-11-24T04:59:37.919370+00:00",
+   "title": "DeepSeek-V3.2-Exp Release 2025/09/29",
+   "url": "https://api-docs.deepseek.com/news/news250929/",
+   "category": "Models & benchmarks",
+   "facts": [
+    "DeepSeek-V3.2-Exp released on 2025/09/29",
+    "Introduces DeepSeek Sparse Attention (DSA) for long-context efficiency",
+    "API prices reduced by 50% or more",
+    "V3.1-Terminus remains available for comparison until October 15, 2025"
+   ]
+  },
+  {
+   "t": "2026-11-24T05:00:00.213374+00:00",
+   "title": "DeepSeek V3.1 Update 2025/09/22",
+   "url": "https://api-docs.deepseek.com/news/news250922/",
+   "category": "Models & benchmarks",
+   "facts": [
+    "DeepSeek-V3.1-Terminus released on 2025/09/22",
+    "Improved language consistency between Chinese and English",
+    "Upgraded performance for Code Agent and Search Agent",
+    "Full suite of APIs available including web search, file input, and URL reading"
+   ]
+  },
+  {
+   "t": "2026-11-24T05:00:12.285315+00:00",
+   "title": "DeepSeek V3.1 Release 2025/08/21",
+   "url": "https://api-docs.deepseek.com/news/news250821/",
+   "category": "Models & benchmarks",
+   "facts": [
+    "DeepSeek-V3.1 released with hybrid inference (Think & Non-Think modes).",
+    "Introduces deepseek-chat for non-thinking and deepseek-reasoner for thinking mode.",
+    "Both modes support 128K context window.",
+    "Added support for Anthropic API format."
+   ]
   }
  ],
  "releases": [
@@ -1116,9 +1484,65 @@
     "https://api-docs.deepseek.com/news/news260813/"
    ],
    "bundled": false
+  },
+  {
+   "topic": "shirudo",
+   "t": "2026-11-24T04:57:47.352378+00:00",
+   "urls": [
+    "https://openai.com/index/introducing-shirudo"
+   ],
+   "bundled": false
+  },
+  {
+   "topic": "robotrack",
+   "t": "2026-11-24T04:58:45.263492+00:00",
+   "urls": [
+    "https://huggingface.co/blog/allenai/robotrack"
+   ],
+   "bundled": false
+  },
+  {
+   "topic": "deepseek-v4",
+   "t": "2026-11-24T04:58:55.251686+00:00",
+   "urls": [
+    "https://api-docs.deepseek.com/news/news260424/"
+   ],
+   "bundled": false
+  },
+  {
+   "topic": "deepseek-v3.2",
+   "t": "2026-11-24T04:59:20.652503+00:00",
+   "urls": [
+    "https://api-docs.deepseek.com/news/news251201/"
+   ],
+   "bundled": false
+  },
+  {
+   "topic": "deepseek-v3.2-exp",
+   "t": "2026-11-24T04:59:37.919370+00:00",
+   "urls": [
+    "https://api-docs.deepseek.com/news/news250929/"
+   ],
+   "bundled": false
+  },
+  {
+   "topic": "deepseek-v3.1-terminus",
+   "t": "2026-11-24T05:00:00.213374+00:00",
+   "urls": [
+    "https://api-docs.deepseek.com/news/news250922/"
+   ],
+   "bundled": false
+  },
+  {
+   "topic": "deepseek-v3.1",
+   "t": "2026-11-24T05:00:12.285315+00:00",
+   "urls": [
+    "https://api-docs.deepseek.com/news/news250821/"
+   ],
+   "bundled": false
   }
  ],
- "gem_fail": 4,
+ "gem_fail": 0,
  "last_weekly": "2026-11-22T20:31:26.804502+00:00",
  "last_bundle": "2026-11-23",
  "job_err": {

@@ -332,7 +332,10 @@
   "https://api-docs.deepseek.com/news/news0905/",
   "https://api-docs.deepseek.com/news/news0802/",
   "https://api-docs.deepseek.com/news/news0725/",
-  "https://api-docs.deepseek.com/news/news250120.md"
+  "https://api-docs.deepseek.com/news/news250120.md",
+  "https://deepmind.google/blog/interpreting-mass-spectra-with-google-antigravity/",
+  "https://huggingface.co/blog/ibm-research/an-indic-voice-agent-with-cuga",
+  "https://huggingface.co/blog/inkling-2-mini-inference-hillclimb"
  ],
  "init": [
   "OpenAI",
@@ -347,6 +350,24 @@
   "Artificial Analysis"
  ],
  "buffer": [
+  {
+   "title": "Hill-climbing Inkling 2 Mini inference on one RTX PRO 6000",
+   "url": "https://huggingface.co/blog/inkling-2-mini-inference-hillclimb",
+   "text": "Hill-climbing Inkling 2 Mini inference on one RTX PRO 6000 Back to Articles Hill-climbing Inkling 2 Mini inference on one RTX PRO 6000 Published November 25, 2026 Update on GitHub Upvote 1 Niels Rogge nielsr Follow Inkling 2 Mini came out last week and sets a new state of the art for local AI and smaller open-source models. With ~26B total parameters (3B active per token), multimodal inputs, and a 1M-token context window, it leads its weight class on the Artificial Analysis Intelligence Index v5 and across 32 of 48 benchmarks against models like Gemma 4 31B and Qwen3.8-27B, making it a strong open option for coding, tool use, and reasoning on modest hardware. We wrote an extensive blog post on how you can use it within the Hugging Face ecosystem here . One of the interesting aspects of Inkling 2 Mini that might explain its great performance is its unusual architecture. Inkling 2 Mini is a looped Mixture-of-Experts (MoE) model with 24 physical layers where the middle 12 layers run three times, so every token passes through 48 layers. The checkpoint ships in mixed NVFP4 and MXFP8 and bundles a DSpark drafter for speculative decoding. Both vLLM and SGLang, the go-to frameworks for LLM inference, support it on nightly builds, though the published serving recipes target NVIDIA B200 and GB300 GPUs ( sm100 ), leaving out sm120 cards like the NVIDIA RTX PRO 6000 where kernel compatibility can differ. We wanted to see how fast we could serve it on a single NVIDIA RTX PRO 6000 96 GB, the GPU behind an nvidia-rtx-pro-6000 Inference Endpoint . Rather than tuning flags by hand, we gave a coding agent the inference-optimisation skill, the hf CLI, and access to Hugging Face Jobs , and let it run experiments for an afternoon. Across 46 valid benchmark runs, single-user decode went from 136 to 190.6 tok/s (+40%) (ahead of the 167.7 tok/s community SGLang + DSpark benchmark on LocalMaxxing for the same GPU) and 8-user aggregate throughput went from ~570 to 716 tok/s (+26%) using vLLM nightly with DSpark speculative decoding. Greedy outputs are byte-identical with and without speculation, long-context needle retrieval passes 3/3 up to 250K tokens, and the winning config is now running as an Inference Endpoint from a pinned image digest. All logs, scripts, and raw measurements are in NielsRogge/inkling-2-mini-hillclimb . The setup The inference-optimisation skill gives an agent a fixed experimental protocol and a small, engine-agnostic benchmark script ( bench.py ): Measure the hardware and estimate theoretical ceilings before tuning. Change one variable at a time and bracket every candidate between two control runs ( control \u2192 candidate \u2192 control ). Keep a change only if it beats both controls without regressing other metrics. Log every run in PLAN.md , including regressions and dead ends. Pass long-context, concurrency, and greedy-equivalence checks before declaring a winner. bench.py measures single-user decode, aggregate decode at concurrency N, cold prefill at several lengths, and TTFT, using token counts directly from the server's usage response. All runs used a fixed panel of six prompts (code, an explanation, a story, a comparison table, a bash script, and a history summary) at temperature 1.0 (the model's default), thinking on, 512 output tokens, and 12 repetitions whenever speculative decoding was enabled. The skill was written for a local GPU, so we adapted it to Hugging Face infrastructure: HF Jobs for compute. The rtx-pro-6000 Job flavor uses the same GPU as the nvidia-rtx-pro-6000 Inference Endpoint ($2.75/h for both), so Job numbers transfer directly. A ~150-line driver ( jobs/driver.py ) takes a list of server configs, starts each one, runs an unmeasured warmup, calls bench.py unmodified, shuts the server down, and prints one ledger line per run. Because Jobs run on separate machines, the agent swept SGLang ( lmsysorg/sglang:inkling-2-mini ) and vLLM nightly ( vllm/vllm-openai:nightly ) in parallel. CPU Jobs for reading engine source. When a flag was undocumented, the agent ran a cheap cpu-upgrade Job to grep the installed Python package inside the container. That is how it found SGLang's SGLANG_OPT_* environment variables and vLLM's speculative-config fields. Inference Endpoints for deployment, created via hf endpoints deploy using the exact image digest and flags that passed verification. The baseline was our existing org endpoint config: SGLang with --attention-backend fa4 and no speculative decoding. Results Single-user decode speed (median of 12 requests). vLLM + DSpark reaches ~95% of the memory-bandwidth ceiling at its measured acceptance rate. Config (1\u00d7 RTX PRO 6000) 1-user decode (tok/s) 8-user aggregate (tok/s) Prefill 4K / 32K (tok/s) TTFT SGLang, no speculation (baseline) 134\u2013139 543\u2013598 18.7\u201319.1K / 16.9\u201319.1K 41\u2013114 ms vLLM, no speculation 157.0 638 20.7K / 20.7K 33 ms SGLang + DSpark (8 drafts) 166.6 \u2014 \u00b9 18.0\u201319.5K / 18.9\u201319.1K 38\u201351 ms vLLM + DSpark (7 drafts) 190.6 716 20.7K / 20.6K 40 ms Deployed endpoint (over the internet) 194.9 673 11.7K / 19.2K \u00b2 198 ms \u00b2 \u00b9 SGLang's RTX PRO 6000 DSpark recipe caps --max-running-requests at 4. Raising it to 8 reached 660 tok/s, still behind vLLM. \u00b2 Includes ~160 ms of client-to-endpoint network round trip. All of the speedup comes from switching to vLLM nightly (+15% over SGLang without speculation, 136 \u2192 157 tok/s), enabling DSpark with 7 drafts and probabilistic draft sampling (+21% on top, 157 \u2192 190.6 tok/s across four runs: 189.3, 190.4, 191.1, and 190.7), and adding two memory flags so vLLM's DSpark setup actually starts on 96 GB: vllm serve thinkingmachines/Inkling-2-Mini \\ --tool-call-parser inkling \\ --enable-auto-tool-choice \\ --reasoning-parser inkling \\ --max-model-len 262144 \\ --gpu-memory-utilization 0.85 \\ --speculative-config '{\"method\":\"dspark\",\"num_speculative_tokens\":7,\"draft_sample_method\":\"probabilistic\"}' Both num_speculative_tokens: 7 and draft_sample_method: \"probabilistic\" were validated directly: shorter draft counts (such as 5) are rejected at startup because both engines enforce the checkpoint's fixed block size, and switching to greedy draft sampling dropped vLLM decode speed by 11% at temperature 1.0 (see What didn't work ). Why it stops around 190 tok/s Before tuning, the agent probed the RTX PRO 6000 inside a Job ( 1,469 GB/s copy bandwidth, 416 TFLOPS BF16, 792 TFLOPS FP8) and read tensor sizes from the safetensors header. Because every token makes 48 layer visits, plain decode re-reads ~2.7 GB of attention and dense weights, ~2 GB of routed experts (8 of 128 per layer), and ~0.9 GB for the LM head. At 1,469 GB/s, that gives a single-user bandwidth ceiling of ~256 tok/s . Without speculation, vLLM at 157 tok/s hits 61% of that ceiling, mostly limited by kernel launch latency across 48 visits. Speculative decoding changes the memory math on an MoE. Verifying 8 positions together activates the union of their routed experts, reading roughly 40% of each layer's experts instead of 6%. At our measured acceptance of ~2.3 tokens per step at temperature 1.0 (per-position acceptance drops from 0.6 on the first draft to 0.33 and 0.19), the bandwidth ceiling falls to ~201 tok/s . At 190.6 tok/s, vLLM + DSpark is already at ~95% of hardware bandwidth , so further flag tuning has almost nowhere left to go. Moving past 190 tok/s would take a drafter with higher acceptance at temperature 1.0 or a verification path that touches fewer experts per layer. What didn't work Most candidate flags were unsupported, noisy, or slower: vLLM Lever Result Shorter draft length (3\u20136) Rejected at startup; requires num_speculative_tokens = 7 (checkpoint block size \u2212 1). draft_sample_method: \"greedy\" \u221211% at temperature 1.0 (168.6 vs ~190.4 tok/s). rejection_sample_method: \"block\" 190.1 vs 190.3\u2013190.5 for controls; no effect. enable_adaptive_verification Assertion error at startup for the Inkling 2 drafter. draft_lm_head_quantization: \"fp8\" Only supported for DeepSeek DSpark drafters. We also skipped rejection_sample_method: \"fly\" and \"synthetic\" on purpose because they alter the output distribution, and we wanted a strictly lossless speedup. SGLang Lever Result Shorter draft length (3\u20136) Rejected at startup; requires --speculative-num-draft-tokens 8 ( gamma + 1 for the bundled drafter). SGLANG_ENABLE_NV_MEGA_RUNTIME_OPTIMIZATION=1 +4% once, failed to reproduce against fresh controls. SGLANG_OPT_USE_FUSED_DRAFT_SAMPLE=1 +2%, within run-to-run noise. SGLANG_OPT_MOE_QUANT_ONCE=1 +1%, within run-to-run noise. SGLANG_DSPARK_USE_GREEDY_DRAFT=1 \u22129% at temperature 1.0 (156.8 vs ~172 tok/s). Benchmarking gotchas A few measurement issues caught us along the way: Triton JIT during timed prefill. vLLM's first 4K prefill came back at 202 tok/s instead of 20K because Triton was compiling kernels during the timed request. Running an unmeasured warmup across prompt lengths and concurrency fixed 4K prefill, though the first run in each Job still under-reported 32K prefill due to last-chunk shape ",
+   "facts": [
+    "Inkling 2 Mini features ~26B total parameters with 3B active per token.",
+    "The model uses a looped Mixture-of-Experts architecture with 24 physical layers.",
+    "Inference optimization on an RTX PRO 6000 achieved 190.6 tok/s using vLLM and DSpark.",
+    "The model supports a 1M-token context window.",
+    "Performance was improved by 40% compared to baseline configurations.",
+    "The optimization process used a coding agent to run 46 benchmark experiments.",
+    "The model checkpoint uses mixed NVFP4 and MXFP8 precision.",
+    "DSpark speculative decoding was essential for reaching 95% of the hardware memory-bandwidth ceiling."
+   ],
+   "category": "Models & benchmarks",
+   "topic": "inkling-2-mini",
+   "t": "2026-11-25T18:39:47.043502+00:00"
+  },
   {
    "title": "Microduck Obstacle Avoidance: A Sim2Real Workflow with Isaac Lab and Newton",
    "url": "https://huggingface.co/blog/nvidia/microduck-obstacle-avoidance",
@@ -364,6 +385,42 @@
    "category": "Creative AI (3D, animation, design)",
    "topic": "isaac lab",
    "t": "2026-11-25T00:02:39.856179+00:00"
+  },
+  {
+   "title": "From spectrum to structure: Identifying molecules with Mass Spec Skills for Google Antigravity",
+   "url": "https://deepmind.google/blog/interpreting-mass-spectra-with-google-antigravity/",
+   "text": "Identifying Molecules with Mass Spec Skills for Antigravity \u00e2\u0080\u0094 Google DeepMind Skip to main content November 25, 2026 Science From spectrum to structure: Identifying molecules with Mass Spec Skills for Google Antigravity Robert Brunck, Stefan Ganscha, Swaroop Guntupalli, Dariusz Lasecki, Gabriella Marfani, Jack Mason, Hussain Masoom, Rose Mirshafian, Eliseo Papa and Zoi Tsangalidou Explore Science on Google Antigravity Share Built in collaboration with analytical chemists and using community-developed tools, Mass Spec Skills empowers scientists using Google Antigravity to interpret tandem mass spectra, lay out chemical evidence, and match frontier-level retrieval accuracy even with a lightweight model. Every sample of blood, soil or plant tissue contains a vast array of small molecules, such as nutrients, hormones, drugs and their breakdown products, pollutants, or bioactive compounds with therapeutic potential. A modern mass spectrometer can detect tens of thousands of these molecular signals in a single drop of sample extract, measuring the masses of charged molecules and, in tandem mass spectrometry (MS/MS), the fragments they break into. These measurements, however, do not directly reveal the molecular structure. Researchers cannot immediately tell which compound produced a signal and relate it to its biological role or downstream use cases. To fully map the diversity of small molecules, which remains largely uncharted, researchers need ways to translate mass spectra to molecular structures at scale. The standard approach is to match each spectrum against reference spectra from previously measured molecules. Yet even after a decade of expanding reference libraries, spectral searches annotate on average only about 5% of measured spectra, and 10% for human samples; the rest has been called the \"dark matter\" of mass spectrometry. Many of the molecules producing these unannotated signals are already listed in public chemical databases, but their spectra have not been recorded, so there is no reference spectrum to compare against. Elucidating them instead requires inferring the structure directly from the observed fragment ions. Analytical chemists have a well-tested, step-by-step workflow for narrowing down candidate structures from tandem (MS/MS) spectra: check spectral reference libraries, find the molecular formula and retrieve candidate structures from chemical databases, and then test every candidate against observed fragment peaks. The tools for each step exist and are openly available, but running the full workflow would take a domain expert a significant amount of time for every single spectrum. Because a single study can produce thousands of spectra, manual analysis cannot keep up, leaving most of these signals unannotated. Today, we are sharing Mass Spec Skills for Google Antigravity , a suite of domain skills that pair Gemini's chemical reasoning with the ability to run established mass spectrometry tools and query public chemical databases on the user's behalf to fulfil their request. Antigravity runs these skills, combines their results, and reasons about the chemistry, laying out the evidence for a chemist to review. For molecules that are already catalogued in a database, identification is much faster. For undiscovered molecules, the agent still helps: it narrows down the formula and the parts of the structure supported by the fragments to guide full structure elucidation. A language model cannot do this on its own, since matching fragments to a structure takes precise mass calculations, searches across databases of millions of compounds, and simulations of how bonds break. Pairing Gemini\u00e2\u0080\u0099s reasoning with dedicated chemistry tools brings those steps into one workflow. Antigravity and the Mass Spec Skills have the potential to transform our natural product-based drug discovery workflows by substantially accelerating the identification of bioactive compounds from complex plant extracts. Their remarkable accuracy in predicting even highly complex molecular structures (>90% in most of our evaluations), coupled with detailed interpretation of MS/MS fragmentation patterns, could significantly reduce the time required for compound annotation and enable us to prioritise promising bioactive candidates more rapidly and confidently. Dr Phanankosi Moyo University of Pretoria Figure 1. How a molecule is identified from its tandem mass spectrum: prepare the signal, search reference libraries, deduce the formula and rank candidate structures, then cross-check and refine. Each step is carried out by our Mass Spec Skills built on established, openly available tools. Researchers can describe their task and any instrument-specific tolerances in plain language without having to configure each underlying tool. The agent selects and chains the relevant skills, lowering the technical barrier to entry for scientists less familiar with computational tools. From a single prompt, the agent can take an unannotated tandem mass spectrum all the way to a proposed chemical structure and an auditable report (Figure 2). Figure 2. The agent preprocesses the raw recording, identifies the molecular formula C 20 H 21 ClN 6 O, ranks 845 PubChem isomers against simulated fragments and neutral losses, and summarises the evidence alongside the top candidate structure. It also compiles a detailed report mapping predicted fragment substructures onto 14 of the 19 signal peaks (97.7% of summed fragment intensity). Each stage of that workflow can also be run on its own for smaller everyday tasks, from cleaning up a noisy recording to annotating peaks or comparing candidate isomers: Slide 1 of 6 Spotting the precursor ion and removing baseline noise: the agent converts the negative-mode precursor peak at m/z 395.1387 ([M\u00e2\u0088\u0092H]\u00e2\u0088\u0092) into a neutral molecular mass of 396.1459 Da. Using matchms with configurable intensity thresholds, it strips out over 1,700 low-intensity background noise spikes from the raw recording, leaving a clean spectrum of fragment signals ready for structural analysis. Checking public spectral libraries for known compounds: the agent queries experimental MS/MS reference libraries ( GNPS and MoNA ) using user-specified or instrument-matched mass tolerances, scoring de-noised fragment peaks by cosine similarity. In this example, the search returns no high-confidence library match, prompting the agent to fall back to formula prediction and chemical database search. Pinning down the exact elemental composition: combining the neutral mass with SIRIUS fragmentation-tree scoring across ten candidate elements, the agent identifies the chlorinated formula C 20 H 21 ClN 6 O at \u00e2\u0088\u00921.5 ppm mass error (score 37.86, well ahead of the runner-up at 28.33) and confirms that the main fragment formulas add up to the intact molecule. Assigning fragments and diagnostic neutral losses: using MAGMa , MetFrag , and pairwise neutral-loss lookup, the agent accounts for 97.7% of the summed fragment intensity (matching 14 of the 19 preprocessed peaks). It links the measured peaks through sequential neutral losses of hydrogen chloride (HCl) and isocyanic acid (HNCO), placing a chlorine atom and a urea group on the same half of the molecule. Breaking a score tie with reaction chemistry: when top isomers in PubChem account for the exact same share of the preprocessed spectrum (97.7% of summed fragment intensity across 14 of 19 peaks), the agent tests whether their bond connectivity and functional groups match the observed fragmentation pathways, ruling out candidates that lack a central urea linkage and identifying the top candidate that explains the major cleavages. Validating the final molecule and its cleavage sites: the agent verifies with RDKit that the winning structure is chemically valid and matches the exact mass and formula, then draws the 2D molecule and highlights the central bond cleavage that produces the dominant fragment pair. Antigravity and Mass Spec Skills takes a big leap forward from what we currently can do with MS/MS data. The ability to formulate de novo structure predictions, informed by existing knowledge minable through agentic AI, reduces a complicated process - one that previously required days or months of analysis and literature review - to a matter of hours. For natural products, this instantly creates a tool chemists can use to prioritize or de-prioritize features in their data towards metabolite classes of interest, enabling smarter and vastly accelerated workflows towards drug discovery. Dr Scott Jarmusch Assistant Professor at the Technical University of Denmark (DTU) From raw spectrum to structure end-to-end To see how the chemical evidence fits together in practice, consider the negative-mode tandem mass spectrum from the end-to-end run in Figure 2 (precursor [M\u00e2\u0088\u0092H]\u00e2\u0088\u0092 at m/z 395.1387; Figure 3). Figure 3. Top: negative-mode tandem mass spectrum ([M\u00e2\u0088\u0092H]\u00e2\u0088\u0092 precursor at m/z 395.1387; 1,761 raw peaks filtered to 19 preprocessed peak",
+   "facts": [
+    "Google DeepMind introduced Mass Spec Skills for the Google Antigravity platform.",
+    "The tool uses Gemini's chemical reasoning to interpret tandem mass spectra.",
+    "It automates the workflow of identifying molecular structures from mass spectrometry data.",
+    "The system integrates with established tools like SIRIUS, MAGMa, MetFrag, and RDKit.",
+    "It addresses the 'dark matter' of mass spectrometry where most signals remain unannotated.",
+    "The agent can identify molecular formulas and rank candidate structures from databases like PubChem.",
+    "It reduces analysis time for complex molecular identification from days or months to hours.",
+    "The tool is designed to accelerate natural product-based drug discovery workflows."
+   ],
+   "category": "Agents",
+   "topic": "mass spec skills",
+   "t": "2026-11-25T18:39:22.907600+00:00"
+  },
+  {
+   "title": "An Indic Voice Agent with CUGA",
+   "url": "https://huggingface.co/blog/ibm-research/an-indic-voice-agent-with-cuga",
+   "text": "An Indic Voice Agent with CUGA Back to Articles An Indic Voice Agent with CUGA Enterprise Article Published November 25, 2026 Upvote 5 Vrunda Gadesha vrunda-gadesha Follow ibm-research Cyril Shaji cyrilshaji Follow ibm-research Jobit Treesa Varughese jotreesa1 Follow ibm-research Nivetha Suruliraj nivetha-suruliraj Follow ibm-research Anu Sugunan anu24-hugface Follow ibm-research Anupama Murthi anupamamurthi Follow ibm-research Jaydeep Sen JaydeepSen Follow ibm-research Amith Singhee asinghee Follow ibm-research Most useful knowledge is written and digitized in English. Most of the people who need it speak, and think, in their own regional languages like Hindi, Tamil, Telugu, Gujarati, Marathi and many others. Many would rather talk than type. We built a small voice agent to close that gap, using CUGA as the agent harness. This post explains the use case and what we learned. You can try it yourself in CUGA Apps . The use case: a Farm Assistant A farmer asks a question aloud, in their own language: how do I tell good seed from bad? The agent: Listens and turns the speech into text. Searches a 154-page agricultural handbook, which is written in English. Answers in two to four spoken sentences, in the language the question was asked in, using only what the handbook says. Speaks the answer back and shows the source pages, so the answer can be checked. If someone asks about cricket or coding, it politely steers them back to farming instead of making something up. Where CUGA fits CUGA (ConfigUrable Generalist Agent) is IBM Research's open-source agent harness. It handles the model wiring, tool management, state and guardrails, so you write tools and a prompt instead of the agent loop. Here we use it as an embedded SDK inside a small web app, for three things: One agent, any model. Switch between watsonx and OpenAI with one setting. The knowledge engine. Parse a PDF, chunk it, embed it, and search it locally with agent.knowledge.search() . Conversation threads. Each question gets a fresh thread, so one person's language or context never leaks into another's. The key design idea is simple: CUGA is a text-in, text-out brain. Voice is two thin layers around it. audio \u2500\u2500\u25b6 speech-to-text \u2500\u2500\u25b6 knowledge.search \u2500\u2500\u25b6 CUGA (grounded answer) \u2500\u2500\u25b6 text-to-speech \u2500\u2500\u25b6 audio Because the agent only ever sees text, you can build and test it with plain text first, then add the ears and the mouth. You can also swap speech providers without touching the agent. We support two: Sarvam AI's cloud speech APIs, called directly from the user's browser, and open-source models (SraVaani for speech-to-text, Svara for text-to-speech) running on your own server. The hard part is not the voice Adding speech is the easy part. The hard part is cross-lingual retrieval : a Hindi question has to find an English paragraph. Search works by turning text into vectors and finding the nearest ones. CUGA's default embedding model is English-only, so it turns Hindi into vectors that carry almost no meaning. With it, a Hindi or Tamil question still retrieves five passages, but they are the wrong ones. The model, correctly told to answer only from what it was given, quietly says \"the handbook doesn't cover that\". Every layer behaves correctly, so there is no error and no warning. The fix is to use a multilingual embedding model (we use intfloat/multilingual-e5-large ), so the same meaning lands in the same place whatever the language. Conceptually simple, though wiring it into CUGA took a small workaround (shown in the tutorial). After that, one English document serves every language, and you do not need translated copies of anything. Our advice: before you tune a single prompt, ask your agent one question in a non-English language and check that it finds the right pages. Making it sound right and keeping it safe A few small decisions mattered more than we expected: Write for the ear. Markdown, bullet points, citation tags and bracketed translations such as \"millet (\u092c\u093e\u091c\u0930\u093e)\" all sound wrong when read aloud. The prompt asks the model not to produce them, and a light formatter strips any that slip through before speech. Keep guardrails cheap. Simple input checks catch obvious off-topic questions. If one gets through, the model starts its reply with OFF_TOPIC , and the app swaps in a polite redirect. No second LLM call, so the voice path stays fast. Ground every answer. The model sees only the retrieved passages, is told not to use outside knowledge, and the page sources are shown to the user. Keep keys out of the server. With the Sarvam option, the browser talks to Sarvam directly. The server receives only text and never sees the user's key. Try it You do not need to set anything up to see it work. Open the voice agent in CUGA Apps on Hugging Face Spaces, ask a farming question in your language, and listen to the answer: CUGA Apps on Hugging Face \u2192 Want to build one yourself? Our step-by-step tutorial, Build an Indic Voice Agent with CUGA , starts from an empty folder and adds each layer in turn. Beyond farming: Scaling for Bharat Nothing here is specific to agriculture. Swap the handbook for scheme documents, health advisories, or legal guides, and you have a different assistant. Swap the speech provider and you change the deployment model, such as cloud for speed or on-premises for data sovereignty, without rewriting the agent. Voice-first, multilingual assistants are how digital services can reach people who were never served well by English-only text screens. Building them on an open, auditable harness, with answers tied to sources people can check, is how they earn trust. This approach sits precisely at the intersection of what we are building with IBM Bharat Core. Bharat Core is an optimized AI stack built on top of IBM Sovereign Core, designed specifically for the Indian ecosystem to run Indic AI workloads securely on local infrastructure. When scaling a voice agent from a prototype to a secure enterprise application (like a vernacular KYC system or multilingual government bot), you need greater control over data sovereignty. By pairing CUGA\u2019s flexible agent harness with Bharat Core\u2019s ready-to-deploy Indic connectors and fine-tuned models, developers can build fully compliant, sovereign AI solutions tailored to India's unique linguistic diversity. If you are building for India at scale, see the work happening at IBM Bharat Core . Learn more about CUGA New to CUGA? Here are some places to start: cuga.dev : the CUGA home page. CUGA on GitHub : the open-source harness (Apache 2.0). Star it, file issues, or pick up a good first issue. CUGA documentation : setup, the SDK, knowledge, policies and configuration. CUGA Apps gallery on GitHub : the source for the apps in the Hugging Face Space. Spaces you can try in your browser: CUGA Agent : the general-purpose agent, running on a demo CRM scenario. CUGA Apps : launch working CUGA apps from one dashboard. CUGA Policy Playground : two live agents side by side, one with policies and one without. More CUGA posts on the Hugging Face blog: CUGA on Hugging Face: Democratizing Configurable AI Agents : the introduction to CUGA and its configurable reasoning modes. Build real agentic apps using CUGA: two dozen working examples on a lightweight harness : the app gallery this voice agent belongs to. Same Model, Different Harness: CUGA, Hermes, and Deep Agents \u2014 When to Pick CUGA? : how much the harness matters when the model stays the same. Spaces mentioned in this article 3 More from this author Time-Series Models in the Streamhouse: A New Frontier and Use Cases 39 November 18, 2026 Palette: teaching a small model to build decks in your design language 23 November 3, 2026 Community hocdz754 about 7 hours ago \u2022 This comment has been hidden hocdz754 about 7 hours ago \u2022 This comment has been hidden hocdz754 about 7 hours ago \u2022 This comment has been hidden hocdz754 about 7 hours ago \u2022 This comment has been hidden Edit Preview Upload images, audio, and videos by dragging in the text input, pasting, or clicking here . Tap or paste here to upload images Comment \u00b7 Sign up or log in to comment Upvote 5 Spaces mentioned in this article 3",
+   "facts": [
+    "IBM Research released an Indic Voice Agent built on the open-source CUGA agent harness.",
+    "The agent allows users to ask questions in regional languages like Hindi, Tamil, and Telugu.",
+    "CUGA (ConfigUrable Generalist Agent) handles agent wiring, tool management, and guardrails.",
+    "The system uses multilingual embedding models to enable cross-lingual retrieval between Indic languages and English documents.",
+    "The agent is designed to provide grounded answers from specific documents, such as agricultural handbooks.",
+    "It supports both cloud-based speech APIs and open-source models like SraVaani and Svara.",
+    "The project integrates with IBM Bharat Core for secure, sovereign AI deployment in the Indian ecosystem.",
+    "The voice agent is available to test via Hugging Face Spaces."
+   ],
+   "category": "Agents",
+   "topic": "cuga",
+   "t": "2026-11-25T18:39:34.647964+00:00"
   }
  ],
  "week_log": [
@@ -967,6 +1024,54 @@
     "Output token pricing is $2.19 per million tokens",
     "API outputs are permitted for fine-tuning and distillation"
    ]
+  },
+  {
+   "t": "2026-11-25T18:39:22.907600+00:00",
+   "title": "From spectrum to structure: Identifying molecules with Mass Spec Skills for Google Antigravity",
+   "url": "https://deepmind.google/blog/interpreting-mass-spectra-with-google-antigravity/",
+   "category": "Agents",
+   "facts": [
+    "Google DeepMind introduced Mass Spec Skills for the Google Antigravity platform.",
+    "The tool uses Gemini's chemical reasoning to interpret tandem mass spectra.",
+    "It automates the workflow of identifying molecular structures from mass spectrometry data.",
+    "The system integrates with established tools like SIRIUS, MAGMa, MetFrag, and RDKit.",
+    "It addresses the 'dark matter' of mass spectrometry where most signals remain unannotated.",
+    "The agent can identify molecular formulas and rank candidate structures from databases like PubChem.",
+    "It reduces analysis time for complex molecular identification from days or months to hours.",
+    "The tool is designed to accelerate natural product-based drug discovery workflows."
+   ]
+  },
+  {
+   "t": "2026-11-25T18:39:34.647964+00:00",
+   "title": "An Indic Voice Agent with CUGA",
+   "url": "https://huggingface.co/blog/ibm-research/an-indic-voice-agent-with-cuga",
+   "category": "Agents",
+   "facts": [
+    "IBM Research released an Indic Voice Agent built on the open-source CUGA agent harness.",
+    "The agent allows users to ask questions in regional languages like Hindi, Tamil, and Telugu.",
+    "CUGA (ConfigUrable Generalist Agent) handles agent wiring, tool management, and guardrails.",
+    "The system uses multilingual embedding models to enable cross-lingual retrieval between Indic languages and English documents.",
+    "The agent is designed to provide grounded answers from specific documents, such as agricultural handbooks.",
+    "It supports both cloud-based speech APIs and open-source models like SraVaani and Svara.",
+    "The project integrates with IBM Bharat Core for secure, sovereign AI deployment in the Indian ecosystem.",
+    "The voice agent is available to test via Hugging Face Spaces."
+   ]
+  },
+  {
+   "t": "2026-11-25T18:39:47.043502+00:00",
+   "title": "Hill-climbing Inkling 2 Mini inference on one RTX PRO 6000",
+   "url": "https://huggingface.co/blog/inkling-2-mini-inference-hillclimb",
+   "category": "Models & benchmarks",
+   "facts": [
+    "Inkling 2 Mini features ~26B total parameters with 3B active per token.",
+    "The model uses a looped Mixture-of-Experts architecture with 24 physical layers.",
+    "Inference optimization on an RTX PRO 6000 achieved 190.6 tok/s using vLLM and DSpark.",
+    "The model supports a 1M-token context window.",
+    "Performance was improved by 40% compared to baseline configurations.",
+    "The optimization process used a coding agent to run 46 benchmark experiments.",
+    "The model checkpoint uses mixed NVFP4 and MXFP8 precision.",
+    "DSpark speculative decoding was essential for reaching 95% of the hardware memory-bandwidth ceiling."
+   ]
   }
  ],
  "fail": {
@@ -979,7 +1084,7 @@
   "xAI": 0,
   "DeepSeek": 0,
   "Qwen": 0,
-  "Z.ai": 11,
+  "Z.ai": 12,
   "Artificial Analysis": 0
  },
  "feeds": {
@@ -991,23 +1096,6 @@
   "Artificial Analysis": ""
  },
  "drafts": {
-  "496421688": {
-   "tweets": [
-    "BREAKING: DeepSeek-V3.1 is here and the hybrid inference setup is actually wild.\n\nYou get two modes: deepseek-chat (non-thinking) and deepseek-reasoner (thinking). Both have a 128K context window. ngl the flexibility here is exactly what we needed.",
-    "They also added support for the Anthropic API format and strict function calling in the beta API. This makes switching over basically seamless.\n\nThe base model even got 840B extra tokens for long context extension. Performance is up on SWE and Terminal-Bench too.",
-    "Heads up: new pricing starts September 5th.\n\nIs this the start of the agent era? The tool use and multi-step reasoning gains look solid. You can try the \"Think\" toggle on their site right now to see the speed diff vs R1. \ud83d\ude80"
-   ],
-   "source": "DeepSeek-V3.1 released with hybrid inference (Think & Non-Think modes). Introduces deepseek-chat for non-thinking and deepseek-reasoner for thinking mode. Both modes support 128K context window. Added support for Anthropic API format. Beta API now supports Strict Function Calling. V3.1 base model trained with 840B additional tokens for long context. Improved performance on SWE and Terminal-Bench benchmarks. New pricing structure takes effect September 5th, 2025. DeepSeek-V3.1 Release | DeepSeek API Docs Skip to main content The full suite of DeepSeek application APIs is now available: web search, file input, URL reading, model safety, ASR, TTS and more. Click here to view the guide On this page Copy Markdown Copy Markdown Open Markdown DeepSeek-V3.1 Release Introducing DeepSeek-V3.1: our first step toward the agent era! \u00f0\u009f\u009a\u0080 \u00f0\u009f\u00a7 Hybrid inference: Think & Non-Think \u00e2\u0080\u0094 one model, two modes \u00e2\u009a\u00a1\u00ef\u00b8\u008f Faster thinking: DeepSeek-V3.1-Think reaches answers in less time vs. DeepSeek-R1-0528 \u00f0\u009f\u009b \u00ef\u00b8\u008f Stronger agent skills: Post-training boosts tool use and multi-step agent tasks Try it now \u00e2\u0080\u0094 toggle Think/Non-Think via the \"DeepThink\" button: https://chat.deepseek.com/ API Update \u00e2\u009a\u0099\u00ef\u00b8\u008f \u00e2\u0080\u008b \u00f0\u009f\u0094\u00b9 deepseek-chat \u00e2\u0086\u0092 non-thinking mode \u00f0\u009f\u0094\u00b9 deepseek-reasoner \u00e2\u0086\u0092 thinking mode \u00f0\u009f\u00a7\u00b5 128K context for both \u00f0\u009f\u0094\u008c Anthropic API format supported: Anthropic API guide \u00e2\u009c Strict Function Calling supported in Beta API: Tool Calls guide \u00f0\u009f\u009a\u0080 More API resources, smoother API experience Tools & Agents Upgrades \u00f0\u009f\u00a7\u00b0 \u00e2\u0080\u008b \u00f0\u009f\u0093\u0088 Better results on SWE / Terminal-Bench \u00f0\u009f\u0094\u008d Stronger multi-step reasoning for complex search tasks \u00e2\u009a\u00a1\u00ef\u00b8\u008f Big gains in thinking efficiency Model Update \u00f0\u009f\u00a4\u0096 \u00e2\u0080\u008b \u00f0\u009f\u0094\u00b9 V3.1 Base: 840B tokens continued pretraining for long context extension on top of V3 \u00f0\u009f\u0094\u00b9 Tokenizer & chat template updated \u00e2\u0080\u0094 new tokenizer config: https://huggingface.co/deepseek-ai/DeepSeek-V3.1/blob/main/tokenizer_config.json \u00f0\u009f\u0094\u0097 V3.1 Base Open-source weights: https://huggingface.co/deepseek-ai/DeepSeek-V3.1-Base \u00f0\u009f\u0094\u0097 V3.1 Open-source weights: https://huggingface.co/deepseek-ai/DeepSeek-V3.1 Pricing Changes \u00f0\u009f\u0092\u00b3 \u00e2\u0080\u008b \u00f0\u009f\u0094\u00b9 New pricing starts & off-peak discounts end at Sep 5th, 2025, 16:00 (UTC Time) \u00f0\u009f\u0094\u00b9 Until then, APIs follow current pricing \u00f0\u009f\u0093\u009d Pricing page: Models & Pricing API Update \u00e2\u009a\u0099\u00ef\u00b8\u008f Tools & Agents Upgrades \u00f0\u009f\u00a7\u00b0 Model Update \u00f0\u009f\u00a4\u0096 Pricing Changes \u00f0\u009f\u0092\u00b3",
-   "category": "Models & benchmarks"
-  },
-  "534863790": {
-   "tweets": [
-    "Ngl the state of AI evals right now is wild. Hugging Face just published a guide on building agentic evals, and get this: 98.2% of model-benchmark scores are currently reported by only ONE party.\n\nHow are we supposed to trust numbers without third-party validation?",
-    "HF breaks down 3 eras of evals: Q&A, agentic, and teams/swarms.\n\nUnlike Q&A, agentic evals actually check what an agent changes in an environment. Plus, HF hub now has ~17k eval datasets (up 16X in a year) and ~3,500 leaderboards to track it all."
-   ],
-   "source": "Hugging Face published a guide on building and maintaining agentic evaluations. The Hugging Face hub hosts approximately 3,500 evaluation leaderboards. Evaluation datasets on the Hugging Face hub grew 16X in the past year to 17,000. The guide defines three eras of evaluation: question-answer, agentic, and teams/swarms. Agentic evaluations check what an agent changes in an environment rather than just a final answer. 98.2% of model-benchmark scores are currently reported by only one party. The anatomy of an agentic evaluation includes tasks, agent harnesses, rollouts, verifiers, and traces. The article provides an 8-step walkthrough for building an agentic evaluation using a physics lab use case. How to build and maintain an agentic evaluation Back to Articles How to build and maintain an agentic evaluation Published November 23, 2026 Update on GitHub Upvote 31 +25 Avijit Ghosh evijit Follow ben burtenshaw burtenshaw Follow Irene Solaiman irenesolaiman Follow Overview AI evaluations help shape which systems people build, adopt, and trust. An evaluation gives a system tasks, checks its answers or actions, and produces a score. Building and maintaining a useful evaluation therefore takes real work: defining tasks that reflect domain expertise, scoring them reliably, and checking that the results support the claims made. When methods, code, and data stay private, that work is harder for others to scrutinize or build on. Open source offers a means to build stronger, more frequently updated, and more comparable evaluations and the infrastructure around them. Existing tasks, environments, and tools give builders a starting point, so their effort can go to domain expertise and validation. Sharing how an evaluation was built, including what went wrong, lets others find errors, improve it, and reuse it. The Hugging Face hub is the home for AI evaluation: we host around 3500 eval leaderboards and have seen about a 16X growth in eval datasets on the hub in the past year , to about 17000 datasets. In recent months, we have also incorporated support for agentic abstractions that are relevant to evaluation. For example, Traces that store an agent\u2019s work in an easily reviewable and sharable way; Benchmarks that highlight datasets used to evaluate models with leaderboards; and Environments that show datasets used as agentic RL or evaluation environments. This guide covers four things: Three eras of evaluation (section 1). Evaluations moved from checking answers, to checking what an agent did, to checking what a team of agents produces. Each step adds software that can change the score. The steps in an agentic evaluation (section 2). We follow one task through eight steps, from the claim to the reported score. The full walkthrough, with commands, is in Appendix A . When a benchmark is wrong (section 3). Errors in tasks and graders are common. We look at how they are found and corrected. What to open strategically and why (section 4). A table sets out, component by component, what to share and what can stay protected. In the research community, AI evaluation terminology is notoriously inconsistent . The glossary at the end defines each term we use and notes the other names you may come across. 1. Introduction: how evaluation design has changed AI evaluation design has evolved in three forms as language models have become more capable and able to perform more complex work: question answer, agentic, and teams or swarms. Question-answer benchmarks such as MMLU (2020) and GPQA (2023) measure knowledge and reasoning through the answers models produce. As models became capable of planning and using tools, agentic benchmarks such as SWE-bench and WebArena expanded the scope to resolving software issues and completing tasks on websites. These tasks require evaluation setups that account for the environment in which the system operates and the changes it makes. Lately, research on multi-agent systems has started to add another dimension: how agents coordinate and what they accomplish together. This includes decentralized swarms , teams managed by an orchestrator , and specialized agents collaborating on scientific work . Figure 1 shows a rough timeline of these three eras of evaluations. Figure 1. Three types of language model evals. Question-and-answer benchmarks check a response against a key. Agentic benchmarks check what an agent changed in an environment. Team and swarm benchmarks score what a group of agents produced. We\u2019ll focus on agentic evaluations in this article for two reasons. First, they are becoming increasingly the most prominent type in model release announcements due to high user and enterprise interest in agentic deployment. Second, they offer a useful starting point for understanding how evaluation design affects model performance. Team and swarm evaluations introduce further complexity through interactions between agents, which we leave outside the scope of this guide. Once an agent uses tools to complete a task,",
-   "category": "Agents"
-  },
   "564951792": {
    "tweets": [
     "BREAKING: OpenAI announced GPT-6 models have intrinsic protein-design capabilities.\n\nThey can design protein shapes and sequences using pure reasoning and code\u2014no specialized biology models needed.\n\nngl general-purpose models taking over bio workflows is wild.",
@@ -1154,6 +1242,25 @@
    ],
    "source": "Clay uses GPT-6 Sol, Astra, and Luna models for sales workflows. Clay integrates with Codex and ChatGPT to assist sales teams. The Responses API allows Clay to balance intelligence and cost across models. Clay uses agents for research, qualification, and signal detection. GPT-6 Astra is used by Clay for automated software testing and engineering. Clay is developing inbound sales features using GPT-Live-1. Clay aims to automate end-to-end go-to-market workflows with self-improving agents. Clay helps sales teams win with Codex and ChatGPT | OpenAI OpenAI November 24, 2026 Clay helps sales teams win with Codex and ChatGPT ChatGPT and Codex integrations help Clay users research deals and turn data into go-to-market plays, and GPT\u20116 models handle the reasoning. Start building with OpenAI Company size: Startup Region: North America Industry: Technology Products: API, Codex, ChatGPT Share Even when sales teams have plenty of data about a prospect, they can still struggle to understand what matters most and develop a winning pitch. Clay \u2060 (opens in a new window) is a self-learning revenue engine designed to help. Using GPT\u20116 Astra, GPT\u20116 Sol, and other models, Clay enables users to build lists of companies and people, enrich those records using agents, and use that information in go-to-market plays. Clay also brings these capabilities to where customers are already working with plugins for Codex and ChatGPT, making it easier to create and run go-to-market workflows and research accounts and deals. \u201cClay in ChatGPT gives sales reps a way to understand more about the customers they\u2019re trying to sell to. It brings all of that rich context to the places they\u2019re already working.\u201d \u2014Jeff Barg, Head of AI, Clay Giving sales reps more context to act on Clay\u2019s Codex integration lets builders create and run go-to-market plays in Codex, while giving sales reps access to data they can use to research an account or understand a deal they\u2019re trying to close. Jeff has seen reps combine information from their own systems and public datasets to determine how to best communicate their product\u2019s value to a customer. \u201cCustomers love using Codex for a lot of different tasks in sales,\u201d he says. \u201cWe\u2019ve seen the best sales reps be the most empowered by this.\u201d Clay\u2019s ChatGPT plugin brings the same customer data into another tool reps already use, helping them learn more about prospects without leaving ChatGPT. Jeff says, \u201cIt\u2019s been a big success.\u201d Matching intelligence and cost to the task OpenAI models power Claygent\u2019s research, qualification, enrichment, and signal detection, as well as the agent that helps users build workflows and coordinate other Clay agents. Clay uses GPT\u20116 Sol as its primary model, with GPT\u20116 Astra for harder tasks and GPT\u20116 Luna for cost-sensitive work. That range supports background research and copywriting as well as agents that users work with directly. \u201cGPT-6 Sol is a really great model for go-to-market plays. It has really good intuition and can build long-horizon, outcome-based go-to-market tasks.\u201d \u2014Jeff Barg, Head of AI, Clay The Responses API lets Clay use different levels of intelligence and cost through the same interface. \u201cHaving the same Responses API across the different price points is something that\u2019s super appealing to us with OpenAI models,\u201d said Jeff. Building end-to-end plays that self-improve over time GPT\u20116 Astra also helps Jeff build and test software. He used to spend much of his time manually checking features he had built; now he can ask GPT\u20116 Astra to handle more of that work. He explains, \u201cGPT\u20116 Astra really changed how I build software because it fully closed the loop on the engineering process. Now I can have Astra write code, add tests, and then actually run the tests and test the feature and record that and upload that in the PR. It simplifies my life a lot.\u201d For Clay\u2019s customers, Jeff sees GPT\u2011Live\u20111 as a way to use Clay and Codex by voice and help prospects learn about a product. Clay is working on inbound sales development features that would let an agent show a product or service to a prospect. He also sees the Decisions API as another way to integrate models into Clay and open up new use cases. Clay\u2019s ambition is to carry go-to-market workflows from start to finish, with agents that improve as they learn from the results. For Jeff, the goal is to empower builders \u201cto bring the same shift that happened in software engineering to go-to-market.\u201d OpenAI <3 startups Join the community Start building (opens in a new window) Get OpenAI for Business updates Product updates, practical guides, upcoming events, and more. Email address * By subscribing, you agree to receive emails from OpenAI. You can unsubscribe at any time. Read our Privacy Policy \u2060 . Subscribe Keep reading Richpanel helps companies automate 50% of support in 30 days Startup Nov 23, 2026 Hebbia sees improvements in financial research with GPT-6 Astra Nov 20, 2026 Cogent and OpenAI build cyber defense factories for enterpris",
    "category": "Industry"
+  },
+  "632192584": {
+   "tweets": [
+    "OpenAI just dropped the GPT-6 lineup and it\u2019s actually wild. We\u2019ve got Astra, Sol, and Luna models hitting the leaderboard.\n\nTbh the protein design stuff is the standout\u2014GPT-6 can design sequences using just reasoning and code. No specialized bio models needed.",
+    "How does it stack up?\n\nGPT-6.2 Astra Max hits a 62 intelligence score. It\u2019s trailing Claude Fable 5.2 (65) but it\u2019s way cheaper and faster.\n\nAstra is $4.00 per task vs Fable\u2019s $26.54. It also finishes in 14.7 mins while Fable takes 40.5. Huge efficiency gain ngl.",
+    "The pricing spread across the models is wild.\n\nGPT-6 Luna is the budget king at $0.15 per task.\n\nRichpanel is already using Astra and Sol to automate 50% of support in 30 days, even using \"Boss AI\" to manage agents. Clay is using them for sales too. It\u2019s live.",
+    "Context windows are maxed at 1M for the top Sol and Astra tiers.\n\nGPT-6.2 is also showing lab results for protein binding across five targets.\n\nIf you\u2019re looking for the lowest latency, Luna is the play. If you need raw power, Astra is the one. \ud83e\uddec"
+   ],
+   "source": "[{\"t\": \"2026-11-24T04:58:39.985452+00:00\", \"title\": \"Richpanel helps companies automate 50% of support in 30 days\", \"url\": \"https://openai.com/business/customer-stories/richpanel-ai-customer-support\", \"category\": \"Agents\", \"facts\": [\"Richpanel automates 50% of customer support within 30 days\", \"Uses GPT-6 Astra and GPT-6.1 Sol for AI agent setup and procedures\", \"Uses GPT-6 Luna for handling customer conversations\", \"Developed 'Boss AI' to act as an AI manager for agent deployment\"]}, {\"t\": \"2026-11-25T00:02:11.898064+00:00\", \"title\": \"GPT-6 models demonstrate intrinsic protein-design capabilities\", \"url\": \"https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities\", \"category\": \"Models & benchmarks\", \"facts\": [\"OpenAI announced GPT-6 models demonstrate intrinsic protein-design capabilities.\", \"GPT-6 models can design protein shapes and sequences using reasoning and code.\", \"The models do not require specialized biology models to generate designs.\", \"GPT-6.2 designs showed evidence of binding across five targets in lab tests.\"]}, {\"t\": \"2026-11-25T00:02:37.871103+00:00\", \"title\": \"Clay helps sales teams win with Codex and ChatGPT\", \"url\": \"https://openai.com/business/customer-stories/clay-plugins-openai\", \"category\": \"Industry\", \"facts\": [\"Clay uses GPT-6 Sol, Astra, and Luna models for sales workflows.\", \"Clay integrates with Codex and ChatGPT to assist sales teams.\", \"The Responses API allows Clay to balance intelligence and cost across models.\", \"Clay uses agents for research, qualification, and signal detection.\"]}] LLM Leaderboard - Comparison of AI models from OpenAI, Anthropic, Google, Meta & others | Artificial Analysis Artificial Analysis K LLM Leaderboard - Comparison of AI models from OpenAI, Anthropic, Google, Meta & others Comparison and ranking the performance of over 250 AI models (LLMs) across key metrics including intelligence, price, performance and speed (time per task in minutes & latency as time to first answer token), context window & others. For more details including relating to our methodology, see our FAQs. Intelligence Updated Claude Fable 5.2 (max) and Claude Fable 5.2 (xhigh) are the highest intelligence models, followed by GPT-6.2 Astra (max) and Claude Fable 5.2 (high). Time per Task GPT-6 Luna (low) and GPT-6.1 Terra (low) have the lowest time per task, followed by Gemini 4 Hydrogen (low) and Beam 1.0. Time to First Answer Token Tiny Aya Global and Phi-4 Multimodal have the lowest time to first answer token, followed by Celeris-1 and DeepSeek V4.1 Flash 1017 (non-reasoning). Cost per Task K2 Horizon 375B A23B and Command A+ have the lowest cost per task, followed by North Mini Code and GPT-6 Luna (low). Context Window Llama 4 Scout and GPT-6 Sol (Daybreak Blue, max) support the largest context windows, followed by Muse Wonder (max) and Muse Wonder (high). Expand columns Weights : All Size : All Price : All Reasoning : All Status : Current Intelligence Price Speed Latency Features Model Artificial Analysis Intelligence Index Cost per Task USD Time per Task Minutes First Answer Token (s) Context Window Further Analysis Claude Fable 5.2 Max, Default Fallback 65 $26.54 40.5 244.10 1M Model Providers GPT-6.2 Astra Max 62 $4.00 14.7 162.00 1M Model Providers Gemini 4 Neon Xhigh 62 $6.44 26.4 60.64 1M Model Providers Gemini 4 Carbon High 60 $7.76 39.2 76.11 1M Model Providers Claude Opus 5.5 Max, Default Fallback 59 $10.04 24.7 334.15 1M Model Providers GPT-6.2 Sol Max 57 $1.01 10.0 107.86 1M Model Providers Claude Sonnet 5.5 Max, Default Fallback 55 $10.02 30.7 257.23 1M Model Providers Gemini 4 Hydrogen Xhigh 54 $3.16 15.7 57.87 1M Model Providers GPT-6.1 Terra Max 51 $0.96 14.4 180.51 1M Model Providers Gemini 4 Argon High 51 $9.95 23.9 38.32 1M Model Providers Muse Wonder Full Max 50 -- -- -- 1M Model Providers Kimi K3.1 Pro 47 $3.68 34.0 167.02 1M Model Providers Muse Wonder Max 44 $6.95 16.4 26.73 1M Model Providers Qwen4 Max 43 $3.27 16.7 74.99 984k Model Providers Claude Haiku 5.5 Max 37 $0.41 14.6 191.97 1M Model Providers Muse Ember Max 36 $0.14 3.6 5.28 1M Model Providers Grok 4.7 Xhigh 35 $7.77 22.8 53.19 500k Model Providers Tencent Hy4 35 $1.03 13.5 111.58 1M Model Providers DeepSeek V4.1 Flash 1017 Max 32 $0.60 13.4 46.78 1M Model Providers GLM-5.3 Max 32 $5.01 27.4 77.37 1M Model Providers Inkling 2 Small 31 $1.18 24.5 43.56 1M Model Providers MiMo-V2.6-Pro 30 $0.26 48.5 32.00 1M Model Providers Ling 3.1 Flash 1019 30 $3.19 -- -- 1M Model Providers MiniMax-M3.1-Flash 29 $0.49 17.6 51.19 1M Model Providers Step 5 Preview 29 $2.35 24.2 55.14 1M Model Providers Qwen3.8-Flash-Next 28 $0.57 33.1 86.11 256k Model Providers JoyAI-VL-Preview 28 -- -- -- 1M Model Providers GPT-6 Luna Max 28 $0.15 10.5 66.56 1M Model Providers GLM-5.3-Flash Max 28 $0.58 37.9 107.81 1M Model Providers MiMo-V2.6-Flash 27 $0.13 60.4 55.23 1M Model Providers Mistral Large 4 High 26 $2.06 16.5 58.12 1M Model Providers Muse Spark Open Xhigh 25 $2.02 6.2 11.28 1M Model Pr",
+   "category": "Release roundup"
+  },
+  "632228083": {
+   "tweets": [
+    "DeepSeek-R1-0528 just dropped.\n\nThey\u2019re claiming improved benchmark performance and reduced hallucinations.\nHallucinations are the biggest bottleneck for reasoning models ngl, so this is a huge focus.",
+    "The release also includes enhanced front-end capabilities.\n\nWe don't have the exact intelligence score for this version yet. \nCan they actually catch up to Claude Fable 5.2 or GPT-6.2 Astra? \nRight now those are still the ones to beat.",
+    "Available as of May 28.\n\nNo word on price changes in the docs, but the focus on reliability is what matters most.\nTbh if the hallucination fix is real, this is a massive win. \ud83d\udcc8"
+   ],
+   "source": "[{\"t\": \"2026-11-25T00:03:26.319442+00:00\", \"title\": \"DeepSeek-R1-0528 Release 2025/05/28\", \"url\": \"https://api-docs.deepseek.com/news/news250528/\", \"category\": \"Models & benchmarks\", \"facts\": [\"DeepSeek-R1-0528 released on 2025/05/28\", \"Improved benchmark performance\", \"Enhanced front-end capabilities\", \"Reduced hallucinations\"]}] LLM Leaderboard - Comparison of AI models from OpenAI, Anthropic, Google, Meta & others | Artificial Analysis Artificial Analysis K LLM Leaderboard - Comparison of AI models from OpenAI, Anthropic, Google, Meta & others Comparison and ranking the performance of over 250 AI models (LLMs) across key metrics including intelligence, price, performance and speed (time per task in minutes & latency as time to first answer token), context window & others. For more details including relating to our methodology, see our FAQs. Intelligence Updated Claude Fable 5.2 (max) and Claude Fable 5.2 (xhigh) are the highest intelligence models, followed by GPT-6.2 Astra (max) and Claude Fable 5.2 (high). Time per Task GPT-6 Luna (low) and GPT-6.1 Terra (low) have the lowest time per task, followed by Gemini 4 Hydrogen (low) and Beam 1.0. Time to First Answer Token Tiny Aya Global and Phi-4 Multimodal have the lowest time to first answer token, followed by Celeris-1 and DeepSeek V4.1 Flash 1017 (non-reasoning). Cost per Task K2 Horizon 375B A23B and Command A+ have the lowest cost per task, followed by North Mini Code and GPT-6 Luna (low). Context Window Llama 4 Scout and GPT-6 Sol (Daybreak Blue, max) support the largest context windows, followed by Muse Wonder (max) and Muse Wonder (high). Expand columns Weights : All Size : All Price : All Reasoning : All Status : Current Intelligence Price Speed Latency Features Model Artificial Analysis Intelligence Index Cost per Task USD Time per Task Minutes First Answer Token (s) Context Window Further Analysis Claude Fable 5.2 Max, Default Fallback 65 $26.54 40.5 244.10 1M Model Providers GPT-6.2 Astra Max 62 $4.00 14.7 162.00 1M Model Providers Gemini 4 Neon Xhigh 62 $6.44 26.4 60.64 1M Model Providers Gemini 4 Carbon High 60 $7.76 39.2 76.11 1M Model Providers Claude Opus 5.5 Max, Default Fallback 59 $10.04 24.7 334.15 1M Model Providers GPT-6.2 Sol Max 57 $1.01 10.0 107.86 1M Model Providers Claude Sonnet 5.5 Max, Default Fallback 55 $10.02 30.7 257.23 1M Model Providers Gemini 4 Hydrogen Xhigh 54 $3.16 15.7 57.87 1M Model Providers GPT-6.1 Terra Max 51 $0.96 14.4 180.51 1M Model Providers Gemini 4 Argon High 51 $9.95 23.9 38.32 1M Model Providers Muse Wonder Full Max 50 -- -- -- 1M Model Providers Kimi K3.1 Pro 47 $3.68 34.0 167.02 1M Model Providers Muse Wonder Max 44 $6.95 16.4 26.73 1M Model Providers Qwen4 Max 43 $3.27 16.7 74.99 984k Model Providers Claude Haiku 5.5 Max 37 $0.41 14.6 191.97 1M Model Providers Muse Ember Max 36 $0.14 3.6 5.28 1M Model Providers Grok 4.7 Xhigh 35 $7.77 22.8 53.19 500k Model Providers Tencent Hy4 35 $1.03 13.5 111.58 1M Model Providers DeepSeek V4.1 Flash 1017 Max 32 $0.60 13.4 46.78 1M Model Providers GLM-5.3 Max 32 $5.01 27.4 77.37 1M Model Providers Inkling 2 Small 31 $1.18 24.5 43.56 1M Model Providers MiMo-V2.6-Pro 30 $0.26 48.5 32.00 1M Model Providers Ling 3.1 Flash 1019 30 $3.19 -- -- 1M Model Providers MiniMax-M3.1-Flash 29 $0.49 17.6 51.19 1M Model Providers Step 5 Preview 29 $2.35 24.2 55.14 1M Model Providers Qwen3.8-Flash-Next 28 $0.57 33.1 86.11 256k Model Providers JoyAI-VL-Preview 28 -- -- -- 1M Model Providers GPT-6 Luna Max 28 $0.15 10.5 66.56 1M Model Providers GLM-5.3-Flash Max 28 $0.58 37.9 107.81 1M Model Providers MiMo-V2.6-Flash 27 $0.13 60.4 55.23 1M Model Providers Mistral Large 4 High 26 $2.06 16.5 58.12 1M Model Providers Muse Spark Open Xhigh 25 $2.02 6.2 11.28 1M Model Providers Agnes 2.5 Pro Theta 24 $0.57 30.4 10.18 1M Model Providers Ling-3.2-air 23 -- -- -- 1M Model Providers DeepSeek V4 Pro 0813 Max 23 $1.77 19.6 70.13 1M Model Providers Nanbeige4.3-33B 20 -- -- -- 524k Model Providers Inkling 2 Mini 20 $0.59 13.9 26.38 1M Model Providers Qwen3.8 27B Xhigh 20 $3.53 29.3 101.43 256k Model Providers MiniMax-M3 19 $1.29 13.9 68.59 1M Model Providers JT-4.1 Flash 236B A21B 19 -- -- -- 262k Model Providers K2 Horizon 375B A23B 18 $0.00 3.7 14.42 524k Model Providers Beam 1.0 18 $0.28 1.6 5.97 1M Model Providers Solar Pro 4 14 $0.96 65.4 30.23 512k Model Providers K2 Horizon 32B 14 -- -- -- 524k Model Providers K2 Horizon MoVA 36B A4B 14 -- -- -- 524k Model Providers Apodex 1.1 14 $0.76 12.0 22.07 256k Model Providers Nemotron 3.5 Super VL 14 $0.48 4.0 9.16 1M Model Providers Inkling Xhigh 13 $1.35 9.2 17.68 1M Model Providers Nemotron 3 Ultra 550B A55B Reasoning 12 $2.19 4.6 4.42 262k Model Providers Gemini 3.5 Flash-Lite 12 $0.69 1.7 4.67 1M Model Providers K2 Horizon 7B 11 -- -- -- 524k Model Providers A.X-K2 9 -- -- -- 262k Model Providers K2 Horizon 3.7B 8 -- -- -- 524k Model Providers K-EXAONE 2.0 8 -- -- -- 262k Model Providers Muse Glimmer High 6 $0.21 4.8 14.89 131k Model Providers",
+   "category": "Release roundup"
   }
  },
  "approved": [],
@@ -1161,10 +1268,12 @@
  "stats": {
   "drafts": 11,
   "majors": 24,
-  "quotes": 9,
+  "quotes": 11,
   "chats": 2
  },
- "cool": {},
+ "cool": {
+  "gemini-3.5-flash|0": "2026-11-26T08:05:00+00:00"
+ },
  "tg_offset": 694012120,
  "chat": [
   {
@@ -1200,12 +1309,12 @@
    "text": "Here are the 3 best verified items from the last 6 hours:\n\n1. **DeepSeek-R1 Open Release**\n   \u2022 **Why it lands:** Open-weights o1-rival under MIT license with 6 distilled models (32B\u201370B).\n   \u2022 **Angle:** Open source catching up to frontier reasoning models at a fraction of API costs ($0.14/1M input).\n\n2. **DeepSeek-R1-Lite Preview**\n   \u2022 **Why it lands:** Features transparent real-time thought streams on o1-preview level math/AIME benchmarks.\n   \u2022 **Angle:** Visible chain-of-thought vs. hidden reasoning traces\u2014why transparency matters for developers.\n\n3. **DeepSeek Disk Context Caching**\n   \u2022 **Why it lands:** 90% API cost reduction ($0.014/1M token cache hit) and 128K prompt latency drops from 13s to 500ms.\n   \u2022 **Angle:** Massive speed and cost unlock for agentic workflows and long-context apps.\n\n---\n\n\ud83d\udd25 **Model Showdown Idea**\n\u2022 **Prompt:** *\"Explain quantum entanglement to a 10-year-old using only a pair of magic socks.\"*\n\u2022 **Compare:** DeepSeek-R1 vs. GPT-4o\n\u2022 **Post format:** Side-by-side screenshots showing DeepSeek's thinking process vs. GPT-4o's response, short punchy caption.\n\nReply 'draft 1/2/3' to continue."
   }
  ],
- "last_digest": "2026-11-25T08:17:14.240777+00:00",
- "last_scan": "2026-11-25T08:19:09.660231+00:00",
+ "last_digest": "2026-11-25T18:39:51.531118+00:00",
+ "last_scan": "2026-11-25T18:39:51.531201+00:00",
  "credits": {
   "month": "2026-11",
   "used": [
-   195
+   222
   ],
   "alerted": []
  },
@@ -1226,7 +1335,10 @@
   "2124607737073910134",
   "2125371062880022536",
   "2125248925334454647",
-  "2125426403659174212"
+  "2125426403659174212",
+  "2125638790593274259",
+  "2125569362727972967",
+  "2125475649632829552"
  ],
  "style_accounts": [
   "Octoberry"
@@ -1235,13 +1347,13 @@
  "cmds_v": 2,
  "daily": {
   "day": "2026-11-25",
-  "n": 8,
+  "n": 10,
   "min_done": false
  },
  "last_release_watch": "2026-11-25",
  "web_note": "Last web scan: Hacker News: 11 | Reddit failed: 404 Client Error: Not Found for url: htt | GitHub: 12 | Hugging Face: 8 | Web search failed: 404 Client Error: Not Found for url: htt | new: 13 | filter failed: Gemini failed: 503 Server Error: Service Unavailab | comparison ideas failed: Gemini failed: 503 Server Error: Service Unavailable for url",
  "last_rumor": "2026-11-24",
- "q_idx": 5,
+ "q_idx": 0,
  "last_web": "2026-11-24T15:43:52.385347+00:00",
  "web": {
   "subreddits": [
@@ -1827,6 +1939,42 @@
     "Six distilled models released ranging from 32B to 70B parameters",
     "DeepSeek-R1 utilizes large-scale reinforcement learning in post-training"
    ]
+  },
+  {
+   "t": "2026-11-25T18:39:22.907600+00:00",
+   "title": "From spectrum to structure: Identifying molecules with Mass Spec Skills for Google Antigravity",
+   "url": "https://deepmind.google/blog/interpreting-mass-spectra-with-google-antigravity/",
+   "category": "Agents",
+   "facts": [
+    "Google DeepMind introduced Mass Spec Skills for the Google Antigravity platform.",
+    "The tool uses Gemini's chemical reasoning to interpret tandem mass spectra.",
+    "It automates the workflow of identifying molecular structures from mass spectrometry data.",
+    "The system integrates with established tools like SIRIUS, MAGMa, MetFrag, and RDKit."
+   ]
+  },
+  {
+   "t": "2026-11-25T18:39:34.647964+00:00",
+   "title": "An Indic Voice Agent with CUGA",
+   "url": "https://huggingface.co/blog/ibm-research/an-indic-voice-agent-with-cuga",
+   "category": "Agents",
+   "facts": [
+    "IBM Research released an Indic Voice Agent built on the open-source CUGA agent harness.",
+    "The agent allows users to ask questions in regional languages like Hindi, Tamil, and Telugu.",
+    "CUGA (ConfigUrable Generalist Agent) handles agent wiring, tool management, and guardrails.",
+    "The system uses multilingual embedding models to enable cross-lingual retrieval between Indic languages and English documents."
+   ]
+  },
+  {
+   "t": "2026-11-25T18:39:47.043502+00:00",
+   "title": "Hill-climbing Inkling 2 Mini inference on one RTX PRO 6000",
+   "url": "https://huggingface.co/blog/inkling-2-mini-inference-hillclimb",
+   "category": "Models & benchmarks",
+   "facts": [
+    "Inkling 2 Mini features ~26B total parameters with 3B active per token.",
+    "The model uses a looped Mixture-of-Experts architecture with 24 physical layers.",
+    "Inference optimization on an RTX PRO 6000 achieved 190.6 tok/s using vLLM and DSpark.",
+    "The model supports a 1M-token context window."
+   ]
   }
  ],
  "releases": [
@@ -1980,7 +2128,7 @@
    "urls": [
     "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities"
    ],
-   "bundled": false
+   "bundled": true
   },
   {
    "topic": "deepseek-r1-0528",
@@ -1988,7 +2136,7 @@
    "urls": [
     "https://api-docs.deepseek.com/news/news250528/"
    ],
-   "bundled": false
+   "bundled": true
   },
   {
    "topic": "deepseek-v3-0324",
@@ -2061,14 +2209,22 @@
     "https://api-docs.deepseek.com/news/news250120.md"
    ],
    "bundled": false
+  },
+  {
+   "topic": "mass spec skills",
+   "t": "2026-11-25T18:39:22.907600+00:00",
+   "urls": [
+    "https://deepmind.google/blog/interpreting-mass-spectra-with-google-antigravity/"
+   ],
+   "bundled": false
   }
  ],
  "gem_fail": 0,
  "last_weekly": "2026-11-22T20:31:26.804502+00:00",
- "last_bundle": "2026-11-23",
+ "last_bundle": "2026-11-25",
  "job_err": {
   "top picks": "2026-11-23",
   "comparison ideas": "2026-11-24"
  },
- "scan_note": "Last scan: 'I tested the new AI model': 8 found, 3 fresh | 'AI agents new tool': 8 found, 8 fresh | watchlist: 8 found, 8 fresh"
+ "scan_note": "Last scan: 'AI video model new': 8 found, 5 fresh | 'Claude Gemini GPT Grok DeepSeek update': 8 found, 7 fresh | watchlist: 8 found, 8 fresh"
 }

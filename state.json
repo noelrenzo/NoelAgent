@@ -316,7 +316,18 @@
   "https://api-docs.deepseek.com/news/news251201/",
   "https://api-docs.deepseek.com/news/news250929/",
   "https://api-docs.deepseek.com/news/news250922/",
-  "https://api-docs.deepseek.com/news/news250821/"
+  "https://api-docs.deepseek.com/news/news250821/",
+  "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities",
+  "https://openai.com/index/searching-for-distant-planets-with-astra",
+  "https://openai.com/business/customer-stories/intentful-dots",
+  "https://openai.com/business/customer-stories/ifood",
+  "https://openai.com/business/customer-stories/clay-plugins-openai",
+  "https://huggingface.co/blog/nvidia/microduck-obstacle-avoidance",
+  "https://api-docs.deepseek.com/news/news250528/",
+  "https://api-docs.deepseek.com/news/news250325/",
+  "https://api-docs.deepseek.com/news/news250115/",
+  "https://api-docs.deepseek.com/news/news1226/",
+  "https://api-docs.deepseek.com/news/news1210/"
  ],
  "init": [
   "OpenAI",
@@ -384,6 +395,95 @@
    "category": "Agents",
    "topic": "gemini",
    "t": "2026-11-24T04:58:43.429429+00:00"
+  },
+  {
+   "title": "Searching for distant planets with Astra",
+   "url": "https://openai.com/index/searching-for-distant-planets-with-astra",
+   "text": "Searching for distant planets with Astra | OpenAI OpenAI An illustrated view of HD 164604 b zooms out to the Milky Way. Boxes mark a selection of systems with confirmed exoplanets. Distances are scaled to the zoom and show the distance from Earth at the widest view. Hover over or tap a box to read its label. Use the arrow keys to browse labels and Escape to dismiss them. November 24, 2026 Science Searching for distant planets with Astra Two amateur astronomers used Codex and Astra to look for signs of planets in public telescope data. Now they\u2019ve given professional astronomers a few places to look more closely. Share Astronomers have confirmed more than 6,400 planets beyond our solar system \u2060 (opens in a new window) since the first ones were announced in 1992 \u2060 (opens in a new window) . A worldwide community of amateur astronomers has long been part of that search. Some comb through public telescope data for small, repeated dips in a star\u2019s brightness that could signal an orbiting planet. Others use their own telescopes to watch for the next dip and share what they see with researchers. *Data from the NASA Exoplanet Archive\u2019s Planetary Systems Composite Parameters table \u2060 (opens in a new window) . 2026 data are year to date through November 24, 2026. How astronomers discover exoplanets Astronomers have used AI in this search for years. In 2017, researchers trained a neural network on 15,000 signals from NASA\u2019s Kepler Space Telescope \u2060 (opens in a new window) that astronomers had already examined. From those examples, the model learned to recognize which patterns in starlight were most likely to come from a planet. When the researchers used it to examine weaker signals, one led them to an eighth planet orbiting a star called Kepler-90 \u2060 (opens in a new window) . Now, tools like Astra are helping amateur astronomers design and run searches of their own, often on data that has already yielded the more obvious exoplanet signals. Kevin Bond, an engineer at OpenAI, came to astronomy through his love of photographing the night sky. He used Codex to search observations of about 100,000 stars from the Kepler telescope, a planet-hunting mission that ran from 2009 to 2018. Ethan Byrd, founder of the email infrastructure start-up Primitive, has always loved astronomy. Working independently of Bond, he tried several AI models before choosing Astra to help him analyze telescope data from about 19 million stars. Both searches identified potential exoplanets. Bond and Byrd have now turned to astronomers for an independent assessment of their results. Bond contacted an astronomer at the SETI Institute, who ran an independent search and found two of the same signals in the Kepler data. Byrd sent one of his strongest candidates to researchers working on NASA\u2019s Transiting Exoplanet Survey Satellite (TESS) mission. It\u2019s in line for further analysis, and two more candidates are awaiting submission. Looking for dips in starlight One of the most common ways to find an exoplanet is to watch the star it orbits. When a planet passes in front of its star from our point of view on Earth, it blocks a tiny amount of starlight. Astronomers call that crossing a transit. On a graph of the star\u2019s brightness over time, known as a light curve, a transit shows up as a dip. If the dip keeps coming back at regular intervals, astronomers know when to watch for it again. Searching for that pattern across thousands of stars is partly a coding problem. Astronomers have published methods for picking out faint, recurring dips in years of measurements. Bond used Codex to compare those methods, combine them in a search program, and test whether changes to the code improved the search. One AI agent scanned the light curves for promising signals. Another ran more detailed checks on the candidates the first one flagged. Bond ran the program on public data from the Kepler Space Telescope. The search flagged more than 200 signals, including 10 from previously confirmed planets. Finding those known planets gave Bond confidence that the program could pick out the kinds of signals he was looking for. Two stars stood out. The first, KIC 5689121, is a relatively cool star about half the size of our sun in the constellation Lyra. The Codex search found a dip in brightness every 13.8 days. If a planet is causing it, the amount of light it blocks suggests it could be about 2.4 times Earth\u2019s diameter. These four curves show the same Kepler observations aligned on a 13.77-day cycle. The second star, KIC 6691030, is faint and lies in the northern sky. The Codex search found a dip in its brightness every 4.8 days, consistent with a planet smaller than Neptune. These were the two signals the SETI Institute astronomer found independently. Confirming what caused them could take months or years. \u201cKevin\u2019s work shows how citizen scientists, equipped with AI, can help astronomers explore the Kepler Bonus Catalog\u2014a vast collection of stars beyond Kepler\u2019s original targets. His pipeline has surfaced promising candidates in data traditional searches may have missed. Our initial checks are encouraging, and follow-up observations will tell us more.\u201d Vishal Gajjar, associate director for international SETI programs at the SETI Institute Byrd used Astra to design two searches. One looked broadly for exoplanet candidates. The other focused on stars\u2019 habitable zones. A habitable zone is the range of distances from a star where a planet with a suitable atmosphere could support liquid water on its surface. Byrd then asked Astra to review published methods, build the search software, and run initial checks on promising signals. His searches drew on observations from TESS, which NASA launched in 2018, and from other public telescope archives. Kepler watched one field for four years. TESS surveyed both hemispheres in its first 26 sectors, from 2018 to 2020. The star field comes from NASA\u2019s TESS mosaic through September 2025 \u2060 (opens in a new window) , clipped to that original survey footprint. The wider gap shows where TESS pointed farther north during six observing sectors. The inset marks KIC 5689121 \u2060 (opens in a new window) in the original Kepler field \u2060 (opens in a new window) . See NASA\u2019s final prime-mission coverage maps \u2060 (opens in a new window) and its earlier field-of-view animation \u2060 (opens in a new window) . The first pass through the data turned up 49 candidates. Byrd sent one of his strongest candidates to researchers working on the TESS mission, where it is awaiting further analysis. His search is still running. What does it take to confirm a planet? When astronomers see a star dim, they have to consider what else might explain it. Two stars passing in front of one another can produce a similar dip. Even a change in temperature aboard a telescope can affect its instruments enough to make a star appear to dim. Astronomers can use statistics to show that an exoplanet is the most likely explanation for a series of dips. They can also collect more observations, sometimes using a different method. For example, an orbiting planet\u2019s gravity tugs on its star, causing it to move slightly toward and away from us. That motion, called radial velocity, shows up as tiny shifts in the color of the star\u2019s light. Astronomers then publish their findings in a peer-reviewed journal so others can examine the evidence. For Bond and Byrd, each candidate is a question that can be tested. If a planet is passing in front of the star in Lyra every 13.8 days, astronomers can watch for the next crossing. Further observations can help establish whether the dip repeats as expected, while additional checks can help determine what is causing it. Photographs by Kevin Bond Taking part in the search You can contribute without owning a telescope. NASA\u2019s Exoplanet Watch \u2060 (opens in a new window) lets you request data and learn to plot a light curve yourself. Its broader exoplanet citizen science programs \u2060 (opens in a new window) offer other ways to participate. If you have access to a telescope, Exoplanet Watch walks users through how to collect data on transiting exoplanets and participate in observation campaigns. AAVSO\u2019s Exoplanet Observing Program \u2060 (opens in a new window) can show you how to measure a dip in starlight and share your observations with the researchers studying that planet. And the Unistellar Network Investigating TESS Exoplanets \u2060 (opens in a new window) coordinates volunteers around the world with a certain type of telescope to observe the same star, helping astronomers catch transits that can last longer than a single night. Astronomy has a long history of people around the world following their curiosity and sharing what they find. Bond and Byrd are part of that tradition. Their searches are still open, but they turned a love of the night sky into leads that other astronomers can investigate. We want more people to have that opportunity, in astronomy and across science. If you want to follow along with new findi",
+   "facts": [
+    "Amateur astronomers used OpenAI's Codex and Astra to analyze public telescope data.",
+    "The project identified potential exoplanet candidates from Kepler and TESS mission data.",
+    "Kevin Bond used Codex to scan 100,000 stars from the Kepler telescope.",
+    "Ethan Byrd used Astra to analyze telescope data from approximately 19 million stars.",
+    "The search identified 200+ signals, including 10 from previously confirmed planets.",
+    "Two specific candidates (KIC 5689121 and KIC 6691030) were independently verified by the SETI Institute.",
+    "Exoplanet discovery involves detecting dips in starlight caused by transiting planets.",
+    "The work demonstrates how AI tools can assist citizen scientists in astronomical research."
+   ],
+   "category": "Industry",
+   "topic": "astra",
+   "t": "2026-11-25T00:02:33.794230+00:00"
+  },
+  {
+   "title": "How Intentful uses dots to make more time for growth",
+   "url": "https://openai.com/business/customer-stories/intentful-dots",
+   "text": "How Intentful uses dots to make more time for growth | OpenAI OpenAI November 24, 2026 How Intentful uses dots to make more time for growth How a small business founder\u2019s dot helps her with research and proposals, while alerting her to critical messages and resolving issues. Explore ChatGPT for small businesses Company size: SMB Region: North America Industry: Services Products: ChatGPT Share Marina Petrova is CEO and cofounder of Intentful \u2060 (opens in a new window) , a lean team that helps brands make their marketing interactive, with products such as ads that answer customers\u2019 questions in real time and tools that make website information readable by AI. The company also advises and trains marketers on using AI. In travel and tourism, Intentful works with destination organizations and local businesses such as hotels, restaurants, and attractions. A custom proposal is part of how Marina wins their business, showing prospects what\u2019s possible and what it would take to deliver. To keep Intentful growing, she needed more room for that strategic work, but she was spending too much time on research, hunting for files, and formatting decks. Her dot \u2060 changed all that, taking on tasks and meeting Marina\u2019s needs before she even had to ask. \u201cMy dot makes me feel like I gained a new superpower.\u201d \u2014Marina Petrova, CEO and cofounder, Intentful From 300 websites to a proposal in hours instead of days For one of Intentful\u2019s tourism clients, Marina wanted to propose a package of Intentful\u2019s AI services for hundreds of local businesses in the destination. Before she could price the package, she needed to work out which businesses\u2019 websites the package could cover and what Intentful had charged other clients for similar work. She brought in her dot, which she named Aria, to help her get from research to a proposal she could put her name on in a few hours instead of several days. First, Marina gave Aria a spreadsheet of URLs and criteria for deciding which sites to include. For example, a site needed a readable sitemap listing no more than 3,000 pages. \u201cMy dot looked through about 300 website sitemaps, helped me figure out which sites to include in a new offer for local businesses, and pulled pricing from past agreements.\u201d \u2014Marina Petrova, CEO and cofounder, Intentful Next, Aria helped Marina research pricing. Through ChatGPT \u2060 (opens in a new window) plugins, Aria reviewed Intentful\u2019s sales data, including past engagements and discussions in HubSpot. It surfaced pricing from earlier agreements and context from Intentful\u2019s plans for the following year. Using that data, Marina and Aria then built a pricing model: page counts determined the pricing tier, and previous customer agreements also informed the price. \u201cWe worked through a custom pricing model together, and then Aria turned it into a one-page proposal I reviewed and edited,\u201d said Marina. When drafting proposals, Aria knows to use Intentful\u2019s templates from Google Drive. Marina can also point Aria to an earlier proposal as a reference, so the draft follows Intentful\u2019s style from the start. \u201cI need to say what needs to be in a proposal, but I don\u2019t need to spend an hour figuring out its layout. My dot handles that,\u201d Marina says. Aria can also spot things Marina hadn\u2019t thought to check. When Marina asked Aria to reuse pricing from an earlier proposal, it noticed that the original renewal date didn\u2019t match the timing she remembered. Aria flagged the discrepancy and left the date out of the new draft. Staying ahead of messages, tasks, and team updates Marina uses the Gmail and Slack plugins in ChatGPT to catch up on conversations, find open tasks, and see where the team needs her. Aria checks for messages that need Marina\u2019s attention. While Marina was offline, Aria spotted a reply she had been waiting for and let her know it included an invitation for a call that morning. Marina also uses Aria to talk through ideas, find conversations, check an account\u2019s history in the CRM, or open and assign tasks in Asana. She often briefs Aria by phone while she travels. \u201cOn a long drive, I call my dot and talk through what needs to get done. We chat through updates for client proposals, and my dot already knows the structure, the formatting, and what needs to be done.\u201d \u2014Marina Petrova, CEO and cofounder, Intentful Marina loves that her dot works in the tools she already uses. When Aria writes a draft, Marina can leave comments in Google Docs exactly where she wants changes. On longer documents, she asks Aria to use suggesting mode so she can see what changed. Aria also keeps up with changes in shared work without being asked. For a conference presentation, Marina created the deck and a colleague added two slides. \u201cAria noticed the new slides, updated the speaker notes without being asked, and let me know,\u201d Marina says. Marina chooses which information Aria can access and always reviews outgoing email. She can keep work moving without handing over the final call. Using dots to teach others about AI When Marina prepared an AI 101 session on agents, she used Aria to help build the lesson. The process was itself an example of what she wanted attendees to learn: delegate a real task, give the agent enough context, challenge the result, and stay in control of what goes out. Aria\u2019s support continued even after the class. After a flight, Marina saw a participant\u2019s request for access to a training file. When she checked with Aria, it had already shared the file. And after a session for 50 marketers, Aria noticed that a software glitch was preventing participants from opening the recording. It flagged the access issue and offered to fix it before the link was shared. \u201cWith my dot, I can focus on strategic things. I can focus on ideas and growth.\u201d \u2014Marina Petrova, CEO and cofounder, Intentful Join the new era of work More than 1 million businesses around the world are achieving meaningful results with OpenAI. Contact sales Get OpenAI for Business updates Product updates, practical guides, upcoming events, and more. Email address * By subscribing, you agree to receive emails from OpenAI. You can unsubscribe at any time. Read our Privacy Policy \u2060 . Subscribe Keep reading Steuerrecht.com delivers faster legal analysis with ChatGPT Oct 27, 2025 Gondola doubles revenue as its team builds more with Codex Startup Nov 12, 2026 Franchisee reconciles cash in 94% less time with ChatGPT Work Oct 20, 2026",
+   "facts": [
+    "Intentful uses OpenAI 'dots' to automate research and proposal creation.",
+    "Aria, a custom dot, reduced proposal preparation time from days to hours.",
+    "Dots integrate with Gmail, Slack, Google Drive, and Asana.",
+    "Aria can analyze website sitemaps and extract pricing data from past agreements.",
+    "The agent can proactively flag discrepancies in dates and document content.",
+    "Marina Petrova uses voice commands to brief her agent while traveling.",
+    "Aria can perform tasks like updating speaker notes and managing file access permissions.",
+    "Intentful uses these AI agents to teach clients about delegating tasks to AI."
+   ],
+   "category": "Agents",
+   "topic": "openai dots",
+   "t": "2026-11-25T00:02:35.209139+00:00"
+  },
+  {
+   "title": "How iFood scales coding agents across 15,000 repositories",
+   "url": "https://openai.com/business/customer-stories/ifood",
+   "text": "How iFood scales coding agents across 15,000 repositories | OpenAI OpenAI November 24, 2026 How iFood scales coding agents across 15,000 repositories Contact sales Company size: Enterprise Region: Latin America Industry: Technology Products: API 15,000 code repositories at iFood 25,000+ runs completed by the platform US$0.04 average inference cost per run 2x+ as many vulnerabilities fixed through the security platform Share The Remote Agents Platform turned engineering tasks into API calls: teams delegate the work, execution takes place in a remote sandbox, and the result comes back as a merge request. In the internal security platform, the number of vulnerabilities fixed more than doubled. The challenge isn\u2019t the task\u2014it\u2019s the scale iFood maintains more than 15,000 code repositories. Each periodically needs specific tasks performed: validating code to ensure it meets internal standards, fixing vulnerable dependencies, or running an analysis. None of these tasks is difficult on its own. The challenge comes when those tasks multiply. \u201cSolving this for one repository is easy. The challenge is solving it at scale,\u201d says Victor Coelho, Senior Software Engineer at iFood. \u201cThe Remote Agents Platform is designed to make it possible to solve this at scale across all 15,000 repositories.\u201d Before the platform, each team tackled the problem in its own way\u2014and they all ran into the same obstacle. \u201cBefore, we had fragmented solutions. Imagine several teams at iFood trying to solve different problems, but without this layer, this agentic runtime, available to them. In the end, those solutions always ran into the same problem.\u201d What was missing wasn\u2019t intelligence or a use case. It was execution infrastructure. A dedicated runtime . \u201cTeams can focus on solving their business problems and delegate execution to our platform.\u201d \u2014Victor Coelho, Senior Software Engineer, iFood A coding agent in the cloud, accessible through an API The team describes the Remote Agents Platform as an API that launches a remote agentic coding task. The cycle has three steps: the user submits a prompt and environment requirements through a REST call; the platform processes the task on a dedicated remote runner inside an isolated sandbox; and the result is retrieved later. \u201cThe platform\u2019s entry point, its interface, is a simple REST API. Users can use this API to create the runs they need. Internally, we handle and manage the entire lifecycle and delegate execution to isolated sandboxes,\u201d he explains. Task progress can be monitored in real time. The runner\u2019s internal design alternates between two different types of steps\u2014and that combination makes the overall workflow predictable. Deterministic steps bookend the workflow: cloning the repository, importing the skills the agent can use, and setting up the working branch at the start; publishing the merge request and making the generated artifacts available at the end. In between is the agentic execution itself, running GPT\u20115.6 Luna inside the sandbox. \u201cIt\u2019s a combination of those two things: deterministic steps and agentic execution within the workflow.\u201d The sandbox runs Ubuntu and includes the toolchains iFood\u2019s ecosystem requires\u2014Python, Java, Kotlin, C#, TypeScript, Rust, JavaScript, and Go\u2014along with general-purpose tools. Beyond the sandbox, the agent can access Nexus, GitLab, Docker, Snyk, Kubernetes, and AWS. Why GPT\u20115.6 Luna The model choice came down to three factors considered together, rather than just one. \u201cWe chose GPT\u20115.6 Luna because, among models at the same checkpoint, the benchmarks showed it offered a great balance of intelligence, efficiency, and execution speed\u2014how quickly it could complete tasks. Those three qualities together led us to choose GPT\u20115.6 Luna.\u201d That balance matters more for a platform built to scale than it would for a one-off use case. With tens of thousands of tokens being consumed, the average cost of four U.S. cents per run stops being a minor detail and becomes an architectural consideration. \u201cGiven our plans to scale the platform across many use cases at iFood, the balance of efficiency and intelligence that OpenAI\u2019s model provides ensures we can scale sustainably.\u201d \u2014Victor Coelho, Senior Software Engineer, iFood How to tell whether the agent completed the task Delegating execution at scale creates a new challenge: automatically determining whether the agent did what it was supposed to do. iFood\u2019s answer comes in the step after the session. Once execution is complete, the result is processed using OpenAI\u2019s Structured Outputs, which requires the output to conform to a predefined contract. \u201cWe process the result using Structured Outputs, which ensures the response follows a predefined contract. From the agent\u2019s session, we can identify the outputs within the response structure we expect. This helps reduce uncertainty and ensures we can always get a response from the agent\u2019s session, whether positive or negative.\u201d \u2014Victor Coelho, Senior Software Engineer, iFood The first major user: security The platform already powers an internal iFood security product that scans the 15,000 repositories for vulnerable dependencies and attempts to fix them. The migration had a direct impact: \u201cWith our platform, the accuracy of those changes, those fixes, more than doubled,\u201d says Coelho. This use case illustrates the idea behind the platform: the security team didn\u2019t need to build its own agentic runtime or become experts in agent orchestration. It needed to call an API. Asynchronous execution gives developers their time back The team emphasizes what asynchronous execution frees developers to do, rather than replacement. Because the task is delegated and runs without supervision, the developer doesn\u2019t have to stay focused on monitoring it. \u201cWhile they\u2019re in a meeting, they can launch a code fix, a performance analysis, or another task that\u2019s a little more routine\u2014something they can delegate without having to monitor it at that moment.\u201d Routine work no longer competes for the team\u2019s attention. That leaves time for problems that require judgment. \u201cYou can unlock those productivity gains without necessarily having to monitor the work as it happens.\u201d \u2014Victor Coelho, Senior Software Engineer, iFood Modeled on the APIs that inspired it The Remote Agents Platform was designed as an internal layer with similarities to the way OpenAI makes this type of task available to external customers. \u201cThe Remote Agents Platform drew a lot of inspiration from OpenAI\u2019s APIs, both the Batch API and the Agents API, which is an even more recent OpenAI product. We built a platform that resembles those products, but is internal to iFood.\u201d The inspiration went beyond the concept. It extends to the design of the interfaces, the organization of resources, and the approach to asynchronous execution with results retrieved later. \u201cThese products directly inspired how we built our solution.\u201d \u2014Victor Coelho, Senior Software Engineer, iFood Results at a glance The platform has completed more than 25,000 tasks, consuming more than 27 billion tokens, at an average cost of US$0.04 per run. After migrating to the Remote Agents Platform, the internal security platform more than doubled both the accuracy of its fixes and the number of vulnerabilities resolved. Coverage extends across iFood\u2019s more than 15,000 code repositories. All runs use GPT\u20115.6 Luna, chosen for its balance of intelligence, efficiency, and speed. Structured Outputs ensures that each session returns a result that follows a predefined contract, whether positive or negative. Product teams have moved from building fragmented solutions to delegating agentic execution through a REST API. Lessons for leaders The bottleneck is often the runtime, not the use case. Several teams already knew what they wanted to automate; they lacked an environment in which to run it. Combine deterministic steps with agentic execution. Cloning, publishing, and making artifacts available don\u2019t require a model; the complex task in between does. Treat cost per run as an architectural decision. At scale, the cost per task determines what is feasible to automate. Require outputs to follow a contract. Without a structured response, there\u2019s no way to know at scale whether the agent achieved its objective. Asynchronous execution is the real productivity gain. The value lies in not having to monitor the work, rather than completing it faster while watching over it. Tips Expose agentic capabilities through an internal API so other teams can use them without rebuilding the infrastructure. Isolate each run in its own sandbox, with your ecosystem\u2019s toolchains already installed. Choose a model by considering intelligence, cost, and speed together, rather than a single benchmark. Use structured outputs to classify success and failure automatically. Start with an internal user with a clear pain point and high volume\u2014at iFood, that was the security platform. Next steps The team plans to bring the platform to many more ",
+   "facts": [
+    "iFood built a Remote Agents Platform to manage tasks across 15,000 code repositories.",
+    "The platform uses GPT-5.6 Luna for agentic coding tasks.",
+    "The system uses a REST API to trigger tasks in isolated Ubuntu sandboxes.",
+    "iFood has completed over 25,000 runs on the platform.",
+    "The average inference cost per run is US$0.04.",
+    "The platform uses OpenAI's Structured Outputs to validate agent results.",
+    "Security vulnerability fixes more than doubled after migrating to the platform.",
+    "The architecture combines deterministic workflow steps with agentic execution."
+   ],
+   "category": "Agents",
+   "topic": "gpt-5.6 luna",
+   "t": "2026-11-25T00:02:36.613450+00:00"
+  },
+  {
+   "title": "Clay helps sales teams win with Codex and ChatGPT",
+   "url": "https://openai.com/business/customer-stories/clay-plugins-openai",
+   "text": "Clay helps sales teams win with Codex and ChatGPT | OpenAI OpenAI November 24, 2026 Clay helps sales teams win with Codex and ChatGPT ChatGPT and Codex integrations help Clay users research deals and turn data into go-to-market plays, and GPT\u20116 models handle the reasoning. Start building with OpenAI Company size: Startup Region: North America Industry: Technology Products: API, Codex, ChatGPT Share Even when sales teams have plenty of data about a prospect, they can still struggle to understand what matters most and develop a winning pitch. Clay \u2060 (opens in a new window) is a self-learning revenue engine designed to help. Using GPT\u20116 Astra, GPT\u20116 Sol, and other models, Clay enables users to build lists of companies and people, enrich those records using agents, and use that information in go-to-market plays. Clay also brings these capabilities to where customers are already working with plugins for Codex and ChatGPT, making it easier to create and run go-to-market workflows and research accounts and deals. \u201cClay in ChatGPT gives sales reps a way to understand more about the customers they\u2019re trying to sell to. It brings all of that rich context to the places they\u2019re already working.\u201d \u2014Jeff Barg, Head of AI, Clay Giving sales reps more context to act on Clay\u2019s Codex integration lets builders create and run go-to-market plays in Codex, while giving sales reps access to data they can use to research an account or understand a deal they\u2019re trying to close. Jeff has seen reps combine information from their own systems and public datasets to determine how to best communicate their product\u2019s value to a customer. \u201cCustomers love using Codex for a lot of different tasks in sales,\u201d he says. \u201cWe\u2019ve seen the best sales reps be the most empowered by this.\u201d Clay\u2019s ChatGPT plugin brings the same customer data into another tool reps already use, helping them learn more about prospects without leaving ChatGPT. Jeff says, \u201cIt\u2019s been a big success.\u201d Matching intelligence and cost to the task OpenAI models power Claygent\u2019s research, qualification, enrichment, and signal detection, as well as the agent that helps users build workflows and coordinate other Clay agents. Clay uses GPT\u20116 Sol as its primary model, with GPT\u20116 Astra for harder tasks and GPT\u20116 Luna for cost-sensitive work. That range supports background research and copywriting as well as agents that users work with directly. \u201cGPT-6 Sol is a really great model for go-to-market plays. It has really good intuition and can build long-horizon, outcome-based go-to-market tasks.\u201d \u2014Jeff Barg, Head of AI, Clay The Responses API lets Clay use different levels of intelligence and cost through the same interface. \u201cHaving the same Responses API across the different price points is something that\u2019s super appealing to us with OpenAI models,\u201d said Jeff. Building end-to-end plays that self-improve over time GPT\u20116 Astra also helps Jeff build and test software. He used to spend much of his time manually checking features he had built; now he can ask GPT\u20116 Astra to handle more of that work. He explains, \u201cGPT\u20116 Astra really changed how I build software because it fully closed the loop on the engineering process. Now I can have Astra write code, add tests, and then actually run the tests and test the feature and record that and upload that in the PR. It simplifies my life a lot.\u201d For Clay\u2019s customers, Jeff sees GPT\u2011Live\u20111 as a way to use Clay and Codex by voice and help prospects learn about a product. Clay is working on inbound sales development features that would let an agent show a product or service to a prospect. He also sees the Decisions API as another way to integrate models into Clay and open up new use cases. Clay\u2019s ambition is to carry go-to-market workflows from start to finish, with agents that improve as they learn from the results. For Jeff, the goal is to empower builders \u201cto bring the same shift that happened in software engineering to go-to-market.\u201d OpenAI <3 startups Join the community Start building (opens in a new window) Get OpenAI for Business updates Product updates, practical guides, upcoming events, and more. Email address * By subscribing, you agree to receive emails from OpenAI. You can unsubscribe at any time. Read our Privacy Policy \u2060 . Subscribe Keep reading Richpanel helps companies automate 50% of support in 30 days Startup Nov 23, 2026 Hebbia sees improvements in financial research with GPT-6 Astra Nov 20, 2026 Cogent and OpenAI build cyber defense factories for enterprises Startup Nov 10, 2026",
+   "facts": [
+    "Clay uses GPT-6 Sol, Astra, and Luna models for sales workflows.",
+    "Clay integrates with Codex and ChatGPT to assist sales teams.",
+    "The Responses API allows Clay to balance intelligence and cost across models.",
+    "Clay uses agents for research, qualification, and signal detection.",
+    "GPT-6 Astra is used by Clay for automated software testing and engineering.",
+    "Clay is developing inbound sales features using GPT-Live-1.",
+    "Clay aims to automate end-to-end go-to-market workflows with self-improving agents."
+   ],
+   "category": "Industry",
+   "topic": "gpt-6",
+   "t": "2026-11-25T00:02:37.871103+00:00"
+  },
+  {
+   "title": "Microduck Obstacle Avoidance: A Sim2Real Workflow with Isaac Lab and Newton",
+   "url": "https://huggingface.co/blog/nvidia/microduck-obstacle-avoidance",
+   "text": "Microduck Obstacle Avoidance: A Sim2Real Workflow with Isaac Lab and Newton Back to Articles Microduck Obstacle Avoidance: A Sim2Real Workflow with Isaac Lab and Newton Enterprise + Article Published November 24, 2026 Upvote 5 Oluwaseun Doherty seun-doherty Follow nvidia Oyindamola Omotuyi OOyindamola Follow nvidia Richard AntRi31 Follow nvidia TL;DR Add local obstacle avoidance to Microduck while keeping its walking policy fixed. Build varied courses with reusable SimReady assets, model ToF sensing with Newton\u2019s raycaster, and train a controller in Isaac Lab to adjust gamepad velocity commands around obstacles. This tutorial covers simulation training, evaluation, export, and real-robot deployment. Introduction A walking policy can keep Microduck balanced, but it does not tell the robot how to steer around an obstacle in its path. In this workflow, we reuse the walking policy from our first Microduck tutorial and keep its weights fixed. This follow-up trains a separate avoidance controller using time-of-flight (ToF) sensing. You choose a direction with a gamepad; the controller adjusts the velocity command before passing it to the walking policy. NVIDIA Isaac Lab is an open-source framework for training policies across thousands of GPU-parallel simulations and it provides the robot-learning environment. Newton simulates physics and the sensor\u2019s depth measurements. We will cover the control architecture, train on varied obstacle layouts, evaluate the resulting policies, and prepare the interface for hardware testing. 1. Set Microduck obstacle avoidance in Isaac Lab For simulation and training, prepare: A Linux system with a compatible NVIDIA GPU and driver. See the Isaac Lab installation guide for platform requirements. Git with Git LFS, and the uv package manager. For physical-robot testing, prepare: A configured Microduck. Load the same backlash walking-policy export used by the navigation task. A supported ToF sensor with its configuration recorded. A paired gamepad and a level test area with obstacles. Quick install Install uv if it is not already installed. Then clone the exp/microduck branch of the Isaac Lab repository and install its dependencies: git lfs install git clone --branch exp/microduck https://github.com/isaac-sim/IsaacLab.git cd IsaacLab uv sync --frozen Once setup is complete, list the available Microduck environments and presets: uv run isaaclab list_envs --keyword MicroDuck --show_presets Download the walking policy Download and export the upstream backlash walking checkpoint once before training. The obstacle avoidance task loads the exported walking policy automatically. uv run isaaclab play \\ --task IsaacContrib-Velocity-Rough-MicroDuck \\ --rl_library rsl_rl --checkpoint pretrained \\ --num_envs 1 --visualizer none \\ --video newton_gl --video_length 1 \\ presets=backlash 2. Build the obstacle course The environment combines simple primitives with OpenUSD assets available through SimReady Central on Hugging Face. We use a cardboard box , office bin , bedside cabinet alongside cones. From the IsaacLab repository root, download the pinned box, bin and cabinet packages into assets/simready. uvx --from huggingface-hub hf download nvidia/simready-assets \\ --repo-type dataset \\ --revision 9d4556bfe80868c1d27a7a7ba1c2774e63e8cedd \\ --include \"box_cardboard_a01/*\" \\ --include \"trashCan_office_black_a03/*\" \\ --include \"table_bedside_b01/*\" \\ --local-dir ./assets/simready At each episode reset, the environment code automatically samples a layout, shuffles the props, and varies their placement and rotation. Most courses scatter obstacles ahead of the duck, with a smaller mix of clear paths, barriers and passages. The code also mirrors layouts and mixes aligned and staggered rows. Goals start ahead of the duck. Movement commands guide it toward the goal while the policy adjusts them around obstacles. Figure 1. Varied obstacle-course layouts with SimReady assets and primitive geometry. 3. Understand how ToF sensing guides the walking policy The IsaacContrib-ObstacleAvoidance-Flat-MicroDuck task separates obstacle avoidance from balance. A navigation policy uses ToF sensing to adjust forward, lateral, and yaw commands at 50 Hz. The frozen walking policy then converts those commands into joint actions, allowing the robot to learn obstacle avoidance without retraining its walking behavior. During training, the navigation policy\u2019s actor receives ToF history and body and controller state available on the real robot. Its critic has access to additional simulation state to guide learning, but is not needed for deployment. Rewards encourage progress toward the goal, safe arrivals, and movement around obstacles. Following a movement command earns credit only when the robot makes progress with sufficient clearance; risky approaches reduce that credit. Penalties discourage fast approaches, abrupt command changes, collisions, and falls. The obstacle-avoidance task lives in isaaclab_tasks.contrib.microduck_obstacle . Its configuration is in obstacle_avoidance_env_cfg.py , ToF sensing is in sensors.py , and actions, commands, observations and rewards are organized under mdp/ . Model the ToF sensor MicroDuckToFCamera extends Newton\u2019s LegacyMultiMeshRayCasterCamera to model the VL53L5CX\u2014a compact time-of-flight (ToF) sensor on the microduck that measures distance across an 8\u00d78 grid at 15Hz. The simulated sensor has a 45\u00b0 field of view and a 0.12\u20134 m range. It follows the duck\u2019s head, with placement similar to the sensor on the real duck. Real recordings informed the sensor placement and floor readings in simulation. Training adds noise, delays and missing measurements\u2014including near the grid\u2019s edges\u2014to expose the policy to imperfect data. The excerpt below shows selected sensor settings already included in the task configuration. You do not need to edit or run this code separately. # Selected settings; mount and raycast targets omitted. head_tof = MicroDuckToFCameraCfg( prim_path=MICRODUCK_HEAD_BODY_PATH, update_period= 1.0 / 15.0 , pattern_cfg=patterns.PinholeCameraPatternCfg( focal_length= 1.0 , width= 8 , height= 8 , horizontal_aperture=_TOF_APERTURE, vertical_aperture=_TOF_APERTURE, ), randomization=ToFRandomizationCfg( mount_pitch_degrees=(- 10.0 , 10.0 ), mount_height_m=(- 0.02 , 0.02 ), floor_validity_midpoint_offset_m=( 0.0 , 0.13 ), near_floor_edge_impairment_probability= 0.5 , ), data_types=[ \"distance_to_image_plane\" , \"distance_to_camera\" ], max_distance=TOF_MAX_RANGE, depth_clipping_behavior= \"zero\" , ) 4. Train the Microduck policy across parallel environments Train the navigation policy with PPO across 16,384 parallel environments for 1,500 training iterations. Its actor, critic, normalizers, and optimizer start fresh. The task configuration loads the fixed walking checkpoint, robot model, and obstacle assets. The 16,384 environments shown here are configurable, not a minimum requirement. Lower --num_envs to fit your GPU\u2019s available memory. With fewer environments collecting experience in parallel, reaching comparable policy performance may require more training iterations and longer training time. We also trained this policy on NVIDIA DGX Spark in approximately 6 hours using 4,096 parallel environments for 3,000 PPO updates, demonstrating a smaller-scale configuration for the same workflow. Run this command to train the policy: uv run isaaclab train \\ --task IsaacContrib-ObstacleAvoidance-Flat-MicroDuck \\ --rl_library rsl_rl \\ --num_envs 16384 \\ --max_iterations 1500 \\ --seed 42 \\ --device cuda:0 \\ --visualizer none \\ presets=backlash Figure 2. Parallel MicroDuck obstacle-avoidance simulation 5. Inspect behavior and export the policy to ONNX Playback uses the same props, primitives, frozen walker and sensor randomization as training, with a different seed for new obstacle arrangements. Navigation checkpoints are saved under logs/rsl_rl/microduck_obstacle_avoidance_tof_flat_backlash/<timestamp>/ relative to the repository root. Choose a model_<iteration>.pt file from your run and replace /absolute/path/to/model.pt below with its path. This plays the policy, opens the Newton viewer and records 20 seconds of simulation. Set --viz to none for headless recording. uv run --extra video isaaclab play \\ --task IsaacContrib-ObstacleAvoidance-Flat-MicroDuck \\ --rl_library rsl_rl \\ --checkpoint /absolute/path/to/model.pt \\ --num_envs 1 \\ --seed 6173 \\ --device cuda:0 \\ --viz newton_gl \\ --video newton_gl \\ --video_length 1000 \\ presets=backlash Playback saves TorchScript and ONNX models in the checkpoint\u2019s exported folder. Keep the ONNX data file alongside the model. Figure 3. Cone-course evaluation with requested motion, policy steering, and ToF input overlays. 6. Test obstacle avoidance on a real Microduck These deployment tools run the navigation model on a laptop and send adjusted gamepad commands to the walking policy on the robot. Use the same walking policy that was used during navigation training. Section 1 saves the walker\u2019",
+   "facts": [
+    "NVIDIA released a Sim2Real workflow for Microduck obstacle avoidance using Isaac Lab and Newton.",
+    "The workflow trains a navigation policy that adjusts gamepad commands while keeping the walking policy fixed.",
+    "The environment utilizes SimReady assets like cardboard boxes and office bins for obstacle course generation.",
+    "The MicroDuckToFCamera models a VL53L5CX sensor with an 8x8 grid at 15Hz.",
+    "Training was performed using PPO across 16,384 parallel environments.",
+    "The system supports exporting policies to ONNX for deployment on physical robots.",
+    "The navigation policy processes ToF sensor data to adjust forward, lateral, and yaw commands at 50 Hz.",
+    "The tutorial provides instructions for both simulation training and real-robot deployment."
+   ],
+   "category": "Creative AI (3D, animation, design)",
+   "topic": "isaac lab",
+   "t": "2026-11-25T00:02:39.856179+00:00"
   }
  ],
  "week_log": [
@@ -736,6 +836,179 @@
     "Improved performance on SWE and Terminal-Bench benchmarks.",
     "New pricing structure takes effect September 5th, 2025."
    ]
+  },
+  {
+   "t": "2026-11-25T00:02:11.898064+00:00",
+   "title": "GPT-6 models demonstrate intrinsic protein-design capabilities",
+   "url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities",
+   "category": "Models & benchmarks",
+   "facts": [
+    "OpenAI announced GPT-6 models demonstrate intrinsic protein-design capabilities.",
+    "GPT-6 models can design protein shapes and sequences using reasoning and code.",
+    "The models do not require specialized biology models to generate designs.",
+    "GPT-6.2 designs showed evidence of binding across five targets in lab tests.",
+    "The models draw on math, physics, chemistry, and biology to reason about protein interactions.",
+    "GPT-6.2 outperformed or matched specialized models on many protein design tasks.",
+    "Researchers can guide designs by prompting the model on attachment sites and shapes.",
+    "The research was conducted in partnership with Onava."
+   ]
+  },
+  {
+   "t": "2026-11-25T00:02:33.794230+00:00",
+   "title": "Searching for distant planets with Astra",
+   "url": "https://openai.com/index/searching-for-distant-planets-with-astra",
+   "category": "Industry",
+   "facts": [
+    "Amateur astronomers used OpenAI's Codex and Astra to analyze public telescope data.",
+    "The project identified potential exoplanet candidates from Kepler and TESS mission data.",
+    "Kevin Bond used Codex to scan 100,000 stars from the Kepler telescope.",
+    "Ethan Byrd used Astra to analyze telescope data from approximately 19 million stars.",
+    "The search identified 200+ signals, including 10 from previously confirmed planets.",
+    "Two specific candidates (KIC 5689121 and KIC 6691030) were independently verified by the SETI Institute.",
+    "Exoplanet discovery involves detecting dips in starlight caused by transiting planets.",
+    "The work demonstrates how AI tools can assist citizen scientists in astronomical research."
+   ]
+  },
+  {
+   "t": "2026-11-25T00:02:35.209139+00:00",
+   "title": "How Intentful uses dots to make more time for growth",
+   "url": "https://openai.com/business/customer-stories/intentful-dots",
+   "category": "Agents",
+   "facts": [
+    "Intentful uses OpenAI 'dots' to automate research and proposal creation.",
+    "Aria, a custom dot, reduced proposal preparation time from days to hours.",
+    "Dots integrate with Gmail, Slack, Google Drive, and Asana.",
+    "Aria can analyze website sitemaps and extract pricing data from past agreements.",
+    "The agent can proactively flag discrepancies in dates and document content.",
+    "Marina Petrova uses voice commands to brief her agent while traveling.",
+    "Aria can perform tasks like updating speaker notes and managing file access permissions.",
+    "Intentful uses these AI agents to teach clients about delegating tasks to AI."
+   ]
+  },
+  {
+   "t": "2026-11-25T00:02:36.613450+00:00",
+   "title": "How iFood scales coding agents across 15,000 repositories",
+   "url": "https://openai.com/business/customer-stories/ifood",
+   "category": "Agents",
+   "facts": [
+    "iFood built a Remote Agents Platform to manage tasks across 15,000 code repositories.",
+    "The platform uses GPT-5.6 Luna for agentic coding tasks.",
+    "The system uses a REST API to trigger tasks in isolated Ubuntu sandboxes.",
+    "iFood has completed over 25,000 runs on the platform.",
+    "The average inference cost per run is US$0.04.",
+    "The platform uses OpenAI's Structured Outputs to validate agent results.",
+    "Security vulnerability fixes more than doubled after migrating to the platform.",
+    "The architecture combines deterministic workflow steps with agentic execution."
+   ]
+  },
+  {
+   "t": "2026-11-25T00:02:37.871103+00:00",
+   "title": "Clay helps sales teams win with Codex and ChatGPT",
+   "url": "https://openai.com/business/customer-stories/clay-plugins-openai",
+   "category": "Industry",
+   "facts": [
+    "Clay uses GPT-6 Sol, Astra, and Luna models for sales workflows.",
+    "Clay integrates with Codex and ChatGPT to assist sales teams.",
+    "The Responses API allows Clay to balance intelligence and cost across models.",
+    "Clay uses agents for research, qualification, and signal detection.",
+    "GPT-6 Astra is used by Clay for automated software testing and engineering.",
+    "Clay is developing inbound sales features using GPT-Live-1.",
+    "Clay aims to automate end-to-end go-to-market workflows with self-improving agents."
+   ]
+  },
+  {
+   "t": "2026-11-25T00:02:39.856179+00:00",
+   "title": "Microduck Obstacle Avoidance: A Sim2Real Workflow with Isaac Lab and Newton",
+   "url": "https://huggingface.co/blog/nvidia/microduck-obstacle-avoidance",
+   "category": "Creative AI (3D, animation, design)",
+   "facts": [
+    "NVIDIA released a Sim2Real workflow for Microduck obstacle avoidance using Isaac Lab and Newton.",
+    "The workflow trains a navigation policy that adjusts gamepad commands while keeping the walking policy fixed.",
+    "The environment utilizes SimReady assets like cardboard boxes and office bins for obstacle course generation.",
+    "The MicroDuckToFCamera models a VL53L5CX sensor with an 8x8 grid at 15Hz.",
+    "Training was performed using PPO across 16,384 parallel environments.",
+    "The system supports exporting policies to ONNX for deployment on physical robots.",
+    "The navigation policy processes ToF sensor data to adjust forward, lateral, and yaw commands at 50 Hz.",
+    "The tutorial provides instructions for both simulation training and real-robot deployment."
+   ]
+  },
+  {
+   "t": "2026-11-25T00:03:26.319442+00:00",
+   "title": "DeepSeek-R1-0528 Release 2025/05/28",
+   "url": "https://api-docs.deepseek.com/news/news250528/",
+   "category": "Models & benchmarks",
+   "facts": [
+    "DeepSeek-R1-0528 released on 2025/05/28",
+    "Improved benchmark performance",
+    "Enhanced front-end capabilities",
+    "Reduced hallucinations",
+    "Supports JSON output and function calling",
+    "Open-source weights available on Hugging Face",
+    "Full suite of application APIs now available"
+   ]
+  },
+  {
+   "t": "2026-11-25T00:03:43.525620+00:00",
+   "title": "DeepSeek-V3-0324 Release 2025/03/25",
+   "url": "https://api-docs.deepseek.com/news/news250325/",
+   "category": "Models & benchmarks",
+   "facts": [
+    "DeepSeek-V3-0324 released on 2025/03/25",
+    "Major boost in reasoning performance",
+    "Improved front-end development skills",
+    "Enhanced tool-use capabilities",
+    "Models released under MIT License",
+    "Full suite of application APIs available",
+    "API usage remains unchanged",
+    "Open-source weights available on Hugging Face"
+   ]
+  },
+  {
+   "t": "2026-11-25T00:03:54.232682+00:00",
+   "title": "DeepSeek APP 2025/01/15",
+   "url": "https://api-docs.deepseek.com/news/news250115/",
+   "category": "Industry",
+   "facts": [
+    "DeepSeek App officially released on App Store and Google Play",
+    "Powered by DeepSeek-V3 model",
+    "Features web search and Deep-Think mode",
+    "Supports file upload and text extraction",
+    "Includes cross-platform chat history sync",
+    "Login supports E-mail, Google Account, and Apple ID",
+    "Service is 100% free with no ads or in-app purchases",
+    "Application supports ASR and TTS capabilities"
+   ]
+  },
+  {
+   "t": "2026-11-25T00:04:07.673531+00:00",
+   "title": "Introducing DeepSeek-V3 2024/12/26",
+   "url": "https://api-docs.deepseek.com/news/news1226/",
+   "category": "Models & benchmarks",
+   "facts": [
+    "DeepSeek-V3 is a 671B parameter MoE model with 37B activated parameters.",
+    "The model was trained on 14.8 trillion high-quality tokens.",
+    "Inference speed is 60 tokens/second, 3x faster than V2.",
+    "DeepSeek-V3 is fully open-source with accompanying research papers.",
+    "API pricing remains the same as V2 until February 8, 2025.",
+    "New pricing starting February 8: $0.27/M input (cache miss) and $1.10/M output.",
+    "The model supports web search, file input, URL reading, ASR, and TTS.",
+    "Future updates will include multimodal support."
+   ]
+  },
+  {
+   "t": "2026-11-25T00:04:17.887092+00:00",
+   "title": "DeepSeek-V2.5-1210 Release 2024/12/10",
+   "url": "https://api-docs.deepseek.com/news/news1210/",
+   "category": "Models & benchmarks",
+   "facts": [
+    "DeepSeek-V2.5-1210 released on 2024/12/10",
+    "Features improved performance in math, coding, writing, and roleplay",
+    "Internet search functionality is now live on the DeepSeek web platform",
+    "Full suite of application APIs now includes web search, file input, and URL reading",
+    "DeepSeek-V2.5-1210 is the final update in the V2.5 series",
+    "Model is available as open-source on Hugging Face",
+    "DeepSeek is currently developing next-generation foundation models"
+   ]
   }
  ],
  "fail": {
@@ -748,7 +1021,7 @@
   "xAI": 0,
   "DeepSeek": 0,
   "Qwen": 0,
-  "Z.ai": 9,
+  "Z.ai": 10,
   "Artificial Analysis": 0
  },
  "feeds": {
@@ -760,56 +1033,6 @@
   "Artificial Analysis": ""
  },
  "drafts": {
-  "395698567": {
-   "tweets": [
-    "BREAKING: DeepSeek-V4-Pro is officially GA.\n\nThe API now supports web search, file input, and URL reading natively. Tbh this is exactly what we needed. It\u2019s compatible with OpenAI and Anthropic SDKs, so swapping your backend is basically instant.",
-    "They added a \"thinking\" capability with configurable reasoning effort. Ngl, being able to tune the model's internal reasoning is a huge win for complex logic.\n\nDeepSeek-flash is also now served by V4.1-Flash-1017. Legacy flash models are retired but billed at Flash price.",
-    "DeepSeek Harness is now in developer preview for agent devs.\n\nPlus, it's already integrated into Claude Code and GitHub Copilot. Is DeepSeek becoming the default choice for coding assistants? The compatibility here is honestly impressive. \ud83d\udcc8"
-   ],
-   "source": "DeepSeek-V4-Pro is now generally available. DeepSeek API now supports web search, file input, and URL reading. DeepSeek-flash is now served by the DeepSeek-V4.1-Flash-1017 model. API format is compatible with OpenAI and Anthropic SDKs. DeepSeek Harness is available in developer preview. New API supports thinking capabilities with configurable reasoning effort. Legacy models deepseek-v4-flash and deepseek-v4-flash-vision-exp have been retired. DeepSeek models are now integrated into tools like Claude Code and GitHub Copilot. Your First API Call | DeepSeek API Docs Skip to main content The full suite of DeepSeek application APIs is now available: web search, file input, URL reading, model safety, ASR, TTS and more. Click here to view the guide On this page Copy Markdown Copy Markdown Open Markdown Your First API Call The DeepSeek API uses an API format compatible with OpenAI/Anthropic. By modifying the configuration, you can use the OpenAI/Anthropic SDK or softwares compatible with the OpenAI/Anthropic API to access the DeepSeek API. PARAM VALUE base_url (OpenAI) https://api.deepseek.com base_url (Anthropic) https://api.deepseek.com/anthropic api_key apply for an API key model deepseek-flash (1) deepseek-v4-pro (1) Use deepseek-flash as the model name. It is now served by DeepSeek-V4.1-Flash-1017, and the calling method remains unchanged. The legacy names deepseek-v4-flash and deepseek-v4-flash-vision-exp are still accepted, but the corresponding models have been retired; their requests are served by DeepSeek-V4.1-Flash-1017 and billed at the Flash price. Integrate with Agent Tools \u00e2\u0080\u008b DeepSeek Harness is now in developer preview for agent harness developers worldwide. See the DeepSeek Harness Guide for details. The DeepSeek API is supported by many popular AI agent and coding assistant tools. If you use tools like Claude Code, GitHub Copilot, or OpenCode, you can use DeepSeek as the backend model directly \u00e2\u0080\u0094 no code required. See the Agent Integrations Guide for details. Invoke The Chat API \u00e2\u0080\u008b Once you have obtained an API key, you can access the DeepSeek model using the following example scripts in the OpenAI API format. This is a non-stream example, you can set the stream parameter to true to get stream response. For examples using the Anthropic API format, please refer to Anthropic API . Before running these examples, set the DEEPSEEK_API_KEY environment variable in your terminal to your API key. curl python nodejs curl https://api.deepseek.com/chat/completions \\ -H \"Content-Type: application/json\" \\ -H \"Authorization: Bearer ${DEEPSEEK_API_KEY}\" \\ -d '{ \"model\": \"deepseek-flash\", \"messages\": [ {\"role\": \"system\", \"content\": \"You are a helpful assistant.\"}, {\"role\": \"user\", \"content\": \"Hello!\"} ], \"thinking\": {\"type\": \"enabled\"}, \"reasoning_effort\": \"high\", \"stream\": false }' # Please install OpenAI SDK first: `pip3 install openai` import os from openai import OpenAI client = OpenAI ( api_key = os . environ . get ( 'DEEPSEEK_API_KEY' ) , base_url = \"https://api.deepseek.com\" , ) response = client . chat . completions . create ( model = \"deepseek-flash\" , messages = [ { \"role\" : \"system\" , \"content\" : \"You are a helpful assistant\" } , { \"role\" : \"user\" , \"content\" : \"Hello\" } , ] , stream = False , reasoning_effort = \"high\" , extra_body = { \"thinking\" : { \"type\" : \"enabled\" } } , ) print ( response . choices [ 0 ] . message . content ) // Please install OpenAI SDK first: `npm install openai` import OpenAI from \"openai\" ; const openai = new OpenAI ( { baseURL : 'https://api.deepseek.com' , apiKey : process . env . DEEPSEEK_API_KEY , } ) ; async function main ( ) { const completion = await openai . chat . completions . create ( { messages : [ { role : \"system\" , content : \"You are a helpful assistant.\" } ] , model : \"deepseek-flash\" , thinking : { \"type\" : \"enabled\" } , reasoning_effort : \"high\" , stream : false , } ) ; console . log ( completion . choices [ 0 ] . message . content ) ; } main ( ) ; Integrate with Agent Tools Invoke The Chat API",
-   "category": "Models & benchmarks"
-  },
-  "395724123": {
-   "tweets": [
-    "BREAKING: DeepSeek-V4 is officially live and open-sourced.\n\nDeepSeek-V4-Pro: 1.6T total / 49B active params.\nDeepSeek-V4-Flash: 284B total / 13B active.\n1M context is now the default across the board.\n\nNgl, performance rivaling top closed models while being open is huge.",
-    "How are they scaling this? They\u2019re using a novel attention mechanism with token-wise compression and DSA to make 1M context actually affordable.\n\nTbh, making 1M context the standard instead of an expensive add-on is a massive flex.",
-    "API is live today with OpenAI and Anthropic support. Try it at chat.deepseek.com via Expert Mode.\n\nNote: deepseek-chat and deepseek-reasoner are being retired July 24th, 2026.\n\nBoth models have thinking/non-thinking modes. V4-Pro is open-source SOTA for agentic coding \ud83d\ude80"
-   ],
-   "source": "DeepSeek-V4 released with Pro and Flash variants DeepSeek-V4-Pro features 1.6T total and 49B active parameters DeepSeek-V4-Flash features 284B total and 13B active parameters Both models support 1M context length Introduces novel attention mechanism with token-wise compression and DSA API supports OpenAI ChatCompletions and Anthropic formats DeepSeek-chat and deepseek-reasoner to be retired July 24th, 2026 Models feature integrated thinking and non-thinking modes DeepSeek V4 Preview Release | DeepSeek API Docs Skip to main content The full suite of DeepSeek application APIs is now available: web search, file input, URL reading, model safety, ASR, TTS and more. Click here to view the guide On this page Copy Markdown Copy Markdown Open Markdown DeepSeek V4 Preview Release \u00f0\u009f\u009a\u0080 DeepSeek-V4 Preview is officially live & open-sourced! Welcome to the era of cost-effective 1M context length. \u00f0\u009f\u0094\u00b9 DeepSeek-V4-Pro: 1.6T total / 49B active params. Performance rivaling the world's top closed-source models. \u00f0\u009f\u0094\u00b9 DeepSeek-V4-Flash: 284B total / 13B active params. Your fast, efficient, and economical choice. Try it now at chat.deepseek.com via Expert Mode / Instant Mode. API is updated & available today! \u00f0\u009f\u0093\u0084 Tech Report: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/blob/main/DeepSeek_V4.pdf \u00f0\u009f\u00a4\u0097 Open Weights: https://huggingface.co/collections/deepseek-ai/deepseek-v4 DeepSeek-V4-Pro \u00e2\u0080\u008b \u00f0\u009f\u0094\u00b9 Enhanced Agentic Capabilities: Open-source SOTA in Agentic Coding benchmarks. \u00f0\u009f\u0094\u00b9 Rich World Knowledge: Leads all current open models, trailing only Gemini-3.1-Pro. \u00f0\u009f\u0094\u00b9 World-Class Reasoning: Beats all current open models in Math/STEM/Coding, rivaling top closed-source models. DeepSeek-V4-Flash \u00e2\u0080\u008b \u00f0\u009f\u0094\u00b9 Reasoning capabilities closely approach V4-Pro. \u00f0\u009f\u0094\u00b9 Performs on par with V4-Pro on simple Agent tasks. \u00f0\u009f\u0094\u00b9 Smaller parameter size, faster response times, and highly cost-effective API pricing. Structural Innovation & Ultra-High Context Efficiency \u00e2\u0080\u008b \u00f0\u009f\u0094\u00b9 Novel Attention: Token-wise compression + DSA (DeepSeek Sparse Attention). \u00f0\u009f\u0094\u00b9 Peak Efficiency: World-leading long context with drastically reduced compute & memory costs. \u00f0\u009f\u0094\u00b9 1M Standard: 1M context is now the default across all official DeepSeek services. Dedicated Optimizations for Agent Capabilities \u00e2\u0080\u008b \u00f0\u009f\u0094\u00b9 DeepSeek-V4 is seamlessly integrated with leading AI agents like Claude Code, OpenClaw & OpenCode. \u00f0\u009f\u0094\u00b9 Already driving our in-house agentic coding at DeepSeek. The figure below showcases a sample PDF generated by DeepSeek-V4-Pro. API is Available Today! \u00e2\u0080\u008b \u00f0\u009f\u0094\u00b9 Keep base_url, just update model to deepseek-v4-pro or deepseek-v4-flash. \u00f0\u009f\u0094\u00b9 Supports OpenAI ChatCompletions & Anthropic APIs. \u00f0\u009f\u0094\u00b9 Both models support 1M context & dual modes (Thinking / Non-Thinking): Thinking Mode guide \u00e2\u009a \u00ef\u00b8\u008f Note: deepseek-chat & deepseek-reasoner will be fully retired and inaccessible after Jul 24th, 2026, 15:59 (UTC Time). (Currently routing to deepseek-v4-flash non-thinking/thinking). \u00f0\u009f\u0094\u00b9 Amid recent attention, a quick reminder: please rely only on our official accounts for DeepSeek news. Statements from other channels do not reflect our views. \u00f0\u009f\u0094\u00b9 Thank you for your continued trust. We remain committed to longtermism, advancing steadily toward our ultimate goal of AGI. DeepSeek-V4-Pro DeepSeek-V4-Flash Structural Innovation & Ultra-High Context Efficiency Dedicated Optimizations for Agent Capabilities API is Available Today!",
-   "category": "Models & benchmarks"
-  },
-  "423700616": {
-   "tweets": [
-    "DeepSeek just dropped DeepSeek-R1 and performance is on par with OpenAI-o1 for math, code, and reasoning.\n\nThe model and technical report are under the MIT license, and API outputs are explicitly allowed for fine-tuning and distillation.\n\nngl open source is moving insanely fast.",
-    "Practical details if you want to test it:\n- API model: deepseek-reasoner\n- Input (cache hit): $0.14 / 1M tokens\n- Input (cache miss): $0.55 / 1M tokens\n- Output: $2.19 / 1M tokens\n\nThey also released 6 distilled models, with the 32B and 70B performing on par with o1-mini."
-   ],
-   "source": "DeepSeek-R1 released with performance parity to OpenAI-o1 Model and technical report released under MIT license Six distilled models released based on DeepSeek-R1 DeepSeek-R1 utilizes large-scale reinforcement learning in post-training API access available via model=deepseek-reasoner API pricing starts at $0.14 per million input tokens (cache hit) API outputs are permitted for fine-tuning and distillation Supports math, code, and reasoning tasks DeepSeek-R1 Release | DeepSeek API Docs Skip to main content The full suite of DeepSeek application APIs is now available: web search, file input, URL reading, model safety, ASR, TTS and more. Click here to view the guide Copy Markdown Copy Markdown Open Markdown DeepSeek-R1 Release \u00e2\u009a\u00a1 Performance on par with OpenAI-o1 \u00f0\u009f\u0093\u0096 Fully open-source model & technical report \u00f0\u009f\u008f\u0086 Code and models are released under the MIT License: Distill & commercialize freely! \u00f0\u009f\u008c\u0090 Website & API are live now! Try DeepThink at chat.deepseek.com today! \u00f0\u009f\u0094\u00a5 Bonus: Open-Source Distilled Models! \u00f0\u009f\u0094\u00ac Distilled from DeepSeek-R1, 6 small models fully open-sourced \u00f0\u009f\u0093\u008f 32B & 70B models on par with OpenAI-o1-mini \u00f0\u009f\u00a4\u009d Empowering the open-source community \u00f0\u009f\u008c\u008d Pushing the boundaries of open AI ! \u00f0\u009f\u0093\u009c License Update! \u00f0\u009f\u0094\u0084 DeepSeek-R1 is now MIT licensed for clear open access \u00f0\u009f\u0094\u0093 Open for the community to leverage model weights & outputs \u00f0\u009f\u009b \u00ef\u00b8\u008f API outputs can now be used for fine-tuning & distillation \u00f0\u009f\u009b \u00ef\u00b8\u008f DeepSeek-R1: Technical Highlights \u00f0\u009f\u0093\u0088 Large-scale RL in post-training \u00f0\u009f\u008f\u0086 Significant performance boost with minimal labeled data \u00f0\u009f\u0094\u00a2 Math, code, and reasoning tasks on par with OpenAI-o1 \u00f0\u009f\u0093\u0084 More details: https://github.com/deepseek-ai/DeepSeek-R1/blob/main/DeepSeek_R1.pdf \u00f0\u009f\u008c\u0090 API Access & Pricing \u00e2\u009a\u0099\u00ef\u00b8\u008f Use DeepSeek-R1 by setting model=deepseek-reasoner \u00f0\u009f\u0092\u00b0 $0.14 / million input tokens (cache hit) \u00f0\u009f\u0092\u00b0 $0.55 / million input tokens (cache miss) \u00f0\u009f\u0092\u00b0 $2.19 / million output tokens \u00f0\u009f\u0093\u0096 API guide: Thinking Mode guide",
-   "category": "Models & benchmarks"
-  },
-  "423738692": {
-   "tweets": [
-    "DeepSeek-V4.1-Flash-1017 just dropped (2026/10/17) and ngl this update looks solid.\n\nIt features better benchmark performance and faster task completion, using RL with self-feedback for end-to-end project dev\u2014including full 3D modeling and game creation.",
-    "It's optimized for DeepSeek Harness, Tencent CodeBuddy, and WorkBuddy.\n\nSearch & Fetch APIs are open to the public now ($0.75 per 1,000 calls starting Oct 31, 2026).\n\nYou can grab the model on Hugging Face and ModelScope."
-   ],
-   "source": "DeepSeek-V4.1-Flash-1017 released on 2026/10/17 Model features improved benchmark performance and faster task completion Optimized for DeepSeek Harness, Tencent CodeBuddy, and WorkBuddy Uses reinforcement learning with self-feedback for end-to-end project development Search & Fetch APIs are now open to the public Search & Fetch API pricing is $0.75 per 1,000 calls starting Oct 31, 2026 Model is available on Hugging Face and ModelScope Supports building complete projects from scratch including 3D modeling and game creation DeepSeek-V4.1-Flash-1017: Wish-Driven Programming Made Real | DeepSeek API Docs Skip to main content The full suite of DeepSeek application APIs is now available: web search, file input, URL reading, model safety, ASR, TTS and more. Click here to view the guide On this page Copy Markdown Copy Markdown Open Markdown DeepSeek-V4.1-Flash-1017: Wish-Driven Programming Made Real \u00f0\u009f\u009a\u0080 DeepSeek-V4.1-Flash-1017 is here! \u00e2\u0080\u008b Stronger benchmark performance, faster task completion, and shorter outputs than the previous version\u00e2\u0080\u0094a Pareto improvement in performance and cost. Now live on our website, app, and API. \u00f0\u009f\u009b \u00ef\u00b8\u008f Optimized for DeepSeek Harness, Tencent CodeBuddy, WorkBuddy, and more. Upgrade to DeepSeek Harness v0.2.1-rc.1 or later for the best experience with the new model. DeepSWE v1.1 Pass@1 vs. cost per task for DeepSeek V4.1 Flash 1017, tested with the mini-swe-v2 harness. \u00f0\u009f\u008e\u00ae Build complete projects from scratch \u00e2\u0080\u008b DeepSeek-V4.1-Flash-1017 uses reinforcement learning with self-feedback to improve end-to-end project development\u00e2\u0080\u0094from game creation to 3D modeling. See it in action \u00f0\u009f\u0091\u0087 Example 1: 3D modeling of the Forbidden City Example 2: A web-based racing game Example 3: A Portal 2 recreation built with the Godot engine Example 4: Valley of Ages \u00e2\u0080\u0094 a 3D scene tracing the evolution from prehistoric times to the modern era \u00f0\u009f\u0094\u008d Search & Fetch APIs are now open to everyone! \u00e2\u0080\u008b Powered by our in-house search engine, serving hundreds of millions of requests daily worldwide. \u00f0\u009f\u0092\u00b0 Each endpoint: $0.75 per 1,000 calls. \u00f0\u009f\u0093\u0096 Docs: API Guides - Search & Fetch \u00f0\u009f\u0093\u008c Search & Fetch calls via server-side tools in DeepSeek Harness, Claude Code, and Codex are currently free for DeepSeek API users. Billing starts Oct 31, 2026, at 16:00 UTC . \u00f0\u009f\u0094\u0093 Open-source release \u00e2\u0080\u008b Get DeepSeek-V4.1-Flash-1017: \u00f0\u009f\u00a4\u0097 Hugging Face: https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017 \u00f0\u009f\u0094\u0097 ModelScope: https://modelscope.cn/models/deepseek-ai/DeepSeek-V4.1-Flash-1017 \u00f0\u009f\u009a\u0080 DeepSeek-V4.1-Flash-1017 is here! \u00f0\u009f\u008e\u00ae Build complete projects from scratch \u00f0\u009f\u0094\u008d Search & Fetch APIs are now open to everyone! \u00f0\u009f\u0094\u0093 Open-source release",
-   "category": "Models & benchmarks"
-  },
-  "423787026": {
-   "tweets": [
-    "DeepSeek just dropped V4.1-Flash and it\u2019s actually wild ngl.\n\nIt\u2019s a 552B MoE with an asymmetric setup (8B active for input, 16B for output) plus native multimodal support, and it beats their flagship V4-Pro on performance, cost, and speed.",
-    "The efficiency numbers are huge: KV cache is down to 1/4 HBM and 1/8 SSD storage compared to previous gen.\n\nIt's live on the DeepSeek API & Hugging Face. New pricing started Sept 10, 2026, and V4-Pro requests auto-route to V4.1-Flash on Sept 14 at 04:00 UTC."
-   ],
-   "source": "DeepSeek-V4.1-Flash is a 552B-parameter MoE model with an asymmetric architecture. The model features 8B active parameters for input and 16B for output. It offers native visual understanding and multimodal support. KV cache requirements are reduced to 1/4 HBM and 1/8 SSD storage compared to previous generations. The model outperforms the flagship DeepSeek-V4-Pro in performance, cost, and speed. DeepSeek-V4-Pro requests will automatically route to V4.1-Flash starting Sept 14, 2026. New API pricing structure implemented effective Sept 10, 2026. The model is available via the DeepSeek API and hosted on Hugging Face. DeepSeek-V4.1-Flash: Smarter, Faster, More Efficient | DeepSeek API Docs Skip to main content The full suite of DeepSeek application APIs is now available: web search, file input, URL reading, model safety, ASR, TTS and more. Click here to view the guide On this page Copy Markdown Copy Markdown Open Markdown DeepSeek-V4.1-Flash: Smarter, Faster, More Efficient \u00f0\u009f\u009a\u0080 Introducing DeepSeek-V4.1-Flash: smarter, faster, more efficient. \u00f0\u009f\u0094\u00b9 Introducing the smallest model in our new architecture family, with native visual understanding. \u00f0\u009f\u0094\u00b9 Designed for greater capability, faster inference, higher throughput, and scaling to larger models. \u00f0\u009f\u00a7 Asymmetric architecture. More intelligence, less cost. \u00e2\u0080\u008b \u00f0\u009f\u0094\u00b9 552B-parameter MoE. \u00f0\u009f\u0094\u00b9 New Causal Encoder\u00e2\u0080\u0093Decoder architecture: just 8B active parameters for input, 16B for output. \u00f0\u009f\u0094\u00b9 New pre-training methods + larger-scale RL post-training deliver benchmark results ahead of flagship models, including DeepSeek-V4-Pro. \u00f0\u009f\u0092\u00be Smaller KV cache. Bigger savings. \u00e2\u0080\u008b Compared with the previous generation, V4.1-Flash's KV cache needs just: \u00f0\u009f\u0094\u00b9 1/4 the HBM \u00f0\u009f\u0094\u00b9 1/8 the SSD storage Cache-hit charges often account for a large share of agent costs. Compressing the cache cuts those costs significantly. \u00e2\u009a\u00a1 V4.1-Flash is now live on the DeepSeek API with native multimodal support. \u00e2\u0080\u008b Set your model to deepseek-flash . \u00f0\u009f\u0094\u00b9 V4-Flash & V4-Flash-Vision-Exp are retired. For compatibility, deepseek-v4-flash and deepseek-v4-flash-vision-exp temporarily route to V4.1-Flash. \u00f0\u009f\u0094\u00b9 Tests by multiple parties put V4.1-Flash ahead of V4-Pro on performance, cost, speed & total runtime. We're phasing out V4-Pro. \u00f0\u009f\u0094\u00b9 Starting at 04:00 UTC on Sept 14, 2026, all deepseek-v4-pro requests will route to V4.1-Flash at V4.1-Flash rates. This will continue until V4.1-Pro launches. \u00f0\u009f\u00a4\u009d Official partners WorkBuddy (including CodeBuddy) & OpenCode now fully support V4.1-Flash. Try it today! \u00f0\u009f\u0092\u00b0 More efficient architecture. Lower API prices. \u00e2\u0080\u008b V4.1-Flash lets us serve more users at a lower cost. We're passing the savings on to you. \u00f0\u009f\u0094\u00b9 Peak/off-peak pricing continues to balance demand. \u00f0\u009f\u0094\u00b9 Off-peak rates are 50% of peak rates. Schedule flexible workloads off-peak to save. \u00f0\u009f\u0094\u00b9 New pricing takes effect at 04:00 UTC on Sept 10, 2026. \u00f0\u009f\u008c\u0090 Supporting open source. Expanding deployment options. \u00e2\u0080\u008b We'll work closely with the open-source community on V4.1-Flash inference support and explore more deployment options. Planning a large-scale deployment with 2,000 GPUs + a storage cluster? Let's talk. \u00f0\u009f\u0094\u00b9 Model: https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash \u00f0\u009f\u0094\u00b9 Paper: https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/blob/main/DeepSeek_V41_Tech_Report.pdf \u00f0\u009f\u00a7 Asymmetric architecture. More intelligence, less cost. \u00f0\u009f\u0092\u00be Smaller KV cache. Bigger savings. \u00e2\u009a\u00a1 V4.1-Flash is now live on the DeepSeek API with native multimodal support. \u00f0\u009f\u0092\u00b0 More efficient architecture. Lower API prices. \u00f0\u009f\u008c\u0090 Supporting open source. Expanding deployment options.",
-   "category": "Models & benchmarks"
-  },
-  "423803446": {
-   "tweets": [
-    "DeepSeek just dropped DeepSeek-V4-Flash-Vision-Exp on their API platform.\n\nngl seeing a flash model push multimodal agent performance close to Opus-4.8 is pretty wild. It keeps all the V4-Flash text capabilities while adding mixed image inputs.",
-    "Dev details:\n- Images tokenized up to 384 tokens (V4-Flash pricing)\n- Free new Files API to reference images by file_id\n- Supports base64, URLs, Chat Completions, Messages & Responses\n- Harness 0.1.1 out with support\n\nSet model='deepseek-v4-flash-vision-exp' to try."
-   ],
-   "source": "DeepSeek-V4-Flash-Vision-Exp experimental multimodal model released Matches DeepSeek-V4-Flash text capabilities Multimodal agent performance nears Opus-4.8 Supports mixed text and image input Images tokenized at up to 384 tokens each DeepSeek Harness 0.1.1 released with support for the new model New Files API allows referencing images by file_id Supports Chat Completions, Messages, and Responses DeepSeek-V4-Flash-Vision-Exp Release: Multimodal API Now Live | DeepSeek API Docs Skip to main content The full suite of DeepSeek application APIs is now available: web search, file input, URL reading, model safety, ASR, TTS and more. Click here to view the guide On this page Copy Markdown Copy Markdown Open Markdown DeepSeek-V4-Flash-Vision-Exp Release: Multimodal API Now Live DeepSeek-V4-Flash-Vision-Exp is now live on the DeepSeek API Platform! \u00f0\u009f\u009a\u0080 \u00f0\u009f\u0094\u00b9 This experimental multimodal model matches DeepSeek-V4-Flash on text capabilities\u00e2\u0080\u0094including agents, reasoning, and world knowledge. \u00f0\u009f\u0094\u00b9 On multimodal agent benchmarks, V4-Flash-Vision-Exp makes a major leap over V4-Flash, bringing multimodal agent performance close to Opus-4.8. Try it with model='deepseek-v4-flash-vision-exp' . DeepSeek Harness 0.1.1 was released today with out-of-the-box support for the new model. Multimodality unlocks more agent use cases \u00f0\u009f\u0091\u0080 \u00e2\u0080\u008b V4-Flash-Vision-Exp works smoothly across agent frameworks, combining visual understanding with a wide range of tools to unlock more practical workflows. Multimodal API support \u00f0\u009f\u0094\u008c \u00e2\u0080\u008b \u00f0\u009f\u0094\u00b9 Set model='deepseek-v4-flash-vision-exp' \u00f0\u009f\u0094\u00b9 Images are tokenized for billing: up to 384 tokens each, at V4-Flash pricing \u00f0\u009f\u0094\u00b9 Supports Chat Completions, Messages & Responses \u00f0\u009f\u0094\u00b9 Supports mixed text + image input; images can be provided via base64, external URLs, or the Files API Docs: API Guides - Vision Files API is now live \u00f0\u009f\u0093\u0081 \u00e2\u0080\u008b \u00f0\u009f\u0094\u00b9 Free to use \u00f0\u009f\u0094\u00b9 Upload an image once, then reference it by file_id to save request bandwidth \u00f0\u009f\u0094\u00b9 Reuse the same image across requests\u00e2\u0080\u0094no need to upload it again Learn more: API Guides - Files API Multimodality unlocks more agent use cases \u00f0\u009f\u0091\u0080 Multimodal API support \u00f0\u009f\u0094\u008c Files API is now live \u00f0\u009f\u0093\u0081 DeepSeek-V4-Flash-Vision-Exp experimental multimodal model released Matches DeepSeek-V4-Flash text capabilities Multimodal agent performance nears Opus-4.8 Images tokenized up to 384 tokens each Supports Chat Completions, Messages, and Responses New Files API allows image reuse via file_id DeepSeek Harness 0.1.1 released with model support DeepSeek-V4-Flash-Vision-Exp Release: Multimodal API Now Live | DeepSeek API Docs Skip to main content The full suite of DeepSeek application APIs is now available: web search, file input, URL reading, model safety, ASR, TTS and more. Click here to view the guide On this page Copy Markdown Copy Markdown Open Markdown DeepSeek-V4-Flash-Vision-Exp Release: Multimodal API Now Live DeepSeek-V4-Flash-Vision-Exp is now live on the DeepSeek API Platform! \u00f0\u009f\u009a\u0080 \u00f0\u009f\u0094\u00b9 This experimental multimodal model matches DeepSeek-V4-Flash on text capabilities\u00e2\u0080\u0094including agents, reasoning, and world knowledge. \u00f0\u009f\u0094\u00b9 On multimodal agent benchmarks, V4-Flash-Vision-Exp makes a major leap over V4-Flash, bringing multimodal agent performance close to Opus-4.8. Try it with model='deepseek-v4-flash-vision-exp' . DeepSeek Harness 0.1.1 was released today with out-of-the-box support for the new model. Multimodality unlocks more agent use cases \u00f0\u009f\u0091\u0080 \u00e2\u0080\u008b V4-Flash-Vision-Exp works smoothly across agent frameworks, combining visual understanding with a wide range of tools to unlock more practical workflows. Multimodal API support \u00f0\u009f\u0094\u008c \u00e2\u0080\u008b \u00f0\u009f\u0094\u00b9 Set model='deepseek-v4-flash-vision-exp' \u00f0\u009f\u0094\u00b9 Images are tokenized for billing: up to 384 tokens each, at V4-Flash pricing \u00f0\u009f\u0094\u00b9 Supports Chat Completions, Messages & Responses \u00f0\u009f\u0094\u00b9 Supports mixed text + image input; images can be provided via base64, external URLs, or the Files API Docs: API Guides - Vision Files API is now live \u00f0\u009f\u0093\u0081 \u00e2\u0080\u008b \u00f0\u009f\u0094\u00b9 Free to use \u00f0\u009f\u0094\u00b9 Upload an image once, then reference it by file_id to save request bandwidth \u00f0\u009f\u0094\u00b9 Reuse the same image across requests\u00e2\u0080\u0094no need to upload it again Learn more: API Guides - Files API Multimodality unlocks more agent use cases \u00f0\u009f\u0091\u0080 Multimodal API support \u00f0\u009f\u0094\u008c Files API is now live \u00f0\u009f\u0093\u0081",
-   "category": "Models & benchmarks"
-  },
   "423827400": {
    "tweets": [
     "DeepSeek just released their full app capabilities into the API.\n\nV4.1-Flash now supports native web search, URL reading, file parsing, and safety checks, with server-side context assembly.\n\nngl having standalone OCR, ASR, and TTS APIs ready to call is pretty nice.",
@@ -928,17 +1151,68 @@
    ],
    "source": "Hugging Face published a guide on building and maintaining agentic evaluations. The Hugging Face hub hosts approximately 3,500 evaluation leaderboards. Evaluation datasets on the Hugging Face hub grew 16X in the past year to 17,000. The guide defines three eras of evaluation: question-answer, agentic, and teams/swarms. Agentic evaluations check what an agent changes in an environment rather than just a final answer. 98.2% of model-benchmark scores are currently reported by only one party. The anatomy of an agentic evaluation includes tasks, agent harnesses, rollouts, verifiers, and traces. The article provides an 8-step walkthrough for building an agentic evaluation using a physics lab use case. How to build and maintain an agentic evaluation Back to Articles How to build and maintain an agentic evaluation Published November 23, 2026 Update on GitHub Upvote 31 +25 Avijit Ghosh evijit Follow ben burtenshaw burtenshaw Follow Irene Solaiman irenesolaiman Follow Overview AI evaluations help shape which systems people build, adopt, and trust. An evaluation gives a system tasks, checks its answers or actions, and produces a score. Building and maintaining a useful evaluation therefore takes real work: defining tasks that reflect domain expertise, scoring them reliably, and checking that the results support the claims made. When methods, code, and data stay private, that work is harder for others to scrutinize or build on. Open source offers a means to build stronger, more frequently updated, and more comparable evaluations and the infrastructure around them. Existing tasks, environments, and tools give builders a starting point, so their effort can go to domain expertise and validation. Sharing how an evaluation was built, including what went wrong, lets others find errors, improve it, and reuse it. The Hugging Face hub is the home for AI evaluation: we host around 3500 eval leaderboards and have seen about a 16X growth in eval datasets on the hub in the past year , to about 17000 datasets. In recent months, we have also incorporated support for agentic abstractions that are relevant to evaluation. For example, Traces that store an agent\u2019s work in an easily reviewable and sharable way; Benchmarks that highlight datasets used to evaluate models with leaderboards; and Environments that show datasets used as agentic RL or evaluation environments. This guide covers four things: Three eras of evaluation (section 1). Evaluations moved from checking answers, to checking what an agent did, to checking what a team of agents produces. Each step adds software that can change the score. The steps in an agentic evaluation (section 2). We follow one task through eight steps, from the claim to the reported score. The full walkthrough, with commands, is in Appendix A . When a benchmark is wrong (section 3). Errors in tasks and graders are common. We look at how they are found and corrected. What to open strategically and why (section 4). A table sets out, component by component, what to share and what can stay protected. In the research community, AI evaluation terminology is notoriously inconsistent . The glossary at the end defines each term we use and notes the other names you may come across. 1. Introduction: how evaluation design has changed AI evaluation design has evolved in three forms as language models have become more capable and able to perform more complex work: question answer, agentic, and teams or swarms. Question-answer benchmarks such as MMLU (2020) and GPQA (2023) measure knowledge and reasoning through the answers models produce. As models became capable of planning and using tools, agentic benchmarks such as SWE-bench and WebArena expanded the scope to resolving software issues and completing tasks on websites. These tasks require evaluation setups that account for the environment in which the system operates and the changes it makes. Lately, research on multi-agent systems has started to add another dimension: how agents coordinate and what they accomplish together. This includes decentralized swarms , teams managed by an orchestrator , and specialized agents collaborating on scientific work . Figure 1 shows a rough timeline of these three eras of evaluations. Figure 1. Three types of language model evals. Question-and-answer benchmarks check a response against a key. Agentic benchmarks check what an agent changed in an environment. Team and swarm benchmarks score what a group of agents produced. We\u2019ll focus on agentic evaluations in this article for two reasons. First, they are becoming increasingly the most prominent type in model release announcements due to high user and enterprise interest in agentic deployment. Second, they offer a useful starting point for understanding how evaluation design affects model performance. Team and swarm evaluations introduce further complexity through interactions between agents, which we leave outside the scope of this guide. Once an agent uses tools to complete a task,",
    "category": "Agents"
+  },
+  "564951792": {
+   "tweets": [
+    "BREAKING: OpenAI announced GPT-6 models have intrinsic protein-design capabilities.\n\nThey can design protein shapes and sequences using pure reasoning and code\u2014no specialized biology models needed.\n\nngl general-purpose models taking over bio workflows is wild.",
+    "In lab tests with Onava, GPT-6.2 designs showed evidence of binding across 5 targets.\n\nIt matched or beat specialized models on many protein design tasks just by prompting on attachment sites and shapes, drawing on math, physics, chemistry, and bio.\n\ntbh this is huge."
+   ],
+   "source": "OpenAI announced GPT-6 models demonstrate intrinsic protein-design capabilities. GPT-6 models can design protein shapes and sequences using reasoning and code. The models do not require specialized biology models to generate designs. GPT-6.2 designs showed evidence of binding across five targets in lab tests. The models draw on math, physics, chemistry, and biology to reason about protein interactions. GPT-6.2 outperformed or matched specialized models on many protein design tasks. Researchers can guide designs by prompting the model on attachment sites and shapes. The research was conducted in partnership with Onava. GPT-6 models demonstrate intrinsic protein-design capabilities | OpenAI OpenAI November 24, 2026 Science Publication GPT\u20116 models demonstrate intrinsic protein-design capabilities Read the paper (opens in a new window) Share Key findings: Our GPT\u20116 family of models can design new protein shapes and the sequence of their chemical building blocks using only reasoning and code, without calling specialized biology models to generate those designs. An internal research model matched or outperformed specialized models on many protein design tasks. Researchers could also guide designs by prompting the model on where a protein should attach and what shape it should take. In lab tests with Onava, proteins based on GPT\u20116.2\u2019s designs showed evidence of binding, or attachment, across five targets. Redesigned antibodies also retained binding. Specialized models helped supply sequences and select candidates for testing. The models\u2019 written reasoning and code suggest they draw on math, physics, chemistry, and biological knowledge to reason about protein shapes and interactions with other molecules. In a preprint titled GPT\u20116 as a Universal Foundation Model for Protein Biology: Beyond Specialized Models , we show that our GPT\u20116 family of models has intrinsic capabilities for designing new proteins: the models can design new protein structures and sequences without relying on specialized biology models, using only reasoning and general-purpose coding tools. Proteins do much of the work in living cells. They drive the chemical reactions that sustain life, carry oxygen through the blood, and defend the body against infection. Incorrectly shaped proteins can also cause disease and dysfunction. Proteins are made from chains of chemical building blocks called amino acids. The order, or sequence, of these amino acids helps determine how a protein folds into a three-dimensional shape, which in turn influences what it does. Scientists often start with a clear idea of what they want a protein to do. They might want it to block a signal that helps cancer cells evade the immune system or to help capture carbon dioxide from the air. The challenge is to work out what three-dimensional structure would enable the protein to do its job and which amino acid sequence would give it that structure. Specialized biology models capable of generating three-dimensional protein structures and sequences have made this work more practical. Using and coordinating these specialized models requires substantial expertise. Each accepts particular kinds of inputs and constraints, and these models cannot easily accept new kinds of information without changes to their software or additional training. In contrast, a general-purpose model capable of performing the work of multiple specialized models can easily adapt to new instructions and requirements. Our research illustrates the potential power of pairing natural language with intrinsic protein capabilities. We could guide our models at scales ranging from a single bond between two atoms to the overall shape of a protein. For example, we asked GPT\u20116.2 to predict where and how a small molecule would bind to a protein. When we already knew which two atoms formed a bond, we could give the model that information and ask how the rest of the molecule would fit. We could switch between these tasks simply by changing the prompt, without retraining the model. We also asked our models to design small proteins called minibinders and marked where each should attach to its target, and further specified how many coils or strands each minibinder should contain. An internal model followed that instruction with near-perfect fidelity in its three-dimensional designs. Points farther from the center indicate better performance. Newer generations of models improved on many of the 14 protein tasks tested. A closer look at our models\u2019 protein designs We ran computational tests of whether the GPT\u20116 models series could design small proteins to bind given targets, build proteins around specified structural features, predict protein structures and molecular interactions, and rank how sequence changes affect properties such as stability and binding. Our latest models performed comparably to or better than specialized models on most tasks, although predicting a complete protein structure remained a clear weakness. The mode",
+   "category": "Models & benchmarks"
+  },
+  "565021910": {
+   "tweets": [
+    "BREAKING: DeepSeek-R1-0528 just dropped.\n\nFewer hallucinations, better front-end capabilities, and improved benchmark performance. It also officially supports JSON output and function calling.\n\nOpen-source weights are already up on Hugging Face.",
+    "The full suite of application APIs is available now too\u2014including web search, file input, URL reading, ASR, TTS, and model safety.\n\nngl this is a huge release. You can try it out on chat.deepseek.com."
+   ],
+   "source": "DeepSeek-R1-0528 released on 2025/05/28 Improved benchmark performance Enhanced front-end capabilities Reduced hallucinations Supports JSON output and function calling Open-source weights available on Hugging Face Full suite of application APIs now available DeepSeek-R1-0528 Release | DeepSeek API Docs Skip to main content The full suite of DeepSeek application APIs is now available: web search, file input, URL reading, model safety, ASR, TTS and more. Click here to view the guide Copy Markdown Copy Markdown Open Markdown DeepSeek-R1-0528 Release \u00f0\u009f\u009a\u0080 DeepSeek-R1-0528 is here! \u00f0\u009f\u0094\u00b9 Improved benchmark performance \u00f0\u009f\u0094\u00b9 Enhanced front-end capabilities \u00f0\u009f\u0094\u00b9 Reduced hallucinations \u00f0\u009f\u0094\u00b9 Supports JSON output & function calling \u00e2\u009c Try it now: https://chat.deepseek.com/ \u00f0\u009f\u0094\u008c No change to API usage \u00e2\u0080\u0094 docs here: Thinking Mode guide \u00f0\u009f\u0094\u0097 Open-source weights: https://huggingface.co/deepseek-ai/DeepSeek-R1-0528",
+   "category": "Models & benchmarks"
+  },
+  "565032593": {
+   "tweets": [
+    "DeepSeek-V3-0324 just dropped and the update is pretty stacked ngl.\n\nThey got major boosts to reasoning performance, front-end dev skills, and tool-use capabilities.\n\nBest part? Open-source weights are live on Hugging Face under the MIT License.",
+    "A few key API details:\n- API usage remains unchanged\n- Full suite of app APIs available now (web search, file input, ASR, TTS)\n- For non-complex reasoning tasks, they recommend turning off \"DeepThink\" on V3"
+   ],
+   "source": "DeepSeek-V3-0324 released on 2025/03/25 Major boost in reasoning performance Improved front-end development skills Enhanced tool-use capabilities Models released under MIT License Full suite of application APIs available API usage remains unchanged Open-source weights available on Hugging Face DeepSeek-V3-0324 Release | DeepSeek API Docs Skip to main content The full suite of DeepSeek application APIs is now available: web search, file input, URL reading, model safety, ASR, TTS and more. Click here to view the guide Copy Markdown Copy Markdown Open Markdown DeepSeek-V3-0324 Release \u00f0\u009f\u0094\u00b9 Major boost in reasoning performance \u00f0\u009f\u0094\u00b9 Stronger front-end development skills \u00f0\u009f\u0094\u00b9 Smarter tool-use capabilities \u00e2\u009c For non-complex reasoning tasks, we recommend using V3 \u00e2\u0080\u0094 just turn off \u00e2\u0080\u009cDeepThink\u00e2\u0080\u009d \u00f0\u009f\u0094\u008c API usage remains unchanged \u00f0\u009f\u0093\u009c Models are now released under the MIT License, just like DeepSeek-R1! \u00f0\u009f\u0094\u0097 Open-source weights: https://huggingface.co/deepseek-ai/DeepSeek-V3-0324",
+   "category": "Models & benchmarks"
+  },
+  "565045851": {
+   "tweets": [
+    "DeepSeek just officially dropped their app on the App Store and Google Play.\n\nIt's powered by DeepSeek-V3 and is 100% free with no ads or in-app purchases.\n\nngl having V3 natively on mobile without any paywall is huge.",
+    "Here's what is included in the app:\n- Web search & Deep-Think mode\n- File upload and text extraction\n- Cross-platform chat history sync\n- ASR and TTS capabilities\n\nLogin supports E-mail, Google Account, and Apple ID."
+   ],
+   "source": "DeepSeek App officially released on App Store and Google Play Powered by DeepSeek-V3 model Features web search and Deep-Think mode Supports file upload and text extraction Includes cross-platform chat history sync Login supports E-mail, Google Account, and Apple ID Service is 100% free with no ads or in-app purchases Application supports ASR and TTS capabilities Introducing DeepSeek App | DeepSeek API Docs Skip to main content The full suite of DeepSeek application APIs is now available: web search, file input, URL reading, model safety, ASR, TTS and more. Click here to view the guide On this page Copy Markdown Copy Markdown Open Markdown Introducing DeepSeek App \u00f0\u009f\u0092\u00a1 Powered by world-class DeepSeek-V3 \u00f0\u009f\u0086\u0093 FREE to use with seamless interaction \u00f0\u009f\u0093\u00b1 Now officially available on App Store & Google Play & Major Android markets \u00f0\u009f\u0094\u0097Download now: https://download.deepseek.com/app/ Key Features of DeepSeek App: \u00e2\u0080\u008b \u00f0\u009f\u0094\u0090 Easy login: E-mail/Google Account/Apple ID \u00e2\u0098\u0081\u00ef\u00b8\u008f Cross-platform chat history sync \u00f0\u009f\u0094\u008d Web search & Deep-Think mode \u00f0\u009f\u0093\u0084 File upload & text extraction Important Notice: \u00e2\u0080\u008b \u00e2\u009c 100% FREE - No ads, no in-app purchases \u00f0\u009f\u009b\u00a1\u00ef\u00b8\u008f Download only from official channels to avoid being misled \u00f0\u009f\u0093\u00b2 Search \"DeepSeek\" in your app store or visit our website for direct links Key Features of DeepSeek App: Important Notice:",
+   "category": "Industry"
+  },
+  "565055410": {
+   "tweets": [
+    "BREAKING: DeepSeek-V3 is officially out.\n\n671B MoE model with 37B activated parameters, trained on 14.8 trillion tokens.\n\nIt's fully open-source with the research papers already live. Is the gap between open and closed models finally closing?",
+    "The speed is the real story here ngl.\n\nHitting 60 tokens/second, which is 3x faster than V2. It already supports web search, file inputs, and ASR/TTS.\n\nMultimodal updates are coming next.",
+    "API pricing stays the same as V2 until Feb 8, 2025.\n\nAfter that:\n- $0.27/M input (cache miss)\n- $1.10/M output\n\nStill the best value in the game \ud83d\ude80"
+   ],
+   "source": "DeepSeek-V3 is a 671B parameter MoE model with 37B activated parameters. The model was trained on 14.8 trillion high-quality tokens. Inference speed is 60 tokens/second, 3x faster than V2. DeepSeek-V3 is fully open-source with accompanying research papers. API pricing remains the same as V2 until February 8, 2025. New pricing starting February 8: $0.27/M input (cache miss) and $1.10/M output. The model supports web search, file input, URL reading, ASR, and TTS. Future updates will include multimodal support. \u00f0\u009f\u009a\u0080 Introducing DeepSeek-V3 | DeepSeek API Docs Skip to main content The full suite of DeepSeek application APIs is now available: web search, file input, URL reading, model safety, ASR, TTS and more. Click here to view the guide On this page Copy Markdown Copy Markdown Open Markdown \u00f0\u009f\u009a\u0080 Introducing DeepSeek-V3 Biggest leap forward yet \u00e2\u0080\u008b \u00e2\u009a\u00a1 60 tokens/second (3x faster than V2!) \u00f0\u009f\u0092\u00aa Enhanced capabilities \u00f0\u009f\u009b API compatibility intact \u00f0\u009f\u008c\u008d Fully open-source models & papers \u00f0\u009f\u008e\u0089 What\u00e2\u0080\u0099s new in V3 \u00e2\u0080\u008b \u00f0\u009f\u00a7 671B MoE parameters \u00f0\u009f\u009a\u0080 37B activated parameters \u00f0\u009f\u0093\u009a Trained on 14.8T high-quality tokens \u00f0\u009f\u0094\u0097 Dive deeper here: Model \u00f0\u009f\u0091\u0089 https://github.com/deepseek-ai/DeepSeek-V3 Paper \u00f0\u009f\u0091\u0089 https://github.com/deepseek-ai/DeepSeek-V3/blob/main/DeepSeek_V3.pdf \u00f0\u009f\u0092\u00b0 API Pricing Update \u00e2\u0080\u008b \u00f0\u009f\u008e\u0089 Until Feb 8: same as V2! \u00f0\u009f\u00a4\u00af From Feb 8 onwards: Input (cache miss) Input (cache hit) Output $0.27/M tokens $0.07/M tokens $1.10/M tokens Still the best value in the market! \u00f0\u009f\u0094\u00a5 \u00e2\u0080\u008b \u00f0\u009f\u008c\u008c Open-source spirit + Longtermism to inclusive AGI \u00f0\u009f\u008c\u009f DeepSeek\u00e2\u0080\u0099s mission is unwavering. We\u00e2\u0080\u0099re thrilled to share our progress with the community and see the gap between open and closed models narrowing. \u00f0\u009f\u009a\u0080 This is just the beginning! Look forward to multimodal support and other cutting-edge features in the DeepSeek ecosystem. \u00f0\u009f\u0092\u00a1 Together, let\u00e2\u0080\u0099s push the boundaries of innovation! Biggest leap forward yet \u00f0\u009f\u008e\u0089 What\u00e2\u0080\u0099s new in V3 \u00f0\u009f\u0092\u00b0 API Pricing Update Still the best value in the market! \u00f0\u009f\u0094\u00a5",
+   "category": "Models & benchmarks"
+  },
+  "565074138": {
+   "tweets": [
+    "BREAKING: DeepSeek-V2.5-1210 is out and it's the final update for the V2.5 series.\n\nThey've improved performance in math, coding, and roleplay. Internet search is finally live on the web platform\u2014just toggle it for real-time answers. \ud83d\ude80",
+    "The API is now a full suite with web search, file input, and URL reading.\n\nIt\u2019s open-source on Hugging Face. DeepSeek is already working on next-gen models. 5 updates since May... who else is moving this fast ngl?"
+   ],
+   "source": "DeepSeek-V2.5-1210 released on 2024/12/10 Features improved performance in math, coding, writing, and roleplay Internet search functionality is now live on the DeepSeek web platform Full suite of application APIs now includes web search, file input, and URL reading DeepSeek-V2.5-1210 is the final update in the V2.5 series Model is available as open-source on Hugging Face DeepSeek is currently developing next-generation foundation models \u00f0\u009f\u009a\u0080 DeepSeek V2.5: The Grand Finale \u00f0\u009f\u008e\u0089 | DeepSeek API Docs Skip to main content The full suite of DeepSeek application APIs is now available: web search, file input, URL reading, model safety, ASR, TTS and more. Click here to view the guide Copy Markdown Copy Markdown Open Markdown \u00f0\u009f\u009a\u0080 DeepSeek V2.5: The Grand Finale \u00f0\u009f\u008e\u0089 \u00f0\u009f\u008c\u0090 Internet Search is now live on the web! Visit https://chat.deepseek.com/ and toggle \u00e2\u0080\u009cInternet Search\u00e2\u0080\u009d for real-time answers. \u00f0\u009f\u0095\u0092 \u00f0\u009f\u0093\u008a DeepSeek-V2.5-1210 raises the bar across benchmarks like math, coding, writing, and roleplay\u00e2\u0080\u0094built to serve all your work and life needs. \u00f0\u009f\u0094\u00a7 Explore the open-source model on Hugging Face: https://huggingface.co/deepseek-ai/DeepSeek-V2.5-1210 \u00f0\u009f\u0099\u008c With the release of DeepSeek-V2.5-1210, the V2.5 series comes to an end. \u00f0\u009f\u0092\u00aa Since May, the DeepSeek V2 series has brought 5 impactful updates, earning your trust and support along the way. \u00e2\u009c\u00a8 As V2 closes, it\u00e2\u0080\u0099s not the end\u00e2\u0080\u0094it\u00e2\u0080\u0099s the beginning of something greater. DeepSeek is working on next-gen foundation models to push boundaries even further. Stay tuned! \u00e2\u0080\u009cEvery end is a new beginning.\u00e2\u0080\u009d \u00f0\u009f\u0095\u008a\u00ef\u00b8\u008f",
+   "category": "Models & benchmarks"
   }
  },
  "approved": [],
  "held": [],
  "stats": {
   "drafts": 3,
-  "majors": 14,
+  "majors": 20,
   "quotes": 6,
   "chats": 1
  },
- "cool": {},
+ "cool": {
+  "gemini-3.5-flash|0": "2026-11-25T08:05:00+00:00"
+ },
  "tg_offset": 694012120,
  "chat": [
   {
@@ -1394,6 +1668,138 @@
     "Both modes support 128K context window.",
     "Added support for Anthropic API format."
    ]
+  },
+  {
+   "t": "2026-11-25T00:02:11.898064+00:00",
+   "title": "GPT-6 models demonstrate intrinsic protein-design capabilities",
+   "url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities",
+   "category": "Models & benchmarks",
+   "facts": [
+    "OpenAI announced GPT-6 models demonstrate intrinsic protein-design capabilities.",
+    "GPT-6 models can design protein shapes and sequences using reasoning and code.",
+    "The models do not require specialized biology models to generate designs.",
+    "GPT-6.2 designs showed evidence of binding across five targets in lab tests."
+   ]
+  },
+  {
+   "t": "2026-11-25T00:02:33.794230+00:00",
+   "title": "Searching for distant planets with Astra",
+   "url": "https://openai.com/index/searching-for-distant-planets-with-astra",
+   "category": "Industry",
+   "facts": [
+    "Amateur astronomers used OpenAI's Codex and Astra to analyze public telescope data.",
+    "The project identified potential exoplanet candidates from Kepler and TESS mission data.",
+    "Kevin Bond used Codex to scan 100,000 stars from the Kepler telescope.",
+    "Ethan Byrd used Astra to analyze telescope data from approximately 19 million stars."
+   ]
+  },
+  {
+   "t": "2026-11-25T00:02:35.209139+00:00",
+   "title": "How Intentful uses dots to make more time for growth",
+   "url": "https://openai.com/business/customer-stories/intentful-dots",
+   "category": "Agents",
+   "facts": [
+    "Intentful uses OpenAI 'dots' to automate research and proposal creation.",
+    "Aria, a custom dot, reduced proposal preparation time from days to hours.",
+    "Dots integrate with Gmail, Slack, Google Drive, and Asana.",
+    "Aria can analyze website sitemaps and extract pricing data from past agreements."
+   ]
+  },
+  {
+   "t": "2026-11-25T00:02:36.613450+00:00",
+   "title": "How iFood scales coding agents across 15,000 repositories",
+   "url": "https://openai.com/business/customer-stories/ifood",
+   "category": "Agents",
+   "facts": [
+    "iFood built a Remote Agents Platform to manage tasks across 15,000 code repositories.",
+    "The platform uses GPT-5.6 Luna for agentic coding tasks.",
+    "The system uses a REST API to trigger tasks in isolated Ubuntu sandboxes.",
+    "iFood has completed over 25,000 runs on the platform."
+   ]
+  },
+  {
+   "t": "2026-11-25T00:02:37.871103+00:00",
+   "title": "Clay helps sales teams win with Codex and ChatGPT",
+   "url": "https://openai.com/business/customer-stories/clay-plugins-openai",
+   "category": "Industry",
+   "facts": [
+    "Clay uses GPT-6 Sol, Astra, and Luna models for sales workflows.",
+    "Clay integrates with Codex and ChatGPT to assist sales teams.",
+    "The Responses API allows Clay to balance intelligence and cost across models.",
+    "Clay uses agents for research, qualification, and signal detection."
+   ]
+  },
+  {
+   "t": "2026-11-25T00:02:39.856179+00:00",
+   "title": "Microduck Obstacle Avoidance: A Sim2Real Workflow with Isaac Lab and Newton",
+   "url": "https://huggingface.co/blog/nvidia/microduck-obstacle-avoidance",
+   "category": "Creative AI (3D, animation, design)",
+   "facts": [
+    "NVIDIA released a Sim2Real workflow for Microduck obstacle avoidance using Isaac Lab and Newton.",
+    "The workflow trains a navigation policy that adjusts gamepad commands while keeping the walking policy fixed.",
+    "The environment utilizes SimReady assets like cardboard boxes and office bins for obstacle course generation.",
+    "The MicroDuckToFCamera models a VL53L5CX sensor with an 8x8 grid at 15Hz."
+   ]
+  },
+  {
+   "t": "2026-11-25T00:03:26.319442+00:00",
+   "title": "DeepSeek-R1-0528 Release 2025/05/28",
+   "url": "https://api-docs.deepseek.com/news/news250528/",
+   "category": "Models & benchmarks",
+   "facts": [
+    "DeepSeek-R1-0528 released on 2025/05/28",
+    "Improved benchmark performance",
+    "Enhanced front-end capabilities",
+    "Reduced hallucinations"
+   ]
+  },
+  {
+   "t": "2026-11-25T00:03:43.525620+00:00",
+   "title": "DeepSeek-V3-0324 Release 2025/03/25",
+   "url": "https://api-docs.deepseek.com/news/news250325/",
+   "category": "Models & benchmarks",
+   "facts": [
+    "DeepSeek-V3-0324 released on 2025/03/25",
+    "Major boost in reasoning performance",
+    "Improved front-end development skills",
+    "Enhanced tool-use capabilities"
+   ]
+  },
+  {
+   "t": "2026-11-25T00:03:54.232682+00:00",
+   "title": "DeepSeek APP 2025/01/15",
+   "url": "https://api-docs.deepseek.com/news/news250115/",
+   "category": "Industry",
+   "facts": [
+    "DeepSeek App officially released on App Store and Google Play",
+    "Powered by DeepSeek-V3 model",
+    "Features web search and Deep-Think mode",
+    "Supports file upload and text extraction"
+   ]
+  },
+  {
+   "t": "2026-11-25T00:04:07.673531+00:00",
+   "title": "Introducing DeepSeek-V3 2024/12/26",
+   "url": "https://api-docs.deepseek.com/news/news1226/",
+   "category": "Models & benchmarks",
+   "facts": [
+    "DeepSeek-V3 is a 671B parameter MoE model with 37B activated parameters.",
+    "The model was trained on 14.8 trillion high-quality tokens.",
+    "Inference speed is 60 tokens/second, 3x faster than V2.",
+    "DeepSeek-V3 is fully open-source with accompanying research papers."
+   ]
+  },
+  {
+   "t": "2026-11-25T00:04:17.887092+00:00",
+   "title": "DeepSeek-V2.5-1210 Release 2024/12/10",
+   "url": "https://api-docs.deepseek.com/news/news1210/",
+   "category": "Models & benchmarks",
+   "facts": [
+    "DeepSeek-V2.5-1210 released on 2024/12/10",
+    "Features improved performance in math, coding, writing, and roleplay",
+    "Internet search functionality is now live on the DeepSeek web platform",
+    "Full suite of application APIs now includes web search, file input, and URL reading"
+   ]
   }
  ],
  "releases": [
@@ -1540,9 +1946,57 @@
     "https://api-docs.deepseek.com/news/news250821/"
    ],
    "bundled": false
+  },
+  {
+   "topic": "gpt-6",
+   "t": "2026-11-25T00:02:11.898064+00:00",
+   "urls": [
+    "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities"
+   ],
+   "bundled": false
+  },
+  {
+   "topic": "deepseek-r1-0528",
+   "t": "2026-11-25T00:03:26.319442+00:00",
+   "urls": [
+    "https://api-docs.deepseek.com/news/news250528/"
+   ],
+   "bundled": false
+  },
+  {
+   "topic": "deepseek-v3-0324",
+   "t": "2026-11-25T00:03:43.525620+00:00",
+   "urls": [
+    "https://api-docs.deepseek.com/news/news250325/"
+   ],
+   "bundled": false
+  },
+  {
+   "topic": "deepseek-app",
+   "t": "2026-11-25T00:03:54.232682+00:00",
+   "urls": [
+    "https://api-docs.deepseek.com/news/news250115/"
+   ],
+   "bundled": false
+  },
+  {
+   "topic": "deepseek-v3",
+   "t": "2026-11-25T00:04:07.673531+00:00",
+   "urls": [
+    "https://api-docs.deepseek.com/news/news1226/"
+   ],
+   "bundled": false
+  },
+  {
+   "topic": "deepseek-v2.5-1210",
+   "t": "2026-11-25T00:04:17.887092+00:00",
+   "urls": [
+    "https://api-docs.deepseek.com/news/news1210/"
+   ],
+   "bundled": false
   }
  ],
- "gem_fail": 5,
+ "gem_fail": 0,
  "last_weekly": "2026-11-22T20:31:26.804502+00:00",
  "last_bundle": "2026-11-23",
  "job_err": {

@@ -335,7 +335,9 @@
   "https://api-docs.deepseek.com/news/news250120.md",
   "https://deepmind.google/blog/interpreting-mass-spectra-with-google-antigravity/",
   "https://huggingface.co/blog/ibm-research/an-indic-voice-agent-with-cuga",
-  "https://huggingface.co/blog/inkling-2-mini-inference-hillclimb"
+  "https://huggingface.co/blog/inkling-2-mini-inference-hillclimb",
+  "https://huggingface.co/blog/allenai/where-scientists-draw-the-line-on-ai-agents",
+  "https://artificialanalysis.ai/articles/aa-robotics-sim"
  ],
  "init": [
   "OpenAI",
@@ -421,6 +423,24 @@
    "category": "Agents",
    "topic": "cuga",
    "t": "2026-11-25T18:39:34.647964+00:00"
+  },
+  {
+   "title": "Where scientists draw the line on AI agents",
+   "url": "https://huggingface.co/blog/allenai/where-scientists-draw-the-line-on-ai-agents",
+   "text": "Where scientists draw the line on AI agents Back to Articles Where scientists draw the line on AI agents Enterprise Article Published November 25, 2026 Upvote 5 Kyle Wiggers Ai2Comms Follow allenai \ud83d\udcc4 Tech Report Delegating research tasks to AI does not remove scientists\u2019 responsibility for how the work is accomplished. For example, a researcher using AI to review the literature needs to check whether the system overlooks conflicting evidence or makes claims the cited papers don\u2019t support. Someone handing off data analysis to an agentic system needs to understand which methods it used, which files it accessed, and whether the results can be successfully reproduced. A researcher automating part of a lab protocol needs confidence that the system respects physical safety constraints, such as temperature limits or material toxicity, while a researcher working with human-participant data needs assurance that a system protects participants' privacy and limits who can access their information. Researchers also need clear institutional guidelines for verifying and disclosing AI-assisted work. These ethical and safety questions are central to our work on AI for science. Responsible science is about more than accuracy\u2014scientific fields have ethical research norms because of past actions and choices by scientists and scientific communities, and those norms also cover how research is conducted and what impact it has. We want AI tools to expand what scientists can accomplish without compromising their ability to scrutinize evidence, verify methods, and \u2013 perhaps most importantly \u2013 stand behind their findings. To better understand what that requires, we interviewed 17 scientists working in the natural, applied, and social sciences about the responsible development of AI agents. These systems can use tools and carry out research tasks with varying degrees of autonomy. The interviews drew on a network of researchers established through earlier survey work\u2014we wanted to understand how scientists would steer AI\u2019s development to reflect the responsibilities of their fields. We asked where researchers would welcome agentic assistance, what could go wrong, and what safeguards they would need to trust agents with their own studies. Our interest in these questions grew out of work to evaluate the safety of models developed at Ai2. As we expand our focus on AI for science, we\u2019ve found that much of the safety work on scientific applications emphasizes catastrophic risks in areas such as biology and nuclear physics. We also need ways to assess whether agents follow the standards of responsible conduct of research in the fields where they\u2019re used. One of our main findings concerns trust. Across the interviews, we identified five dimensions of scientific trust : validation, privacy, objectivity, accountability, and transparency. Together, they reflect concerns that go beyond whether an AI system produces a correct answer. Researchers also need to understand how an answer was reached, protect sensitive information, recognize bias, and determine who is charged with verifying and standing behind AI-assisted findings. These are matters of responsible conduct of research. Another main finding suggests that scientists should help decide which research tasks agents take on, how those agents operate, and how their performance is evaluated. Even a technically correct result may be unsuitable for scientific use if researchers cannot inspect how it was produced, or if an agent accesses confidential data or files beyond what the researcher authorized. A third key finding pertains to the future of science. Interviewees were divided between excitement about AI-driven progress and existential concern about the role of human scientists. They proposed training in AI use and named developing and enforcing guidelines as a critical, timely challenge. Helping researchers check the work For many participants in our interviews, the appeal of AI agents began with time-consuming research tasks\u2014processing large datasets, writing code, documenting experimental procedures, and handling repetitive administrative work. Automating these activities could free researchers to spend more time on fieldwork, mentoring, or developing new ideas. It could also make it possible to analyze volumes of data that would be difficult to examine manually. But delegating research tasks creates a corresponding need to verify the work an AI system performs. Several participants described checking AI-generated answers against original publications rather than accepting summaries at face value. They worried about confident responses containing subtle inaccuracies, as well as tools that reinforce assumptions by retrieving only studies that support a favored hypothesis. But checking the final answer from an AI system is only part of the challenge. Researchers may also need to know which sources an agent omitted, whether it followed the requested methodology, and what information it accessed along the way. Our interviews suggest how evaluations of AI agents for scientific research could better reflect these concerns. A literature-review benchmark, for example, could test whether an agent overlooks contradictory evidence or draws conclusions unsupported by its sources. A coding benchmark could assess not only whether the generated code works, but whether the agent accesses files outside its authorized scope. Evaluations of data-processing agents could compare their methods and results with established human workflows. These examples point toward a longer-term goal\u2014a participatory benchmark in which scientists help define the research practices and safety requirements that agents should be tested against. We want to evaluate whether systems developed at Ai2 or elsewhere follow the standards of the fields where they\u2019re used, as well as whether they complete assigned tasks. These evaluations remain proposals to develop and test with scientists, rather than established solutions. But they offer a direction for our work at Ai2: building open scientific tools means making their behavior and limitations easier to investigate and giving the research community a role in defining what trustworthy performance looks like. Keep scientific judgment in the loop Verification is only one consideration in using AI tools for science. Respondents also raised a more fundamental question\u2014what happens to scientific expertise when AI takes over parts of the research process? An early-career biologist described deliberately limiting AI use while acquiring skills they hoped to teach future students. Another researcher questioned whether producing a correct result was sufficient if the researcher learned nothing in the process: even with perfect outputs, \u201cdid the person who obtained the perfect outputs get anything out of this?\u201d Some participants were concerned that AI-assisted research could diminish learning, though the value of automation depends in part on the researcher and the task. An experienced scientist may reasonably delegate a familiar procedure to save time, while someone still learning that procedure may benefit from doing the work themselves. Participants also drew different boundaries around activities involving intellectual contribution. One biologist refused to use AI to generate research ideas, considering that a responsibility to retain personally. Others were more open to AI-assisted ideation or writing. An anthropologist, for example, argued that some sections of scientific papers, particularly routine descriptions of methods and results, are formulaic enough to benefit from automation. Even researchers who tried AI for writing sometimes reconsidered. One political scientist described using Claude to help revise a manuscript, then deciding to rewrite the entire paper because the boundaries of their own intellectual contribution had become unclear. \u201cI don\u2019t know what was AI and what was me,\u201d the researcher said. Context mattered, too. Having AI critique a manuscript before submission was viewed favorably by some participants, while using it to review another researcher's unpublished work raised concerns. The distinction involves more than technical capability; peer review carries responsibilities around confidentiality, attribution, and the fair evaluation of others' research. These disagreements suggest that responsible automation cannot be defined by a universal list of acceptable and unacceptable tasks. Scientific fields have different norms, and individual researchers may have different goals even when performing similar work. The same tension applies to safeguards built into AI systems. One political scientist described how content restrictions that prevent AI tools from discussing certain topics could interfere with legitimate research on political violence or human rights violations. Meanwhile, participants working with sensitive human-subject data wanted stronger guarantees about privacy, access, and how informa",
+   "facts": [
+    "Allen Institute for AI (Ai2) interviewed 17 scientists on the responsible development of AI agents.",
+    "Five dimensions of scientific trust were identified: validation, privacy, objectivity, accountability, and transparency.",
+    "Researchers expressed concerns about AI agents overlooking conflicting evidence or making unsupported claims.",
+    "There is a need for clear institutional guidelines for verifying and disclosing AI-assisted scientific work.",
+    "Participants highlighted the risk of AI-assisted research diminishing human learning and intellectual contribution.",
+    "Ai2 is exploring participatory benchmarks where scientists help define safety requirements for AI agents.",
+    "Scientists emphasized that delegating tasks to AI does not remove the researcher's responsibility for the work.",
+    "Interviewees were divided between enthusiasm for AI-driven progress and existential concerns about the role of human scientists."
+   ],
+   "category": "Agents",
+   "topic": "ai-agents-in-science",
+   "t": "2026-11-26T01:56:55.871202+00:00"
   }
  ],
  "week_log": [
@@ -1072,6 +1092,38 @@
     "The model checkpoint uses mixed NVFP4 and MXFP8 precision.",
     "DSpark speculative decoding was essential for reaching 95% of the hardware memory-bandwidth ceiling."
    ]
+  },
+  {
+   "t": "2026-11-26T01:56:55.871202+00:00",
+   "title": "Where scientists draw the line on AI agents",
+   "url": "https://huggingface.co/blog/allenai/where-scientists-draw-the-line-on-ai-agents",
+   "category": "Agents",
+   "facts": [
+    "Allen Institute for AI (Ai2) interviewed 17 scientists on the responsible development of AI agents.",
+    "Five dimensions of scientific trust were identified: validation, privacy, objectivity, accountability, and transparency.",
+    "Researchers expressed concerns about AI agents overlooking conflicting evidence or making unsupported claims.",
+    "There is a need for clear institutional guidelines for verifying and disclosing AI-assisted scientific work.",
+    "Participants highlighted the risk of AI-assisted research diminishing human learning and intellectual contribution.",
+    "Ai2 is exploring participatory benchmarks where scientists help define safety requirements for AI agents.",
+    "Scientists emphasized that delegating tasks to AI does not remove the researcher's responsibility for the work.",
+    "Interviewees were divided between enthusiasm for AI-driven progress and existential concerns about the role of human scientists."
+   ]
+  },
+  {
+   "t": "2026-11-26T01:57:01.379172+00:00",
+   "title": "Can language models drive a humanoid robot? Introducing AA-Robotics-Sim v0.1 November 25, 2026",
+   "url": "https://artificialanalysis.ai/articles/aa-robotics-sim",
+   "category": "Models & benchmarks",
+   "facts": [
+    "Artificial Analysis introduced AA-Robotics-Sim v0.1 to evaluate frontier language models on controlling a simulated Unitree G1 humanoid robot.",
+    "The benchmark includes ten household and industrial tasks across four skill groups: embodied reasoning, pick and place, assembly/tool use, and mobility.",
+    "GPT-6.2 Astra leads the benchmark with a score of 71.0.",
+    "Models are given five practice episodes in new scenes to write code and notes before being evaluated on ten additional unseen scenes.",
+    "The simulation uses NVIDIA Isaac Sim and the Unitree G1 robot with 29 joints and three-fingered hands.",
+    "Every model achieved a perfect score on the mobility task (warehouse navigation).",
+    "Pick and place tasks were the weakest performance area for all models due to difficulties with the robot's three-fingered hands.",
+    "GPT-6.2 Sol is the fastest model at 17.3 minutes per evaluation episode, while Claude Fable 5.2 is the most expensive at $9.01 per episode."
+   ]
   }
  ],
  "fail": {
@@ -1084,7 +1136,7 @@
   "xAI": 0,
   "DeepSeek": 0,
   "Qwen": 0,
-  "Z.ai": 12,
+  "Z.ai": 13,
   "Artificial Analysis": 0
  },
  "feeds": {
@@ -1096,14 +1148,6 @@
   "Artificial Analysis": ""
  },
  "drafts": {
-  "564951792": {
-   "tweets": [
-    "BREAKING: OpenAI announced GPT-6 models have intrinsic protein-design capabilities.\n\nThey can design protein shapes and sequences using pure reasoning and code\u2014no specialized biology models needed.\n\nngl general-purpose models taking over bio workflows is wild.",
-    "In lab tests with Onava, GPT-6.2 designs showed evidence of binding across 5 targets.\n\nIt matched or beat specialized models on many protein design tasks just by prompting on attachment sites and shapes, drawing on math, physics, chemistry, and bio.\n\ntbh this is huge."
-   ],
-   "source": "OpenAI announced GPT-6 models demonstrate intrinsic protein-design capabilities. GPT-6 models can design protein shapes and sequences using reasoning and code. The models do not require specialized biology models to generate designs. GPT-6.2 designs showed evidence of binding across five targets in lab tests. The models draw on math, physics, chemistry, and biology to reason about protein interactions. GPT-6.2 outperformed or matched specialized models on many protein design tasks. Researchers can guide designs by prompting the model on attachment sites and shapes. The research was conducted in partnership with Onava. GPT-6 models demonstrate intrinsic protein-design capabilities | OpenAI OpenAI November 24, 2026 Science Publication GPT\u20116 models demonstrate intrinsic protein-design capabilities Read the paper (opens in a new window) Share Key findings: Our GPT\u20116 family of models can design new protein shapes and the sequence of their chemical building blocks using only reasoning and code, without calling specialized biology models to generate those designs. An internal research model matched or outperformed specialized models on many protein design tasks. Researchers could also guide designs by prompting the model on where a protein should attach and what shape it should take. In lab tests with Onava, proteins based on GPT\u20116.2\u2019s designs showed evidence of binding, or attachment, across five targets. Redesigned antibodies also retained binding. Specialized models helped supply sequences and select candidates for testing. The models\u2019 written reasoning and code suggest they draw on math, physics, chemistry, and biological knowledge to reason about protein shapes and interactions with other molecules. In a preprint titled GPT\u20116 as a Universal Foundation Model for Protein Biology: Beyond Specialized Models , we show that our GPT\u20116 family of models has intrinsic capabilities for designing new proteins: the models can design new protein structures and sequences without relying on specialized biology models, using only reasoning and general-purpose coding tools. Proteins do much of the work in living cells. They drive the chemical reactions that sustain life, carry oxygen through the blood, and defend the body against infection. Incorrectly shaped proteins can also cause disease and dysfunction. Proteins are made from chains of chemical building blocks called amino acids. The order, or sequence, of these amino acids helps determine how a protein folds into a three-dimensional shape, which in turn influences what it does. Scientists often start with a clear idea of what they want a protein to do. They might want it to block a signal that helps cancer cells evade the immune system or to help capture carbon dioxide from the air. The challenge is to work out what three-dimensional structure would enable the protein to do its job and which amino acid sequence would give it that structure. Specialized biology models capable of generating three-dimensional protein structures and sequences have made this work more practical. Using and coordinating these specialized models requires substantial expertise. Each accepts particular kinds of inputs and constraints, and these models cannot easily accept new kinds of information without changes to their software or additional training. In contrast, a general-purpose model capable of performing the work of multiple specialized models can easily adapt to new instructions and requirements. Our research illustrates the potential power of pairing natural language with intrinsic protein capabilities. We could guide our models at scales ranging from a single bond between two atoms to the overall shape of a protein. For example, we asked GPT\u20116.2 to predict where and how a small molecule would bind to a protein. When we already knew which two atoms formed a bond, we could give the model that information and ask how the rest of the molecule would fit. We could switch between these tasks simply by changing the prompt, without retraining the model. We also asked our models to design small proteins called minibinders and marked where each should attach to its target, and further specified how many coils or strands each minibinder should contain. An internal model followed that instruction with near-perfect fidelity in its three-dimensional designs. Points farther from the center indicate better performance. Newer generations of models improved on many of the 14 protein tasks tested. A closer look at our models\u2019 protein designs We ran computational tests of whether the GPT\u20116 models series could design small proteins to bind given targets, build proteins around specified structural features, predict protein structures and molecular interactions, and rank how sequence changes affect properties such as stability and binding. Our latest models performed comparably to or better than specialized models on most tasks, although predicting a complete protein structure remained a clear weakness. The mode",
-   "category": "Models & benchmarks"
-  },
   "565021910": {
    "tweets": [
     "BREAKING: DeepSeek-R1-0528 just dropped.\n\nFewer hallucinations, better front-end capabilities, and improved benchmark performance. It also officially supports JSON output and function calling.\n\nOpen-source weights are already up on Hugging Face.",
@@ -1261,13 +1305,22 @@
    ],
    "source": "[{\"t\": \"2026-11-25T00:03:26.319442+00:00\", \"title\": \"DeepSeek-R1-0528 Release 2025/05/28\", \"url\": \"https://api-docs.deepseek.com/news/news250528/\", \"category\": \"Models & benchmarks\", \"facts\": [\"DeepSeek-R1-0528 released on 2025/05/28\", \"Improved benchmark performance\", \"Enhanced front-end capabilities\", \"Reduced hallucinations\"]}] LLM Leaderboard - Comparison of AI models from OpenAI, Anthropic, Google, Meta & others | Artificial Analysis Artificial Analysis K LLM Leaderboard - Comparison of AI models from OpenAI, Anthropic, Google, Meta & others Comparison and ranking the performance of over 250 AI models (LLMs) across key metrics including intelligence, price, performance and speed (time per task in minutes & latency as time to first answer token), context window & others. For more details including relating to our methodology, see our FAQs. Intelligence Updated Claude Fable 5.2 (max) and Claude Fable 5.2 (xhigh) are the highest intelligence models, followed by GPT-6.2 Astra (max) and Claude Fable 5.2 (high). Time per Task GPT-6 Luna (low) and GPT-6.1 Terra (low) have the lowest time per task, followed by Gemini 4 Hydrogen (low) and Beam 1.0. Time to First Answer Token Tiny Aya Global and Phi-4 Multimodal have the lowest time to first answer token, followed by Celeris-1 and DeepSeek V4.1 Flash 1017 (non-reasoning). Cost per Task K2 Horizon 375B A23B and Command A+ have the lowest cost per task, followed by North Mini Code and GPT-6 Luna (low). Context Window Llama 4 Scout and GPT-6 Sol (Daybreak Blue, max) support the largest context windows, followed by Muse Wonder (max) and Muse Wonder (high). Expand columns Weights : All Size : All Price : All Reasoning : All Status : Current Intelligence Price Speed Latency Features Model Artificial Analysis Intelligence Index Cost per Task USD Time per Task Minutes First Answer Token (s) Context Window Further Analysis Claude Fable 5.2 Max, Default Fallback 65 $26.54 40.5 244.10 1M Model Providers GPT-6.2 Astra Max 62 $4.00 14.7 162.00 1M Model Providers Gemini 4 Neon Xhigh 62 $6.44 26.4 60.64 1M Model Providers Gemini 4 Carbon High 60 $7.76 39.2 76.11 1M Model Providers Claude Opus 5.5 Max, Default Fallback 59 $10.04 24.7 334.15 1M Model Providers GPT-6.2 Sol Max 57 $1.01 10.0 107.86 1M Model Providers Claude Sonnet 5.5 Max, Default Fallback 55 $10.02 30.7 257.23 1M Model Providers Gemini 4 Hydrogen Xhigh 54 $3.16 15.7 57.87 1M Model Providers GPT-6.1 Terra Max 51 $0.96 14.4 180.51 1M Model Providers Gemini 4 Argon High 51 $9.95 23.9 38.32 1M Model Providers Muse Wonder Full Max 50 -- -- -- 1M Model Providers Kimi K3.1 Pro 47 $3.68 34.0 167.02 1M Model Providers Muse Wonder Max 44 $6.95 16.4 26.73 1M Model Providers Qwen4 Max 43 $3.27 16.7 74.99 984k Model Providers Claude Haiku 5.5 Max 37 $0.41 14.6 191.97 1M Model Providers Muse Ember Max 36 $0.14 3.6 5.28 1M Model Providers Grok 4.7 Xhigh 35 $7.77 22.8 53.19 500k Model Providers Tencent Hy4 35 $1.03 13.5 111.58 1M Model Providers DeepSeek V4.1 Flash 1017 Max 32 $0.60 13.4 46.78 1M Model Providers GLM-5.3 Max 32 $5.01 27.4 77.37 1M Model Providers Inkling 2 Small 31 $1.18 24.5 43.56 1M Model Providers MiMo-V2.6-Pro 30 $0.26 48.5 32.00 1M Model Providers Ling 3.1 Flash 1019 30 $3.19 -- -- 1M Model Providers MiniMax-M3.1-Flash 29 $0.49 17.6 51.19 1M Model Providers Step 5 Preview 29 $2.35 24.2 55.14 1M Model Providers Qwen3.8-Flash-Next 28 $0.57 33.1 86.11 256k Model Providers JoyAI-VL-Preview 28 -- -- -- 1M Model Providers GPT-6 Luna Max 28 $0.15 10.5 66.56 1M Model Providers GLM-5.3-Flash Max 28 $0.58 37.9 107.81 1M Model Providers MiMo-V2.6-Flash 27 $0.13 60.4 55.23 1M Model Providers Mistral Large 4 High 26 $2.06 16.5 58.12 1M Model Providers Muse Spark Open Xhigh 25 $2.02 6.2 11.28 1M Model Providers Agnes 2.5 Pro Theta 24 $0.57 30.4 10.18 1M Model Providers Ling-3.2-air 23 -- -- -- 1M Model Providers DeepSeek V4 Pro 0813 Max 23 $1.77 19.6 70.13 1M Model Providers Nanbeige4.3-33B 20 -- -- -- 524k Model Providers Inkling 2 Mini 20 $0.59 13.9 26.38 1M Model Providers Qwen3.8 27B Xhigh 20 $3.53 29.3 101.43 256k Model Providers MiniMax-M3 19 $1.29 13.9 68.59 1M Model Providers JT-4.1 Flash 236B A21B 19 -- -- -- 262k Model Providers K2 Horizon 375B A23B 18 $0.00 3.7 14.42 524k Model Providers Beam 1.0 18 $0.28 1.6 5.97 1M Model Providers Solar Pro 4 14 $0.96 65.4 30.23 512k Model Providers K2 Horizon 32B 14 -- -- -- 524k Model Providers K2 Horizon MoVA 36B A4B 14 -- -- -- 524k Model Providers Apodex 1.1 14 $0.76 12.0 22.07 256k Model Providers Nemotron 3.5 Super VL 14 $0.48 4.0 9.16 1M Model Providers Inkling Xhigh 13 $1.35 9.2 17.68 1M Model Providers Nemotron 3 Ultra 550B A55B Reasoning 12 $2.19 4.6 4.42 262k Model Providers Gemini 3.5 Flash-Lite 12 $0.69 1.7 4.67 1M Model Providers K2 Horizon 7B 11 -- -- -- 524k Model Providers A.X-K2 9 -- -- -- 262k Model Providers K2 Horizon 3.7B 8 -- -- -- 524k Model Providers K-EXAONE 2.0 8 -- -- -- 262k Model Providers Muse Glimmer High 6 $0.21 4.8 14.89 131k Model Providers",
    "category": "Release roundup"
+  },
+  "658331536": {
+   "tweets": [
+    "BREAKING: Can LLMs actually drive a humanoid robot?\n\nArtificial Analysis just dropped the AA-Robotics-Sim v0.1 research preview to find out. They're testing models on a simulated Unitree G1 with 29 joints. GPT-6.2 Astra is absolutely crushing it with a 71.0 score. \ud83e\udd16",
+    "The benchmark uses NVIDIA Isaac Sim. Models get 5 practice runs to write code and notes, then they're tested on 10 totally unseen scenes.\n\nMobility is basically solved\u2014perfect scores across the board. But pick and place? Total struggle with those 3-fingered hands tbh.",
+    "The efficiency stats are wild.\n\nClaude Fable 5.2 is the most expensive at $9.01 per episode, while GPT-6.2 Sol is the speed king at 17.3 minutes. Seeing the gap between reasoning and physical dexterity is fascinating ngl."
+   ],
+   "source": "Artificial Analysis introduced AA-Robotics-Sim v0.1 to evaluate frontier language models on controlling a simulated Unitree G1 humanoid robot. The benchmark includes ten household and industrial tasks across four skill groups: embodied reasoning, pick and place, assembly/tool use, and mobility. GPT-6.2 Astra leads the benchmark with a score of 71.0. Models are given five practice episodes in new scenes to write code and notes before being evaluated on ten additional unseen scenes. The simulation uses NVIDIA Isaac Sim and the Unitree G1 robot with 29 joints and three-fingered hands. Every model achieved a perfect score on the mobility task (warehouse navigation). Pick and place tasks were the weakest performance area for all models due to difficulties with the robot's three-fingered hands. GPT-6.2 Sol is the fastest model at 17.3 minutes per evaluation episode, while Claude Fable 5.2 is the most expensive at $9.01 per episode. Can language models drive a humanoid robot? Introducing AA-Robotics-Sim v0.1 | Artificial Analysis Artificial Analysis K All articles November 25, 2026 Can language models drive a humanoid robot? Introducing AA-Robotics-Sim v0.1 AA-Robotics-Sim v0.1 gives frontier language models control of a simulated Unitree G1 humanoid robot across ten household and industrial tasks. Today\u2019s research preview of our simulation benchmark follows last month\u2019s preview of AA-Robotics v0.1, our work with physical robot arms in our lab. In AA-Robotics-Sim v0.1, each model practices five episodes per task, keeps only the notes and code it wrote, and is then scored on ten new evaluation scenes with different rooms, lighting and task details. AA-Robotics-Sim v0.1 Introducing AA-Robotics-Sim v0.1 Frontier language models can now write and run code well enough to act in the physical world. AA-Robotics v0.1 was our first step, with models controlling a robot arm. AA-Robotics-Sim v0.1 evaluates frontier language models on their ability to control a simulated humanoid robot, which has to walk, look around, and use two dexterous hands at once. AA-Robotics-Sim v0.1 is our research preview of the simplest experiment we have designed to test this: language models in coding agent harnesses directly controlling a humanoid. Each model is given control of a simulated Unitree G1, with 29 joints, three-fingered hands and a head camera, and a simple objective for each task. It is the next step in our work measuring AI agents in simulated robotics, and we plan to expand from here. For each task, the model is first given five practice episodes back to back, each in a new scene, to learn the environment and take notes. Only the files it writes (memory, notes, code and skills) are kept. Using these, the model is then evaluated on ten new scenes, each with a different room, lighting, layout and task details, and each in a fresh run that starts from a copy of those files. We find that some skills are already mature, while others are missing from every model. Every model walked the robot to the goal without moving a package in every navigation episode, and most played the full melody on the toy piano in most episodes. But no model reliably loaded the dishwasher, with only five dishes ending in the rack in 90 episodes, and none finished with a single item of laundry in the washing machine. GPT-6.2 Astra leads AA-Robotics-Sim with 71.0, 13.5 points ahead of Claude Fable 5.2 at 57.5 and GPT-6.2 Sol at 53.7. GPT-6.2 Astra succeeded in 61 of its 100 evaluation episodes, against 43 for Fable 5.2 and 41 for GPT-6.2 Sol, and was perfect on the toy piano, the abacus and the conveyor. AA-Robotics-Sim Mean of the 10 task scores (0 to 100) \u00b7 10 evaluation episodes per task Each evaluation episode is scored out of 100: full success scores 100, and partial progress earns partial credit. A task's score is the mean of its 10 evaluation episodes, and the AA-Robotics-Sim score is the mean of the 10 task scores. The ten tasks AA-Robotics-Sim v0.1 has ten tasks modeled on household and light industrial work, in four groups of skills. Every evaluation scene changes the room, the lighting, the layout and the props, and the details of the task, such as the melody, the chess puzzle or the shelf level. Embodied Reasoning Work out an answer (the mate, the sum, the melody), then carry it out precisely. Toy piano Goal : Play the given melody on the toy piano. Success : The last key presses match the melody. Chess Goal : Play Black's mate in one on the board. Success : The board shows the mating position, hand open. Abacus Goal : Add the given number to the one on the abacus. Success : The abacus shows the correct sum. Pick and Place Grasp, carry and put objects down. Box to shelf Goal : Carry the box from the table to the shelf. Success : The box rests on the target shelf, hands away. Dishwasher Goal : Put the dish from the table into the dishwasher rack. Success : The dish rests in the rack, hands away. Laundry Goal : Put all the laundry from the chair into ",
+   "category": "Models & benchmarks"
   }
  },
  "approved": [],
  "held": [],
  "stats": {
   "drafts": 11,
-  "majors": 24,
+  "majors": 25,
   "quotes": 11,
   "chats": 2
  },
@@ -1975,17 +2028,33 @@
     "Inference optimization on an RTX PRO 6000 achieved 190.6 tok/s using vLLM and DSpark.",
     "The model supports a 1M-token context window."
    ]
+  },
+  {
+   "t": "2026-11-26T01:56:55.871202+00:00",
+   "title": "Where scientists draw the line on AI agents",
+   "url": "https://huggingface.co/blog/allenai/where-scientists-draw-the-line-on-ai-agents",
+   "category": "Agents",
+   "facts": [
+    "Allen Institute for AI (Ai2) interviewed 17 scientists on the responsible development of AI agents.",
+    "Five dimensions of scientific trust were identified: validation, privacy, objectivity, accountability, and transparency.",
+    "Researchers expressed concerns about AI agents overlooking conflicting evidence or making unsupported claims.",
+    "There is a need for clear institutional guidelines for verifying and disclosing AI-assisted scientific work."
+   ]
+  },
+  {
+   "t": "2026-11-26T01:57:01.379172+00:00",
+   "title": "Can language models drive a humanoid robot? Introducing AA-Robotics-Sim v0.1 November 25, 2026",
+   "url": "https://artificialanalysis.ai/articles/aa-robotics-sim",
+   "category": "Models & benchmarks",
+   "facts": [
+    "Artificial Analysis introduced AA-Robotics-Sim v0.1 to evaluate frontier language models on controlling a simulated Unitree G1 humanoid robot.",
+    "The benchmark includes ten household and industrial tasks across four skill groups: embodied reasoning, pick and place, assembly/tool use, and mobility.",
+    "GPT-6.2 Astra leads the benchmark with a score of 71.0.",
+    "Models are given five practice episodes in new scenes to write code and notes before being evaluated on ten additional unseen scenes."
+   ]
   }
  ],
  "releases": [
-  {
-   "topic": "deepseek-v4.1-flash",
-   "t": "2026-11-23T01:00:58.741961+00:00",
-   "urls": [
-    "https://api-docs.deepseek.com/news/news261017"
-   ],
-   "bundled": true
-  },
   {
    "topic": "deepseek-v4.1-flash",
    "t": "2026-11-23T01:01:07.659450+00:00",
@@ -2215,6 +2284,14 @@
    "t": "2026-11-25T18:39:22.907600+00:00",
    "urls": [
     "https://deepmind.google/blog/interpreting-mass-spectra-with-google-antigravity/"
+   ],
+   "bundled": false
+  },
+  {
+   "topic": "aa-robotics-sim",
+   "t": "2026-11-26T01:57:01.379172+00:00",
+   "urls": [
+    "https://artificialanalysis.ai/articles/aa-robotics-sim"
    ],
    "bundled": false
   }
